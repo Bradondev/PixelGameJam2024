@@ -1,0 +1,58 @@
+{
+	"categories": [
+		{
+			"uuid": "c756c1b9-195d-46ea-aeaa-3896999a7567",
+			"title": "Task",
+			"color": "73bfff"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "23212f59-f605-4383-8666-b37c3531bd96",
+			"title": "Todo",
+			"tasks": [
+				"c3fa4ceb-f61d-47a3-b917-f7c17c8bf4dc",
+				"f41e2270-5556-450a-b52e-9c2a2f2c99c2"
+			]
+		},
+		{
+			"uuid": "fd4c5681-9361-4a4c-ab7c-2b0226ea6077",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "f99793f3-b0b5-4622-8979-b2b08f9ee32e",
+			"title": "Done",
+			"tasks": []
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "c3fa4ceb-f61d-47a3-b917-f7c17c8bf4dc",
+			"title": "Fix 2 pixel inventory cell walls",
+			"description": "",
+			"category": "c756c1b9-195d-46ea-aeaa-3896999a7567",
+			"steps": []
+		},
+		{
+			"uuid": "f41e2270-5556-450a-b52e-9c2a2f2c99c2",
+			"title": "added back ground to items in drawing",
+			"description": "",
+			"category": "c756c1b9-195d-46ea-aeaa-3896999a7567",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"23212f59-f605-4383-8666-b37c3531bd96"
+			],
+			[
+				"fd4c5681-9361-4a4c-ab7c-2b0226ea6077"
+			],
+			[
+				"f99793f3-b0b5-4622-8979-b2b08f9ee32e"
+			]
+		]
+	}
+}
