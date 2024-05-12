@@ -16,11 +16,11 @@ in_inventory_height = 2
 slot_flags = 1
 default_properties_string = "{
 \"price\": {
-\"res://Items/pistol.tres\": 4
+\"res://Items/Guns/pistol.tres\": 4
 }
 }"
 default_properties = {
 "price": {
-"res://Items/pistol.tres": 4
+"res://Items/Guns/pistol.tres": 4
 }
 }

@@ -4,14 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="2_swy07"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="3_77755"]
 [ext_resource type="Resource" uid="uid://b2clgtypmt6xi" path="res://Items/HealthPack.tres" id="4_dn5ey"]
-[ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/pistol.tres" id="5_bkbtw"]
-[ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Sniper.tres" id="6_y3lew"]
-[ext_resource type="Resource" uid="uid://dm8qailcqviqa" path="res://Items/shotGun.tres" id="7_fll8l"]
+[ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistol.tres" id="5_bkbtw"]
+[ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/Sniper.tres" id="6_y3lew"]
+[ext_resource type="Resource" uid="uid://dm8qailcqviqa" path="res://Items/Guns/shotGun.tres" id="7_fll8l"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="8_dlaf6"]
 [ext_resource type="PackedScene" uid="uid://bj1vmolmsqv8k" path="res://Scene/inventory/Shop.tscn" id="9_rdcr0"]
 [ext_resource type="Script" path="res://addons/wyvernbox/crafting/vendor.gd" id="10_i48mk"]
 
-[sub_resource type="Resource" id="Resource_i0yoy"]
+[sub_resource type="Resource" id="Resource_kicaf"]
 resource_local_to_scene = true
 script = ExtResource("8_dlaf6")
 items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("4_dn5ey"), ExtResource("5_bkbtw"), ExtResource("6_y3lew"), ExtResource("7_fll8l")])
@@ -32,7 +32,7 @@ offset_top = 104.0
 offset_right = 232.0
 offset_bottom = 216.0
 scale = Vector2(2, 2)
-contents = SubResource("Resource_i0yoy")
+contents = SubResource("Resource_kicaf")
 interaction_mode = 29
 autosave_intensity = 3
 
