@@ -7,9 +7,9 @@
 
 [resource]
 script = ExtResource("5_q2m8j")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_2vgbk"), ExtResource("2_wa2ll"), ExtResource("3_yw0rs")])
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("3_yw0rs"), ExtResource("2_wa2ll"), ExtResource("1_2vgbk")])
 item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
-item_chances = Array[float]([10.0, 50.0, 100.0])
+item_chances = Array[float]([10.0, 10.0, 10.0])
 repeat_post_chance = true
 randomize_locations = true
 delay_between_items = 0.0

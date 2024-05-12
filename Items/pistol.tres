@@ -1,18 +1,29 @@
-[gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://b4t3uv3lch1n6"]
+[gd_resource type="Resource" script_class="ItemType" load_steps=5 format=3 uid="uid://b4t3uv3lch1n6"]
 
+[ext_resource type="Script" path="res://addons/wyvernbox/crafting/item_conversion.gd" id="1_tkeoe"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="1_vg2vs"]
 [ext_resource type="Texture2D" uid="uid://dos822plixx7i" path="res://Art_UI/Inventory_ItemPlaceholder_1x1.png" id="2_o4s2m"]
+
+[sub_resource type="Resource" id="Resource_gybkr"]
+script = ExtResource("1_tkeoe")
+name = "Insert name or full locale string"
+tags = Array[StringName]([])
+input_types = Array[Resource]([null])
+input_counts = Array[int]([1])
+output_types = Array[Resource]([null])
+output_ranges = Array[Vector2]([Vector2(1, 1)])
 
 [resource]
 script = ExtResource("1_vg2vs")
 name = "pistol"
 description = "small gun"
-tags = Array[StringName]([&""])
+tags = Array[StringName]([])
 texture = ExtResource("2_o4s2m")
 texture_scale = 1.0
 max_stack_count = 1
 in_inventory_width = 1
 in_inventory_height = 1
 slot_flags = 1
+custom_data = SubResource("Resource_gybkr")
 default_properties_string = "{}"
 default_properties = {}

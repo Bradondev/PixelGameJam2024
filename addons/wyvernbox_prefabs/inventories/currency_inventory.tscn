@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgxmix0ikbfc2"]
+[gd_scene load_steps=10 format=3 uid="uid://dgxmix0ikbfc2"]
 
 [ext_resource type="PackedScene" uid="uid://b7jlucsddt6dg" path="res://addons/wyvernbox_prefabs/inventory_cell.tscn" id="1"]
 [ext_resource type="Script" path="res://addons/wyvernbox/inventory_view.gd" id="2"]
+[ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/pistol.tres" id="2_kkusq"]
 [ext_resource type="Script" path="res://addons/wyvernbox/inventories/currency_inventory.gd" id="3"]
 [ext_resource type="StyleBox" uid="uid://cqx3opxr50d2o" path="res://addons/wyvernbox_prefabs/graphics/selected_cell.tres" id="4_qdoq2"]
 [ext_resource type="PackedScene" uid="uid://co5ok1mm2s7vu" path="res://addons/wyvernbox_prefabs/item_stack_view.tscn" id="6"]
@@ -9,7 +10,7 @@
 [sub_resource type="Resource" id="3"]
 resource_name = "CurrencyInventory"
 script = ExtResource("3")
-restricted_to_types = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([null, null, null, null, null])
+restricted_to_types = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("2_kkusq"), null, null, null, null])
 max_stack = 99999999
 width = 5
 
