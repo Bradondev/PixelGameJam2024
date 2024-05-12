@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemType" load_steps=2 format=3 uid="uid://b4t3uv3lch1n6"]
+
+[ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="1_ck6i7"]
+
+[resource]
+script = ExtResource("1_ck6i7")
+name = ""
+description = ""
+tags = Array[StringName]([&""])
+texture_scale = 1.0
+max_stack_count = 1
+in_inventory_width = 1
+in_inventory_height = 1
+slot_flags = 1
+default_properties_string = ""
+default_properties = {}
