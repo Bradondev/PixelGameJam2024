@@ -104,7 +104,7 @@ func _update_weapon_stats():
 
 	var crit_label := tr(crit_stat_text)
 	if !("%s" in crit_label || "%d" in crit_label || "%f" in crit_label):
-    # Epic localization fail (Github #17)
+	# Epic localization fail (Github #17)
 		crit_label += " %s"
 	
 	$"Weapon/B/Crit/Label".text = crit_label % (stats.get("crit_power", 0.0) * 0.01)

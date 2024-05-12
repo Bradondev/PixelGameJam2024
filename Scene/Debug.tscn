@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://6grn4eawox77"]
+[gd_scene load_steps=12 format=3 uid="uid://6grn4eawox77"]
 
 [ext_resource type="PackedScene" uid="uid://dxmu3oawxupu1" path="res://Scene/inventory/grid_inventoryPlayer.tscn" id="1_qs76t"]
 [ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="2_swy07"]
@@ -8,15 +8,14 @@
 [ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Sniper.tres" id="6_y3lew"]
 [ext_resource type="Resource" uid="uid://dm8qailcqviqa" path="res://Items/shotGun.tres" id="7_fll8l"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="8_dlaf6"]
+[ext_resource type="PackedScene" uid="uid://bj1vmolmsqv8k" path="res://Scene/inventory/Shop.tscn" id="9_rdcr0"]
 [ext_resource type="Script" path="res://addons/wyvernbox/crafting/vendor.gd" id="10_i48mk"]
-[ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="10_o7tnn"]
-[ext_resource type="PackedScene" uid="uid://dgxmix0ikbfc2" path="res://addons/wyvernbox_prefabs/inventories/currency_inventory.tscn" id="11_ytiyg"]
 
-[sub_resource type="Resource" id="Resource_wtspg"]
+[sub_resource type="Resource" id="Resource_i0yoy"]
 resource_local_to_scene = true
 script = ExtResource("8_dlaf6")
 items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("4_dn5ey"), ExtResource("5_bkbtw"), ExtResource("6_y3lew"), ExtResource("7_fll8l")])
-item_repeat_ranges = Array[Vector2]([Vector2(1, 4), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 4), Vector2(1, 10), Vector2(1, 1), Vector2(1, 1)])
 item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
 repeat_post_chance = true
 randomize_locations = true
@@ -25,32 +24,17 @@ spread_distance = 32.0
 spread_cone_degrees = 360.0
 spread_angle_degrees = 0.0
 
-[sub_resource type="Resource" id="Resource_fq0af"]
-script = ExtResource("10_o7tnn")
-name = ""
-description = ""
-tags = Array[StringName]([])
-texture_scale = 1.0
-max_stack_count = 1
-in_inventory_width = 1
-in_inventory_height = 1
-slot_flags = 1
-default_properties_string = ""
-default_properties = {}
-
-[sub_resource type="Resource" id="Resource_yhmf1"]
-script = ExtResource("8_dlaf6")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("5_bkbtw")])
-item_repeat_ranges = Array[Vector2]([Vector2(1, 696)])
-item_chances = Array[float]([100.0])
-repeat_post_chance = true
-randomize_locations = false
-delay_between_items = 0.0
-spread_distance = 32.0
-spread_cone_degrees = 360.0
-spread_angle_degrees = 0.0
-
 [node name="Debug" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_qs76t")]
+offset_left = 120.0
+offset_top = 104.0
+offset_right = 232.0
+offset_bottom = 216.0
+scale = Vector2(2, 2)
+contents = SubResource("Resource_i0yoy")
+interaction_mode = 29
+autosave_intensity = 3
 
 [node name="Tooltip" parent="." instance=ExtResource("2_swy07")]
 visible = false
@@ -58,7 +42,7 @@ offset_left = 120.0
 offset_top = 106.0
 offset_right = 342.0
 offset_bottom = 328.0
-compare_to_inventory = NodePath("../MarginContainer")
+compare_to_inventory = NodePath("../player")
 
 [node name="Item" parent="." instance=ExtResource("3_77755")]
 offset_left = 120.0
@@ -67,28 +51,31 @@ offset_right = 232.0
 offset_bottom = 216.0
 unit_size = Vector2(32, 32)
 
-[node name="MarginContainer" parent="." instance=ExtResource("1_qs76t")]
-offset_left = 120.0
-offset_top = 104.0
-offset_right = 232.0
-offset_bottom = 216.0
-scale = Vector2(2, 2)
-contents = SubResource("Resource_wtspg")
+[node name="shop" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="InventoryVendor" type="Node" parent="."]
+[node name="ShopManager" type="Node" parent="shop"]
 script = ExtResource("10_i48mk")
-vendor_inventory = NodePath("../Money")
-sell_reward_into_inventory = NodePath("../Money")
-stock = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("7_fll8l"), SubResource("Resource_fq0af")])
-stock_counts = Array[int]([2, 2])
-stock_restocks = Array[int]([20, 20])
-clear_sold_items_when_hidden = false
-free_buyback = false
+vendor_inventory = NodePath("../shop")
+sell_reward_into_inventory = NodePath("../../player")
+stock = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("7_fll8l"), ExtResource("6_y3lew"), ExtResource("4_dn5ey")])
+stock_counts = Array[int]([1, 1, 1])
+stock_restocks = Array[int]([3, 3, 3])
+infinite_restocks = false
+remove_price_on_buy = true
 
-[node name="Money" parent="." instance=ExtResource("11_ytiyg")]
-offset_left = 31.0
-offset_top = 56.0
-offset_right = 31.0
-offset_bottom = 56.0
+[node name="shop" parent="shop" instance=ExtResource("9_rdcr0")]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 122.0
+offset_right = 792.0
+offset_bottom = 250.0
 scale = Vector2(2, 2)
-contents = SubResource("Resource_yhmf1")
+interaction_mode = 7
+autosave_intensity = 3
+
+[connection signal="grab_attempted" from="shop/shop" to="shop/ShopManager" method="_on_Inventory_grab_attempted"]
+[connection signal="item_stack_added" from="shop/shop" to="shop/ShopManager" method="_on_Inventory_item_stack_added"]
