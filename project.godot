@@ -13,3 +13,14 @@ config_version=5
 config/name="Pixel Game Jam 2024"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/stretch/mode="viewport"
+window/vsync/vsync_mode=0
+
+[rendering]
+
+textures/default_filters/use_nearest_mipmap_filter=true
