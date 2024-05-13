@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhkiy4ucj30lo"]
+
+[ext_resource type="Texture2D" uid="uid://c6654jxqrhpmf" path="res://Art_PNG/UI_Player Token, Normal.png" id="1_snjcd"]
+[ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="2_brpdq"]
+[ext_resource type="Texture2D" uid="uid://dcfxp0gtvvhyu" path="res://Art_UI/ProgressBar_PlayerResource (Over).png" id="3_8tpyf"]
+[ext_resource type="Texture2D" uid="uid://3vmgjxrcavhb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Green.png" id="4_gmflh"]
+[ext_resource type="Texture2D" uid="uid://blci8p2pk46kb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Red.png" id="5_c2l54"]
+[ext_resource type="Texture2D" uid="uid://cttyvchnc16nr" path="res://Art_UI/ProgressBar_PlayerResource (Value), Blue.png" id="6_kt6gp"]
+[ext_resource type="Texture2D" uid="uid://ds3cqx1dk14we" path="res://Art_PNG/UI_Ammo.png" id="7_nytj8"]
+[ext_resource type="FontFile" uid="uid://dmo6e5w4r5tmf" path="res://Fonts/Pixels (16px).ttf" id="8_skyss"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="BotMargin" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Hbox" type="HBoxContainer" parent="BotMargin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Player" type="HBoxContainer" parent="BotMargin/Hbox"]
+layout_mode = 2
+theme_override_constants/separation = -6
+
+[node name="PlayerPortrait" type="TextureRect" parent="BotMargin/Hbox/Player"]
+z_index = 1
+layout_mode = 2
+texture = ExtResource("1_snjcd")
+
+[node name="Resources" type="VBoxContainer" parent="BotMargin/Hbox/Player"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="TopBar" type="TextureProgressBar" parent="BotMargin/Hbox/Player/Resources"]
+layout_mode = 2
+value = 50.0
+texture_under = ExtResource("2_brpdq")
+texture_over = ExtResource("3_8tpyf")
+texture_progress = ExtResource("4_gmflh")
+
+[node name="MidBar" type="TextureProgressBar" parent="BotMargin/Hbox/Player/Resources"]
+layout_mode = 2
+value = 50.0
+texture_under = ExtResource("2_brpdq")
+texture_over = ExtResource("3_8tpyf")
+texture_progress = ExtResource("5_c2l54")
+
+[node name="BotBar" type="TextureProgressBar" parent="BotMargin/Hbox/Player/Resources"]
+layout_mode = 2
+value = 50.0
+texture_under = ExtResource("2_brpdq")
+texture_over = ExtResource("3_8tpyf")
+texture_progress = ExtResource("6_kt6gp")
+
+[node name="Ammo" type="HBoxContainer" parent="BotMargin/Hbox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="AmmoIcon" type="TextureRect" parent="BotMargin/Hbox/Ammo"]
+layout_mode = 2
+texture = ExtResource("7_nytj8")
+expand_mode = 3
+
+[node name="AmmoText" type="RichTextLabel" parent="BotMargin/Hbox/Ammo"]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("8_skyss")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]1/6"
+scroll_active = false
