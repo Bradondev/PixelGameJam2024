@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Bullet" load_steps=2 format=3 uid="uid://b0jk21pbxb7x"]
+
+[ext_resource type="Script" path="res://GD Scripts/BulletBase.gd" id="1_c3skx"]
+
+[resource]
+script = ExtResource("1_c3skx")
+BulletType = 1

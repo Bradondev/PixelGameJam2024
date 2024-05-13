@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://6grn4eawox77"]
+[gd_scene load_steps=6 format=3 uid="uid://cwuqfs6h6xo5k"]
 
 [ext_resource type="PackedScene" uid="uid://dxmu3oawxupu1" path="res://Scene/inventory/grid_inventoryPlayer.tscn" id="1_qs76t"]
 [ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="2_swy07"]

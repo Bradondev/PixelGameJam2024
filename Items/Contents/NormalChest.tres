@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="ItemInstantiator" load_steps=4 format=3 uid="uid://bda4vfkwqvdxg"]
 
-[ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/Sniper.tres" id="1_2vgbk"]
+[ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="2_k0vlq"]
 [ext_resource type="Resource" uid="uid://dm8qailcqviqa" path="res://Items/Guns/shotGun.tres" id="2_wa2ll"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="5_q2m8j"]
 
 [resource]
 script = ExtResource("5_q2m8j")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("2_wa2ll"), ExtResource("1_2vgbk")])
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("2_wa2ll"), ExtResource("2_k0vlq")])
 item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1)])
-item_chances = Array[float]([10.0, 10.0])
+item_chances = Array[float]([100.0, 100.0])
 repeat_post_chance = true
 randomize_locations = true
 delay_between_items = 0.0

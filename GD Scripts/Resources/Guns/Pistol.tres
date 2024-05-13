@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Gun" load_steps=3 format=3 uid="uid://cvy67xy4en5fv"]
+
+[ext_resource type="Texture2D" uid="uid://dos822plixx7i" path="res://Art_UI/Inventory_ItemPlaceholder_1x1.png" id="1_45wi2"]
+[ext_resource type="Script" path="res://GD Scripts/GunBase.gd" id="1_l67uj"]
+
+[resource]
+script = ExtResource("1_l67uj")
+GunType = 1
+Sprite = ExtResource("1_45wi2")
+Description = ""
+ROF = 0
+BaseDamage = 3
+MagSize = 0
+Spread = 0

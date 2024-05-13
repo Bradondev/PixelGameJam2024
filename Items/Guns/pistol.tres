@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://b4t3uv3lch1n6"]
+[gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://b4t3uv3lch1n6"]
 
+[ext_resource type="Resource" uid="uid://cvy67xy4en5fv" path="res://GD Scripts/Resources/Guns/Pistol.tres" id="1_28tvx"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="1_vg2vs"]
 [ext_resource type="Texture2D" uid="uid://dos822plixx7i" path="res://Art_UI/Inventory_ItemPlaceholder_1x1.png" id="2_o4s2m"]
 
@@ -14,5 +15,6 @@ max_stack_count = 10
 in_inventory_width = 1
 in_inventory_height = 1
 slot_flags = 65
+custom_data = ExtResource("1_28tvx")
 default_properties_string = "{}"
 default_properties = {}
