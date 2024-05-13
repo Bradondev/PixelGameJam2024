@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://dn8xh53dpsrtp"]
+
+[ext_resource type="Texture2D" uid="uid://tq0mjygm3nfl" path="res://Art_PNG/UI_TitleMenu_Art.png" id="1_ynfv6"]
+[ext_resource type="Texture2D" uid="uid://j18x6gvny58r" path="res://Art_UI/Button_TitleMenu, Start (Normal).png" id="2_xxfle"]
+[ext_resource type="Texture2D" uid="uid://bcvoeindev2yr" path="res://Art_UI/Button_TitleMenu, Start (Pressed).png" id="3_xricq"]
+[ext_resource type="Texture2D" uid="uid://dig7ea2o2r2dx" path="res://Art_UI/Button_TitleMenu, Start (Hover).png" id="4_w3q7j"]
+[ext_resource type="Texture2D" uid="uid://cscwyv4ur0r7r" path="res://Art_UI/Button_TitleMenu, Options (Normal).png" id="5_8c6pa"]
+[ext_resource type="Texture2D" uid="uid://k7jqmu6wtosf" path="res://Art_UI/Button_TitleMenu, Options (Pressed).png" id="6_85b8o"]
+[ext_resource type="Texture2D" uid="uid://c3vgd4owudxca" path="res://Art_UI/Button_TitleMenu, Options (Hover).png" id="7_ghkh8"]
+[ext_resource type="Texture2D" uid="uid://15eqnriwggmi" path="res://Art_UI/Button_TitleMenu, Quit (Normal).png" id="8_axeml"]
+[ext_resource type="Texture2D" uid="uid://dfehem3xdi7rb" path="res://Art_UI/Button_TitleMenu, Quit (Pressed).png" id="9_g0hqw"]
+[ext_resource type="Texture2D" uid="uid://cd5xrcedh8nov" path="res://Art_UI/Button_TitleMenu, Quit (Hover).png" id="10_1f1jy"]
+[ext_resource type="Texture2D" uid="uid://c5mabavm86o5x" path="res://Art_PNG/UI_TitleMenu_Gun.png" id="11_4sbf0"]
+
+[node name="Title_Menu" type="CanvasLayer"]
+
+[node name="BG" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ynfv6")
+
+[node name="BottomMargin" type="MarginContainer" parent="BG"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 65
+
+[node name="Hbox" type="HBoxContainer" parent="BG/BottomMargin"]
+layout_mode = 2
+alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="BG/BottomMargin/Hbox"]
+layout_mode = 2
+texture_normal = ExtResource("2_xxfle")
+texture_pressed = ExtResource("3_xricq")
+texture_hover = ExtResource("4_w3q7j")
+
+[node name="OptionButton" type="TextureButton" parent="BG/BottomMargin/Hbox"]
+layout_mode = 2
+texture_normal = ExtResource("5_8c6pa")
+texture_pressed = ExtResource("6_85b8o")
+texture_hover = ExtResource("7_ghkh8")
+
+[node name="QuitButton" type="TextureButton" parent="BG/BottomMargin/Hbox"]
+layout_mode = 2
+texture_normal = ExtResource("8_axeml")
+texture_pressed = ExtResource("9_g0hqw")
+texture_hover = ExtResource("10_1f1jy")
+
+[node name="TopMargin" type="MarginContainer" parent="BG"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 20
+
+[node name="Hbox" type="HBoxContainer" parent="BG/TopMargin"]
+layout_mode = 2
+theme_override_constants/separation = 700
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="BG/TopMargin/Hbox"]
+layout_mode = 2
+texture = ExtResource("11_4sbf0")
+
+[node name="TextureRect2" type="TextureRect" parent="BG/TopMargin/Hbox"]
+layout_mode = 2
+texture = ExtResource("11_4sbf0")
+flip_h = true

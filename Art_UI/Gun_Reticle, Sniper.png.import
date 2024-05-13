@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg3r5bc565cgq"
-path="res://.godot/imported/Monster Rough Drafts.png-f6dbe6221bd7af4422fdfc47a33a722c.ctex"
+uid="uid://sqcvml55oqno"
+path="res://.godot/imported/Gun_Reticle, Sniper.png-cd77312ec3d0d41702dbcfee9c2db6f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_PNG/Monster Rough Drafts.png"
-dest_files=["res://.godot/imported/Monster Rough Drafts.png-f6dbe6221bd7af4422fdfc47a33a722c.ctex"]
+source_file="res://Art_UI/Gun_Reticle, Sniper.png"
+dest_files=["res://.godot/imported/Gun_Reticle, Sniper.png-cd77312ec3d0d41702dbcfee9c2db6f9.ctex"]
 
 [params]
 
