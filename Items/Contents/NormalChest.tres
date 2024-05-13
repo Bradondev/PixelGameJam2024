@@ -1,15 +1,14 @@
-[gd_resource type="Resource" script_class="ItemInstantiator" load_steps=5 format=3 uid="uid://bda4vfkwqvdxg"]
+[gd_resource type="Resource" script_class="ItemInstantiator" load_steps=4 format=3 uid="uid://bda4vfkwqvdxg"]
 
 [ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/Sniper.tres" id="1_2vgbk"]
 [ext_resource type="Resource" uid="uid://dm8qailcqviqa" path="res://Items/Guns/shotGun.tres" id="2_wa2ll"]
-[ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistol.tres" id="3_yw0rs"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="5_q2m8j"]
 
 [resource]
 script = ExtResource("5_q2m8j")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("3_yw0rs"), ExtResource("2_wa2ll"), ExtResource("1_2vgbk")])
-item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
-item_chances = Array[float]([10.0, 10.0, 10.0])
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("2_wa2ll"), ExtResource("1_2vgbk")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([10.0, 10.0])
 repeat_post_chance = true
 randomize_locations = true
 delay_between_items = 0.0

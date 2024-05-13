@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://dged612bgfo67"]
+
+[ext_resource type="PackedScene" uid="uid://cq2ptxw1g8mjf" path="res://Scene/change_sceneButton.tscn" id="1_88vrq"]
+[ext_resource type="PackedScene" uid="uid://dxmu3oawxupu1" path="res://Scene/inventory/grid_inventoryPlayer.tscn" id="2_p8u3q"]
+[ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="3_s18f4"]
+[ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="4_kouft"]
+[ext_resource type="PackedScene" uid="uid://tgvrlnbiq5l5" path="res://Scene/inventory/Chest.tscn" id="6_u34hl"]
+
+[node name="DebugSave" type="Node2D"]
+
+[node name="MarginContainer" parent="." instance=ExtResource("2_p8u3q")]
+offset_left = 184.0
+offset_top = 213.0
+offset_right = 296.0
+offset_bottom = 325.0
+scale = Vector2(2, 2)
+init_contents = true
+autosave_file_path = ""
+autosave_intensity = 1
+
+[node name="Tooltip" parent="." instance=ExtResource("3_s18f4")]
+visible = false
+offset_left = 176.0
+offset_top = 218.0
+offset_right = 398.0
+offset_bottom = 440.0
+compare_to_inventory = NodePath("../player")
+
+[node name="Item" parent="." instance=ExtResource("4_kouft")]
+offset_left = 120.0
+offset_top = 104.0
+offset_right = 232.0
+offset_bottom = 216.0
+unit_size = Vector2(32, 32)
+
+[node name="chest" parent="." instance=ExtResource("6_u34hl")]
+offset_left = 679.0
+offset_top = 259.0
+offset_right = 743.0
+offset_bottom = 323.0
+scale = Vector2(2, 2)
+
+[node name="ChangeScene" parent="." instance=ExtResource("1_88vrq")]
+offset_left = 223.0
+offset_top = 85.0
+offset_right = 335.0
+offset_bottom = 116.0
+Level = "res://Scene/Debug.tscn"

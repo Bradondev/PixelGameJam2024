@@ -81,7 +81,7 @@ func _ready():
 	if Engine.is_editor_hint(): return
 
 	rng.randomize()
-	refill_stock()
+	#refill_stock()
 	get_parent().connect("visibility_changed", Callable(self, "_on_visibility_changed"))
 
 ## Replenishes the inventory's contents with fresh stock from get_stock.
