@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://hvbxywxy0bfl"]
 
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="3_vwbb6"]
-[ext_resource type="Texture2D" uid="uid://7f0ongxi3co8" path="res://Art_UI/Inventory_ItemPlaceholder_3x1.png" id="4_s4uj3"]
+[ext_resource type="Texture2D" uid="uid://rniavqq2sdwq" path="res://Art_UI/Inventory_ItemPlaceholder_3x1.png" id="4_s4uj3"]
 
 [resource]
 script = ExtResource("3_vwbb6")

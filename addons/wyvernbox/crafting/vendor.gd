@@ -183,6 +183,7 @@ func _remove_from_sale(stack : ItemStack):
 
 
 func _on_Inventory_grab_attempted(item_stack : ItemStack, success : bool):
+
 	var inventory = get_node(vendor_inventory).inventory
 	if success:
 		_restock_item(item_stack, inventory)

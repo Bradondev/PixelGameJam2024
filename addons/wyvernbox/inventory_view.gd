@@ -612,6 +612,7 @@ func _try_buy(stack : ItemStack):
 		return true
 	
 	var price : Dictionary = stack.extra_properties[&"price"].duplicate()
+	print_debug(price)
 	var counts := {}
 	var inventories := InventoryView.get_instances()
 	inventories.sort_custom(_compare_inventory_priority)
@@ -645,6 +646,7 @@ func _try_buy(stack : ItemStack):
 		if price.size() == 0: break
 		if x.interaction_mode & InteractionFlags.CAN_TAKE_AUTO == 0: continue
 		x.inventory.consume_items(price, false, items_to_check)
+		
 
 	return true
 
