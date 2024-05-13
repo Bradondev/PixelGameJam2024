@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lcpujvrpegfr"
-path="res://.godot/imported/Item_Equipment_Helmet, v1.png-d9b15cf5fbc2b52818e14834e6846758.ctex"
+uid="uid://c5mabavm86o5x"
+path="res://.godot/imported/UI_TitleMenu_Gun.png-aeae940d492cf8106f7e699921ed5400.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_PNG/Item_Equipment_Helmet, v1.png"
-dest_files=["res://.godot/imported/Item_Equipment_Helmet, v1.png-d9b15cf5fbc2b52818e14834e6846758.ctex"]
+source_file="res://Art_PNG/UI_TitleMenu_Gun.png"
+dest_files=["res://.godot/imported/UI_TitleMenu_Gun.png-aeae940d492cf8106f7e699921ed5400.ctex"]
 
 [params]
 

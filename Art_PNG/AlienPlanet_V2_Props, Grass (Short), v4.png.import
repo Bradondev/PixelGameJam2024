@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lcpujvrpegfr"
-path="res://.godot/imported/Item_Equipment_Helmet, v1.png-d9b15cf5fbc2b52818e14834e6846758.ctex"
+uid="uid://7ngkl4xpe5ag"
+path="res://.godot/imported/AlienPlanet_V2_Props, Grass (Short), v4.png-7f9ca617a57e0dee1a275af516ceaca4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_PNG/Item_Equipment_Helmet, v1.png"
-dest_files=["res://.godot/imported/Item_Equipment_Helmet, v1.png-d9b15cf5fbc2b52818e14834e6846758.ctex"]
+source_file="res://Art_PNG/AlienPlanet_V2_Props, Grass (Short), v4.png"
+dest_files=["res://.godot/imported/AlienPlanet_V2_Props, Grass (Short), v4.png-7f9ca617a57e0dee1a275af516ceaca4.ctex"]
 
 [params]
 
