@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dged612bgfo67"]
 
-[ext_resource type="PackedScene" path="res://Scene/change_sceneButton.tscn" id="1_88vrq"]
+[ext_resource type="PackedScene" uid="uid://cq2ptxw1g8mjf" path="res://Scene/change_sceneButton.tscn" id="1_88vrq"]
 [ext_resource type="PackedScene" uid="uid://dxmu3oawxupu1" path="res://Scene/inventory/grid_inventoryPlayer.tscn" id="2_p8u3q"]
 [ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="3_s18f4"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="4_kouft"]

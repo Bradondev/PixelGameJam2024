@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://co5ok1mm2s7vu" path="res://addons/wyvernbox_prefabs/item_stack_view.tscn" id="3_byn5b"]
 [ext_resource type="StyleBox" uid="uid://cqx3opxr50d2o" path="res://addons/wyvernbox_prefabs/graphics/selected_cell.tres" id="4_gxhb0"]
 [ext_resource type="PackedScene" uid="uid://b7jlucsddt6dg" path="res://addons/wyvernbox_prefabs/inventory_cell.tscn" id="5_6scxo"]
-[ext_resource type="Texture2D" uid="uid://2oqty8jr6brg" path="res://Art_UI/Inventory _Grid, Single_16x16px.png" id="6_vubyr"]
-[ext_resource type="Texture2D" uid="uid://dd0almu0y2xqv" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="6_wivg7"]
+[ext_resource type="Texture2D" uid="uid://c4t3h4sbhkgk4" path="res://Art_UI/Inventory _Grid, Single_16x16px.png" id="6_vubyr"]
+[ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="6_wivg7"]
 
 [sub_resource type="Resource" id="Resource_plmu5"]
 resource_name = "GridInventory"
