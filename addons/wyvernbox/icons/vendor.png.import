@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg3r5bc565cgq"
-path="res://.godot/imported/Monster Rough Drafts.png-f6dbe6221bd7af4422fdfc47a33a722c.ctex"
+uid="uid://cbirt7fqqclgl"
+path="res://.godot/imported/vendor.png-039bc138662a77005199c42d55069483.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_PNG/Monster Rough Drafts.png"
-dest_files=["res://.godot/imported/Monster Rough Drafts.png-f6dbe6221bd7af4422fdfc47a33a722c.ctex"]
+source_file="res://addons/wyvernbox/icons/vendor.png"
+dest_files=["res://.godot/imported/vendor.png-039bc138662a77005199c42d55069483.ctex"]
 
 [params]
 

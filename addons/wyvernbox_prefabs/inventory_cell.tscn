@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7jlucsddt6dg"]
+
+[ext_resource type="Texture2D" uid="uid://c7ihdk583wuji" path="res://Art_UI/Inventory_ItemSlot_1x1.png" id="1_6layi"]
+[ext_resource type="Texture2D" uid="uid://c4t3h4sbhkgk4" path="res://Art_UI/Inventory _Grid, Single_16x16px.png" id="2_r65hh"]
+
+[node name="Cell" type="TextureRect"]
+custom_minimum_size = Vector2(16, 16)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("1_6layi")
+expand_mode = 1
+
+[node name="Inner" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_r65hh")
+expand_mode = 1

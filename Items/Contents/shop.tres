@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemInstantiator" load_steps=5 format=3 uid="uid://8nltaycjtb7l"]
+
+[ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/Sniper.tres" id="1_jxju3"]
+[ext_resource type="Resource" uid="uid://dm8qailcqviqa" path="res://Items/Guns/shotGun.tres" id="2_q0pbl"]
+[ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistol.tres" id="3_qkys2"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="4_78e6i"]
+
+[resource]
+script = ExtResource("4_78e6i")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_jxju3"), ExtResource("2_q0pbl"), ExtResource("3_qkys2")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([10.0, 50.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg3r5bc565cgq"
-path="res://.godot/imported/Monster Rough Drafts.png-f6dbe6221bd7af4422fdfc47a33a722c.ctex"
+uid="uid://bkq2w2liy8qcy"
+path="res://.godot/imported/Inventory _Grid, Background_Fits 7x7 grids.png-3b96623a72b2e61c1255c7476fb7ba6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_PNG/Monster Rough Drafts.png"
-dest_files=["res://.godot/imported/Monster Rough Drafts.png-f6dbe6221bd7af4422fdfc47a33a722c.ctex"]
+source_file="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png"
+dest_files=["res://.godot/imported/Inventory _Grid, Background_Fits 7x7 grids.png-3b96623a72b2e61c1255c7476fb7ba6c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg3r5bc565cgq"
-path="res://.godot/imported/Monster Rough Drafts.png-f6dbe6221bd7af4422fdfc47a33a722c.ctex"
+uid="uid://dmb5h6idcd7ka"
+path="res://.godot/imported/Inventory_ItemSlot_4x2.png-b81daf9a83bddb95e25683ef59116b99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_PNG/Monster Rough Drafts.png"
-dest_files=["res://.godot/imported/Monster Rough Drafts.png-f6dbe6221bd7af4422fdfc47a33a722c.ctex"]
+source_file="res://Art_UI/Inventory_ItemSlot_4x2.png"
+dest_files=["res://.godot/imported/Inventory_ItemSlot_4x2.png-b81daf9a83bddb95e25683ef59116b99.ctex"]
 
 [params]
 

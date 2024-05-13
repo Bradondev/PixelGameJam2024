@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg3r5bc565cgq"
-path="res://.godot/imported/Monster Rough Drafts.png-f6dbe6221bd7af4422fdfc47a33a722c.ctex"
+uid="uid://c88bx7qyspw5b"
+path="res://.godot/imported/godotLight.webp-3351fc18e1e5fb10684138c45d634295.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_PNG/Monster Rough Drafts.png"
-dest_files=["res://.godot/imported/Monster Rough Drafts.png-f6dbe6221bd7af4422fdfc47a33a722c.ctex"]
+source_file="res://Art_Lighting/godotLight.webp"
+dest_files=["res://.godot/imported/godotLight.webp-3351fc18e1e5fb10684138c45d634295.ctex"]
 
 [params]
 
