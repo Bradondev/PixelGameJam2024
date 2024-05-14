@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://br2il8di536b8"]
+[gd_scene load_steps=12 format=3 uid="uid://br2il8di536b8"]
 
 [ext_resource type="Script" path="res://Scene_Sub/BulletPackScene/BulletScene.gd" id="1_iuxtd"]
 [ext_resource type="Texture2D" uid="uid://odguf8e2ot3" path="res://Art_PNG/Player_Bullet.png" id="2_rytp5"]
@@ -55,6 +55,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dew30"]
 size = Vector2(4, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2noy"]
+size = Vector2(4, 1)
+
 [node name="9MmBullet" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_iuxtd")
@@ -72,5 +75,13 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("RectangleShape2D_y2noy")
+
 [connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

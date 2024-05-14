@@ -57,6 +57,7 @@ offset_right = -34.0
 offset_bottom = 41.0
 
 [node name="ShopManager" parent="shop" index="0"]
+stock = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([null, null, null])
 remove_price_on_buy = false
 free_buyback = true
 

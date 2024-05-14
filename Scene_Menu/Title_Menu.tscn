@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c5mabavm86o5x" path="res://Art_PNG/UI_TitleMenu_Gun.png" id="11_4sbf0"]
 [ext_resource type="PackedScene" uid="uid://46dh7w8axvql" path="res://Scene_Menu/Options_Menu.tscn" id="13_10nno"]
 [ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="14_b2fyb"]
-[ext_resource type="PackedScene" uid="uid://c6nocpurjjcau" path="res://Scene_Testing/player_movement_test.tscn" id="15_5531n"]
+[ext_resource type="PackedScene" uid="uid://d1ui8lkg8n8hk" path="res://Scene/hub.tscn" id="15_qlvyu"]
 
 [sub_resource type="Animation" id="Animation_gc1kh"]
 length = 0.001
@@ -157,7 +157,7 @@ visible = false
 visible = false
 offset_top = 0.0
 offset_bottom = 0.0
-Scene = ExtResource("15_5531n")
+Scene = ExtResource("15_qlvyu")
 
 [connection signal="pressed" from="BG/BottomMargin/Hbox/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="BG/BottomMargin/Hbox/OptionButton" to="." method="_on_option_button_pressed"]

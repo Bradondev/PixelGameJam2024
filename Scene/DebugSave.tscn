@@ -1,10 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://dged612bgfo67"]
+[gd_scene load_steps=8 format=3 uid="uid://dged612bgfo67"]
 
 [ext_resource type="PackedScene" uid="uid://cq2ptxw1g8mjf" path="res://Scene/change_sceneButton.tscn" id="1_88vrq"]
 [ext_resource type="PackedScene" uid="uid://dxmu3oawxupu1" path="res://Scene/inventory/grid_inventoryPlayer.tscn" id="2_p8u3q"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="2_tlg4t"]
 [ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="3_s18f4"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="4_kouft"]
 [ext_resource type="PackedScene" uid="uid://tgvrlnbiq5l5" path="res://Scene/inventory/Chest.tscn" id="6_u34hl"]
+
+[sub_resource type="Resource" id="Resource_ln40m"]
+script = ExtResource("2_tlg4t")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([null])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1)])
+item_chances = Array[float]([100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
 
 [node name="DebugSave" type="Node2D"]
 
@@ -14,6 +27,7 @@ offset_top = 213.0
 offset_right = 296.0
 offset_bottom = 325.0
 scale = Vector2(2, 2)
+contents = SubResource("Resource_ln40m")
 init_contents = true
 autosave_file_path = ""
 autosave_intensity = 1
