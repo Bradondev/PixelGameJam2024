@@ -11,6 +11,7 @@ var exitedBodyName: String
 
 @onready var smp = $EnemyStateMachine
 @onready var DetectionArea = $DetectionArea
+@onready var animatedSprite = $AlienSprite
 
 @export var speed: float = 100
 @export var attackingRadius: float = 0.25
@@ -19,6 +20,7 @@ var exitedBodyName: String
 @export var attackDelay: float = 0.1
 @export var strength: int = 10
 @export var health: int = 100
+@export var stunned: bool = false
 
 func _on_state_machine_player_entered(to):
 	pass # Replace with function body.
@@ -53,12 +55,21 @@ func _on_state_machine_player_updated(state, delta):
 			if DetectionArea.body_exited:
 				if "Player" in bodyName:
 					smp.set_trigger("Idle")
+			if stunned:
+				smp.set_trigger("Stunned")
 		"Attacking":
+			if DetectionArea.body_exited:
+				if "Player" in bodyName:
+					smp.set_trigger("Idle")
 			play_animation("AttackingAnim")
 			wait(0.1)
 			smp.set_trigger("Chasing")
 		"Stunned":
-			wait(1)
+			if DetectionArea.body_exited:
+				if "Player" in bodyName:
+					smp.set_trigger("Idle")
+			wait(stunnedTime)
+			stunned = false
 			smp.set_trigger("Idle")
 		"Damaged":
 			play_animation("Damaged")
@@ -68,7 +79,7 @@ func _on_state_machine_player_updated(state, delta):
 				health -= 1
 		"Dead":
 			play_animation("Dead")
-			wait(1)
+			wait(0.5)
 			queue_free()
 func play_animation(animation):
 	pass
