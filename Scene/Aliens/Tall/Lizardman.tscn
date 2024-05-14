@@ -1,0 +1,396 @@
+[gd_scene load_steps=52 format=3 uid="uid://cpfa5fp5y5x5l"]
+
+[ext_resource type="Script" path="res://GD Scripts/Aliens/EnemyAIBase.gd" id="1_cir2i"]
+[ext_resource type="Texture2D" uid="uid://5iq45gounpmn" path="res://Art_PNG/Shadow_Large_Transparent.png" id="1_qj3b8"]
+[ext_resource type="Texture2D" uid="uid://bhi07vkyt8lp" path="res://Art_PNG/Monster_Lizardman, Placeholder.png" id="2_r1pq6"]
+[ext_resource type="Script" path="res://addons/imjp94.yafsm/src/StateMachinePlayer.gd" id="4_b0pi0"]
+[ext_resource type="Script" path="res://addons/imjp94.yafsm/src/states/State.gd" id="4_xttob"]
+[ext_resource type="Script" path="res://addons/imjp94.yafsm/src/states/StateMachine.gd" id="5_jwbk5"]
+[ext_resource type="Script" path="res://addons/imjp94.yafsm/src/transitions/Transition.gd" id="5_p45ch"]
+[ext_resource type="Script" path="res://addons/imjp94.yafsm/src/conditions/Condition.gd" id="5_wq122"]
+
+[sub_resource type="Resource" id="Resource_rvmaa"]
+script = ExtResource("4_xttob")
+name = "Attacking"
+metadata/graph_offset = Vector2(579.5, -18)
+
+[sub_resource type="Resource" id="Resource_32uvp"]
+script = ExtResource("4_xttob")
+name = "Chasing"
+metadata/graph_offset = Vector2(762.5, 62)
+
+[sub_resource type="Resource" id="Resource_ogllt"]
+script = ExtResource("4_xttob")
+name = "Damaged"
+metadata/graph_offset = Vector2(578, -98)
+
+[sub_resource type="Resource" id="Resource_u4p1l"]
+script = ExtResource("4_xttob")
+name = "Dead"
+metadata/graph_offset = Vector2(726, -98)
+
+[sub_resource type="Resource" id="Resource_vfijq"]
+script = ExtResource("4_xttob")
+name = "Entry"
+metadata/graph_offset = Vector2(266, 62)
+
+[sub_resource type="Resource" id="Resource_e63ed"]
+script = ExtResource("4_xttob")
+name = "Exit"
+metadata/graph_offset = Vector2(866, -98)
+
+[sub_resource type="Resource" id="Resource_tnk4m"]
+script = ExtResource("4_xttob")
+name = "Idle"
+metadata/graph_offset = Vector2(406, 62)
+
+[sub_resource type="Resource" id="Resource_7kjei"]
+script = ExtResource("4_xttob")
+name = "PlayerDetected"
+metadata/graph_offset = Vector2(560.5, 142)
+
+[sub_resource type="Resource" id="Resource_tbnoj"]
+script = ExtResource("4_xttob")
+name = "Stunned"
+metadata/graph_offset = Vector2(582, 222)
+
+[sub_resource type="Resource" id="Resource_copms"]
+script = ExtResource("5_wq122")
+name = "Chasing"
+
+[sub_resource type="Resource" id="Resource_ubnxo"]
+script = ExtResource("5_p45ch")
+from = "Attacking"
+to = "Chasing"
+conditions = {
+"Chasing": SubResource("Resource_copms")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_kvc6r"]
+script = ExtResource("5_wq122")
+name = "Idle"
+
+[sub_resource type="Resource" id="Resource_n36n4"]
+script = ExtResource("5_p45ch")
+from = "Attacking"
+to = "Idle"
+conditions = {
+"Idle": SubResource("Resource_kvc6r")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_5tiwd"]
+script = ExtResource("5_wq122")
+name = "Attacking"
+
+[sub_resource type="Resource" id="Resource_gbrel"]
+script = ExtResource("5_p45ch")
+from = "Chasing"
+to = "Attacking"
+conditions = {
+"Attacking": SubResource("Resource_5tiwd")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_ehvwl"]
+script = ExtResource("5_wq122")
+name = "Damaged"
+
+[sub_resource type="Resource" id="Resource_fpyed"]
+script = ExtResource("5_p45ch")
+from = "Chasing"
+to = "Damaged"
+conditions = {
+"Damaged": SubResource("Resource_ehvwl")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_4j4wj"]
+script = ExtResource("5_wq122")
+name = "Idle"
+
+[sub_resource type="Resource" id="Resource_cmvti"]
+script = ExtResource("5_p45ch")
+from = "Chasing"
+to = "Idle"
+conditions = {
+"Idle": SubResource("Resource_4j4wj")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_3s174"]
+script = ExtResource("5_wq122")
+name = "Stunned"
+
+[sub_resource type="Resource" id="Resource_tf5ns"]
+script = ExtResource("5_p45ch")
+from = "Chasing"
+to = "Stunned"
+conditions = {
+"Stunned": SubResource("Resource_3s174")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_sqf7f"]
+script = ExtResource("5_wq122")
+name = "Chasing"
+
+[sub_resource type="Resource" id="Resource_ot5m8"]
+script = ExtResource("5_p45ch")
+from = "Damaged"
+to = "Chasing"
+conditions = {
+"Chasing": SubResource("Resource_sqf7f")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_i6hyg"]
+script = ExtResource("5_wq122")
+name = "Dead"
+
+[sub_resource type="Resource" id="Resource_8jjig"]
+script = ExtResource("5_p45ch")
+from = "Damaged"
+to = "Dead"
+conditions = {
+"Dead": SubResource("Resource_i6hyg")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_d76dc"]
+script = ExtResource("5_wq122")
+name = "Idle"
+
+[sub_resource type="Resource" id="Resource_dwhhu"]
+script = ExtResource("5_p45ch")
+from = "Damaged"
+to = "Idle"
+conditions = {
+"Idle": SubResource("Resource_d76dc")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_epbox"]
+script = ExtResource("5_p45ch")
+from = "Dead"
+to = "Exit"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_pi74j"]
+script = ExtResource("5_p45ch")
+from = "Entry"
+to = "Idle"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_7l22v"]
+script = ExtResource("5_wq122")
+name = "PlayerDetected"
+
+[sub_resource type="Resource" id="Resource_c3iq7"]
+script = ExtResource("5_p45ch")
+from = "Idle"
+to = "PlayerDetected"
+conditions = {
+"PlayerDetected": SubResource("Resource_7l22v")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_tncqo"]
+script = ExtResource("5_wq122")
+name = "Chasing"
+
+[sub_resource type="Resource" id="Resource_2b5qq"]
+script = ExtResource("5_p45ch")
+from = "PlayerDetected"
+to = "Chasing"
+conditions = {
+"Chasing": SubResource("Resource_tncqo")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_qums1"]
+script = ExtResource("5_wq122")
+name = "Idle"
+
+[sub_resource type="Resource" id="Resource_28nvx"]
+script = ExtResource("5_p45ch")
+from = "PlayerDetected"
+to = "Idle"
+conditions = {
+"Idle": SubResource("Resource_qums1")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_at3ev"]
+script = ExtResource("5_wq122")
+name = "Chasing"
+
+[sub_resource type="Resource" id="Resource_vpugd"]
+script = ExtResource("5_p45ch")
+from = "Stunned"
+to = "Chasing"
+conditions = {
+"Chasing": SubResource("Resource_at3ev")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_7q7ts"]
+script = ExtResource("5_wq122")
+name = "Idle"
+
+[sub_resource type="Resource" id="Resource_nww6g"]
+script = ExtResource("5_p45ch")
+from = "Stunned"
+to = "Idle"
+conditions = {
+"Idle": SubResource("Resource_7q7ts")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_jidoq"]
+script = ExtResource("5_jwbk5")
+states = {
+"Attacking": SubResource("Resource_rvmaa"),
+"Chasing": SubResource("Resource_32uvp"),
+"Damaged": SubResource("Resource_ogllt"),
+"Dead": SubResource("Resource_u4p1l"),
+"Entry": SubResource("Resource_vfijq"),
+"Exit": SubResource("Resource_e63ed"),
+"Idle": SubResource("Resource_tnk4m"),
+"PlayerDetected": SubResource("Resource_7kjei"),
+"Stunned": SubResource("Resource_tbnoj")
+}
+transitions = {
+"Attacking": {
+"Chasing": SubResource("Resource_ubnxo"),
+"Idle": SubResource("Resource_n36n4")
+},
+"Chasing": {
+"Attacking": SubResource("Resource_gbrel"),
+"Damaged": SubResource("Resource_fpyed"),
+"Idle": SubResource("Resource_cmvti"),
+"Stunned": SubResource("Resource_tf5ns")
+},
+"Damaged": {
+"Chasing": SubResource("Resource_ot5m8"),
+"Dead": SubResource("Resource_8jjig"),
+"Idle": SubResource("Resource_dwhhu")
+},
+"Dead": {
+"Exit": SubResource("Resource_epbox")
+},
+"Entry": {
+"Idle": SubResource("Resource_pi74j")
+},
+"Idle": {
+"PlayerDetected": SubResource("Resource_c3iq7")
+},
+"PlayerDetected": {
+"Chasing": SubResource("Resource_2b5qq"),
+"Idle": SubResource("Resource_28nvx")
+},
+"Stunned": {
+"Chasing": SubResource("Resource_vpugd"),
+"Idle": SubResource("Resource_nww6g")
+}
+}
+name = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oygcs"]
+atlas = ExtResource("2_r1pq6")
+region = Rect2(0, 0, 31, 59)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_37oi4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oygcs")
+}],
+"loop": true,
+"name": &"Attacking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oygcs")
+}],
+"loop": true,
+"name": &"Chasing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oygcs")
+}],
+"loop": true,
+"name": &"Damaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oygcs")
+}],
+"loop": true,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oygcs")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oygcs")
+}],
+"loop": true,
+"name": &"PlayerDetected",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oygcs")
+}],
+"loop": true,
+"name": &"Stunned",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t2a5k"]
+radius = 52.1536
+
+[node name="Lizard" type="Node2D"]
+script = ExtResource("1_cir2i")
+
+[node name="EnemyStateMachine" type="Node" parent="."]
+script = ExtResource("4_b0pi0")
+state_machine = SubResource("Resource_jidoq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_37oi4")
+animation = &"Idle"
+centered = false
+offset = Vector2(-15.5, -59)
+
+[node name="ShadowLarge" type="Sprite2D" parent="."]
+texture = ExtResource("1_qj3b8")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_t2a5k")
+one_way_collision_margin = 0.0
+
+[connection signal="entered" from="EnemyStateMachine" to="." method="_on_state_machine_player_entered"]
+[connection signal="exited" from="EnemyStateMachine" to="." method="_on_state_machine_player_exited"]
+[connection signal="transited" from="EnemyStateMachine" to="." method="_on_state_machine_player_transited"]
+[connection signal="updated" from="EnemyStateMachine" to="." method="_on_state_machine_player_updated"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
