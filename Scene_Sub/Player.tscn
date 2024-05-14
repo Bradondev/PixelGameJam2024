@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://bpilr5la784ys"]
 
 [ext_resource type="PackedScene" uid="uid://bhkiy4ucj30lo" path="res://Scene/UI.tscn" id="1_4gmy4"]
-[ext_resource type="Script" path="res://Scene_Sub/Player.gd" id="1_aaqgx"]
+[ext_resource type="Script" path="res://GD Scripts/Player.gd" id="1_022et"]
 [ext_resource type="PackedScene" uid="uid://dxmu3oawxupu1" path="res://Scene/inventory/grid_inventoryPlayer.tscn" id="1_ewq30"]
 [ext_resource type="Texture2D" uid="uid://umlm1vbaxm6t" path="res://Art_PNG/Player_SpriteSheet (10fr walk, 6fr shoot) TEMPORARY NOT FINISHED.png" id="2_65ycv"]
 [ext_resource type="Texture2D" uid="uid://cfltwwhawhwrv" path="res://Art_PNG/Player_Base, Placeholder.png" id="2_bcn8m"]
@@ -105,7 +105,7 @@ height = 23.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("inventory", "PlayerInventory")]
 scale = Vector2(2, 2)
-script = ExtResource("1_aaqgx")
+script = ExtResource("1_022et")
 inventory = NodePath("UI/Inventory")
 PlayerInventory = NodePath("UI/Inventory/player")
 
