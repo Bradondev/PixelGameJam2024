@@ -27,8 +27,9 @@ static func get_stat_label(stat_with_suffix : String, values, use_rich : bool = 
 		first = false
 
 	if stat_suffix_idx != -1:
+		
 		line = wyvernshield_suffix_labels[stat_suffix_idx].format([line])
-
+		
 	var bonus_res : EquipBonus = null
 	if !all_bonuses_dict.has(stat_with_suffix):
 		bonus_res = load(item_bonus_paths.path_join(stat_with_suffix.left(stat_with_suffix.length() - 1) if stat_suffix_idx != -1 else stat_with_suffix) + ".tres")
@@ -40,10 +41,10 @@ static func get_stat_label(stat_with_suffix : String, values, use_rich : bool = 
 	if bonus_res == null:
 		line += (
 			" "
-			+ TranslationServer.translate(item_bonus_locale_string % stat_with_suffix)
+			+ TranslationServer.translate( stat_with_suffix)
 			+ ("[/color]" if use_rich else "")
 		)
-
+		#print_debug(line)
 	else:
 		line += (
 			" "

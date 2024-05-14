@@ -12,4 +12,9 @@ class_name  Gun
 @export var MagSize: int
 @export var Spread: int # in degrees 
 
-var CurrentMagSize: int
+@export var BulletType : ItemType
+var CurrentMagSize: int = 0
+
+
+func LoadMag(Size:int):
+	CurrentMagSize = Size

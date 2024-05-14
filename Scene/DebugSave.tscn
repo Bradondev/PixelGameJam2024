@@ -45,4 +45,4 @@ offset_left = 223.0
 offset_top = 85.0
 offset_right = 335.0
 offset_bottom = 116.0
-Level = "res://Scene/Debug.tscn"
+Level = "res://Scene_Testing/player_movement_test.tscn"
