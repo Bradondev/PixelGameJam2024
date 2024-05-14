@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://bpilr5la784ys"]
+[gd_scene load_steps=30 format=3 uid="uid://bpilr5la784ys"]
 
 [ext_resource type="PackedScene" uid="uid://bhkiy4ucj30lo" path="res://Scene/UI.tscn" id="1_4gmy4"]
 [ext_resource type="Script" path="res://Scene_Sub/Player.gd" id="1_aaqgx"]
 [ext_resource type="PackedScene" uid="uid://dxmu3oawxupu1" path="res://Scene/inventory/grid_inventoryPlayer.tscn" id="1_ewq30"]
+[ext_resource type="Texture2D" uid="uid://umlm1vbaxm6t" path="res://Art_PNG/Player_SpriteSheet (10fr walk, 6fr shoot) TEMPORARY NOT FINISHED.png" id="2_65ycv"]
 [ext_resource type="Texture2D" uid="uid://cfltwwhawhwrv" path="res://Art_PNG/Player_Base, Placeholder.png" id="2_bcn8m"]
 [ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="2_hwfff"]
 [ext_resource type="PackedScene" uid="uid://b7got3qc3fi8j" path="res://Scene_Sub/gunNode.tscn" id="2_kanhx"]
@@ -15,6 +16,31 @@
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="7_pe8uv"]
 [ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="8_0e3s1"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="9_qwigw"]
+[ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="10_3jppb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf0pw"]
+atlas = ExtResource("2_65ycv")
+region = Rect2(0, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcj8v"]
+atlas = ExtResource("2_65ycv")
+region = Rect2(64, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ci5p"]
+atlas = ExtResource("2_65ycv")
+region = Rect2(128, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad68j"]
+atlas = ExtResource("2_65ycv")
+region = Rect2(192, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adk8u"]
+atlas = ExtResource("2_65ycv")
+region = Rect2(256, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnsbw"]
+atlas = ExtResource("2_65ycv")
+region = Rect2(320, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_er37s"]
 atlas = ExtResource("2_bcn8m")
@@ -22,6 +48,29 @@ region = Rect2(0, 0, 13, 29)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vpuo5"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kf0pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcj8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ci5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad68j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adk8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnsbw")
+}],
+"loop": true,
+"name": &"PistolShoot",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_er37s")
@@ -37,9 +86,9 @@ height = 10.0
 
 [sub_resource type="Resource" id="Resource_54y7k"]
 script = ExtResource("9_qwigw")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("8_0e3s1")])
-item_repeat_ranges = Array[Vector2]([Vector2(50, 50)])
-item_chances = Array[float]([100.0])
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("8_0e3s1"), ExtResource("10_3jppb")])
+item_repeat_ranges = Array[Vector2]([Vector2(50, 50), Vector2(50, 50)])
+item_chances = Array[float]([100.0, 100.0])
 repeat_post_chance = true
 randomize_locations = true
 delay_between_items = 0.0
@@ -62,9 +111,12 @@ PlayerInventory = NodePath("UI/Inventory/player")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vpuo5")
+animation = &"PistolShoot"
+frame_progress = 0.766711
 
 [node name="Gun" parent="." node_paths=PackedStringArray("PlayerInventory", "Ui", "ammoLabel") instance=ExtResource("2_kanhx")]
-position = Vector2(3.5, 1)
+position = Vector2(18, -2.5)
+rotation = -0.011148
 scale = Vector2(0.5, 0.5)
 CurrentGun = ExtResource("4_vi5yn")
 PlayerInventory = NodePath("../UI/Inventory/player")
@@ -78,9 +130,6 @@ shape = SubResource("CapsuleShape2D_278xp")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="UI" parent="." instance=ExtResource("1_4gmy4")]
-
-[node name="MidBar" parent="UI/BotMargin/Hbox/Player/Resources" index="1"]
-value = 100.0
 
 [node name="Inventory" type="Control" parent="UI"]
 layout_mode = 3

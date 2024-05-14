@@ -1,15 +1,68 @@
-[gd_scene load_steps=3 format=3 uid="uid://br2il8di536b8"]
+[gd_scene load_steps=11 format=3 uid="uid://br2il8di536b8"]
 
 [ext_resource type="Script" path="res://Scene_Sub/BulletPackScene/BulletScene.gd" id="1_iuxtd"]
+[ext_resource type="Texture2D" uid="uid://odguf8e2ot3" path="res://Art_PNG/Player_Bullet.png" id="2_rytp5"]
+[ext_resource type="Texture2D" uid="uid://druponpt2wlqy" path="res://Art_PNG/Player_Bullet_HitEffect (anim_5fr).png" id="2_v4nhy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33y34"]
+atlas = ExtResource("2_v4nhy")
+region = Rect2(32, 0, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtuhe"]
+atlas = ExtResource("2_v4nhy")
+region = Rect2(64, 0, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2ygl"]
+atlas = ExtResource("2_v4nhy")
+region = Rect2(96, 0, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14ru8"]
+atlas = ExtResource("2_v4nhy")
+region = Rect2(128, 0, 32, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xvh5"]
+atlas = ExtResource("2_rytp5")
+region = Rect2(0, 0, 4, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vn1nr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33y34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtuhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2ygl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14ru8")
+}],
+"loop": true,
+"name": &"OnHit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xvh5")
+}],
+"loop": true,
+"name": &"bullet",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dew30"]
-size = Vector2(16, 4)
+size = Vector2(4, 1)
 
 [node name="9MmBullet" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_iuxtd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vn1nr")
+animation = &"bullet"
+frame_progress = 0.190005
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dew30")
@@ -19,4 +72,5 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
+[connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

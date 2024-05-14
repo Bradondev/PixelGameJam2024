@@ -2,16 +2,17 @@
 
 [ext_resource type="Script" path="res://GD Scripts/GunBase.gd" id="1_3guwc"]
 [ext_resource type="Texture2D" uid="uid://b4a2qaonglahb" path="res://Art_PNG/Item_Gun_Sniper, Desert, v1.png" id="1_8outm"]
-[ext_resource type="Resource" uid="uid://bg63kcap61rmc" path="res://Items/Bullet/7.62mm.tres" id="1_wn637"]
+[ext_resource type="Texture2D" uid="uid://sqcvml55oqno" path="res://Art_UI/Gun_Reticle, Sniper.png" id="1_j4a0q"]
 
 [resource]
 script = ExtResource("1_3guwc")
 GunType = 0
 Sprite = ExtResource("1_8outm")
+CrossHairSprite = ExtResource("1_j4a0q")
 BulletSpawnPoint = Vector2(26, -1)
 Description = ""
 ROF = 0
 BaseDamage = 0
 MagSize = 6
-Spread = 0
-BulletType = ExtResource("1_wn637")
+Arc = 0
+ButtetCount = 1

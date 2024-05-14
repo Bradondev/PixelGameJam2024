@@ -7,7 +7,7 @@ class_name  Gun
 @export var BulletSpawnPoint: Vector2 = Vector2.ZERO
 @export_multiline var Description : String
 @export_category("Gun  Properties")
-@export var ROF : int =2 # Bullets per seconds
+@export var ROF : float =.2 # Bullets per seconds
 @export var BaseDamage : int
 @export var MagSize: int
 @export_range(0, 360) var Arc: int= 0 # in degrees 

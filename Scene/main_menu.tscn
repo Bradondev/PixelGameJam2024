@@ -1,0 +1,146 @@
+[gd_scene load_steps=16 format=3 uid="uid://dfwf1gva1hprq"]
+
+[ext_resource type="Texture2D" uid="uid://tq0mjygm3nfl" path="res://Art_PNG/UI_TitleMenu_Art.png" id="1_p2x7v"]
+[ext_resource type="Script" path="res://GD Scripts/main_menu.gd" id="1_svywq"]
+[ext_resource type="Texture2D" uid="uid://c5mabavm86o5x" path="res://Art_PNG/UI_TitleMenu_Gun.png" id="2_a511q"]
+[ext_resource type="Texture2D" uid="uid://j18x6gvny58r" path="res://Art_UI/Button_TitleMenu, Start (Normal).png" id="3_qllsk"]
+[ext_resource type="Texture2D" uid="uid://bcvoeindev2yr" path="res://Art_UI/Button_TitleMenu, Start (Pressed).png" id="4_g3uh0"]
+[ext_resource type="Texture2D" uid="uid://dig7ea2o2r2dx" path="res://Art_UI/Button_TitleMenu, Start (Hover).png" id="5_bwlyu"]
+[ext_resource type="Texture2D" uid="uid://cscwyv4ur0r7r" path="res://Art_UI/Button_TitleMenu, Options (Normal).png" id="6_8t35r"]
+[ext_resource type="Texture2D" uid="uid://k7jqmu6wtosf" path="res://Art_UI/Button_TitleMenu, Options (Pressed).png" id="7_rpjnq"]
+[ext_resource type="Texture2D" uid="uid://c3vgd4owudxca" path="res://Art_UI/Button_TitleMenu, Options (Hover).png" id="8_t0ebu"]
+[ext_resource type="Texture2D" uid="uid://15eqnriwggmi" path="res://Art_UI/Button_TitleMenu, Quit (Normal).png" id="9_nxl3r"]
+[ext_resource type="Texture2D" uid="uid://dfehem3xdi7rb" path="res://Art_UI/Button_TitleMenu, Quit (Pressed).png" id="10_ktey6"]
+[ext_resource type="Texture2D" uid="uid://cd5xrcedh8nov" path="res://Art_UI/Button_TitleMenu, Quit (Hover).png" id="11_nbssi"]
+
+[sub_resource type="Animation" id="Animation_y6ekf"]
+resource_name = "UpAndDown"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("guns:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("guns2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(838, 0), Vector2(838, 100)]
+}
+
+[sub_resource type="Animation" id="Animation_fqjj7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("guns:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("guns2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(838, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jmr30"]
+_data = {
+"RESET": SubResource("Animation_fqjj7"),
+"UpAndDown": SubResource("Animation_y6ekf")
+}
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_svywq")
+
+[node name="UiTitleMenuArt" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 540.0
+texture = ExtResource("1_p2x7v")
+
+[node name="guns" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 340.0
+texture = ExtResource("2_a511q")
+
+[node name="guns2" type="TextureRect" parent="."]
+offset_left = 838.0
+offset_right = 958.0
+offset_bottom = 340.0
+texture = ExtResource("2_a511q")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jmr30")
+}
+
+[node name="buttons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -105.0
+offset_bottom = -27.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Start" type="TextureButton" parent="buttons"]
+layout_mode = 2
+texture_normal = ExtResource("3_qllsk")
+texture_pressed = ExtResource("4_g3uh0")
+texture_hover = ExtResource("5_bwlyu")
+
+[node name="options" type="TextureButton" parent="buttons"]
+layout_mode = 2
+texture_normal = ExtResource("6_8t35r")
+texture_pressed = ExtResource("7_rpjnq")
+texture_hover = ExtResource("8_t0ebu")
+
+[node name="exit" type="TextureButton" parent="buttons"]
+layout_mode = 2
+texture_normal = ExtResource("9_nxl3r")
+texture_pressed = ExtResource("10_ktey6")
+texture_hover = ExtResource("11_nbssi")
+
+[connection signal="pressed" from="buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="buttons/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="buttons/exit" to="." method="_on_exit_pressed"]

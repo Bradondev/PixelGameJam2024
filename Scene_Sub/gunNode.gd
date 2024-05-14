@@ -7,15 +7,21 @@ extends Node2D
 @export var ammoLabel :RichTextLabel
 var CanShoot = true
 @onready var bulletspawnpoint: Marker2D = $bulletspawnpoint
+var MouseR
 
+@onready var gun_reticle: Sprite2D = $gunReticle
+
+func _physics_process(delta: float) -> void:
+	look_at(get_global_mouse_position())
+	if Input.is_action_pressed("Shoot"):
+		ShootGun()
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	UpdateGunSprite()
 	UpdateAmmoText()
 # Called every frame. 'delta' is the elapsed time since the previous fr
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action("Shoot"):
-		ShootGun()
 	if event.is_action_pressed("Reload"):
 		ReloadCurrentGun()
 		
@@ -59,6 +65,7 @@ func ShootGun():
 		await  get_tree().create_timer(1/CurrentGun.ROF).timeout
 		CanShoot = true
 func UpdateAmmoText():
+	gun_reticle.texture = CurrentGun.CrossHairSprite
 	bulletspawnpoint.global_position = CurrentGun.BulletSpawnPoint
 	ammoLabel.text = str(CurrentGun.CurrentMagSize) +"/" +  str(CurrentGun.MagSize) 
 func UpdateGunSprite():

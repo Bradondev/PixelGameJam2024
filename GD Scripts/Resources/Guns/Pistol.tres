@@ -1,17 +1,19 @@
-[gd_resource type="Resource" script_class="Gun" load_steps=5 format=3 uid="uid://cvy67xy4en5fv"]
+[gd_resource type="Resource" script_class="Gun" load_steps=6 format=3 uid="uid://cvy67xy4en5fv"]
 
 [ext_resource type="Script" path="res://GD Scripts/GunBase.gd" id="1_l67uj"]
 [ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="1_vcc1c"]
 [ext_resource type="PackedScene" uid="uid://br2il8di536b8" path="res://Scene_Sub/BulletPackScene/9mmBullet.tscn" id="1_yv4f0"]
 [ext_resource type="Texture2D" uid="uid://cjka1k5lddr4x" path="res://Art_PNG/Item_Gun_Pistol_Desert, v1.png" id="2_6cijg"]
+[ext_resource type="Texture2D" uid="uid://qj27yop0ib1s" path="res://Art_UI/Gun_Reticle_Pistol_v1.png" id="3_467br"]
 
 [resource]
 script = ExtResource("1_l67uj")
-GunType = 1
+GunType = 0
 Sprite = ExtResource("2_6cijg")
+CrossHairSprite = ExtResource("3_467br")
 BulletSpawnPoint = Vector2(5, -2)
 Description = ""
-ROF = 1
+ROF = 2.0
 BaseDamage = 3
 MagSize = 8
 Arc = 0

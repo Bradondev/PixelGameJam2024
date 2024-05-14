@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dn8xh53dpsrtp"]
+[gd_scene load_steps=19 format=3 uid="uid://dn8xh53dpsrtp"]
 
+[ext_resource type="Script" path="res://GD Scripts/main_menu.gd" id="1_a50wq"]
 [ext_resource type="Texture2D" uid="uid://tq0mjygm3nfl" path="res://Art_PNG/UI_TitleMenu_Art.png" id="1_ynfv6"]
 [ext_resource type="Texture2D" uid="uid://j18x6gvny58r" path="res://Art_UI/Button_TitleMenu, Start (Normal).png" id="2_xxfle"]
 [ext_resource type="Texture2D" uid="uid://bcvoeindev2yr" path="res://Art_UI/Button_TitleMenu, Start (Pressed).png" id="3_xricq"]
@@ -11,13 +12,94 @@
 [ext_resource type="Texture2D" uid="uid://dfehem3xdi7rb" path="res://Art_UI/Button_TitleMenu, Quit (Pressed).png" id="9_g0hqw"]
 [ext_resource type="Texture2D" uid="uid://cd5xrcedh8nov" path="res://Art_UI/Button_TitleMenu, Quit (Hover).png" id="10_1f1jy"]
 [ext_resource type="Texture2D" uid="uid://c5mabavm86o5x" path="res://Art_PNG/UI_TitleMenu_Gun.png" id="11_4sbf0"]
+[ext_resource type="PackedScene" uid="uid://46dh7w8axvql" path="res://Scene_Menu/Options_Menu.tscn" id="13_10nno"]
+[ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="14_b2fyb"]
+[ext_resource type="PackedScene" uid="uid://c6nocpurjjcau" path="res://Scene_Testing/player_movement_test.tscn" id="15_5531n"]
+
+[sub_resource type="Animation" id="Animation_0f2kc"]
+resource_name = "guns"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG/TextureRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(830, 0), Vector2(830, 70)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BG/TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(10, 0), Vector2(10, 70)]
+}
+
+[sub_resource type="Animation" id="Animation_gc1kh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG/TextureRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(830, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BG/TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pdxbh"]
+_data = {
+"RESET": SubResource("Animation_gc1kh"),
+"guns": SubResource("Animation_0f2kc")
+}
 
 [node name="Title_Menu" type="CanvasLayer"]
+script = ExtResource("1_a50wq")
 
 [node name="BG" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_ynfv6")
+
+[node name="TextureRect" type="TextureRect" parent="BG"]
+layout_mode = 2
+offset_left = 10.0
+offset_right = 130.0
+offset_bottom = 340.0
+texture = ExtResource("11_4sbf0")
+
+[node name="TextureRect2" type="TextureRect" parent="BG"]
+layout_mode = 2
+offset_left = 830.0
+offset_right = 950.0
+offset_bottom = 340.0
+texture = ExtResource("11_4sbf0")
+flip_h = true
 
 [node name="BottomMargin" type="MarginContainer" parent="BG"]
 layout_mode = 1
@@ -63,11 +145,23 @@ layout_mode = 2
 theme_override_constants/separation = 700
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="BG/TopMargin/Hbox"]
-layout_mode = 2
-texture = ExtResource("11_4sbf0")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pdxbh")
+}
 
-[node name="TextureRect2" type="TextureRect" parent="BG/TopMargin/Hbox"]
-layout_mode = 2
-texture = ExtResource("11_4sbf0")
-flip_h = true
+[node name="Options_Menu" parent="." instance=ExtResource("13_10nno")]
+visible = false
+
+[node name="Load_Screen" parent="." instance=ExtResource("14_b2fyb")]
+visible = false
+offset_top = 0.0
+offset_bottom = 0.0
+Scene = ExtResource("15_5531n")
+
+[connection signal="pressed" from="BG/BottomMargin/Hbox/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="BG/BottomMargin/Hbox/OptionButton" to="." method="_on_option_button_pressed"]
+[connection signal="pressed" from="BG/BottomMargin/Hbox/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Options_Menu/Button" to="." method="_on_button_pressed"]
+
+[editable path="Options_Menu"]

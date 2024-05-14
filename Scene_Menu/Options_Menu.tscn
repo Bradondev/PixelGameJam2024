@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://fjfjhb32pj4n"]
+[gd_scene load_steps=2 format=3 uid="uid://46dh7w8axvql"]
 
 [ext_resource type="FontFile" uid="uid://dmo6e5w4r5tmf" path="res://Fonts/Pixels (16px).ttf" id="1_epljb"]
 
@@ -128,3 +128,11 @@ layout_mode = 2
 [node name="Slider" type="HSlider" parent="Margin/Hbox/Vbox/Hbox/RightOptions/Hbox2/Center"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 505.0
+offset_right = 958.0
+offset_bottom = 536.0
+text = "back"
