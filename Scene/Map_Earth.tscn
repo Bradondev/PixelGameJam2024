@@ -10,6 +10,7 @@ offset_left = -4244.0
 offset_top = -2222.0
 offset_right = 5610.0
 offset_bottom = 3863.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="MapDarken" type="CanvasModulate" parent="."]

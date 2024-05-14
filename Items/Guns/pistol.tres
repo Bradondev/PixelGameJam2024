@@ -2,14 +2,14 @@
 
 [ext_resource type="Resource" uid="uid://cvy67xy4en5fv" path="res://GD Scripts/Resources/Guns/Pistol.tres" id="1_28tvx"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="1_vg2vs"]
-[ext_resource type="Texture2D" uid="uid://dos822plixx7i" path="res://Art_UI/Inventory_ItemPlaceholder_1x1.png" id="2_o4s2m"]
+[ext_resource type="Texture2D" uid="uid://cjka1k5lddr4x" path="res://Art_PNG/Item_Gun_Pistol_Desert, v1.png" id="3_iqd4g"]
 
 [resource]
 script = ExtResource("1_vg2vs")
 name = "pistol"
 description = "small gun"
 tags = Array[StringName]([])
-texture = ExtResource("2_o4s2m")
+texture = ExtResource("3_iqd4g")
 texture_scale = 1.0
 max_stack_count = 10
 in_inventory_width = 1

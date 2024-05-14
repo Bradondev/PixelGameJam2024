@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Gun" load_steps=4 format=3 uid="uid://qscj50t2p7f5"]
+
+[ext_resource type="Script" path="res://GD Scripts/GunBase.gd" id="1_34u2s"]
+[ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="1_yol7s"]
+[ext_resource type="Texture2D" uid="uid://bylbp27aqtftx" path="res://Art_PNG/Item_Gun_SMG_Desert, v1.png" id="2_ldqu5"]
+
+[resource]
+script = ExtResource("1_34u2s")
+GunType = 0
+Sprite = ExtResource("2_ldqu5")
+BulletSpawnPoint = Vector2(14, -3)
+Description = ""
+ROF = 0
+BaseDamage = 0
+MagSize = 24
+Spread = 0
+BulletType = ExtResource("1_yol7s")

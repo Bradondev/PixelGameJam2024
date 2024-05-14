@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://dmswgxfj6pdi8"]
 
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="1_qsbbl"]
-[ext_resource type="Texture2D" uid="uid://sg7526r7jjxk" path="res://Art_UI/Inventory_ItemPlaceholder_2x4.png" id="2_r7ryh"]
+[ext_resource type="Texture2D" uid="uid://b4a2qaonglahb" path="res://Art_PNG/Item_Gun_Sniper, Desert, v1.png" id="2_lyn12"]
 
 [resource]
 script = ExtResource("1_qsbbl")
 name = "sniper"
 description = "this is a sniper"
 tags = Array[StringName]([])
-texture = ExtResource("2_r7ryh")
+texture = ExtResource("2_lyn12")
 texture_scale = 1.0
 max_stack_count = 1
 in_inventory_width = 4

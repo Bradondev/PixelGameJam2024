@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://b7got3qc3fi8j"]
+[gd_scene load_steps=3 format=3 uid="uid://b7got3qc3fi8j"]
 
-[node name="Gun" type="Node2D"]
+[ext_resource type="Script" path="res://Scene_Sub/gunNode.gd" id="1_uy531"]
+[ext_resource type="Texture2D" uid="uid://b4a2qaonglahb" path="res://Art_PNG/Item_Gun_Sniper, Desert, v1.png" id="2_0rxbh"]
+
+[node name="Gun" type="Node2D" node_paths=PackedStringArray("gun")]
+script = ExtResource("1_uy531")
+gun = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0rxbh")
+flip_h = true
+
+[node name="bulletspawnpoint" type="Marker2D" parent="."]
+position = Vector2(26, -1)
