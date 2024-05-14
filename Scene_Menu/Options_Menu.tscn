@@ -1,0 +1,130 @@
+[gd_scene load_steps=2 format=3 uid="uid://fjfjhb32pj4n"]
+
+[ext_resource type="FontFile" uid="uid://dmo6e5w4r5tmf" path="res://Fonts/Pixels (16px).ttf" id="1_epljb"]
+
+[node name="Options_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorBG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.0941176, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="Hbox" type="HBoxContainer" parent="Margin"]
+layout_mode = 2
+alignment = 1
+
+[node name="Vbox" type="VBoxContainer" parent="Margin/Hbox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="OptionsTitleLabel" type="RichTextLabel" parent="Margin/Hbox/Vbox"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_epljb")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center]Options"
+
+[node name="Hbox" type="HBoxContainer" parent="Margin/Hbox/Vbox"]
+layout_mode = 2
+theme_override_constants/separation = 120
+
+[node name="LeftOptions" type="VBoxContainer" parent="Margin/Hbox/Vbox/Hbox"]
+layout_mode = 2
+
+[node name="Hbox1" type="HBoxContainer" parent="Margin/Hbox/Vbox/Hbox/LeftOptions"]
+layout_mode = 2
+
+[node name="OptionsLabel1" type="RichTextLabel" parent="Margin/Hbox/Vbox/Hbox/LeftOptions/Hbox1"]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_epljb")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[left]Option 1"
+scroll_active = false
+
+[node name="SpinBox" type="SpinBox" parent="Margin/Hbox/Vbox/Hbox/LeftOptions/Hbox1"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="Hbox2" type="HBoxContainer" parent="Margin/Hbox/Vbox/Hbox/LeftOptions"]
+layout_mode = 2
+
+[node name="OptionsLabel2" type="RichTextLabel" parent="Margin/Hbox/Vbox/Hbox/LeftOptions/Hbox2"]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_epljb")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[left]Option 2
+"
+scroll_active = false
+
+[node name="Center" type="CenterContainer" parent="Margin/Hbox/Vbox/Hbox/LeftOptions/Hbox2"]
+layout_mode = 2
+
+[node name="Slider" type="HSlider" parent="Margin/Hbox/Vbox/Hbox/LeftOptions/Hbox2/Center"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="RightOptions" type="VBoxContainer" parent="Margin/Hbox/Vbox/Hbox"]
+layout_mode = 2
+
+[node name="Hbox1" type="HBoxContainer" parent="Margin/Hbox/Vbox/Hbox/RightOptions"]
+layout_mode = 2
+
+[node name="OptionsLabel1" type="RichTextLabel" parent="Margin/Hbox/Vbox/Hbox/RightOptions/Hbox1"]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_epljb")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[left]Option 1"
+scroll_active = false
+
+[node name="SpinBox" type="SpinBox" parent="Margin/Hbox/Vbox/Hbox/RightOptions/Hbox1"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="Hbox2" type="HBoxContainer" parent="Margin/Hbox/Vbox/Hbox/RightOptions"]
+layout_mode = 2
+
+[node name="OptionsLabel2" type="RichTextLabel" parent="Margin/Hbox/Vbox/Hbox/RightOptions/Hbox2"]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_epljb")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[left]Option 2
+"
+scroll_active = false
+
+[node name="Center" type="CenterContainer" parent="Margin/Hbox/Vbox/Hbox/RightOptions/Hbox2"]
+layout_mode = 2
+
+[node name="Slider" type="HSlider" parent="Margin/Hbox/Vbox/Hbox/RightOptions/Hbox2/Center"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2

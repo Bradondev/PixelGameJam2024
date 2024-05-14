@@ -1,7 +1,17 @@
 [gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://dm8qailcqviqa"]
 
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="1_xatty"]
+[ext_resource type="Script" path="res://addons/wyvernbox/crafting/item_conversion.gd" id="2_apour"]
 [ext_resource type="Texture2D" uid="uid://7f0ongxi3co8" path="res://Art_UI/Inventory_ItemPlaceholder_3x1.png" id="2_p43nu"]
+
+[sub_resource type="Resource" id="Resource_bjlfs"]
+script = ExtResource("2_apour")
+name = "Insert name or full locale string"
+tags = Array[StringName]([])
+input_types = Array[Resource]([ExtResource("1_l0b7v")])
+input_counts = Array[int]([4])
+output_types = Array[Resource]([null])
+output_ranges = Array[Vector2]([Vector2(1, 1)])
 
 [resource]
 script = ExtResource("1_xatty")
