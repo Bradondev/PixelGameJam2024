@@ -5,6 +5,9 @@ extends Node2D
 @export var PlayerInventory:InventoryView
 @export var Ui : CanvasLayer
 @export var ammoLabel :RichTextLabel
+var CanShoot = true
+@onready var bulletspawnpoint: Marker2D = $bulletspawnpoint
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	UpdateGunSprite()
@@ -18,7 +21,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 func ReloadCurrentGun():
 	
-	var price : Dictionary = {CurrentGun.BulletType: CurrentGun.MagSize}
+	var price : Dictionary = {CurrentGun.BulletTypeItem: CurrentGun.MagSize}
 	var items_to_check = {}
 	var counts := {}
 	
@@ -29,13 +32,34 @@ func ReloadCurrentGun():
 	else : print_debug("out of ammo")
 	UpdateAmmoText()
 func ShootGun():
-	if CurrentGun.CurrentMagSize:
-		CurrentGun.CurrentMagSize -=1
-		print_debug(CurrentGun.CurrentMagSize)
-	else : print_debug("out of ammo")
-	UpdateAmmoText()
-
+	if CanShoot:
+		
+		if CurrentGun.CurrentMagSize:
+			CurrentGun.CurrentMagSize -=1
+			print_debug(CurrentGun.CurrentMagSize)
+			UpdateAmmoText()
+		else : 
+			UpdateAmmoText()
+			print_debug("out of ammo") 
+			return
+		for i in CurrentGun.ButtetCount:
+			var newBullet = CurrentGun.BulletScene.instantiate()
+			newBullet.position =global_position
+			if CurrentGun.ButtetCount == 1:
+				newBullet.rotation  = global_rotation
+			else:
+				var arc_rad = deg_to_rad(CurrentGun.Arc)
+				var increment = arc_rad / (CurrentGun.ButtetCount -1)
+				newBullet.global_rotation = (
+					global_rotation + increment * i -
+					arc_rad / 2
+					)
+			get_tree().root.call_deferred("add_child", newBullet)
+		CanShoot = false
+		await  get_tree().create_timer(1/CurrentGun.ROF).timeout
+		CanShoot = true
 func UpdateAmmoText():
+	bulletspawnpoint.global_position = CurrentGun.BulletSpawnPoint
 	ammoLabel.text = str(CurrentGun.CurrentMagSize) +"/" +  str(CurrentGun.MagSize) 
 func UpdateGunSprite():
 	gun.texture = CurrentGun.Sprite

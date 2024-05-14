@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_description.gd" id="3_mtpcd"]
 [ext_resource type="PackedScene" uid="uid://cq2ptxw1g8mjf" path="res://Scene/change_sceneButton.tscn" id="4_4dfhq"]
 [ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_price.gd" id="4_8rfm8"]
-[ext_resource type="Resource" uid="uid://qscj50t2p7f5" path="res://GD Scripts/Resources/Guns/Smg.tres" id="4_lhtd0"]
+[ext_resource type="Resource" uid="uid://cvy67xy4en5fv" path="res://GD Scripts/Resources/Guns/Pistol.tres" id="4_vi5yn"]
 [ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_key_hints.gd" id="5_g6k7r"]
 [ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_stats.gd" id="6_dttps"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="7_pe8uv"]
@@ -66,7 +66,7 @@ sprite_frames = SubResource("SpriteFrames_vpuo5")
 [node name="Gun" parent="." node_paths=PackedStringArray("PlayerInventory", "Ui", "ammoLabel") instance=ExtResource("2_kanhx")]
 position = Vector2(3.5, 1)
 scale = Vector2(0.5, 0.5)
-CurrentGun = ExtResource("4_lhtd0")
+CurrentGun = ExtResource("4_vi5yn")
 PlayerInventory = NodePath("../UI/Inventory/player")
 Ui = NodePath("../UI")
 ammoLabel = NodePath("../UI/BotMargin/Hbox/Ammo/AmmoText")

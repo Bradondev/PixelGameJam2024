@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Gun" load_steps=4 format=3 uid="uid://cvy67xy4en5fv"]
+[gd_resource type="Resource" script_class="Gun" load_steps=5 format=3 uid="uid://cvy67xy4en5fv"]
 
 [ext_resource type="Script" path="res://GD Scripts/GunBase.gd" id="1_l67uj"]
 [ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="1_vcc1c"]
+[ext_resource type="PackedScene" uid="uid://br2il8di536b8" path="res://Scene_Sub/BulletPackScene/9mmBullet.tscn" id="1_yv4f0"]
 [ext_resource type="Texture2D" uid="uid://cjka1k5lddr4x" path="res://Art_PNG/Item_Gun_Pistol_Desert, v1.png" id="2_6cijg"]
 
 [resource]
@@ -10,8 +11,10 @@ GunType = 1
 Sprite = ExtResource("2_6cijg")
 BulletSpawnPoint = Vector2(5, -2)
 Description = ""
-ROF = 0
+ROF = 1
 BaseDamage = 3
 MagSize = 8
-Spread = 0
-BulletType = ExtResource("1_vcc1c")
+Arc = 0
+ButtetCount = 1
+BulletTypeItem = ExtResource("1_vcc1c")
+BulletScene = ExtResource("1_yv4f0")
