@@ -19,10 +19,25 @@ script = ExtResource("4_xttob")
 name = "Chasing"
 metadata/graph_offset = Vector2(762.5, 62)
 
+[sub_resource type="Resource" id="Resource_ogllt"]
+script = ExtResource("4_xttob")
+name = "Damaged"
+metadata/graph_offset = Vector2(578, -98)
+
+[sub_resource type="Resource" id="Resource_u4p1l"]
+script = ExtResource("4_xttob")
+name = "Dead"
+metadata/graph_offset = Vector2(726, -98)
+
 [sub_resource type="Resource" id="Resource_vfijq"]
 script = ExtResource("4_xttob")
 name = "Entry"
 metadata/graph_offset = Vector2(266, 62)
+
+[sub_resource type="Resource" id="Resource_e63ed"]
+script = ExtResource("4_xttob")
+name = "Exit"
+metadata/graph_offset = Vector2(866, -98)
 
 [sub_resource type="Resource" id="Resource_tnk4m"]
 script = ExtResource("4_xttob")
@@ -38,21 +53,6 @@ metadata/graph_offset = Vector2(560.5, 142)
 script = ExtResource("4_xttob")
 name = "Stunned"
 metadata/graph_offset = Vector2(582, 222)
-
-[sub_resource type="Resource" id="Resource_u4p1l"]
-script = ExtResource("4_xttob")
-name = "Dead"
-metadata/graph_offset = Vector2(726, -98)
-
-[sub_resource type="Resource" id="Resource_e63ed"]
-script = ExtResource("4_xttob")
-name = "Exit"
-metadata/graph_offset = Vector2(866, -98)
-
-[sub_resource type="Resource" id="Resource_ogllt"]
-script = ExtResource("4_xttob")
-name = "Damaged"
-metadata/graph_offset = Vector2(578, -98)
 
 [sub_resource type="Resource" id="Resource_copms"]
 script = ExtResource("5_wq122")
@@ -93,6 +93,19 @@ conditions = {
 }
 priority = 0
 
+[sub_resource type="Resource" id="Resource_ehvwl"]
+script = ExtResource("5_wq122")
+name = "Damaged"
+
+[sub_resource type="Resource" id="Resource_fpyed"]
+script = ExtResource("5_p45ch")
+from = "Chasing"
+to = "Damaged"
+conditions = {
+"Damaged": SubResource("Resource_ehvwl")
+}
+priority = 0
+
 [sub_resource type="Resource" id="Resource_4j4wj"]
 script = ExtResource("5_wq122")
 name = "Idle"
@@ -119,17 +132,50 @@ conditions = {
 }
 priority = 0
 
-[sub_resource type="Resource" id="Resource_ehvwl"]
+[sub_resource type="Resource" id="Resource_sqf7f"]
 script = ExtResource("5_wq122")
-name = "Damaged"
+name = "Chasing"
 
-[sub_resource type="Resource" id="Resource_fpyed"]
+[sub_resource type="Resource" id="Resource_ot5m8"]
 script = ExtResource("5_p45ch")
-from = "Chasing"
-to = "Damaged"
+from = "Damaged"
+to = "Chasing"
 conditions = {
-"Damaged": SubResource("Resource_ehvwl")
+"Chasing": SubResource("Resource_sqf7f")
 }
+priority = 0
+
+[sub_resource type="Resource" id="Resource_i6hyg"]
+script = ExtResource("5_wq122")
+name = "Dead"
+
+[sub_resource type="Resource" id="Resource_8jjig"]
+script = ExtResource("5_p45ch")
+from = "Damaged"
+to = "Dead"
+conditions = {
+"Dead": SubResource("Resource_i6hyg")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_d76dc"]
+script = ExtResource("5_wq122")
+name = "Idle"
+
+[sub_resource type="Resource" id="Resource_dwhhu"]
+script = ExtResource("5_p45ch")
+from = "Damaged"
+to = "Idle"
+conditions = {
+"Idle": SubResource("Resource_d76dc")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_epbox"]
+script = ExtResource("5_p45ch")
+from = "Dead"
+to = "Exit"
+conditions = {}
 priority = 0
 
 [sub_resource type="Resource" id="Resource_pi74j"]
@@ -201,52 +247,6 @@ from = "Stunned"
 to = "Idle"
 conditions = {
 "Idle": SubResource("Resource_7q7ts")
-}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_epbox"]
-script = ExtResource("5_p45ch")
-from = "Dead"
-to = "Exit"
-conditions = {}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_sqf7f"]
-script = ExtResource("5_wq122")
-name = "Chasing"
-
-[sub_resource type="Resource" id="Resource_ot5m8"]
-script = ExtResource("5_p45ch")
-from = "Damaged"
-to = "Chasing"
-conditions = {
-"Chasing": SubResource("Resource_sqf7f")
-}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_d76dc"]
-script = ExtResource("5_wq122")
-name = "Idle"
-
-[sub_resource type="Resource" id="Resource_dwhhu"]
-script = ExtResource("5_p45ch")
-from = "Damaged"
-to = "Idle"
-conditions = {
-"Idle": SubResource("Resource_d76dc")
-}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_i6hyg"]
-script = ExtResource("5_wq122")
-name = "Dead"
-
-[sub_resource type="Resource" id="Resource_8jjig"]
-script = ExtResource("5_p45ch")
-from = "Damaged"
-to = "Dead"
-conditions = {
-"Dead": SubResource("Resource_i6hyg")
 }
 priority = 0
 
@@ -372,9 +372,9 @@ script = ExtResource("1_cir2i")
 script = ExtResource("4_b0pi0")
 state_machine = SubResource("Resource_jidoq")
 
-[node name="AlienSprite" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_37oi4")
-animation = &"Chasing"
+animation = &"Idle"
 centered = false
 offset = Vector2(-15.5, -59)
 
