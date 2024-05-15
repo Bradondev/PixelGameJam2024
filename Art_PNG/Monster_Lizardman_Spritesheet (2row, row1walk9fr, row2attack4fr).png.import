@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwuo5r60b5ifd"
-path="res://.godot/imported/Player_Bullet_HitEffect (anim_5fr).png-1709eba85958c9d01048e43bfd10d576.ctex"
+uid="uid://ir3idghx8dfq"
+path="res://.godot/imported/Monster_Lizardman_Spritesheet (2row, row1walk9fr, row2attack4fr).png-9421bb9dc08685364e803d12a390d3ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_PNG/Player_Bullet_HitEffect (anim_5fr).png"
-dest_files=["res://.godot/imported/Player_Bullet_HitEffect (anim_5fr).png-1709eba85958c9d01048e43bfd10d576.ctex"]
+source_file="res://Art_PNG/Monster_Lizardman_Spritesheet (2row, row1walk9fr, row2attack4fr).png"
+dest_files=["res://.godot/imported/Monster_Lizardman_Spritesheet (2row, row1walk9fr, row2attack4fr).png-9421bb9dc08685364e803d12a390d3ea.ctex"]
 
 [params]
 
