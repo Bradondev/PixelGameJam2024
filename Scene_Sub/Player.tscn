@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bpilr5la784ys"]
+[gd_scene load_steps=38 format=3 uid="uid://bpilr5la784ys"]
 
 [ext_resource type="PackedScene" uid="uid://bhkiy4ucj30lo" path="res://Scene/UI.tscn" id="1_4gmy4"]
 [ext_resource type="Script" path="res://GD Scripts/Player.gd" id="1_022et"]
@@ -10,13 +10,21 @@
 [ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_description.gd" id="3_mtpcd"]
 [ext_resource type="PackedScene" uid="uid://cq2ptxw1g8mjf" path="res://Scene/change_sceneButton.tscn" id="4_4dfhq"]
 [ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_price.gd" id="4_8rfm8"]
-[ext_resource type="Resource" uid="uid://cvy67xy4en5fv" path="res://GD Scripts/Resources/Guns/Pistol.tres" id="4_vi5yn"]
 [ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_key_hints.gd" id="5_g6k7r"]
+[ext_resource type="Resource" uid="uid://do7sgf5bh3gtx" path="res://GD Scripts/Resources/Guns/ShotGun.tres" id="5_t3nrw"]
 [ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_stats.gd" id="6_dttps"]
+[ext_resource type="PackedScene" uid="uid://4ohh3iq6c7uc" path="res://Scene/inventory/playerEquitment.tscn" id="7_4fhhw"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="7_pe8uv"]
 [ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="8_0e3s1"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="9_qwigw"]
 [ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="10_3jppb"]
+[ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistol.tres" id="12_2jiyi"]
+[ext_resource type="Resource" uid="uid://0fxdylg7pp7g" path="res://Items/Guns/ShotGun.tres" id="13_bd66d"]
+[ext_resource type="Resource" uid="uid://dpkpknqrbljcx" path="res://Items/Guns/Smg.tres" id="14_e38q6"]
+[ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/Sniper.tres" id="15_lah56"]
+[ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="20_8k8yi"]
+[ext_resource type="Texture2D" uid="uid://dcfxp0gtvvhyu" path="res://Art_UI/ProgressBar_PlayerResource (Over).png" id="21_o6y1b"]
+[ext_resource type="Texture2D" uid="uid://3vmgjxrcavhb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Green.png" id="22_ieffp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kf0pw"]
 atlas = ExtResource("2_65ycv")
@@ -86,9 +94,9 @@ height = 10.0
 
 [sub_resource type="Resource" id="Resource_54y7k"]
 script = ExtResource("9_qwigw")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("8_0e3s1"), ExtResource("10_3jppb")])
-item_repeat_ranges = Array[Vector2]([Vector2(50, 50), Vector2(50, 50)])
-item_chances = Array[float]([100.0, 100.0])
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("8_0e3s1"), ExtResource("10_3jppb"), ExtResource("12_2jiyi"), ExtResource("13_bd66d"), ExtResource("14_e38q6"), ExtResource("15_lah56")])
+item_repeat_ranges = Array[Vector2]([Vector2(50, 50), Vector2(50, 50), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0, 100.0])
 repeat_post_chance = true
 randomize_locations = true
 delay_between_items = 0.0
@@ -118,7 +126,19 @@ frame_progress = 0.766711
 position = Vector2(18, -2.5)
 rotation = -0.011148
 scale = Vector2(0.5, 0.5)
-CurrentGun = ExtResource("4_vi5yn")
+CurrentGun = ExtResource("5_t3nrw")
+PlayerInventory = NodePath("../UI/Inventory/player")
+Ui = NodePath("../UI")
+ammoLabel = NodePath("../UI/BotMargin/Hbox/Ammo/AmmoText")
+
+[node name="Gun2" parent="." node_paths=PackedStringArray("gun", "PlayerInventory", "Ui", "ammoLabel") instance=ExtResource("2_kanhx")]
+process_mode = 4
+visible = false
+position = Vector2(18, -2.5)
+rotation = -0.011148
+scale = Vector2(0.5, 0.5)
+CurrentGun = ExtResource("5_t3nrw")
+gun = NodePath("../Gun/Sprite2D")
 PlayerInventory = NodePath("../UI/Inventory/player")
 Ui = NodePath("../UI")
 ammoLabel = NodePath("../UI/BotMargin/Hbox/Ammo/AmmoText")
@@ -137,6 +157,14 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Equip" parent="UI/Inventory" instance=ExtResource("7_4fhhw")]
+layout_mode = 1
+offset_left = 140.0
+offset_top = 1.0
+offset_right = 140.0
+offset_bottom = 1.0
+cell_size = Vector2(32, 32)
+
 [node name="ChangeScene" parent="UI/Inventory" instance=ExtResource("4_4dfhq")]
 layout_mode = 0
 offset_left = 445.0
@@ -147,8 +175,10 @@ Level = "res://Scene/DebugSave.tscn"
 
 [node name="player" parent="UI/Inventory" instance=ExtResource("1_ewq30")]
 layout_mode = 0
-offset_top = 80.0
-offset_bottom = 192.0
+offset_left = 239.0
+offset_top = 2.0
+offset_right = 351.0
+offset_bottom = 114.0
 scale = Vector2(2, 2)
 contents = SubResource("Resource_54y7k")
 init_contents = true
@@ -190,5 +220,29 @@ collision_mask = 2
 position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_5h22y")
 debug_color = Color(0, 0, 0, 0.419608)
+
+[node name="BotBar" type="TextureProgressBar" parent="."]
+offset_left = -24.0
+offset_top = -26.0
+offset_right = 72.0
+offset_bottom = -14.0
+scale = Vector2(0.5, 0.5)
+value = 50.0
+texture_under = ExtResource("20_8k8yi")
+texture_over = ExtResource("21_o6y1b")
+texture_progress = ExtResource("22_ieffp")
+
+[node name="reloading texts" type="Label" parent="BotBar"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -22.0
+offset_right = 87.0
+offset_bottom = 1.0
+text = "Reloading"
+horizontal_alignment = 1
+
+[connection signal="item_stack_added" from="UI/Inventory/Equip" to="." method="_on_equip_item_stack_added"]
+[connection signal="item_stack_changed" from="UI/Inventory/Equip" to="." method="_on_equip_item_stack_changed"]
+[connection signal="item_stack_removed" from="UI/Inventory/Equip" to="." method="_on_equip_item_stack_removed"]
 
 [editable path="UI"]

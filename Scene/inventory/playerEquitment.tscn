@@ -1,0 +1,158 @@
+[gd_scene load_steps=14 format=3 uid="uid://4ohh3iq6c7uc"]
+
+[ext_resource type="Script" path="res://addons/wyvernbox/inventory_view.gd" id="1_trkmv"]
+[ext_resource type="Script" path="res://addons/wyvernbox/inventories/restricted_inventory.gd" id="2_iwicm"]
+[ext_resource type="PackedScene" uid="uid://co5ok1mm2s7vu" path="res://addons/wyvernbox_prefabs/item_stack_view.tscn" id="3_ij5su"]
+[ext_resource type="StyleBox" uid="uid://cqx3opxr50d2o" path="res://addons/wyvernbox_prefabs/graphics/selected_cell.tres" id="4_lcqrf"]
+[ext_resource type="PackedScene" uid="uid://b7jlucsddt6dg" path="res://addons/wyvernbox_prefabs/inventory_cell.tscn" id="5_flo8l"]
+[ext_resource type="Texture2D" uid="uid://bbktnb86mocwh" path="res://Art_UI/Equipment_EquipBackground.png" id="5_r62ds"]
+[ext_resource type="Texture2D" uid="uid://3wkyukhse1gf" path="res://Art_UI/Equipment_EquipWeapon.png" id="7_bx55o"]
+[ext_resource type="Texture2D" uid="uid://de4sxb56jy8d7" path="res://Art_UI/Equipment_EquipThrowables.png" id="8_hg4uh"]
+[ext_resource type="Texture2D" uid="uid://c7nyobbsa7ons" path="res://Art_UI/Equipment_EquipHelmet.png" id="9_xyo4o"]
+[ext_resource type="Texture2D" uid="uid://mpq1fbxbnv7d" path="res://Art_UI/Equipment_EquipChest.png" id="10_qjtvg"]
+[ext_resource type="Texture2D" uid="uid://dwuqc3dp8naut" path="res://Art_UI/Equipment_EquipPants.png" id="11_m80og"]
+[ext_resource type="Texture2D" uid="uid://jx6k7lhfbc3h" path="res://Art_UI/Equipment_EquipBackpack.png" id="12_xlnq5"]
+
+[sub_resource type="Resource" id="3"]
+resource_name = "RestrictedInventory"
+script = ExtResource("2_iwicm")
+allow_rotation = false
+restricted_to_types = Array[int]([4, 4, 2097152, 262144, 524288, 4194304, 16777216])
+width = 7
+
+[node name="Equip" type="Control" groups=["inventory_view"]]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_right = -320.0
+grow_horizontal = 2
+script = ExtResource("1_trkmv")
+inventory = SubResource("3")
+item_scene = ExtResource("3_ij5su")
+cell_size = Vector2(16, 16)
+selected_item_style = ExtResource("4_lcqrf")
+view_filter_color = Color(1, 1, 1, 0.74902)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -159.0
+offset_right = 77.0
+offset_bottom = 260.0
+texture = ExtResource("5_r62ds")
+
+[node name="Cells" type="Control" parent="."]
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="weapon1" parent="Cells" instance=ExtResource("5_flo8l")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -155.0
+offset_top = 114.0
+offset_right = -43.0
+offset_bottom = 146.0
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_filter = 0
+texture = ExtResource("7_bx55o")
+expand_mode = 0
+
+[node name="weapon2" parent="Cells" instance=ExtResource("5_flo8l")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -156.0
+offset_top = 56.0
+offset_right = -44.0
+offset_bottom = 88.0
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_filter = 0
+texture = ExtResource("7_bx55o")
+expand_mode = 0
+stretch_mode = 4
+
+[node name="Throwable" parent="Cells" instance=ExtResource("5_flo8l")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 33.0
+offset_top = 87.0
+offset_right = 65.0
+offset_bottom = 119.0
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_filter = 0
+texture = ExtResource("8_hg4uh")
+expand_mode = 0
+stretch_mode = 4
+
+[node name="Helm" parent="Cells" instance=ExtResource("5_flo8l")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -39.0
+offset_top = 16.0
+offset_right = -7.0
+offset_bottom = 48.0
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_filter = 0
+texture = ExtResource("9_xyo4o")
+expand_mode = 0
+stretch_mode = 4
+
+[node name="Chest" parent="Cells" instance=ExtResource("5_flo8l")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -16.0
+offset_top = 77.0
+offset_right = 16.0
+offset_bottom = 109.0
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_filter = 0
+texture = ExtResource("10_qjtvg")
+expand_mode = 0
+stretch_mode = 4
+
+[node name="pants" parent="Cells" instance=ExtResource("5_flo8l")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 14.0
+offset_top = 136.0
+offset_right = 46.0
+offset_bottom = 168.0
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_filter = 0
+texture = ExtResource("11_m80og")
+expand_mode = 0
+stretch_mode = 4
+
+[node name="Feet" parent="Cells" instance=ExtResource("5_flo8l")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 25.0
+offset_top = 34.0
+offset_right = 57.0
+offset_bottom = 66.0
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_filter = 0
+texture = ExtResource("12_xlnq5")
+expand_mode = 0
+stretch_mode = 4
