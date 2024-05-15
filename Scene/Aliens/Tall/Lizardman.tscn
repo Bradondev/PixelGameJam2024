@@ -1,58 +1,59 @@
-[gd_scene load_steps=62 format=3 uid="uid://cpfa5fp5y5x5l"]
+[gd_scene load_steps=86 format=3 uid="uid://cpfa5fp5y5x5l"]
 
 [ext_resource type="Script" path="res://GD Scripts/Aliens/EnemyAIBase.gd" id="1_cir2i"]
 [ext_resource type="Texture2D" uid="uid://5iq45gounpmn" path="res://Art_PNG/Shadow_Large_Transparent.png" id="1_qj3b8"]
-[ext_resource type="Texture2D" uid="uid://bhi07vkyt8lp" path="res://Art_PNG/Monster_Lizardman, Placeholder.png" id="2_r1pq6"]
 [ext_resource type="Script" path="res://addons/imjp94.yafsm/src/StateMachinePlayer.gd" id="4_b0pi0"]
 [ext_resource type="Script" path="res://addons/imjp94.yafsm/src/states/State.gd" id="4_xttob"]
 [ext_resource type="Script" path="res://addons/imjp94.yafsm/src/states/StateMachine.gd" id="5_jwbk5"]
 [ext_resource type="Script" path="res://addons/imjp94.yafsm/src/transitions/Transition.gd" id="5_p45ch"]
 [ext_resource type="Script" path="res://addons/imjp94.yafsm/src/conditions/Condition.gd" id="5_wq122"]
+[ext_resource type="Texture2D" uid="uid://ir3idghx8dfq" path="res://Art_PNG/Monster_Lizardman_Spritesheet (2row, row1walk9fr, row2attack4fr).png" id="7_bromv"]
+[ext_resource type="Script" path="res://GD Scripts/Aliens/DamageCollider.gd" id="9_2je0m"]
 
 [sub_resource type="Resource" id="Resource_rvmaa"]
 script = ExtResource("4_xttob")
 name = "Attacking"
-metadata/graph_offset = Vector2(1239.5, 382)
+metadata/graph_offset = Vector2(759.5, 202)
 
 [sub_resource type="Resource" id="Resource_32uvp"]
 script = ExtResource("4_xttob")
 name = "Chasing"
-metadata/graph_offset = Vector2(1422.5, 462)
+metadata/graph_offset = Vector2(942.5, 282)
 
 [sub_resource type="Resource" id="Resource_ogllt"]
 script = ExtResource("4_xttob")
 name = "Damaged"
-metadata/graph_offset = Vector2(1238, 302)
+metadata/graph_offset = Vector2(758, 122)
 
 [sub_resource type="Resource" id="Resource_u4p1l"]
 script = ExtResource("4_xttob")
 name = "Dead"
-metadata/graph_offset = Vector2(1386, 302)
+metadata/graph_offset = Vector2(906, 122)
 
 [sub_resource type="Resource" id="Resource_vfijq"]
 script = ExtResource("4_xttob")
 name = "Entry"
-metadata/graph_offset = Vector2(926, 462)
+metadata/graph_offset = Vector2(446, 282)
 
 [sub_resource type="Resource" id="Resource_e63ed"]
 script = ExtResource("4_xttob")
 name = "Exit"
-metadata/graph_offset = Vector2(1526, 302)
+metadata/graph_offset = Vector2(1046, 122)
 
 [sub_resource type="Resource" id="Resource_tnk4m"]
 script = ExtResource("4_xttob")
 name = "Idle"
-metadata/graph_offset = Vector2(1066, 462)
+metadata/graph_offset = Vector2(586, 282)
 
 [sub_resource type="Resource" id="Resource_7kjei"]
 script = ExtResource("4_xttob")
 name = "PlayerDetected"
-metadata/graph_offset = Vector2(1220.5, 542)
+metadata/graph_offset = Vector2(740.5, 362)
 
 [sub_resource type="Resource" id="Resource_tbnoj"]
 script = ExtResource("4_xttob")
 name = "Stunned"
-metadata/graph_offset = Vector2(1242, 622)
+metadata/graph_offset = Vector2(762, 442)
 
 [sub_resource type="Resource" id="Resource_copms"]
 script = ExtResource("5_wq122")
@@ -67,19 +68,6 @@ conditions = {
 }
 priority = 0
 
-[sub_resource type="Resource" id="Resource_kvc6r"]
-script = ExtResource("5_wq122")
-name = "Idle"
-
-[sub_resource type="Resource" id="Resource_n36n4"]
-script = ExtResource("5_p45ch")
-from = "Attacking"
-to = "Idle"
-conditions = {
-"Idle": SubResource("Resource_kvc6r")
-}
-priority = 0
-
 [sub_resource type="Resource" id="Resource_bntut"]
 script = ExtResource("5_wq122")
 name = "Damaged"
@@ -90,6 +78,19 @@ from = "Attacking"
 to = "Damaged"
 conditions = {
 "Damaged": SubResource("Resource_bntut")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_kvc6r"]
+script = ExtResource("5_wq122")
+name = "Idle"
+
+[sub_resource type="Resource" id="Resource_n36n4"]
+script = ExtResource("5_p45ch")
+from = "Attacking"
+to = "Idle"
+conditions = {
+"Idle": SubResource("Resource_kvc6r")
 }
 priority = 0
 
@@ -198,19 +199,6 @@ to = "Idle"
 conditions = {}
 priority = 0
 
-[sub_resource type="Resource" id="Resource_7l22v"]
-script = ExtResource("5_wq122")
-name = "PlayerDetected"
-
-[sub_resource type="Resource" id="Resource_c3iq7"]
-script = ExtResource("5_p45ch")
-from = "Idle"
-to = "PlayerDetected"
-conditions = {
-"PlayerDetected": SubResource("Resource_7l22v")
-}
-priority = 0
-
 [sub_resource type="Resource" id="Resource_frog5"]
 script = ExtResource("5_wq122")
 name = "Damaged"
@@ -221,6 +209,19 @@ from = "Idle"
 to = "Damaged"
 conditions = {
 "Damaged": SubResource("Resource_frog5")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_7l22v"]
+script = ExtResource("5_wq122")
+name = "PlayerDetected"
+
+[sub_resource type="Resource" id="Resource_c3iq7"]
+script = ExtResource("5_p45ch")
+from = "Idle"
+to = "PlayerDetected"
+conditions = {
+"PlayerDetected": SubResource("Resource_7l22v")
 }
 priority = 0
 
@@ -244,19 +245,6 @@ conditions = {
 }
 priority = 0
 
-[sub_resource type="Resource" id="Resource_qums1"]
-script = ExtResource("5_wq122")
-name = "Idle"
-
-[sub_resource type="Resource" id="Resource_28nvx"]
-script = ExtResource("5_p45ch")
-from = "PlayerDetected"
-to = "Idle"
-conditions = {
-"Idle": SubResource("Resource_qums1")
-}
-priority = 0
-
 [sub_resource type="Resource" id="Resource_2cis4"]
 script = ExtResource("5_wq122")
 name = "Damaged"
@@ -267,6 +255,19 @@ from = "PlayerDetected"
 to = "Damaged"
 conditions = {
 "Damaged": SubResource("Resource_2cis4")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_qums1"]
+script = ExtResource("5_wq122")
+name = "Idle"
+
+[sub_resource type="Resource" id="Resource_28nvx"]
+script = ExtResource("5_p45ch")
+from = "PlayerDetected"
+to = "Idle"
+conditions = {
+"Idle": SubResource("Resource_qums1")
 }
 priority = 0
 
@@ -283,19 +284,6 @@ conditions = {
 }
 priority = 0
 
-[sub_resource type="Resource" id="Resource_7q7ts"]
-script = ExtResource("5_wq122")
-name = "Idle"
-
-[sub_resource type="Resource" id="Resource_nww6g"]
-script = ExtResource("5_p45ch")
-from = "Stunned"
-to = "Idle"
-conditions = {
-"Idle": SubResource("Resource_7q7ts")
-}
-priority = 0
-
 [sub_resource type="Resource" id="Resource_02ubs"]
 script = ExtResource("5_wq122")
 name = "Damaged"
@@ -306,6 +294,19 @@ from = "Stunned"
 to = "Damaged"
 conditions = {
 "Damaged": SubResource("Resource_02ubs")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_7q7ts"]
+script = ExtResource("5_wq122")
+name = "Idle"
+
+[sub_resource type="Resource" id="Resource_nww6g"]
+script = ExtResource("5_p45ch")
+from = "Stunned"
+to = "Idle"
+conditions = {
+"Idle": SubResource("Resource_7q7ts")
 }
 priority = 0
 
@@ -363,23 +364,140 @@ transitions = {
 }
 name = ""
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oygcs"]
-atlas = ExtResource("2_r1pq6")
-region = Rect2(0, 0, 31, 59)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnw80"]
+atlas = ExtResource("7_bromv")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo4wf"]
+atlas = ExtResource("7_bromv")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1cv8"]
+atlas = ExtResource("7_bromv")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcpdm"]
+atlas = ExtResource("7_bromv")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2s00"]
+atlas = ExtResource("7_bromv")
+region = Rect2(512, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrcxq"]
+atlas = ExtResource("7_bromv")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3trv"]
+atlas = ExtResource("7_bromv")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10wem"]
+atlas = ExtResource("7_bromv")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqunc"]
+atlas = ExtResource("7_bromv")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4c6a"]
+atlas = ExtResource("7_bromv")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k2yr"]
+atlas = ExtResource("7_bromv")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuhej"]
+atlas = ExtResource("7_bromv")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy63t"]
+atlas = ExtResource("7_bromv")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18xyl"]
+atlas = ExtResource("7_bromv")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kylcw"]
+atlas = ExtResource("7_bromv")
+region = Rect2(768, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pswrg"]
+atlas = ExtResource("7_bromv")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft7xy"]
+atlas = ExtResource("7_bromv")
+region = Rect2(640, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmr6y"]
+atlas = ExtResource("7_bromv")
+region = Rect2(768, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrwbj"]
+atlas = ExtResource("7_bromv")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5ob6"]
+atlas = ExtResource("7_bromv")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouxmh"]
+atlas = ExtResource("7_bromv")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmgys"]
+atlas = ExtResource("7_bromv")
+region = Rect2(0, 128, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_37oi4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oygcs")
+"texture": SubResource("AtlasTexture_xnw80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo4wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1cv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcpdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2s00")
 }],
 "loop": true,
 "name": &"Attacking",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oygcs")
+"texture": SubResource("AtlasTexture_wrcxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3trv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10wem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqunc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4c6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0k2yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fuhej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy63t")
 }],
 "loop": true,
 "name": &"Chasing",
@@ -387,7 +505,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oygcs")
+"texture": SubResource("AtlasTexture_18xyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kylcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18xyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kylcw")
 }],
 "loop": true,
 "name": &"Damaged",
@@ -395,7 +522,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oygcs")
+"texture": SubResource("AtlasTexture_pswrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft7xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmr6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18xyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft7xy")
 }],
 "loop": true,
 "name": &"Dead",
@@ -403,7 +542,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oygcs")
+"texture": SubResource("AtlasTexture_nrwbj")
 }],
 "loop": true,
 "name": &"Idle",
@@ -411,7 +550,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oygcs")
+"texture": SubResource("AtlasTexture_a5ob6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouxmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouxmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5ob6")
 }],
 "loop": true,
 "name": &"PlayerDetected",
@@ -419,7 +567,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oygcs")
+"texture": SubResource("AtlasTexture_lmgys")
 }],
 "loop": true,
 "name": &"Stunned",
@@ -433,7 +581,13 @@ radius = 52.1536
 radius = 16.0
 height = 54.0
 
-[node name="Lizard" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_cmtcf"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qxep8"]
+radius = 76.0066
+
+[node name="Lizard" type="CharacterBody2D"]
 script = ExtResource("1_cir2i")
 
 [node name="EnemyStateMachine" type="Node" parent="."]
@@ -442,9 +596,10 @@ state_machine = SubResource("Resource_jidoq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_37oi4")
-animation = &"Idle"
+animation = &"Stunned"
+frame_progress = 0.966339
 centered = false
-offset = Vector2(-15.5, -59)
+offset = Vector2(-64, -96)
 
 [node name="ShadowLarge" type="Sprite2D" parent="."]
 texture = ExtResource("1_qj3b8")
@@ -464,6 +619,16 @@ collision_mask = 3
 position = Vector2(0, -27)
 shape = SubResource("CapsuleShape2D_hbvl1")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cmtcf")
+
+[node name="DamageCollider" type="Area2D" parent="."]
+script = ExtResource("9_2je0m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageCollider"]
+shape = SubResource("CircleShape2D_qxep8")
+disabled = true
+
 [connection signal="entered" from="EnemyStateMachine" to="." method="_on_state_machine_player_entered"]
 [connection signal="exited" from="EnemyStateMachine" to="." method="_on_state_machine_player_exited"]
 [connection signal="transited" from="EnemyStateMachine" to="." method="_on_state_machine_player_transited"]
@@ -471,3 +636,4 @@ shape = SubResource("CapsuleShape2D_hbvl1")
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="area_shape_entered" from="HurtBox" to="." method="_on_hurt_box_collision"]
+[connection signal="area_entered" from="DamageCollider" to="DamageCollider" method="_on_area_entered"]

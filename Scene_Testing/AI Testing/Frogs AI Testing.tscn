@@ -9,7 +9,7 @@
 
 [node name="Lizard" parent="." instance=ExtResource("1_w0wf0")]
 position = Vector2(365, 0)
-speed = 200.0
+speed = 500.0
 
 [node name="Camera2D" type="Camera2D" parent="Lizard"]
 position = Vector2(-365, 0)
