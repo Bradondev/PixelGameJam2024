@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cpfa5fp5y5x5l"]
+[gd_scene load_steps=62 format=3 uid="uid://cpfa5fp5y5x5l"]
 
 [ext_resource type="Script" path="res://GD Scripts/Aliens/EnemyAIBase.gd" id="1_cir2i"]
 [ext_resource type="Texture2D" uid="uid://5iq45gounpmn" path="res://Art_PNG/Shadow_Large_Transparent.png" id="1_qj3b8"]
@@ -12,47 +12,47 @@
 [sub_resource type="Resource" id="Resource_rvmaa"]
 script = ExtResource("4_xttob")
 name = "Attacking"
-metadata/graph_offset = Vector2(579.5, -18)
+metadata/graph_offset = Vector2(1239.5, 382)
 
 [sub_resource type="Resource" id="Resource_32uvp"]
 script = ExtResource("4_xttob")
 name = "Chasing"
-metadata/graph_offset = Vector2(762.5, 62)
+metadata/graph_offset = Vector2(1422.5, 462)
 
 [sub_resource type="Resource" id="Resource_ogllt"]
 script = ExtResource("4_xttob")
 name = "Damaged"
-metadata/graph_offset = Vector2(578, -98)
+metadata/graph_offset = Vector2(1238, 302)
 
 [sub_resource type="Resource" id="Resource_u4p1l"]
 script = ExtResource("4_xttob")
 name = "Dead"
-metadata/graph_offset = Vector2(726, -98)
+metadata/graph_offset = Vector2(1386, 302)
 
 [sub_resource type="Resource" id="Resource_vfijq"]
 script = ExtResource("4_xttob")
 name = "Entry"
-metadata/graph_offset = Vector2(266, 62)
+metadata/graph_offset = Vector2(926, 462)
 
 [sub_resource type="Resource" id="Resource_e63ed"]
 script = ExtResource("4_xttob")
 name = "Exit"
-metadata/graph_offset = Vector2(866, -98)
+metadata/graph_offset = Vector2(1526, 302)
 
 [sub_resource type="Resource" id="Resource_tnk4m"]
 script = ExtResource("4_xttob")
 name = "Idle"
-metadata/graph_offset = Vector2(406, 62)
+metadata/graph_offset = Vector2(1066, 462)
 
 [sub_resource type="Resource" id="Resource_7kjei"]
 script = ExtResource("4_xttob")
 name = "PlayerDetected"
-metadata/graph_offset = Vector2(560.5, 142)
+metadata/graph_offset = Vector2(1220.5, 542)
 
 [sub_resource type="Resource" id="Resource_tbnoj"]
 script = ExtResource("4_xttob")
 name = "Stunned"
-metadata/graph_offset = Vector2(582, 222)
+metadata/graph_offset = Vector2(1242, 622)
 
 [sub_resource type="Resource" id="Resource_copms"]
 script = ExtResource("5_wq122")
@@ -77,6 +77,19 @@ from = "Attacking"
 to = "Idle"
 conditions = {
 "Idle": SubResource("Resource_kvc6r")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_bntut"]
+script = ExtResource("5_wq122")
+name = "Damaged"
+
+[sub_resource type="Resource" id="Resource_5p05l"]
+script = ExtResource("5_p45ch")
+from = "Attacking"
+to = "Damaged"
+conditions = {
+"Damaged": SubResource("Resource_bntut")
 }
 priority = 0
 
@@ -198,6 +211,26 @@ conditions = {
 }
 priority = 0
 
+[sub_resource type="Resource" id="Resource_frog5"]
+script = ExtResource("5_wq122")
+name = "Damaged"
+
+[sub_resource type="Resource" id="Resource_icgf2"]
+script = ExtResource("5_p45ch")
+from = "Idle"
+to = "Damaged"
+conditions = {
+"Damaged": SubResource("Resource_frog5")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_j5m5l"]
+script = ExtResource("5_p45ch")
+from = "Idle"
+to = "Stunned"
+conditions = {}
+priority = 0
+
 [sub_resource type="Resource" id="Resource_tncqo"]
 script = ExtResource("5_wq122")
 name = "Chasing"
@@ -221,6 +254,19 @@ from = "PlayerDetected"
 to = "Idle"
 conditions = {
 "Idle": SubResource("Resource_qums1")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_2cis4"]
+script = ExtResource("5_wq122")
+name = "Damaged"
+
+[sub_resource type="Resource" id="Resource_2dydj"]
+script = ExtResource("5_p45ch")
+from = "PlayerDetected"
+to = "Damaged"
+conditions = {
+"Damaged": SubResource("Resource_2cis4")
 }
 priority = 0
 
@@ -250,6 +296,19 @@ conditions = {
 }
 priority = 0
 
+[sub_resource type="Resource" id="Resource_02ubs"]
+script = ExtResource("5_wq122")
+name = "Damaged"
+
+[sub_resource type="Resource" id="Resource_ginw6"]
+script = ExtResource("5_p45ch")
+from = "Stunned"
+to = "Damaged"
+conditions = {
+"Damaged": SubResource("Resource_02ubs")
+}
+priority = 0
+
 [sub_resource type="Resource" id="Resource_jidoq"]
 script = ExtResource("5_jwbk5")
 states = {
@@ -266,6 +325,7 @@ states = {
 transitions = {
 "Attacking": {
 "Chasing": SubResource("Resource_ubnxo"),
+"Damaged": SubResource("Resource_5p05l"),
 "Idle": SubResource("Resource_n36n4")
 },
 "Chasing": {
@@ -286,14 +346,18 @@ transitions = {
 "Idle": SubResource("Resource_pi74j")
 },
 "Idle": {
-"PlayerDetected": SubResource("Resource_c3iq7")
+"Damaged": SubResource("Resource_icgf2"),
+"PlayerDetected": SubResource("Resource_c3iq7"),
+"Stunned": SubResource("Resource_j5m5l")
 },
 "PlayerDetected": {
 "Chasing": SubResource("Resource_2b5qq"),
+"Damaged": SubResource("Resource_2dydj"),
 "Idle": SubResource("Resource_28nvx")
 },
 "Stunned": {
 "Chasing": SubResource("Resource_vpugd"),
+"Damaged": SubResource("Resource_ginw6"),
 "Idle": SubResource("Resource_nww6g")
 }
 }
@@ -365,6 +429,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_t2a5k"]
 radius = 52.1536
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hbvl1"]
+radius = 16.0
+height = 54.0
+
 [node name="Lizard" type="Node2D"]
 script = ExtResource("1_cir2i")
 
@@ -388,9 +456,18 @@ scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_t2a5k")
 one_way_collision_margin = 0.0
 
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -27)
+shape = SubResource("CapsuleShape2D_hbvl1")
+
 [connection signal="entered" from="EnemyStateMachine" to="." method="_on_state_machine_player_entered"]
 [connection signal="exited" from="EnemyStateMachine" to="." method="_on_state_machine_player_exited"]
 [connection signal="transited" from="EnemyStateMachine" to="." method="_on_state_machine_player_transited"]
 [connection signal="updated" from="EnemyStateMachine" to="." method="_on_state_machine_player_updated"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="area_shape_entered" from="HurtBox" to="." method="_on_hurt_box_collision"]

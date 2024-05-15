@@ -9,6 +9,7 @@ var target_position = Vector2.ZERO
 var velocity = Vector2.ZERO
 var bodyName: String
 var exitedBodyName: String
+var damageAmount: int
 
 # References to other nodes in the scene
 @onready var smp = $EnemyStateMachine
@@ -24,6 +25,7 @@ var exitedBodyName: String
 @export var strength: int = 10
 @export var health: int = 100
 @export var stunned: bool = false
+@export var nineMMDamage: int = 25
 
 # Called when the player enters a state
 func _on_state_machine_player_entered(to):
@@ -82,7 +84,8 @@ func _on_state_machine_player_updated(state, delta):
 			if health <= 0:
 				smp.set_trigger("Dead")
 			else:
-				health -= 1
+				health -= damageAmount
+				smp.set_trigger("Idle")
 		"Dead":
 			play_animation("Dead")
 			wait(0.5)
@@ -118,3 +121,10 @@ func _on_detection_area_body_exited(body):
 	if "Player" in body.name:
 		player = null
 	exitedBodyName = body.name
+
+func take_damage(amount:int):
+	damageAmount = amount
+	smp.set_trigger("Damaged")
+
+func _on_hurt_box_collision(area_rid, area, area_shape_index, local_shape_index):
+	take_damage(nineMMDamage)
