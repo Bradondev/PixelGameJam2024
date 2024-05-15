@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bhkiy4ucj30lo" path="res://Scene/UI.tscn" id="1_4gmy4"]
 [ext_resource type="Script" path="res://GD Scripts/Player.gd" id="1_022et"]
 [ext_resource type="PackedScene" uid="uid://dxmu3oawxupu1" path="res://Scene/inventory/grid_inventoryPlayer.tscn" id="1_ewq30"]
-[ext_resource type="Texture2D" uid="uid://umlm1vbaxm6t" path="res://Art_PNG/Player_SpriteSheet (10fr walk, 6fr shoot) TEMPORARY NOT FINISHED.png" id="2_65ycv"]
+[ext_resource type="Texture2D" uid="uid://b121h30fvm6hb" path="res://Art_PNG/Player_SpriteSheet (10fr walk, 6fr shoot) TEMPORARY NOT FINISHED.png" id="2_65ycv"]
 [ext_resource type="Texture2D" uid="uid://cfltwwhawhwrv" path="res://Art_PNG/Player_Base, Placeholder.png" id="2_bcn8m"]
 [ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="2_hwfff"]
 [ext_resource type="PackedScene" uid="uid://b7got3qc3fi8j" path="res://Scene_Sub/gunNode.tscn" id="2_kanhx"]

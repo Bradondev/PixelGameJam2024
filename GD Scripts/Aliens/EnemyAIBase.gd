@@ -43,6 +43,7 @@ func _on_state_machine_player_transited(from, to):
 # Calls depending on the state machines update
 func _on_state_machine_player_updated(state, delta):
 	velocity = Vector2.ZERO
+	print_debug(state)
 	match state:
 		"Idle":
 			chasing = false
@@ -54,7 +55,7 @@ func _on_state_machine_player_updated(state, delta):
 		"PlayerDetected":
 			chasing = false
 			if DetectionArea.body_exited:
-				if "Player" in bodyName:
+				if "Player" in exitedBodyName:
 					smp.set_trigger("Idle")
 			play_animation("PlayerDetected")
 			wait(detectionTime)
@@ -63,14 +64,14 @@ func _on_state_machine_player_updated(state, delta):
 			if not player == null:
 				chasing = true
 			if DetectionArea.body_exited:
-				if "Player" in bodyName:
+				if "Player" in exitedBodyName:
 					smp.set_trigger("Idle")
 			if stunned:
 				smp.set_trigger("Stunned")
 		"Attacking":
 			chasing = false
 			if DetectionArea.body_exited:
-				if "Player" in bodyName:
+				if "Player" in exitedBodyName:
 					smp.set_trigger("Idle")
 			play_animation("Attacking")
 			wait(0.1)
@@ -79,7 +80,7 @@ func _on_state_machine_player_updated(state, delta):
 		"Stunned":
 			chasing = false
 			if DetectionArea.body_exited:
-				if "Player" in bodyName:
+				if "Player" in exitedBodyName:
 					smp.set_trigger("Idle")
 			wait(stunnedTime)
 			stunned = false
@@ -99,7 +100,7 @@ func _on_state_machine_player_updated(state, delta):
 			queue_free()
 
 func _process(delta):
-	if chasing:
+	if chasing and not player == null:
 		velocity = (player.position - global_position).normalized() * speed * delta
 	move_and_slide()
 
@@ -121,11 +122,13 @@ func wait(seconds: float) -> void:
 func _on_detection_area_body_entered(body):
 	if "Player" in body.name:
 		player = body
+	exitedBodyName = ""
 	bodyName = body.name
 
 func _on_detection_area_body_exited(body):
 	if "Player" in body.name:
 		player = null
+	bodyName = ""
 	exitedBodyName = body.name
 
 func take_damage(amount:int):

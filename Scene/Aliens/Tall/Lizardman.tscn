@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://cpfa5fp5y5x5l"]
+[gd_scene load_steps=87 format=3 uid="uid://cpfa5fp5y5x5l"]
 
 [ext_resource type="Script" path="res://GD Scripts/Aliens/EnemyAIBase.gd" id="1_cir2i"]
 [ext_resource type="Texture2D" uid="uid://5iq45gounpmn" path="res://Art_PNG/Shadow_Large_Transparent.png" id="1_qj3b8"]
@@ -225,11 +225,17 @@ conditions = {
 }
 priority = 0
 
+[sub_resource type="Resource" id="Resource_tstwv"]
+script = ExtResource("5_wq122")
+name = "Stunned"
+
 [sub_resource type="Resource" id="Resource_j5m5l"]
 script = ExtResource("5_p45ch")
 from = "Idle"
 to = "Stunned"
-conditions = {}
+conditions = {
+"Stunned": SubResource("Resource_tstwv")
+}
 priority = 0
 
 [sub_resource type="Resource" id="Resource_tncqo"]
