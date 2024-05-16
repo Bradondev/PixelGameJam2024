@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkejm17sqsdul"]
+
+[ext_resource type="Texture2D" uid="uid://eay24kwvtjc3" path="res://Art_PNG/Player_CompositeSprite_SpriteSheet_Bottom.png" id="1_mbpkd"]
+
+[node name="CompositeSprite" type="Node2D"]
+
+[node name="Gun" type="AnimationPlayer" parent="."]
+
+[node name="Body" type="AnimationPlayer" parent="."]
+
+[node name="Bottom" type="AnimationPlayer" parent="."]
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Gun" type="Sprite2D" parent="Sprites"]
+
+[node name="Bottom" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("1_mbpkd")
+hframes = 10

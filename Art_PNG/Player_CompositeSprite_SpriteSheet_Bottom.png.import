@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drmieoxjisha0"
-path="res://.godot/imported/Wifebeater Lizard.png-61ff05194bf6db46b25a195b2f0a3cd4.ctex"
+uid="uid://eay24kwvtjc3"
+path="res://.godot/imported/Player_CompositeSprite_SpriteSheet_Bottom.png-1ef8b2e26866e4789b90cfde599172e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_Aseprite/GIF Previews/Wifebeater Lizard.png"
-dest_files=["res://.godot/imported/Wifebeater Lizard.png-61ff05194bf6db46b25a195b2f0a3cd4.ctex"]
+source_file="res://Art_PNG/Player_CompositeSprite_SpriteSheet_Bottom.png"
+dest_files=["res://.godot/imported/Player_CompositeSprite_SpriteSheet_Bottom.png-1ef8b2e26866e4789b90cfde599172e6.ctex"]
 
 [params]
 
