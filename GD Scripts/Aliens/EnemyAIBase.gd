@@ -9,7 +9,6 @@ var target_position = Vector2.ZERO
 var bodyName: String
 var exitedBodyName: String
 var damageAmount: int
-var chasing: bool = false
 
 # References to other nodes in the scene
 @onready var smp = $EnemyStateMachine
@@ -18,9 +17,8 @@ var chasing: bool = false
 
 # Exported variables for tuning enemy behavior
 @export var speed: float = 1000.0
-@export var attackingRadius: float = 0.25
 @export var detectionTime: float = 0.5
-@export var stunnedTime: float = 1.0
+@export var stunnedTime: float = 0.1
 @export var attackDelay: float = 0.1
 @export var strength: int = 10
 @export var health: int = 100
@@ -43,66 +41,55 @@ func _on_state_machine_player_transited(from, to):
 # Calls depending on the state machines update
 func _on_state_machine_player_updated(state, delta):
 	velocity = Vector2.ZERO
-	print_debug(state)
 	match state:
 		"Idle":
-			chasing = false
+			if stunned:
+				smp.set_trigger("Stunned")
 			if DetectionArea.body_entered:
 				if "Player" in bodyName:
 					smp.set_trigger("PlayerDetected")
 			if not playingAnim == "Idle":
 				play_animation("Idle")
 		"PlayerDetected":
-			chasing = false
-			if DetectionArea.body_exited:
-				if "Player" in exitedBodyName:
-					smp.set_trigger("Idle")
+			if stunned:
+				smp.set_trigger("Stunned")
 			play_animation("PlayerDetected")
 			wait(detectionTime)
 			smp.set_trigger("Chasing")
 		"Chasing":
 			if not player == null:
-				chasing = true
-			if DetectionArea.body_exited:
-				if "Player" in exitedBodyName:
-					smp.set_trigger("Idle")
+				play_animation("Chasing")
+				move_and_slide()
+			else:
+				smp.set_trigger("Idle")
 			if stunned:
 				smp.set_trigger("Stunned")
 		"Attacking":
-			chasing = false
-			if DetectionArea.body_exited:
-				if "Player" in exitedBodyName:
-					smp.set_trigger("Idle")
+			if stunned:
+				smp.set_trigger("Stunned")
 			play_animation("Attacking")
 			wait(0.1)
 			player.TakeDamage(strength)
 			smp.set_trigger("Chasing")
 		"Stunned":
-			chasing = false
-			if DetectionArea.body_exited:
-				if "Player" in exitedBodyName:
-					smp.set_trigger("Idle")
 			wait(stunnedTime)
 			stunned = false
-			smp.set_trigger("Idle")
+			smp.set_trigger("Chasing")
 		"Damaged":
-			chasing = false
+			stunned = true
 			play_animation("Damaged")
-			if health <= 0:
-				smp.set_trigger("Dead")
-			else:
-				health -= damageAmount
-				smp.set_trigger("Idle")
+			wait(0.1)
+			take_damage(damageAmount)
+			smp.set_trigger("Stunned")
 		"Dead":
-			chasing = false
 			play_animation("Dead")
 			wait(0.5)
 			queue_free()
 
 func _process(delta):
-	if chasing and not player == null:
+	if player != null:
 		velocity = (player.position - global_position).normalized() * speed * delta
-	move_and_slide()
+
 
 # Play an animation and update the current animation state
 func play_animation(animation):
@@ -117,7 +104,7 @@ func play_animation(animation):
 
 # Wait for a specified duration
 func wait(seconds: float) -> void:
-	await get_tree().create_timer(seconds).timeout
+	await(get_tree().create_timer(seconds).timeout)
 
 func _on_detection_area_body_entered(body):
 	if "Player" in body.name:
@@ -132,9 +119,13 @@ func _on_detection_area_body_exited(body):
 	exitedBodyName = body.name
 
 func take_damage(amount:int):
-	damageAmount = amount
-	smp.set_trigger("Damaged")
+	health -= amount
+	if health <= 0:
+		health = 0
+		smp.set_trigger("dead")
+	else:
+		smp.set_trigger("Damaged")
 
 func _on_hurt_box_collision(area_rid, area, area_shape_index, local_shape_index):
-	if "9MmBullet" in area.get_parent().name:
-		take_damage(nineMMDamage)
+
+	take_damage(nineMMDamage)
