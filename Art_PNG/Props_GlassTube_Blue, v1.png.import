@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwuo5r60b5ifd"
-path="res://.godot/imported/Player_Bullet_HitEffect (anim_5fr).png-1709eba85958c9d01048e43bfd10d576.ctex"
+uid="uid://beij8oblty7m1"
+path="res://.godot/imported/Props_GlassTube_Blue, v1.png-cd6171e50f6fc897304d18aff5a2aa74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_PNG/Player_Bullet_HitEffect (anim_5fr).png"
-dest_files=["res://.godot/imported/Player_Bullet_HitEffect (anim_5fr).png-1709eba85958c9d01048e43bfd10d576.ctex"]
+source_file="res://Art_PNG/Props_GlassTube_Blue, v1.png"
+dest_files=["res://.godot/imported/Props_GlassTube_Blue, v1.png-cd6171e50f6fc897304d18aff5a2aa74.ctex"]
 
 [params]
 

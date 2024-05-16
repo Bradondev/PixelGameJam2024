@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwuo5r60b5ifd"
-path="res://.godot/imported/Player_Bullet_HitEffect (anim_5fr).png-1709eba85958c9d01048e43bfd10d576.ctex"
+uid="uid://bka3elsjsuywf"
+path="res://.godot/imported/Player_Animations-SheetWIP.PNG-ec41ebdd507483564952de02e78f77eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_PNG/Player_Bullet_HitEffect (anim_5fr).png"
-dest_files=["res://.godot/imported/Player_Bullet_HitEffect (anim_5fr).png-1709eba85958c9d01048e43bfd10d576.ctex"]
+source_file="res://Art_Aseprite/Player_Animations-SheetWIP.PNG"
+dest_files=["res://.godot/imported/Player_Animations-SheetWIP.PNG-ec41ebdd507483564952de02e78f77eb.ctex"]
 
 [params]
 
