@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://ef2ck3t68lfc"]
+
+[ext_resource type="Resource" uid="uid://qscj50t2p7f5" path="res://GD Scripts/Resources/Guns/SmgV1.tres" id="1_tfmql"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_dgmfs"]
+[ext_resource type="Texture2D" uid="uid://bylbp27aqtftx" path="res://Art_PNG/Item_Gun_SMG_Desert, v1.png" id="3_kjjq6"]
+
+[resource]
+script = ExtResource("2_dgmfs")
+name = "Smg"
+description = ""
+tags = Array[StringName]([])
+texture = ExtResource("3_kjjq6")
+texture_scale = 1.0
+max_stack_count = 1
+in_inventory_width = 2
+in_inventory_height = 1
+slot_flags = 4
+custom_data = ExtResource("1_tfmql")
+default_properties_string = "{
+\"price\": {
+\"res://Items/Guns/pistolV1.tres\": 2
+}
+}"
+default_properties = {
+"price": {
+"res://Items/Guns/pistolV1.tres": 2
+}
+}

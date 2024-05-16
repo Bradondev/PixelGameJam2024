@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://b0budqwoq0p0j"]
+
+[ext_resource type="Resource" uid="uid://cvy67xy4en5fv" path="res://GD Scripts/Resources/Guns/PistolV1.tres" id="1_yhhck"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_7hg7i"]
+[ext_resource type="Texture2D" uid="uid://cjka1k5lddr4x" path="res://Art_PNG/Item_Gun_Pistol_Desert, v1.png" id="3_54log"]
+
+[resource]
+script = ExtResource("2_7hg7i")
+name = "pistol"
+description = "small gun"
+tags = Array[StringName]([])
+texture = ExtResource("3_54log")
+texture_scale = 1.0
+max_stack_count = 10
+in_inventory_width = 1
+in_inventory_height = 1
+slot_flags = 69
+custom_data = ExtResource("1_yhhck")
+default_properties_string = "{
+\"price\": {
+\"res://Items/Guns/pistolV1.tres\": 2
+}
+}"
+default_properties = {
+"price": {
+"res://Items/Guns/pistolV1.tres": 2
+}
+}

@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="ItemInstantiator" load_steps=5 format=3 uid="uid://8nltaycjtb7l"]
 
-[ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/Sniper.tres" id="1_jxju3"]
-[ext_resource type="Resource" uid="uid://dm8qailcqviqa" path="res://Items/Guns/shotGun.tres" id="2_q0pbl"]
-[ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistol.tres" id="3_qkys2"]
+[ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/SniperV1.tres" id="1_jxju3"]
+[ext_resource type="Resource" uid="uid://0fxdylg7pp7g" path="res://Items/Guns/shotGunV1.tres" id="2_q0pbl"]
+[ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistolV1.tres" id="3_qkys2"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="4_78e6i"]
 
 [resource]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bpilr5la784ys"]
+[gd_scene load_steps=40 format=3 uid="uid://bpilr5la784ys"]
 
 [ext_resource type="PackedScene" uid="uid://bhkiy4ucj30lo" path="res://Scene/UI.tscn" id="1_4gmy4"]
 [ext_resource type="Script" path="res://GD Scripts/Player.gd" id="1_022et"]
@@ -12,16 +12,18 @@
 [ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_price.gd" id="4_8rfm8"]
 [ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_key_hints.gd" id="5_g6k7r"]
 [ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_stats.gd" id="6_dttps"]
+[ext_resource type="Texture2D" uid="uid://ceynpt3hds851" path="res://Art_UI/Inventory _Label.png" id="6_t7dqc"]
 [ext_resource type="PackedScene" uid="uid://4ohh3iq6c7uc" path="res://Scene/inventory/playerEquitment.tscn" id="7_4fhhw"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="7_pe8uv"]
+[ext_resource type="Texture2D" uid="uid://dnf86xepq13c2" path="res://Art_UI/UI_Close_Active.png" id="7_uoci8"]
 [ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="8_0e3s1"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="9_qwigw"]
 [ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="10_3jppb"]
-[ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistol.tres" id="12_2jiyi"]
-[ext_resource type="Resource" uid="uid://0fxdylg7pp7g" path="res://Items/Guns/shotGun.tres" id="13_bd66d"]
-[ext_resource type="Resource" uid="uid://dpkpknqrbljcx" path="res://Items/Guns/Smg.tres" id="14_e38q6"]
+[ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistolV1.tres" id="12_2jiyi"]
+[ext_resource type="Resource" uid="uid://0fxdylg7pp7g" path="res://Items/Guns/shotGunV1.tres" id="13_bd66d"]
+[ext_resource type="Resource" uid="uid://dpkpknqrbljcx" path="res://Items/Guns/SmgV1.tres" id="14_e38q6"]
 [ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="15_7wkj2"]
-[ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/Sniper.tres" id="15_lah56"]
+[ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/SniperV1.tres" id="15_lah56"]
 [ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="20_8k8yi"]
 [ext_resource type="Texture2D" uid="uid://dcfxp0gtvvhyu" path="res://Art_UI/ProgressBar_PlayerResource (Over).png" id="21_o6y1b"]
 [ext_resource type="Texture2D" uid="uid://3vmgjxrcavhb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Green.png" id="22_ieffp"]
@@ -156,6 +158,23 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Inventory"]
+offset_left = 250.0
+offset_right = 368.0
+offset_bottom = 9.0
+scale = Vector2(2, 2)
+theme_override_constants/separation = 0
+metadata/_edit_group_ = true
+
+[node name="InventoryLabel" type="TextureRect" parent="UI/Inventory/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_t7dqc")
+
+[node name="close" type="TextureRect" parent="UI/Inventory/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_uoci8")
+stretch_mode = 2
+
 [node name="Equip" parent="UI/Inventory" instance=ExtResource("7_4fhhw")]
 layout_mode = 1
 offset_left = 140.0
@@ -174,10 +193,10 @@ Level = "res://Scene/DebugSave.tscn"
 
 [node name="player" parent="UI/Inventory" instance=ExtResource("1_ewq30")]
 layout_mode = 0
-offset_left = 239.0
-offset_top = 2.0
-offset_right = 351.0
-offset_bottom = 114.0
+offset_left = 250.0
+offset_top = 14.0
+offset_right = 362.0
+offset_bottom = 126.0
 scale = Vector2(2, 2)
 contents = SubResource("Resource_54y7k")
 init_contents = true

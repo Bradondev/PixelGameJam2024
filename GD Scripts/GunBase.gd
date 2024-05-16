@@ -15,7 +15,7 @@ class_name  Gun
 @export var BulletTypeItem : ItemType
 @export var BulletScene: PackedScene
 @export var ReloadTime : float
-@export_range(0, 100) var Accuracy : int
+@export_range(0, 100) var Accuracy : int = 100
 var CurrentMagSize: int = 0
 
 

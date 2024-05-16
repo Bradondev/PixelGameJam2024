@@ -74,8 +74,9 @@ func ShootGun():
 				var increment = arc_rad / (CurrentGun.ButtetCount -1)
 				newBullet.global_rotation = (
 					global_rotation + increment * i -
-					arc_rad / 2 + ApplyAccuracy()
+					arc_rad / 2
 					)
+				newBullet.global_rotation += ApplyAccuracy()
 			get_tree().root.call_deferred("add_child", newBullet)
 		CanShoot = false
 		await  get_tree().create_timer(1/CurrentGun.ROF).timeout

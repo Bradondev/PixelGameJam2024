@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="ItemGenerator" load_steps=4 format=3 uid="uid://ddmiq0e25r5ns"]
 
-[ext_resource type="Resource" uid="uid://dm8qailcqviqa" path="res://Items/Guns/shotGun.tres" id="1_jotor"]
+[ext_resource type="Resource" path="res://Items/Guns/shotGun.tres" id="1_jotor"]
 [ext_resource type="Script" path="res://addons/wyvernbox/crafting/item_generator.gd" id="1_ty387"]
-[ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/Sniper.tres" id="2_rujrg"]
+[ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/SniperV1.tres" id="2_rujrg"]
 
 [resource]
 script = ExtResource("1_ty387")

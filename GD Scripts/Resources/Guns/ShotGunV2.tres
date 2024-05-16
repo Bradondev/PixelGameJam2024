@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Gun" load_steps=6 format=3 uid="uid://bprqvp3k8u77s"]
+
+[ext_resource type="PackedScene" uid="uid://br2il8di536b8" path="res://Scene_Sub/BulletPackScene/9mmBullet.tscn" id="1_4y77k"]
+[ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="2_umudh"]
+[ext_resource type="Texture2D" uid="uid://bm1ih8ytus4tp" path="res://Art_UI/Gun_Reticle, Shotgun v1.png" id="3_ngxm6"]
+[ext_resource type="Texture2D" uid="uid://bw0olar15pkkj" path="res://Art_PNG/Item_Gun_Shotgun, Desert, v1.png" id="4_i7fd0"]
+[ext_resource type="Script" path="res://GD Scripts/GunBase.gd" id="5_hexfy"]
+
+[resource]
+script = ExtResource("5_hexfy")
+GunType = 0
+Sprite = ExtResource("4_i7fd0")
+CrossHairSprite = ExtResource("3_ngxm6")
+BulletSpawnPoint = Vector2(0, 0)
+Description = ""
+ROF = 2.0
+BaseDamage = 0
+MagSize = 2
+Arc = 10
+ButtetCount = 8
+BulletTypeItem = ExtResource("2_umudh")
+BulletScene = ExtResource("1_4y77k")
+ReloadTime = 3.0
+Accuracy = 50

@@ -20,5 +20,5 @@ Arc = 0
 ButtetCount = 1
 BulletTypeItem = ExtResource("2_m4wj7")
 BulletScene = ExtResource("1_w05g6")
-ReloadTime = 0.0
+ReloadTime = 3.0
 Accuracy = 0

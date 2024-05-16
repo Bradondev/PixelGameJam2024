@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://dpkpknqrbljcx"]
 
+[ext_resource type="Resource" uid="uid://qscj50t2p7f5" path="res://GD Scripts/Resources/Guns/SmgV1.tres" id="1_7pu4r"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="1_mf608"]
-[ext_resource type="Resource" uid="uid://qscj50t2p7f5" path="res://GD Scripts/Resources/Guns/Smg.tres" id="1_y4bgx"]
 [ext_resource type="Texture2D" uid="uid://bylbp27aqtftx" path="res://Art_PNG/Item_Gun_SMG_Desert, v1.png" id="3_x0gu4"]
 
 [resource]
@@ -15,14 +15,14 @@ max_stack_count = 1
 in_inventory_width = 2
 in_inventory_height = 1
 slot_flags = 4
-custom_data = ExtResource("1_y4bgx")
+custom_data = ExtResource("1_7pu4r")
 default_properties_string = "{
 \"price\": {
-\"res://Items/Guns/pistol.tres\": 2
+\"res://Items/Guns/pistolV1.tres\": 2
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Guns/pistol.tres": 2
+"res://Items/Guns/pistolV1.tres": 2
 }
 }
