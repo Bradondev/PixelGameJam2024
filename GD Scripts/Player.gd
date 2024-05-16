@@ -31,9 +31,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 
 func FlipInventory():
-	if !inventory.visible:inventory.show()
-	else: inventory.hide()
-
+	if !inventory.visible:
+		inventory.show()
+		gun.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	else:
+		inventory.hide()
+		gun.process_mode = Node.PROCESS_MODE_INHERIT
+		
 
 func UpdateSpirt():
 	pass

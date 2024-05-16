@@ -8,12 +8,15 @@ extends Node2D
 var CanShoot = true
 @onready var bulletspawnpoint: Marker2D = $bulletspawnpoint
 var MouseR
-
+var Reloading = false
 @onready var gun_reticle: Sprite2D = $gunReticle
+@onready var reload_bar: TextureProgressBar = $"../BotBar"
 
 func _physics_process(delta: float) -> void:
 	if !CurrentGun: return
+	
 	look_at(get_global_mouse_position())
+	
 	if Input.is_action_pressed("Shoot"):
 		ShootGun()
 	
@@ -23,12 +26,21 @@ func _ready() -> void:
 	UpdateAmmoText()
 # Called every frame. 'delta' is the elapsed time since the previous fr
 func _unhandled_input(event: InputEvent) -> void:
-	if !CurrentGun: return
+	if !CurrentGun or Reloading: return
 	if event.is_action_pressed("Reload"):
 		ReloadCurrentGun()
 		
 func ReloadCurrentGun():
+	if CurrentGun.MagSize == CurrentGun.CurrentMagSize:
+		print_debug("mag is full")
+		return
+	reload_bar.value = 0
+	reload_bar.visible = true
+	Reloading = true
 	
+	var tween  = get_tree().create_tween()
+	tween.tween_property(reload_bar, "value", 100,CurrentGun.ReloadTime)
+	await  tween.finished
 	var price : Dictionary = {CurrentGun.BulletTypeItem: CurrentGun.MagSize}
 	var items_to_check = {}
 	var counts := {}
@@ -38,13 +50,15 @@ func ReloadCurrentGun():
 	if Bullets:
 		CurrentGun.LoadMag(Bullets[0].count)
 	else : print_debug("out of ammo")
+	Reloading = false
+	reload_bar.visible = false
 	UpdateAmmoText()
+	
 func ShootGun():
 	if CanShoot:
 		
 		if CurrentGun.CurrentMagSize:
 			CurrentGun.CurrentMagSize -=1
-			print_debug(CurrentGun.CurrentMagSize)
 			UpdateAmmoText()
 		else : 
 			UpdateAmmoText()
@@ -54,13 +68,13 @@ func ShootGun():
 			var newBullet = CurrentGun.BulletScene.instantiate()
 			newBullet.position =global_position
 			if CurrentGun.ButtetCount == 1:
-				newBullet.rotation  = global_rotation
+				newBullet.rotation  = global_rotation + ApplyAccuracy()
 			else:
 				var arc_rad = deg_to_rad(CurrentGun.Arc)
 				var increment = arc_rad / (CurrentGun.ButtetCount -1)
 				newBullet.global_rotation = (
 					global_rotation + increment * i -
-					arc_rad / 2
+					arc_rad / 2 + ApplyAccuracy()
 					)
 			get_tree().root.call_deferred("add_child", newBullet)
 		CanShoot = false
@@ -78,3 +92,9 @@ func UpdateAmmoText():
 	ammoLabel.text = str(CurrentGun.CurrentMagSize) +"/" +  str(CurrentGun.MagSize) 
 func UpdateGunSprite():
 	gun.texture = CurrentGun.Sprite
+func ApplyAccuracy(): 
+	var rng = RandomNumberGenerator.new()
+	var baseAcc =  (100 -CurrentGun.Accuracy ) / 100.00
+	print_debug(baseAcc)
+	var my_random_number = rng.randf_range(-baseAcc, baseAcc)
+	return my_random_number

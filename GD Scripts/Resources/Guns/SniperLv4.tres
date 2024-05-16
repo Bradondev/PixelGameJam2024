@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Gun" load_steps=6 format=3 uid="uid://bviy4bmuxo4bf"]
+
+[ext_resource type="PackedScene" uid="uid://br2il8di536b8" path="res://Scene_Sub/BulletPackScene/9mmBullet.tscn" id="1_4hwoo"]
+[ext_resource type="Resource" uid="uid://bg63kcap61rmc" path="res://Items/Bullet/7.62mm.tres" id="2_hkn71"]
+[ext_resource type="Texture2D" uid="uid://sqcvml55oqno" path="res://Art_UI/Gun_Reticle, Sniper.png" id="3_jirwk"]
+[ext_resource type="Texture2D" uid="uid://b4a2qaonglahb" path="res://Art_PNG/Item_Gun_Sniper, Desert, v1.png" id="4_jsmqn"]
+[ext_resource type="Script" path="res://GD Scripts/GunBase.gd" id="5_8p83e"]
+
+[resource]
+script = ExtResource("5_8p83e")
+GunType = 0
+Sprite = ExtResource("4_jsmqn")
+CrossHairSprite = ExtResource("3_jirwk")
+BulletSpawnPoint = Vector2(26, -1)
+Description = ""
+ROF = 0.05
+BaseDamage = 0
+MagSize = 6
+Arc = 0
+ButtetCount = 1
+BulletTypeItem = ExtResource("2_hkn71")
+BulletScene = ExtResource("1_4hwoo")
+ReloadTime = 0.0

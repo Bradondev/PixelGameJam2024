@@ -14,8 +14,10 @@ class_name  Gun
 @export var ButtetCount: int =1
 @export var BulletTypeItem : ItemType
 @export var BulletScene: PackedScene
-
+@export var ReloadTime : float
+@export_range(0, 100) var Accuracy : int
 var CurrentMagSize: int = 0
+
 
 
 func LoadMag(Size:int):
