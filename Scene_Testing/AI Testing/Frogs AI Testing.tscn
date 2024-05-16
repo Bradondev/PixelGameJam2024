@@ -7,7 +7,6 @@
 
 [node name="Lizard" parent="." instance=ExtResource("1_w0wf0")]
 position = Vector2(365, 0)
-speed = 500.0
 
 [node name="Player" parent="." instance=ExtResource("1_33fcq")]
 

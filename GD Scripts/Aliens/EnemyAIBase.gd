@@ -11,7 +11,7 @@ var exitedBodyName: String
 var damageAmount: int
 
 # References to other nodes in the scene
-@onready var smp = $EnemyStateMachine
+@onready var SMP = $EnemyStateMachine
 @onready var DetectionArea = $DetectionArea
 @onready var animatedSprite = $AnimatedSprite2D
 
@@ -24,7 +24,6 @@ var damageAmount: int
 @export var health: int = 100
 @export var stunned: bool = false
 @export var nineMMDamage: int = 25
-
 # Called when the player enters a state
 func _on_state_machine_player_entered(to):
 	pass # Replace with function body.
@@ -44,43 +43,43 @@ func _on_state_machine_player_updated(state, delta):
 	match state:
 		"Idle":
 			if stunned:
-				smp.set_trigger("Stunned")
+				SMP.set_trigger("Stunned")
 			if DetectionArea.body_entered:
 				if "Player" in bodyName:
-					smp.set_trigger("PlayerDetected")
+					SMP.set_trigger("PlayerDetected")
 			if not playingAnim == "Idle":
 				play_animation("Idle")
 		"PlayerDetected":
 			if stunned:
-				smp.set_trigger("Stunned")
+				SMP.set_trigger("Stunned")
 			play_animation("PlayerDetected")
 			wait(detectionTime)
-			smp.set_trigger("Chasing")
+			SMP.set_trigger("Chasing")
 		"Chasing":
 			if not player == null:
 				play_animation("Chasing")
 				move_and_slide()
 			else:
-				smp.set_trigger("Idle")
+				SMP.set_trigger("Idle")
 			if stunned:
-				smp.set_trigger("Stunned")
+				SMP.set_trigger("Stunned")
 		"Attacking":
 			if stunned:
-				smp.set_trigger("Stunned")
+				SMP.set_trigger("Stunned")
 			play_animation("Attacking")
 			wait(0.1)
 			player.TakeDamage(strength)
-			smp.set_trigger("Chasing")
+			SMP.set_trigger("Chasing")
 		"Stunned":
 			wait(stunnedTime)
 			stunned = false
-			smp.set_trigger("Chasing")
+			SMP.set_trigger("Chasing")
 		"Damaged":
 			stunned = true
 			play_animation("Damaged")
 			wait(0.1)
 			take_damage(damageAmount)
-			smp.set_trigger("Stunned")
+			SMP.set_trigger("Stunned")
 		"Dead":
 			play_animation("Dead")
 			wait(0.5)
@@ -122,9 +121,9 @@ func take_damage(amount:int):
 	health -= amount
 	if health <= 0:
 		health = 0
-		smp.set_trigger("dead")
+		SMP.set_trigger("dead")
 	else:
-		smp.set_trigger("Damaged")
+		SMP.set_trigger("Damaged")
 
 func _on_hurt_box_collision(area_rid, area, area_shape_index, local_shape_index):
 
