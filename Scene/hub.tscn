@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1ui8lkg8n8hk"]
+[gd_scene load_steps=12 format=3 uid="uid://d1ui8lkg8n8hk"]
 
 [ext_resource type="Script" path="res://Scene/hub.gd" id="1_tbohb"]
-[ext_resource type="Texture2D" uid="uid://jskdd11ngeoe" path="res://Art_PNG/Item_Bullet, Single.png" id="2_8dog2"]
-[ext_resource type="Texture2D" uid="uid://x8dvvvrt701i" path="res://Art_PNG/Item_Equipment_Chest, v2.png" id="3_arqkn"]
+[ext_resource type="AudioStream" uid="uid://c2q0hvwighqiw" path="res://Audio/Song - Kevin MacLeod - 8bit Dungeon Boss NO COPYRIGHT 8-bit Music.mp3" id="2_oxanp"]
+[ext_resource type="Texture2D" uid="uid://bt0b4nk6uvm0a" path="res://Art_UI/Shop_TextureButton, Normal.png" id="3_v814g"]
 [ext_resource type="Texture2D" uid="uid://c2kbx8cind26s" path="res://Art_PNG/Monster_Drowned (Gun), Placeholder.png" id="4_j0yrg"]
+[ext_resource type="Texture2D" uid="uid://brsqjv5ec7nl2" path="res://Art_UI/Shop_TextureButton, Pressed.png" id="4_repa8"]
+[ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="5_2qcak"]
+[ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="6_o6ojd"]
+[ext_resource type="Texture2D" uid="uid://bbktnb86mocwh" path="res://Art_UI/Equipment_EquipBackground.png" id="7_cfmhh"]
+[ext_resource type="Texture2D" uid="uid://btcmsj22xtuqh" path="res://Art_UI/Shop_TextureButton, Normal, Small.png" id="8_nef1m"]
+[ext_resource type="Texture2D" uid="uid://5547r6r8hhhk" path="res://Art_UI/Shop_TextureButton, Pressed, Small.png" id="9_bcvpg"]
+
+[sub_resource type="Theme" id="Theme_vs827"]
 
 [node name="Hub" type="Control"]
 layout_mode = 3
@@ -14,31 +22,96 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tbohb")
 
-[node name="Buttons" type="HBoxContainer" parent="." groups=["Ui"]]
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_oxanp")
+autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -90.0
-offset_top = -15.5
-offset_right = 90.0
-offset_bottom = 15.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 1)
 
-[node name="missions" type="Button" parent="Buttons"]
-layout_mode = 2
-text = "Missions"
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
 
-[node name="stash" type="Button" parent="Buttons"]
+[node name="Vbox" type="VBoxContainer" parent="Margin"]
 layout_mode = 2
-text = "stash"
 
-[node name="shop" type="Button" parent="Buttons"]
+[node name="Center" type="CenterContainer" parent="Margin/Vbox"]
 layout_mode = 2
-text = "shop"
+
+[node name="HubTubs" type="HBoxContainer" parent="Margin/Vbox/Center" groups=["Ui"]]
+layout_mode = 2
+
+[node name="missions" type="TextureButton" parent="Margin/Vbox/Center/HubTubs"]
+layout_mode = 2
+texture_normal = ExtResource("3_v814g")
+texture_pressed = ExtResource("4_repa8")
+texture_hover = ExtResource("5_2qcak")
+
+[node name="Text" type="RichTextLabel" parent="Margin/Vbox/Center/HubTubs/missions"]
+custom_minimum_size = Vector2(85, 22)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]missions"
+scroll_active = false
+
+[node name="stash" type="TextureButton" parent="Margin/Vbox/Center/HubTubs"]
+layout_mode = 2
+texture_normal = ExtResource("3_v814g")
+texture_pressed = ExtResource("4_repa8")
+texture_hover = ExtResource("5_2qcak")
+
+[node name="Text" type="RichTextLabel" parent="Margin/Vbox/Center/HubTubs/stash"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]stash"
+
+[node name="shop" type="TextureButton" parent="Margin/Vbox/Center/HubTubs"]
+layout_mode = 2
+theme = SubResource("Theme_vs827")
+texture_normal = ExtResource("3_v814g")
+texture_pressed = ExtResource("4_repa8")
+texture_hover = ExtResource("5_2qcak")
+
+[node name="Text2" type="RichTextLabel" parent="Margin/Vbox/Center/HubTubs/shop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]shop"
 
 [node name="Mission" type="Control" parent="." groups=["Ui"]]
 visible = false
@@ -49,19 +122,216 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Mission"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_8dog2")
+[node name="Margin" type="MarginContainer" parent="Mission"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
 
-[node name="back" type="Button" parent="Mission"]
-layout_mode = 0
-offset_left = 891.0
-offset_top = 499.0
-offset_right = 956.0
-offset_bottom = 534.0
-text = "back"
+[node name="ColorRect" type="ColorRect" parent="Mission/Margin"]
+layout_mode = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+
+[node name="Margin" type="MarginContainer" parent="Mission/Margin/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="MissionList" type="VBoxContainer" parent="Mission/Margin/ColorRect/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Mission1" type="HBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureButton" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1"]
+layout_mode = 2
+texture_normal = ExtResource("3_v814g")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]placeholder"
+
+[node name="MarginContainer" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="ColorRect" type="ColorRect" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer"]
+layout_mode = 2
+color = Color(0.137255, 0.137255, 0.137255, 1)
+
+[node name="MarginContainer3" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer/ColorRect/MarginContainer3"]
+layout_mode = 2
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "Are you ready, kids?
+Aye, aye, Captain
+I can't hear you
+Aye, aye, Captain
+Ohhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhd"
+
+[node name="Mission2" type="HBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureButton" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2"]
+layout_mode = 2
+texture_normal = ExtResource("3_v814g")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]placeholder"
+
+[node name="MarginContainer" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="ColorRect" type="ColorRect" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer"]
+layout_mode = 2
+color = Color(0.137255, 0.137255, 0.137255, 1)
+
+[node name="MarginContainer2" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer/ColorRect/MarginContainer2"]
+layout_mode = 2
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "Who lives in a pineapple under the sea?
+Absorbent and yellow and porous is he"
+
+[node name="Mission3" type="HBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureButton" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3"]
+layout_mode = 2
+texture_normal = ExtResource("3_v814g")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]placeholder"
+
+[node name="MarginContainer" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 2
+
+[node name="ColorRect" type="ColorRect" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/MarginContainer"]
+layout_mode = 2
+color = Color(0.137255, 0.137255, 0.137255, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "If nautical nonsense be something you wish
+Then drop on the deck and flop like a fish"
+
+[node name="MarginContainer" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 1
+
+[node name="back" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource("3_v814g")
+texture_pressed = ExtResource("4_repa8")
+texture_hover = ExtResource("5_2qcak")
+
+[node name="Text" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/MarginContainer/back"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]back"
 
 [node name="Stash" type="Control" parent="." groups=["Ui"]]
 visible = false
@@ -72,19 +342,231 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Stash"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("3_arqkn")
+[node name="Margin" type="MarginContainer" parent="Stash"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
 
-[node name="back" type="Button" parent="Stash"]
-layout_mode = 0
-offset_left = 891.0
-offset_top = 499.0
-offset_right = 956.0
-offset_bottom = 534.0
-text = "back"
+[node name="ColorRect" type="ColorRect" parent="Stash/Margin"]
+layout_mode = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Stash/Margin/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Stash/Margin/ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_cfmhh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/TextureRect"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLACEHOLDER
+WHY DOESNT INVENTORY SCENE HAVE A SIZE"
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StashTabs" type="HBoxContainer" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs"]
+layout_mode = 2
+texture_normal = ExtResource("8_nef1m")
+texture_pressed = ExtResource("9_bcvpg")
+texture_hover = ExtResource("5_2qcak")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]1"
+scroll_active = false
+
+[node name="TextureButton2" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs"]
+layout_mode = 2
+texture_normal = ExtResource("8_nef1m")
+texture_pressed = ExtResource("9_bcvpg")
+texture_hover = ExtResource("5_2qcak")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]2"
+scroll_active = false
+
+[node name="TextureButton3" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs"]
+layout_mode = 2
+texture_normal = ExtResource("8_nef1m")
+texture_pressed = ExtResource("9_bcvpg")
+texture_hover = ExtResource("5_2qcak")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]3"
+scroll_active = false
+
+[node name="TextureButton4" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs"]
+layout_mode = 2
+texture_normal = ExtResource("8_nef1m")
+texture_pressed = ExtResource("9_bcvpg")
+texture_hover = ExtResource("5_2qcak")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]4"
+scroll_active = false
+
+[node name="TextureButton5" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs"]
+layout_mode = 2
+texture_normal = ExtResource("8_nef1m")
+texture_pressed = ExtResource("9_bcvpg")
+texture_hover = ExtResource("5_2qcak")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]5"
+scroll_active = false
+
+[node name="TextureButton6" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs"]
+layout_mode = 2
+texture_normal = ExtResource("8_nef1m")
+texture_pressed = ExtResource("9_bcvpg")
+texture_hover = ExtResource("5_2qcak")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]6"
+scroll_active = false
+
+[node name="TextureButton7" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs"]
+layout_mode = 2
+texture_normal = ExtResource("8_nef1m")
+texture_pressed = ExtResource("9_bcvpg")
+texture_hover = ExtResource("5_2qcak")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]7"
+scroll_active = false
+
+[node name="ColorRect" type="ColorRect" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.352941, 0.176471, 0.14902, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.0
+offset_top = 64.0
+offset_right = 190.0
+offset_bottom = 181.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center]PLACEHOLDER FOR GRIDS FOR STASH"
+
+[node name="back" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("3_v814g")
+texture_pressed = ExtResource("4_repa8")
+texture_hover = ExtResource("5_2qcak")
+stretch_mode = 3
+
+[node name="Text2" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/back"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]back"
 
 [node name="shop" type="Control" parent="." groups=["Ui"]]
 visible = false
@@ -109,9 +591,9 @@ offset_right = 956.0
 offset_bottom = 534.0
 text = "back"
 
-[connection signal="pressed" from="Buttons/missions" to="." method="_on_missions_pressed"]
-[connection signal="pressed" from="Buttons/stash" to="." method="_on_stash_pressed"]
-[connection signal="pressed" from="Buttons/shop" to="." method="_on_shop_pressed"]
-[connection signal="pressed" from="Mission/back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Stash/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Margin/Vbox/Center/HubTubs/missions" to="." method="_on_missions_pressed"]
+[connection signal="pressed" from="Margin/Vbox/Center/HubTubs/stash" to="." method="_on_stash_pressed"]
+[connection signal="pressed" from="Margin/Vbox/Center/HubTubs/shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="Mission/Margin/ColorRect/Margin/MissionList/MarginContainer/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="shop/back" to="." method="_on_back_pressed"]
