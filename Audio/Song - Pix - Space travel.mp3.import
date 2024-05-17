@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cc8fu176wh3bh"
+path="res://.godot/imported/Song - Pix - Space travel.mp3-d00d7c13f002dbd6e1278385b1fe0156.mp3str"
+
+[deps]
+
+source_file="res://Audio/Song - Pix - Space travel.mp3"
+dest_files=["res://.godot/imported/Song - Pix - Space travel.mp3-d00d7c13f002dbd6e1278385b1fe0156.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
