@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bru61wwju326n"]
+
+[ext_resource type="Texture2D" uid="uid://c71ivr81rfurv" path="res://Art_PNG/Props_Bunker_Down.png" id="1_0iumj"]
+
+[node name="Bunker" type="StaticBody2D" groups=["Bunker", "Prop"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0iumj")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-29, -12)
+polygon = PackedVector2Array(12, -21, 41, -26, 71, -21, 71, 56, 12, 57)

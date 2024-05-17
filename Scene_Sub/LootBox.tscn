@@ -1,0 +1,97 @@
+[gd_scene load_steps=13 format=3 uid="uid://cqy4p7dbms0kf"]
+
+[ext_resource type="Script" path="res://GD Scripts/LootBox.gd" id="1_6letl"]
+[ext_resource type="Texture2D" uid="uid://c152raqpp2x57" path="res://Art_PNG/Props_Lootbox_Small_Opened (Outlined).png" id="2_qwick"]
+[ext_resource type="Texture2D" uid="uid://83vrxel4as5h" path="res://Art_PNG/Props_Lootbox_Small_Locked (Outlined).png" id="2_uoko0"]
+[ext_resource type="Texture2D" uid="uid://cn10askpyfxeb" path="res://Art_PNG/Props_Lootbox_Small_Opened.png" id="3_5k5t3"]
+[ext_resource type="Texture2D" uid="uid://dw7v51siliyam" path="res://Art_PNG/Props_Lootbox_Small_Locked.png" id="3_476hi"]
+[ext_resource type="PackedScene" uid="uid://bc4j42x2jqd7o" path="res://Scene/inventory/bunker.tscn" id="4_jvuiq"]
+[ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="5_h04qh"]
+[ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="8_ko2bl"]
+[ext_resource type="Texture2D" uid="uid://dcfxp0gtvvhyu" path="res://Art_UI/ProgressBar_PlayerResource (Over).png" id="9_2yww2"]
+[ext_resource type="Texture2D" uid="uid://3vmgjxrcavhb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Green.png" id="10_0to0l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1g03"]
+size = Vector2(35, 13.75)
+
+[sub_resource type="Resource" id="Resource_b4lgt"]
+resource_name = "GridInventory"
+script = ExtResource("5_h04qh")
+height = 3
+width = 6
+
+[node name="LootBoxs" type="StaticBody2D" node_paths=PackedStringArray("HighLightArea", "InterArea") groups=["Bunker", "Prop"]]
+scale = Vector2(2, 2)
+script = ExtResource("1_6letl")
+OpenedSpriteHighLight = ExtResource("2_qwick")
+OpenedSprite = ExtResource("3_5k5t3")
+HighLightArea = NodePath("InterActArea")
+InterArea = NodePath("InterActArea")
+HighLightSprite = ExtResource("2_uoko0")
+OgSprite = ExtResource("3_476hi")
+Opentime = 1.0
+HasInventory = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_476hi")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-29, -12)
+polygon = PackedVector2Array(19, 6, 19, 17, 39, 17, 39, 6)
+
+[node name="InterActArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
+position = Vector2(0.5, 12.125)
+shape = SubResource("RectangleShape2D_q1g03")
+debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("4_jvuiq")]
+visible = false
+custom_minimum_size = Vector2(96, 48)
+offset_left = 642.0
+offset_top = 123.0
+offset_right = 738.0
+offset_bottom = 171.0
+scale = Vector2(2, 2)
+inventory = SubResource("Resource_b4lgt")
+init_contents = true
+autosave_file_path = ""
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 3.0
+offset_top = -21.0
+offset_right = 28.0
+offset_bottom = 2.0
+text = "E"
+horizontal_alignment = 1
+
+[node name="BotBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -25.5
+offset_top = -16.0
+offset_right = 70.5
+offset_bottom = -4.0
+scale = Vector2(0.5, 0.5)
+value = 50.0
+texture_under = ExtResource("8_ko2bl")
+texture_over = ExtResource("9_2yww2")
+texture_progress = ExtResource("10_0to0l")
+metadata/_edit_group_ = true
+
+[node name="reloading texts" type="Label" parent="BotBar"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -22.0
+offset_right = 87.0
+offset_bottom = 1.0
+text = "opening"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="InterActArea" to="." method="_on_inter_act_area_body_entered"]
+[connection signal="body_exited" from="InterActArea" to="." method="_on_inter_act_area_body_exited"]

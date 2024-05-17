@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("2_ejxod")
-name = ""
+name = "AK-47"
 description = ""
 tags = Array[StringName]([])
 texture = ExtResource("3_5bldw")

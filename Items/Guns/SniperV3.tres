@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://basndsdc45t7l"]
 
-[ext_resource type="Resource" uid="uid://gvubuypvpq84" path="res://GD Scripts/Resources/Guns/SniperV1.tres" id="1_javha"]
+[ext_resource type="Resource" uid="uid://dlrvunkdvvgyx" path="res://GD Scripts/Resources/Guns/SniperV3.tres" id="1_cher8"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_70yea"]
 [ext_resource type="Texture2D" uid="uid://b4a2qaonglahb" path="res://Art_PNG/Item_Gun_Sniper, Desert, v1.png" id="3_yu75u"]
 
@@ -15,7 +15,7 @@ max_stack_count = 1
 in_inventory_width = 4
 in_inventory_height = 2
 slot_flags = 4
-custom_data = ExtResource("1_javha")
+custom_data = ExtResource("1_cher8")
 default_properties_string = "{
 \"price\": {
 \"res://Items/Guns/pistolV1.tres\": 2

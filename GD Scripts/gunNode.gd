@@ -41,6 +41,11 @@ func ReloadCurrentGun():
 	var tween  = get_tree().create_tween()
 	tween.tween_property(reload_bar, "value", 100,CurrentGun.ReloadTime)
 	await  tween.finished
+	if !CurrentGun:
+		Reloading = false
+		reload_bar.visible = false
+		UpdateAmmoText()
+		return
 	var price : Dictionary = {CurrentGun.BulletTypeItem: CurrentGun.MagSize}
 	var items_to_check = {}
 	var counts := {}

@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://bj2vnrppqbww3"]
 
-[ext_resource type="Resource" uid="uid://do7sgf5bh3gtx" path="res://GD Scripts/Resources/Guns/ShotGunV1.tres" id="1_05udr"]
+[ext_resource type="Resource" uid="uid://oksgyhpi0euw" path="res://GD Scripts/Resources/Guns/ShotGunV5.tres" id="1_nwp4b"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_2k10r"]
 [ext_resource type="Texture2D" uid="uid://bw0olar15pkkj" path="res://Art_PNG/Item_Gun_Shotgun, Desert, v1.png" id="3_kq2l0"]
 
 [resource]
 script = ExtResource("2_2k10r")
-name = ""
+name = "UTS-15"
 description = ""
 tags = Array[StringName]([])
 texture = ExtResource("3_kq2l0")
@@ -15,7 +15,7 @@ max_stack_count = 1
 in_inventory_width = 3
 in_inventory_height = 1
 slot_flags = 4
-custom_data = ExtResource("1_05udr")
+custom_data = ExtResource("1_nwp4b")
 default_properties_string = "{
 \"price\": {
 \"res://Items/Guns/pistolV1.tres\": 2

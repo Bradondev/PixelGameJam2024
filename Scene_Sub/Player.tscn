@@ -7,11 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cfltwwhawhwrv" path="res://Art_PNG/Player_Base, Placeholder.png" id="2_bcn8m"]
 [ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="2_hwfff"]
 [ext_resource type="PackedScene" uid="uid://b7got3qc3fi8j" path="res://Scene_Sub/gunNode.tscn" id="2_kanhx"]
-[ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_description.gd" id="3_mtpcd"]
-[ext_resource type="PackedScene" uid="uid://cq2ptxw1g8mjf" path="res://Scene/change_sceneButton.tscn" id="4_4dfhq"]
-[ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_price.gd" id="4_8rfm8"]
-[ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_key_hints.gd" id="5_g6k7r"]
-[ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_stats.gd" id="6_dttps"]
 [ext_resource type="Texture2D" uid="uid://ceynpt3hds851" path="res://Art_UI/Inventory _Label.png" id="6_t7dqc"]
 [ext_resource type="PackedScene" uid="uid://4ohh3iq6c7uc" path="res://Scene/inventory/playerEquitment.tscn" id="7_4fhhw"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="7_pe8uv"]
@@ -24,9 +19,12 @@
 [ext_resource type="Resource" uid="uid://dpkpknqrbljcx" path="res://Items/Guns/SmgV1.tres" id="14_e38q6"]
 [ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="15_7wkj2"]
 [ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/SniperV1.tres" id="15_lah56"]
+[ext_resource type="Resource" uid="uid://6r12xhs5o152" path="res://Items/Aqua.tres" id="17_dr0o5"]
 [ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="20_8k8yi"]
+[ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="20_kcioh"]
 [ext_resource type="Texture2D" uid="uid://dcfxp0gtvvhyu" path="res://Art_UI/ProgressBar_PlayerResource (Over).png" id="21_o6y1b"]
 [ext_resource type="Texture2D" uid="uid://3vmgjxrcavhb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Green.png" id="22_ieffp"]
+[ext_resource type="Texture2D" uid="uid://bt0b4nk6uvm0a" path="res://Art_UI/Shop_TextureButton, Normal.png" id="25_faxl1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kf0pw"]
 atlas = ExtResource("2_65ycv")
@@ -96,15 +94,21 @@ height = 10.0
 
 [sub_resource type="Resource" id="Resource_54y7k"]
 script = ExtResource("9_qwigw")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("8_0e3s1"), ExtResource("10_3jppb"), ExtResource("12_2jiyi"), ExtResource("13_bd66d"), ExtResource("14_e38q6"), ExtResource("15_lah56"), ExtResource("15_7wkj2")])
-item_repeat_ranges = Array[Vector2]([Vector2(50, 50), Vector2(50, 50), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(50, 60)])
-item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0])
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("8_0e3s1"), ExtResource("10_3jppb"), ExtResource("12_2jiyi"), ExtResource("13_bd66d"), ExtResource("14_e38q6"), ExtResource("15_lah56"), ExtResource("15_7wkj2"), ExtResource("17_dr0o5")])
+item_repeat_ranges = Array[Vector2]([Vector2(50, 50), Vector2(50, 50), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(50, 60), Vector2(50, 60)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0])
 repeat_post_chance = true
 randomize_locations = true
 delay_between_items = 0.0
 spread_distance = 32.0
 spread_cone_degrees = 360.0
 spread_angle_degrees = 0.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0wuuo"]
+texture = ExtResource("20_kcioh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hk4p5"]
+texture = ExtResource("25_faxl1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muh05"]
 size = Vector2(23, 34.5)
@@ -113,13 +117,16 @@ size = Vector2(23, 34.5)
 radius = 4.5
 height = 23.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("inventory", "PlayerInventory")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("inventory", "PlayerInventory") groups=["Player"]]
 scale = Vector2(2, 2)
+collision_layer = 257
 script = ExtResource("1_022et")
 inventory = NodePath("UI/Inventory")
 PlayerInventory = NodePath("UI/Inventory/player")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_vpuo5")
 animation = &"PistolShoot"
 frame_progress = 0.766711
@@ -148,9 +155,11 @@ position = Vector2(0, 11)
 shape = SubResource("CapsuleShape2D_278xp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 
 [node name="UI" parent="." instance=ExtResource("1_4gmy4")]
 process_mode = 3
+visible = false
 
 [node name="Inventory" type="Control" parent="UI"]
 layout_mode = 3
@@ -159,10 +168,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/Inventory"]
+layout_mode = 0
 offset_left = 250.0
+offset_top = 5.0
 offset_right = 368.0
-offset_bottom = 9.0
-scale = Vector2(2, 2)
+offset_bottom = 14.0
 theme_override_constants/separation = 0
 metadata/_edit_group_ = true
 
@@ -183,21 +193,12 @@ offset_right = 140.0
 offset_bottom = 1.0
 cell_size = Vector2(32, 32)
 
-[node name="ChangeScene" parent="UI/Inventory" instance=ExtResource("4_4dfhq")]
-layout_mode = 0
-offset_left = 445.0
-offset_top = 399.0
-offset_right = 557.0
-offset_bottom = 430.0
-Level = "res://Scene/DebugSave.tscn"
-
 [node name="player" parent="UI/Inventory" instance=ExtResource("1_ewq30")]
 layout_mode = 0
 offset_left = 250.0
 offset_top = 14.0
 offset_right = 362.0
 offset_bottom = 126.0
-scale = Vector2(2, 2)
 contents = SubResource("Resource_54y7k")
 init_contents = true
 interaction_mode = 29
@@ -211,8 +212,11 @@ offset_left = 3.0
 offset_top = 80.0
 offset_right = 225.0
 offset_bottom = 302.0
-property_scripts = Array[Script]([ExtResource("3_mtpcd"), ExtResource("4_8rfm8"), ExtResource("5_g6k7r"), ExtResource("6_dttps")])
-color_description = Color(0.203922, 0.203922, 0.203922, 1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_0wuuo")
+compare_to_inventory = NodePath("../player")
+property_scripts = Array[Script]([])
+nameplate_panel = SubResource("StyleBoxTexture_hk4p5")
+back_panel = SubResource("StyleBoxTexture_0wuuo")
 
 [node name="Item" parent="UI/Inventory" instance=ExtResource("7_pe8uv")]
 offset_left = 3.0
@@ -220,6 +224,31 @@ offset_top = 78.0
 offset_right = 115.0
 offset_bottom = 190.0
 unit_size = Vector2(32, 32)
+hide_cursor = true
+
+[node name="DescriptionbackGround" type="TextureRect" parent="UI/Inventory"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 276.0
+offset_right = 237.0
+offset_bottom = 471.0
+texture = ExtResource("20_kcioh")
+
+[node name="name" type="RichTextLabel" parent="UI/Inventory/DescriptionbackGround"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 232.0
+offset_bottom = 33.0
+bbcode_enabled = true
+text = "[center]Name"
+
+[node name="Description" type="RichTextLabel" parent="UI/Inventory/DescriptionbackGround"]
+layout_mode = 0
+offset_top = 33.0
+offset_right = 233.0
+offset_bottom = 195.0
+bbcode_enabled = true
+text = "[center] Description"
 
 [node name="InterActArea" type="Area2D" parent="."]
 collision_layer = 8

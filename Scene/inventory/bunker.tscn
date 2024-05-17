@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://bc4j42x2jqd7o"]
+
+[ext_resource type="Script" path="res://addons/wyvernbox/inventory_view.gd" id="1_0llpc"]
+[ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="2_62im2"]
+[ext_resource type="PackedScene" uid="uid://co5ok1mm2s7vu" path="res://addons/wyvernbox_prefabs/item_stack_view.tscn" id="3_b67mn"]
+[ext_resource type="StyleBox" uid="uid://cqx3opxr50d2o" path="res://addons/wyvernbox_prefabs/graphics/selected_cell.tres" id="4_2gnfk"]
+[ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="5_4055m"]
+[ext_resource type="PackedScene" uid="uid://b7jlucsddt6dg" path="res://addons/wyvernbox_prefabs/inventory_cell.tscn" id="6_tdnmv"]
+[ext_resource type="Texture2D" uid="uid://c4t3h4sbhkgk4" path="res://Art_UI/Inventory _Grid, Single_16x16px.png" id="7_4ny7p"]
+
+[sub_resource type="Resource" id="Resource_plmu5"]
+resource_name = "GridInventory"
+script = ExtResource("2_62im2")
+height = 7
+width = 7
+
+[node name="MarginContainer" type="MarginContainer"]
+custom_minimum_size = Vector2(112, 112)
+offset_right = 112.0
+offset_bottom = 112.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/margin_right = 0
+script = ExtResource("1_0llpc")
+inventory = SubResource("Resource_plmu5")
+init_contents = false
+item_scene = ExtResource("3_b67mn")
+cell_size = Vector2(16, 16)
+selected_item_style = ExtResource("4_2gnfk")
+grid_background = NodePath("BG")
+autosave_file_path = "3"
+
+[node name="Border" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("5_4055m")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(16, 16)
+
+[node name="Cell" parent="SubViewport" instance=ExtResource("6_tdnmv")]
+custom_minimum_size = Vector2(0, 0)
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_4ny7p")
+expand_mode = 0
+stretch_mode = 1
+
+[node name="BG" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 6.84
+mouse_filter = 2
+texture = ExtResource("7_4ny7p")
+stretch_mode = 1

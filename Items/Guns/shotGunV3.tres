@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://v0pjp1xp6582"]
 
-[ext_resource type="Resource" uid="uid://do7sgf5bh3gtx" path="res://GD Scripts/Resources/Guns/ShotGunV1.tres" id="1_32n0y"]
+[ext_resource type="Resource" uid="uid://dcs3xpldmvg2a" path="res://GD Scripts/Resources/Guns/ShotGunV3.tres" id="1_kwgub"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_h00gs"]
 [ext_resource type="Texture2D" uid="uid://bw0olar15pkkj" path="res://Art_PNG/Item_Gun_Shotgun, Desert, v1.png" id="3_dr1l3"]
 
 [resource]
 script = ExtResource("2_h00gs")
-name = ""
+name = "Saiga-12"
 description = ""
 tags = Array[StringName]([])
 texture = ExtResource("3_dr1l3")
@@ -15,7 +15,7 @@ max_stack_count = 1
 in_inventory_width = 3
 in_inventory_height = 1
 slot_flags = 4
-custom_data = ExtResource("1_32n0y")
+custom_data = ExtResource("1_kwgub")
 default_properties_string = "{
 \"price\": {
 \"res://Items/Guns/pistolV1.tres\": 2

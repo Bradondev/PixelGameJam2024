@@ -14,3 +14,6 @@ drop_camera_3d = NodePath("")
 drop_ray_mask = 1
 unit_size = Vector2(18, 18)
 hide_cursor = false
+
+[node name="Count" parent="." index="2"]
+scale = Vector2(2, 2)

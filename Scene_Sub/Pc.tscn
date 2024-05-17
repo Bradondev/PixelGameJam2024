@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://btcuans18pkm8"]
+
+[ext_resource type="Script" path="res://GD Scripts/InterActAble.gd" id="1_ybxhk"]
+[ext_resource type="Texture2D" uid="uid://c5kpbl71cojah" path="res://Art_PNG/Props_Terminal.png" id="2_1n82y"]
+[ext_resource type="Texture2D" uid="uid://caxr3bukrg2fw" path="res://Art_PNG/Props_Terminal (Outlined).png" id="2_emfwe"]
+[ext_resource type="PackedScene" uid="uid://bc4j42x2jqd7o" path="res://Scene/inventory/bunker.tscn" id="6_a6v2t"]
+[ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="7_dnlqv"]
+[ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="8_fmvn1"]
+[ext_resource type="Texture2D" uid="uid://dcfxp0gtvvhyu" path="res://Art_UI/ProgressBar_PlayerResource (Over).png" id="9_hgkxm"]
+[ext_resource type="Texture2D" uid="uid://3vmgjxrcavhb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Green.png" id="10_7t6hp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1g03"]
+size = Vector2(58, 26.25)
+
+[sub_resource type="Resource" id="Resource_b4lgt"]
+resource_name = "GridInventory"
+script = ExtResource("7_dnlqv")
+height = 3
+width = 4
+
+[node name="Terminal" type="StaticBody2D" node_paths=PackedStringArray("HighLightArea", "InterArea") groups=["Bunker", "Prop"]]
+scale = Vector2(2, 2)
+script = ExtResource("1_ybxhk")
+HighLightArea = NodePath("InterActArea")
+InterArea = NodePath("InterActArea")
+HighLightSprite = ExtResource("2_emfwe")
+OgSprite = ExtResource("2_1n82y")
+Opentime = 1.0
+HasInventory = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1n82y")
+offset = Vector2(0, -22)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-29.5, -34.25)
+polygon = PackedVector2Array(-1, 0.5, -0.5, 20.5, 2.5, 33, 5.5, 19.5, 53, 20, 54, 33, 55, 21, 59, 21.5, 59, 0.5)
+
+[node name="InterActArea" type="Area2D" parent="."]
+position = Vector2(-0.5, -22.25)
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
+position = Vector2(-0.5, 18.375)
+shape = SubResource("RectangleShape2D_q1g03")
+debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("6_a6v2t")]
+visible = false
+custom_minimum_size = Vector2(64, 48)
+offset_left = 642.0
+offset_top = 123.0
+offset_right = 706.0
+offset_bottom = 171.0
+scale = Vector2(2, 2)
+inventory = SubResource("Resource_b4lgt")
+init_contents = true
+autosave_file_path = ""
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 3.0
+offset_top = -21.0
+offset_right = 28.0
+offset_bottom = 2.0
+text = "E"
+horizontal_alignment = 1
+
+[node name="BotBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -28.0
+offset_top = -31.5
+offset_right = 68.0
+offset_bottom = -19.5
+scale = Vector2(0.5, 0.5)
+value = 50.0
+texture_under = ExtResource("8_fmvn1")
+texture_over = ExtResource("9_hgkxm")
+texture_progress = ExtResource("10_7t6hp")
+metadata/_edit_group_ = true
+
+[node name="reloading texts" type="Label" parent="BotBar"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -22.0
+offset_right = 87.0
+offset_bottom = 1.0
+text = "hacking"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="InterActArea" to="." method="_on_inter_act_area_body_entered"]
+[connection signal="body_exited" from="InterActArea" to="." method="_on_inter_act_area_body_exited"]

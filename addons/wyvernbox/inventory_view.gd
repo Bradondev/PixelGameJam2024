@@ -218,8 +218,9 @@ func _ready():
 	add_to_group(&"inventory_view")
 	add_to_group(&"view_filterable")
 	_on_visibility_changed()
-
-
+	var player = get_tree().get_nodes_in_group("Player")[0]
+	if player:
+		item_stack_selected.connect(player.EditDescriptionAField)
 func _enter_tree():
 	_instances.push_front(self)
 

@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_vg2vs")
-name = "pistol"
-description = "small gun"
+name = "Bersa Thunder 9"
+description = "\"Small gun\""
 tags = Array[StringName]([])
 texture = ExtResource("3_iqd4g")
 texture_scale = 1.0

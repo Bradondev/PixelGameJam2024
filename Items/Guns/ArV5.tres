@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://c4f7ja8u47jwm"]
 
-[ext_resource type="Resource" uid="uid://bh3w6gq1pbvnm" path="res://GD Scripts/Resources/Guns/ArV1.tres" id="1_jqay6"]
+[ext_resource type="Resource" uid="uid://p1ltotsn40q2" path="res://GD Scripts/Resources/Guns/ArV5.tres" id="1_8pcwg"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_1juor"]
 [ext_resource type="Texture2D" uid="uid://5mlquwt4ufnu" path="res://Art_PNG/Item_Gun_AR_Blue, v1.png" id="3_yt4m3"]
 
 [resource]
 script = ExtResource("2_1juor")
-name = ""
+name = "SC-2010"
 description = ""
 tags = Array[StringName]([])
 texture = ExtResource("3_yt4m3")
@@ -15,6 +15,6 @@ max_stack_count = 1
 in_inventory_width = 1
 in_inventory_height = 1
 slot_flags = 4
-custom_data = ExtResource("1_jqay6")
+custom_data = ExtResource("1_8pcwg")
 default_properties_string = "{}"
 default_properties = {}

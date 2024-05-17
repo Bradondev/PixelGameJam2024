@@ -73,11 +73,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Stash"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("3_arqkn")
 
 [node name="back" type="Button" parent="Stash"]
+layout_mode = 0
 offset_left = 891.0
 offset_top = 499.0
 offset_right = 956.0
@@ -94,11 +96,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="shop"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("4_j0yrg")
 
 [node name="back" type="Button" parent="shop"]
+layout_mode = 0
 offset_left = 891.0
 offset_top = 499.0
 offset_right = 956.0

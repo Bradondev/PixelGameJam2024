@@ -14,7 +14,8 @@ class_name  Player
 
 @onready var mid_bar: TextureProgressBar = $UI/BotMargin/Hbox/Player/Resources/MidBar
 @onready var equipment: InventoryView = $UI/Inventory/Equip
-
+@onready var Name: RichTextLabel = $UI/Inventory/DescriptionbackGround/name
+@onready var description: RichTextLabel = $UI/Inventory/DescriptionbackGround/Description
 
 func  _ready() -> void: 
 	UpdataProgress()
@@ -101,3 +102,8 @@ func _on_equip_item_stack_removed(item_stack: ItemStack) -> void:
 		print_debug("plants")
 	elif item_stack.position_in_inventory == Vector2(6,0):
 		print_debug("feet")
+
+
+func EditDescriptionAField(item_view: ItemStackView):
+	description.text = "[center]" +item_view.stack.item_type.description
+	Name.text = "[center]" + item_view.stack.item_type.name

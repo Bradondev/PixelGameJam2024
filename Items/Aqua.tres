@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://6r12xhs5o152"]
+
+[ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="1_u6knn"]
+[ext_resource type="Texture2D" uid="uid://243g83cqtkxc" path="res://Art_PNG/Item_Currency_Aqua.png" id="2_bx4t5"]
+
+[resource]
+script = ExtResource("1_u6knn")
+name = "Aqua"
+description = ""
+tags = Array[StringName]([])
+texture = ExtResource("2_bx4t5")
+texture_scale = 1.0
+max_stack_count = 1000
+in_inventory_width = 1
+in_inventory_height = 1
+slot_flags = 64
+default_properties_string = "{
+\"back_color\": Color(0, 0.305882, 0.305882, 1)
+}"
+default_properties = {
+"back_color": Color(0, 0.305882, 0.305882, 1)
+}
