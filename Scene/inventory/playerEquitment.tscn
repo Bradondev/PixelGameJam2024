@@ -1,12 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://4ohh3iq6c7uc"]
+[gd_scene load_steps=17 format=3 uid="uid://4ohh3iq6c7uc"]
 
 [ext_resource type="Script" path="res://addons/wyvernbox/inventory_view.gd" id="1_trkmv"]
 [ext_resource type="Script" path="res://addons/wyvernbox/inventories/restricted_inventory.gd" id="2_iwicm"]
 [ext_resource type="PackedScene" uid="uid://co5ok1mm2s7vu" path="res://addons/wyvernbox_prefabs/item_stack_view.tscn" id="3_ij5su"]
 [ext_resource type="StyleBox" uid="uid://cqx3opxr50d2o" path="res://addons/wyvernbox_prefabs/graphics/selected_cell.tres" id="4_lcqrf"]
 [ext_resource type="PackedScene" uid="uid://b7jlucsddt6dg" path="res://addons/wyvernbox_prefabs/inventory_cell.tscn" id="5_flo8l"]
-[ext_resource type="Texture2D" uid="uid://bbktnb86mocwh" path="res://Art_UI/Equipment_EquipBackground.png" id="5_r62ds"]
+[ext_resource type="Texture2D" uid="uid://c706m4p7oyn4x" path="res://Art_UI/Equipment_Header_Equipment.png" id="5_t0qfh"]
+[ext_resource type="Texture2D" uid="uid://ccc0u26heci2b" path="res://Art_UI/UI_Close_Inactive.png" id="6_2es7w"]
+[ext_resource type="Texture2D" uid="uid://dnf86xepq13c2" path="res://Art_UI/UI_Close_Active.png" id="7_7wco6"]
 [ext_resource type="Texture2D" uid="uid://3wkyukhse1gf" path="res://Art_UI/Equipment_EquipWeapon.png" id="7_bx55o"]
+[ext_resource type="Texture2D" uid="uid://b0k63ah48v8c7" path="res://Art_UI/Equipment_EquipBackground_V2.png" id="8_2doix"]
 [ext_resource type="Texture2D" uid="uid://de4sxb56jy8d7" path="res://Art_UI/Equipment_EquipThrowables.png" id="8_hg4uh"]
 [ext_resource type="Texture2D" uid="uid://c7nyobbsa7ons" path="res://Art_UI/Equipment_EquipHelmet.png" id="9_xyo4o"]
 [ext_resource type="Texture2D" uid="uid://mpq1fbxbnv7d" path="res://Art_UI/Equipment_EquipChest.png" id="10_qjtvg"]
@@ -21,13 +24,14 @@ restricted_to_types = Array[int]([4, 4, 2097152, 262144, 524288, 4194304, 167772
 width = 7
 
 [node name="Equip" type="Control" groups=["inventory_view"]]
+clip_contents = true
+custom_minimum_size = Vector2(236, 195)
 layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -320.0
-offset_right = -320.0
-grow_horizontal = 2
+anchors_preset = 0
+offset_right = 236.0
+offset_bottom = 195.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 script = ExtResource("1_trkmv")
 inventory = SubResource("3")
 item_scene = ExtResource("3_ij5su")
@@ -35,15 +39,39 @@ cell_size = Vector2(16, 16)
 selected_item_style = ExtResource("4_lcqrf")
 view_filter_color = Color(1, 1, 1, 0.74902)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Vbox" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = -159.0
-offset_right = 77.0
-offset_bottom = 260.0
-texture = ExtResource("5_r62ds")
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 0
+
+[node name="Equipheader" type="HBoxContainer" parent="Vbox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="EquipText" type="TextureRect" parent="Vbox/Equipheader"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("5_t0qfh")
+stretch_mode = 2
+
+[node name="CloseButton" type="TextureButton" parent="Vbox/Equipheader"]
+layout_mode = 2
+size_flags_vertical = 0
+texture_normal = ExtResource("6_2es7w")
+texture_hover = ExtResource("7_7wco6")
+
+[node name="EquipmentBox" type="TextureRect" parent="Vbox"]
+layout_mode = 2
+texture = ExtResource("8_2doix")
+stretch_mode = 2
 
 [node name="Cells" type="Control" parent="."]
 anchors_preset = 0
+offset_left = 159.0
+offset_top = 9.0
+offset_right = 159.0
+offset_bottom = 9.0
 mouse_filter = 2
 
 [node name="weapon1" parent="Cells" instance=ExtResource("5_flo8l")]

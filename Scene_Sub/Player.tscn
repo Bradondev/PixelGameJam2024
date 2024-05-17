@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bpilr5la784ys"]
+[gd_scene load_steps=35 format=3 uid="uid://bpilr5la784ys"]
 
 [ext_resource type="PackedScene" uid="uid://bhkiy4ucj30lo" path="res://Scene/UI.tscn" id="1_4gmy4"]
 [ext_resource type="Script" path="res://GD Scripts/Player.gd" id="1_022et"]
@@ -6,11 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://b48py1ks7spng" path="res://Scene_Sub/CompositeSprite.tscn" id="2_c03tf"]
 [ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="2_hwfff"]
 [ext_resource type="PackedScene" uid="uid://b7got3qc3fi8j" path="res://Scene_Sub/gunNode.tscn" id="2_kanhx"]
-[ext_resource type="Texture2D" uid="uid://ceynpt3hds851" path="res://Art_UI/Inventory _Label.png" id="6_t7dqc"]
+[ext_resource type="Texture2D" uid="uid://01g12v5bkbi7" path="res://Art_UI/Equipment_Header_Inventory.png" id="5_y0a5w"]
+[ext_resource type="Texture2D" uid="uid://c01fpnkhhaubx" path="res://Art_UI/Equipment_Header_Information.png" id="6_leruw"]
 [ext_resource type="PackedScene" uid="uid://4ohh3iq6c7uc" path="res://Scene/inventory/playerEquitment.tscn" id="7_4fhhw"]
+[ext_resource type="Texture2D" uid="uid://cfcc8kd3my6n1" path="res://Art_UI/Equipment_InformationBackground.png" id="7_h428q"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="7_pe8uv"]
-[ext_resource type="Texture2D" uid="uid://dnf86xepq13c2" path="res://Art_UI/UI_Close_Active.png" id="7_uoci8"]
 [ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="8_0e3s1"]
+[ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="8_egc2v"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="9_qwigw"]
 [ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="10_3jppb"]
 [ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistolV1.tres" id="12_2jiyi"]
@@ -18,6 +20,7 @@
 [ext_resource type="Resource" uid="uid://dpkpknqrbljcx" path="res://Items/Guns/SmgV1.tres" id="14_e38q6"]
 [ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="15_7wkj2"]
 [ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/SniperV1.tres" id="15_lah56"]
+[ext_resource type="Texture2D" uid="uid://8pco4p25s6q5" path="res://Art_UI/Equipment_Footer_Inventory.png" id="17_3rjy4"]
 [ext_resource type="Resource" uid="uid://6r12xhs5o152" path="res://Items/Aqua.tres" id="17_dr0o5"]
 [ext_resource type="Resource" uid="uid://ncpu4qpolv3d" path="res://Items/Guns/ArV1.tres" id="17_nh65r"]
 [ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="20_8k8yi"]
@@ -60,7 +63,7 @@ scale = Vector2(2, 2)
 collision_layer = 257
 script = ExtResource("1_022et")
 inventory = NodePath("UI/Inventory")
-PlayerInventory = NodePath("UI/Inventory/player")
+PlayerInventory = NodePath("UI/Inventory/Margin/EquipmentAndInventory/InventoryVbox/player")
 
 [node name="CompositeSprite" parent="." instance=ExtResource("2_c03tf")]
 testing = false
@@ -68,7 +71,7 @@ testing = false
 [node name="Gun" parent="." node_paths=PackedStringArray("PlayerInventory", "Ui", "ammoLabel", "player") instance=ExtResource("2_kanhx")]
 position = Vector2(0, -16)
 rotation = -0.0279253
-PlayerInventory = NodePath("../UI/Inventory/player")
+PlayerInventory = NodePath("../UI/Inventory/Margin/EquipmentAndInventory/InventoryVbox/player")
 Ui = NodePath("../UI")
 ammoLabel = NodePath("../UI/BotMargin/Hbox/Ammo/AmmoText")
 player = NodePath("..")
@@ -79,7 +82,7 @@ visible = false
 position = Vector2(0, -16)
 rotation = -0.011148
 scale = Vector2(0.5, 0.5)
-PlayerInventory = NodePath("../UI/Inventory/player")
+PlayerInventory = NodePath("../UI/Inventory/Margin/EquipmentAndInventory/InventoryVbox/player")
 Ui = NodePath("../UI")
 ammoLabel = NodePath("../UI/BotMargin/Hbox/Ammo/AmmoText")
 player = NodePath("..")
@@ -97,47 +100,82 @@ process_mode = 3
 
 [node name="Inventory" type="Control" parent="UI"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 318.0
+grow_horizontal = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Inventory"]
-layout_mode = 0
-offset_left = 250.0
-offset_top = 5.0
-offset_right = 368.0
-offset_bottom = 14.0
-theme_override_constants/separation = 0
-metadata/_edit_group_ = true
-
-[node name="InventoryLabel" type="TextureRect" parent="UI/Inventory/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("6_t7dqc")
-
-[node name="close" type="TextureRect" parent="UI/Inventory/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("7_uoci8")
-stretch_mode = 2
-
-[node name="Equip" parent="UI/Inventory" instance=ExtResource("7_4fhhw")]
+[node name="Margin" type="MarginContainer" parent="UI/Inventory"]
 layout_mode = 1
-offset_left = 140.0
-offset_top = 1.0
-offset_right = 140.0
-offset_bottom = 1.0
-cell_size = Vector2(32, 32)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 310.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
 
-[node name="player" parent="UI/Inventory" instance=ExtResource("1_ewq30")]
-layout_mode = 0
-offset_left = 250.0
-offset_top = 14.0
-offset_right = 362.0
-offset_bottom = 126.0
+[node name="EquipmentAndInventory" type="HBoxContainer" parent="UI/Inventory/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 500
+alignment = 1
+
+[node name="InventoryVbox" type="VBoxContainer" parent="UI/Inventory/Margin/EquipmentAndInventory"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/Inventory/Margin/EquipmentAndInventory/InventoryVbox"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("5_y0a5w")
+
+[node name="player" parent="UI/Inventory/Margin/EquipmentAndInventory/InventoryVbox" instance=ExtResource("1_ewq30")]
+layout_mode = 2
+size_flags_vertical = 4
 contents = SubResource("Resource_54y7k")
 init_contents = true
 interaction_mode = 29
 autosave_file_path = ""
 autosave_intensity = 1
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Inventory/Margin/EquipmentAndInventory/InventoryVbox"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("17_3rjy4")
+
+[node name="EquipmentVbox" type="VBoxContainer" parent="UI/Inventory/Margin/EquipmentAndInventory"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Equip" parent="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox" instance=ExtResource("7_4fhhw")]
+layout_mode = 2
+cell_size = Vector2(32, 32)
+
+[node name="InformationHeader" type="TextureRect" parent="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox"]
+layout_mode = 2
+texture = ExtResource("6_leruw")
+
+[node name="DescriptionbackGround" type="TextureRect" parent="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox"]
+layout_mode = 2
+texture = ExtResource("7_h428q")
+
+[node name="name" type="RichTextLabel" parent="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 232.0
+offset_bottom = 33.0
+theme = ExtResource("8_egc2v")
+bbcode_enabled = true
+text = "[center]Name"
+
+[node name="Description" type="RichTextLabel" parent="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround"]
+layout_mode = 0
+offset_top = 33.0
+offset_right = 233.0
+offset_bottom = 195.0
+theme = ExtResource("8_egc2v")
+bbcode_enabled = true
+text = "[center] Description"
 
 [node name="Tooltip" parent="UI/Inventory" instance=ExtResource("2_hwfff")]
 visible = false
@@ -147,7 +185,7 @@ offset_top = 80.0
 offset_right = 225.0
 offset_bottom = 302.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_0wuuo")
-compare_to_inventory = NodePath("../player")
+compare_to_inventory = NodePath("../Margin/EquipmentAndInventory/InventoryVbox/player")
 property_scripts = Array[Script]([])
 nameplate_panel = SubResource("StyleBoxTexture_hk4p5")
 back_panel = SubResource("StyleBoxTexture_0wuuo")
@@ -159,30 +197,6 @@ offset_right = 115.0
 offset_bottom = 190.0
 unit_size = Vector2(32, 32)
 hide_cursor = true
-
-[node name="DescriptionbackGround" type="TextureRect" parent="UI/Inventory"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 276.0
-offset_right = 237.0
-offset_bottom = 471.0
-texture = ExtResource("20_kcioh")
-
-[node name="name" type="RichTextLabel" parent="UI/Inventory/DescriptionbackGround"]
-layout_mode = 0
-offset_left = -1.0
-offset_right = 232.0
-offset_bottom = 33.0
-bbcode_enabled = true
-text = "[center]Name"
-
-[node name="Description" type="RichTextLabel" parent="UI/Inventory/DescriptionbackGround"]
-layout_mode = 0
-offset_top = 33.0
-offset_right = 233.0
-offset_bottom = 195.0
-bbcode_enabled = true
-text = "[center] Description"
 
 [node name="InterActArea" type="Area2D" parent="."]
 visible = false
@@ -225,8 +239,8 @@ offset_bottom = 1.0
 text = "Reloading"
 horizontal_alignment = 1
 
-[connection signal="item_stack_added" from="UI/Inventory/Equip" to="." method="_on_equip_item_stack_added"]
-[connection signal="item_stack_changed" from="UI/Inventory/Equip" to="." method="_on_equip_item_stack_changed"]
-[connection signal="item_stack_removed" from="UI/Inventory/Equip" to="." method="_on_equip_item_stack_removed"]
+[connection signal="item_stack_added" from="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/Equip" to="." method="_on_equip_item_stack_added"]
+[connection signal="item_stack_changed" from="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/Equip" to="." method="_on_equip_item_stack_changed"]
+[connection signal="item_stack_removed" from="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/Equip" to="." method="_on_equip_item_stack_removed"]
 
 [editable path="UI"]

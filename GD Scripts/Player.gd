@@ -18,9 +18,9 @@ var CurrentGunNode : GunNode
 @onready var composite_sprite: Node2D = $CompositeSprite
 
 @onready var mid_bar: TextureProgressBar = $UI/BotMargin/Hbox/Player/Resources/MidBar
-@onready var equipment: InventoryView = $UI/Inventory/Equip
-@onready var Name: RichTextLabel = $UI/Inventory/DescriptionbackGround/name
-@onready var description: RichTextLabel = $UI/Inventory/DescriptionbackGround/Description
+@onready var equipment: InventoryView = $UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/Equip
+@onready var Name: RichTextLabel = $UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround/name
+@onready var description: RichTextLabel = $UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround/Description
 
 func  _ready() -> void: 
 	CurrentGunNode = gun
