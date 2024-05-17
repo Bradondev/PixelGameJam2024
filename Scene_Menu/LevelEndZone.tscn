@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dev0qboo4pbph"]
+[gd_scene load_steps=6 format=3 uid="uid://dev0qboo4pbph"]
 
 [ext_resource type="Script" path="res://Scene_Menu/missionManager.gd" id="1_icfrn"]
 [ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="2_3b8y6"]
+[ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="3_s2ivh"]
+[ext_resource type="PackedScene" uid="uid://d1ui8lkg8n8hk" path="res://Scene/hub.tscn" id="4_q3xv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixmot"]
 size = Vector2(234, 140)
 
-[node name="mission1" type="Node2D"]
+[node name="EndZone" type="Node2D"]
 script = ExtResource("1_icfrn")
 
 [node name="InterActArea" type="Area2D" parent="."]
@@ -19,7 +21,6 @@ shape = SubResource("RectangleShape2D_ixmot")
 debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 offset_left = 395.0
@@ -50,13 +51,17 @@ grow_vertical = 2
 alignment = 1
 metadata/_edit_group_ = true
 
-[node name="Button" type="Button" parent="CanvasLayer/TextureRect/HBoxContainer"]
+[node name="on" type="Button" parent="CanvasLayer/TextureRect/HBoxContainer"]
 layout_mode = 2
 text = "yes"
 
-[node name="Button2" type="Button" parent="CanvasLayer/TextureRect/HBoxContainer"]
+[node name="off" type="Button" parent="CanvasLayer/TextureRect/HBoxContainer"]
 layout_mode = 2
 text = "no"
+
+[node name="Load_Screen" parent="CanvasLayer" instance=ExtResource("3_s2ivh")]
+visible = false
+Scene = ExtResource("4_q3xv2")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -116.0
@@ -69,3 +74,5 @@ vertical_alignment = 1
 
 [connection signal="body_entered" from="InterActArea" to="." method="_on_inter_act_area_body_entered"]
 [connection signal="body_exited" from="InterActArea" to="." method="_on_inter_act_area_body_exited"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/HBoxContainer/on" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/HBoxContainer/off" to="." method="_on_button_2_pressed"]

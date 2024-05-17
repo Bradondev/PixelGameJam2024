@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("2_hmjxf")
-name = "Smg"
+name = "CZ Scorpion Evo 3"
 description = ""
 tags = Array[StringName]([])
 texture = ExtResource("3_xe8eg")
@@ -17,8 +17,9 @@ in_inventory_height = 1
 slot_flags = 4
 custom_data = ExtResource("1_30xyg")
 default_properties_string = "{
+{
 \"price\": {
-\"res://Items/Guns/pistolV1.tres\": 2
+\"res://Items/Aqua.tres\": 16
 }
 }"
 default_properties = {

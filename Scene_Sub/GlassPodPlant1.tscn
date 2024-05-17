@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://vkcwmht6mhk5"]
 
-[ext_resource type="Texture2D" uid="uid://ca2on6cb07o51" path="res://Art_PNG/Props_GlassTube.png" id="1_3flnm"]
+[ext_resource type="Texture2D" uid="uid://b00vos6d58jnk" path="res://Art_PNG/Props_GlassTube_Plant, v2.png" id="1_4xtqo"]
 
 [node name="GlassPod" type="StaticBody2D" groups=["Bunker", "Prop"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_3flnm")
+texture = ExtResource("1_4xtqo")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-29, -12)

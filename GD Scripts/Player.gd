@@ -5,7 +5,7 @@ class_name  Player
 @export var MaxHealth :int = 100
 @export var CurrentHealth: int = 100
 @export var inventory: Control
-
+@export var BasicItems : ItemInstantiator
 @export var speed :int = 10000 # speed in pixels/sec
 @export var PlayerInventory:InventoryView
 @export var ui: CanvasLayer 
@@ -25,7 +25,9 @@ var CurrentGunNode : GunNode
 func  _ready() -> void: 
 	CurrentGunNode = gun
 	UpdataProgress()
-	pass
+
+	
+	
 func _physics_process(delta):
 	var Action = "walk"
 	if CurrentGunNode.global_rotation_degrees + 90 <= 0 or  CurrentGunNode.global_rotation_degrees + 90 >= 180 :
@@ -156,5 +158,6 @@ func SetAnim(NameOfAction):
 		var time =	composite_sprite.sprite_player.current_animation_position
 		composite_sprite.AnimPlayer(AnimationName,.001)
 		composite_sprite.sprite_player.seek(time, true)
+
 
 

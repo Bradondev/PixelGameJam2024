@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("2_sqw6q")
-name = "Smg"
+name = "Colt 9mm SMG"
 description = ""
 tags = Array[StringName]([])
 texture = ExtResource("3_eql8h")
@@ -18,11 +18,11 @@ slot_flags = 4
 custom_data = ExtResource("1_pcjrr")
 default_properties_string = "{
 \"price\": {
-\"res://Items/Guns/pistolV1.tres\": 2
+\"res://Items/Aqua.tres\": 12
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Guns/pistolV1.tres": 2
+"res://Items/Aqua.tres": 12
 }
 }

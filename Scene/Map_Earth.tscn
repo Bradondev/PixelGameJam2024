@@ -16,6 +16,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="MapDarken" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.254902, 0.254902, 0.254902, 1)
 
 [node name="TileMap" type="TileMap" parent="."]

@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bru61wwju326n" path="res://Scene_Sub/bunkerFront.tscn" id="8_iudp5"]
 [ext_resource type="PackedScene" uid="uid://ct36nufjxft58" path="res://Scene_Sub/GlassPodBlue1.tscn" id="9_rpw58"]
 
-[node name="PlayerMovementTest" type="Node2D"]
+[node name="PlayerMovementTest2" type="Node2D"]
 
 [node name="MapEarth" parent="." instance=ExtResource("1_pd02m")]
 position = Vector2(193, 228)
@@ -32,11 +32,9 @@ InveentroyContent = ExtResource("5_m115g")
 
 [node name="LootBoxs2" parent="." instance=ExtResource("5_15cq1")]
 position = Vector2(47, -24)
-scale = Vector2(1, 1)
 
 [node name="Terminal" parent="." instance=ExtResource("6_n4cva")]
 position = Vector2(28, 141)
-scale = Vector2(1, 1)
 
 [node name="Bunker2" parent="." instance=ExtResource("7_dcqmj")]
 position = Vector2(22, 258)

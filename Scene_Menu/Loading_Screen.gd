@@ -1,5 +1,5 @@
 extends Control
-
+class_name  LoadScene
 @onready var load_bar: TextureProgressBar = $ColorRect/Center/Vbox/Center/LoadBar
 @export var Scene : PackedScene
 # Called when the node enters the scene tree for the first time.

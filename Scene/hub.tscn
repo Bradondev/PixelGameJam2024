@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c2kbx8cind26s" path="res://Art_PNG/Monster_Drowned (Gun), Placeholder.png" id="4_j0yrg"]
 [ext_resource type="Texture2D" uid="uid://brsqjv5ec7nl2" path="res://Art_UI/Shop_TextureButton, Pressed.png" id="4_repa8"]
 [ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="5_2qcak"]
-[ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="6_o6ojd"]
+[ext_resource type="Theme" path="res://HUB_FontTheme.tres" id="6_o6ojd"]
 [ext_resource type="Texture2D" uid="uid://bbktnb86mocwh" path="res://Art_UI/Equipment_EquipBackground.png" id="7_cfmhh"]
 [ext_resource type="Texture2D" uid="uid://btcmsj22xtuqh" path="res://Art_UI/Shop_TextureButton, Normal, Small.png" id="8_nef1m"]
 [ext_resource type="Texture2D" uid="uid://5547r6r8hhhk" path="res://Art_UI/Shop_TextureButton, Pressed, Small.png" id="9_bcvpg"]
