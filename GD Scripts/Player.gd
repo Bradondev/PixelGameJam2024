@@ -12,20 +12,30 @@ class_name  Player
 @onready var gun: Node2D = $Gun
 @onready var gun_2: Node2D = $Gun2
 
+var CurrentGunNode : GunNode
+
+
+@onready var composite_sprite: Node2D = $CompositeSprite
+
 @onready var mid_bar: TextureProgressBar = $UI/BotMargin/Hbox/Player/Resources/MidBar
 @onready var equipment: InventoryView = $UI/Inventory/Equip
 @onready var Name: RichTextLabel = $UI/Inventory/DescriptionbackGround/name
 @onready var description: RichTextLabel = $UI/Inventory/DescriptionbackGround/Description
 
 func  _ready() -> void: 
+	CurrentGunNode = gun
 	UpdataProgress()
 	pass
 func _physics_process(delta):
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * speed * delta
 	move_and_slide()
+	CheckForAngle()
 	
-
+	if CurrentGunNode.global_rotation_degrees + 90 <= 0 or  CurrentGunNode.global_rotation_degrees + 90 >= 180 :
+		composite_sprite.scale.x = -1
+	else:
+		composite_sprite.scale.x = 1
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu_inventory"):
 		FlipInventory()
@@ -107,3 +117,24 @@ func _on_equip_item_stack_removed(item_stack: ItemStack) -> void:
 func EditDescriptionAField(item_view: ItemStackView):
 	description.text = "[center]" +item_view.stack.item_type.description
 	Name.text = "[center]" + item_view.stack.item_type.name
+
+
+func CheckForAngle():
+	var CurrentRoation = CurrentGunNode.global_rotation_degrees
+	
+	if CurrentRoation >=-90 and CurrentRoation <= -67.5 or CurrentRoation >= -112.5 and CurrentRoation <= -90:
+		print_debug("up")
+		
+	elif CurrentRoation >-67.5 and CurrentRoation < -22.5 or CurrentRoation >= -157.5 and CurrentRoation <= -112.5:
+		print_debug("up_rigth")
+		
+	elif CurrentRoation >=-22.5 and CurrentRoation <= 22.5 or abs(CurrentRoation )>= 157.5 :
+		print_debug("middle")
+		
+	elif CurrentRoation >22.5 and CurrentRoation <=67.5 or CurrentRoation <= 157.5 and CurrentRoation >= 112.5:
+		print_debug("down_right")
+
+			
+	elif CurrentRoation >=67.5 and CurrentRoation <= 90 or CurrentRoation <= 112.5 and CurrentRoation >= 90:
+		print_debug("Down")
+	print_debug(CurrentRoation)

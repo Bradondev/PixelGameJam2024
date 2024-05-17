@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bkejm17sqsdul"]
+[gd_scene load_steps=61 format=3 uid="uid://b48py1ks7spng"]
 
 [ext_resource type="Script" path="res://Scene_Sub/CompositeSprite.gd" id="1_aeq0t"]
 [ext_resource type="Texture2D" uid="uid://eay24kwvtjc3" path="res://Art_PNG/Player_CompositeSprite_SpriteSheet_Bottom.png" id="1_mbpkd"]
@@ -2739,7 +2739,6 @@ _data = {
 
 [node name="CompositeSprite" type="Node2D"]
 script = ExtResource("1_aeq0t")
-testing = false
 
 [node name="Camera (testing)" type="Camera2D" parent="."]
 offset = Vector2(0, -16)

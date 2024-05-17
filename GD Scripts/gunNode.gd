@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name  GunNode
 @export var CurrentGun: Gun
 @export var gun: Sprite2D
 @export var PlayerInventory:InventoryView
@@ -16,7 +16,6 @@ func _physics_process(delta: float) -> void:
 	if !CurrentGun: return
 	
 	look_at(get_global_mouse_position())
-	
 	if Input.is_action_pressed("Shoot"):
 		ShootGun()
 	
@@ -89,15 +88,11 @@ func ShootGun():
 func UpdateAmmoText():
 	if !CurrentGun:
 		ammoLabel.text = str("No gun") 
-		gun_reticle.texture = null
-		gun.texture = null
 		return
-	gun_reticle.texture = CurrentGun.CrossHairSprite
+	#gun_reticle.texture = CurrentGun.CrossHairSprite
 	bulletspawnpoint.global_position = CurrentGun.BulletSpawnPoint
-	UpdateGunSprite()
 	ammoLabel.text = str(CurrentGun.CurrentMagSize) +"/" +  str(CurrentGun.MagSize) 
-func UpdateGunSprite():
-	gun.texture = CurrentGun.Sprite
+
 func ApplyAccuracy(): 
 	var rng = RandomNumberGenerator.new()
 	var baseAcc =  (100 -CurrentGun.Accuracy ) / 100.00

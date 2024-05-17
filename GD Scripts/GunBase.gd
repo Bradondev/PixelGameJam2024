@@ -1,7 +1,7 @@
 extends Resource
 class_name  Gun
 
-@export_enum("ShotGun", "Pistol", "Sniper","SMG","Rifle") var GunType: int
+@export_enum("shotty", "pistol", "sniper","smg","ar") var GunType: int
 @export var Sprite : Texture2D
 @export var CrossHairSprite : Texture2D
 @export var BulletSpawnPoint: Vector2 = Vector2.ZERO
