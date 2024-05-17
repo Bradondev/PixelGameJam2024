@@ -5,20 +5,27 @@ class_name  GunNode
 @export var PlayerInventory:InventoryView
 @export var Ui : CanvasLayer
 @export var ammoLabel :RichTextLabel
+@export var player :Player
+
+
 var CanShoot = true
-@onready var bulletspawnpoint: Marker2D = $bulletspawnpoint
+@onready var bulletspawnpoint: Node2D = $bulletspawnpoint
 var MouseR
 var Reloading = false
-@onready var gun_reticle: Sprite2D = $gunReticle
+var isShooting = true
 @onready var reload_bar: TextureProgressBar = $"../BotBar"
+@onready var reticle: Sprite2D =$Reticle
 
 func _physics_process(delta: float) -> void:
+	look_at(get_global_mouse_position())
 	if !CurrentGun: return
 	
-	look_at(get_global_mouse_position())
-	if Input.is_action_pressed("Shoot"):
-		ShootGun()
 	
+	if Input.is_action_pressed("Shoot"):
+		isShooting = true
+		ShootGun()
+	else: 
+		isShooting = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 
@@ -68,9 +75,9 @@ func ShootGun():
 			UpdateAmmoText()
 			print_debug("out of ammo") 
 			return
+			
 		for i in CurrentGun.ButtetCount:
 			var newBullet = CurrentGun.BulletScene.instantiate()
-			newBullet.position =global_position
 			if CurrentGun.ButtetCount == 1:
 				newBullet.rotation  = global_rotation + ApplyAccuracy()
 			else:
@@ -81,7 +88,12 @@ func ShootGun():
 					arc_rad / 2
 					)
 				newBullet.global_rotation += ApplyAccuracy()
+			newBullet.currentgun = CurrentGun
+			newBullet.global_position = bulletspawnpoint.global_position
+			print_debug(newBullet.global_position)
+			
 			get_tree().root.call_deferred("add_child", newBullet)
+		player.SetAnim("shoot")
 		CanShoot = false
 		await  get_tree().create_timer(1/CurrentGun.ROF).timeout
 		CanShoot = true
@@ -90,12 +102,12 @@ func UpdateAmmoText():
 		ammoLabel.text = str("No gun") 
 		return
 	#gun_reticle.texture = CurrentGun.CrossHairSprite
-	bulletspawnpoint.global_position = CurrentGun.BulletSpawnPoint
+	bulletspawnpoint.position = CurrentGun.BulletSpawnPoint
+	reticle.texture = CurrentGun.CrossHairSprite
 	ammoLabel.text = str(CurrentGun.CurrentMagSize) +"/" +  str(CurrentGun.MagSize) 
 
 func ApplyAccuracy(): 
 	var rng = RandomNumberGenerator.new()
 	var baseAcc =  (100 -CurrentGun.Accuracy ) / 100.00
-	print_debug(baseAcc)
 	var my_random_number = rng.randf_range(-baseAcc, baseAcc)
 	return my_random_number

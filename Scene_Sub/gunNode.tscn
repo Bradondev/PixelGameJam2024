@@ -6,10 +6,11 @@
 [node name="Gun" type="Node2D"]
 script = ExtResource("1_uy531")
 
-[node name="bulletspawnpoint" type="Marker2D" parent="."]
+[node name="bulletspawnpoint" type="Node2D" parent="."]
 position = Vector2(26, -1)
-rotation = -0.00410873
+scale = Vector2(1, 1)
 
 [node name="Reticle" type="Sprite2D" parent="."]
-position = Vector2(5, 0)
+position = Vector2(45, 0)
+scale = Vector2(1, 1)
 texture = ExtResource("2_whn5t")

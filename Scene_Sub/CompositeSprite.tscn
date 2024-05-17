@@ -2749,6 +2749,7 @@ zoom = Vector2(6, 6)
 position = Vector2(0, -16)
 
 [node name="Reticle" type="Sprite2D" parent="ReticleArm"]
+visible = false
 position = Vector2(45, 0)
 texture = ExtResource("2_kugdu")
 
