@@ -1,0 +1,80 @@
+[gd_scene load_steps=16 format=3 uid="uid://dkrp2wctpx7k8"]
+
+[ext_resource type="PackedScene" uid="uid://dd0hqlllt0tqs" path="res://Scene/Map_Earth.tscn" id="1_n6nms"]
+[ext_resource type="PackedScene" uid="uid://bpilr5la784ys" path="res://Scene_Sub/Player.tscn" id="2_8yw46"]
+[ext_resource type="PackedScene" uid="uid://qjsl7x5vcuya" path="res://Scene_Sub/bunker.tscn" id="3_f7n0n"]
+[ext_resource type="Texture2D" uid="uid://7ngkl4xpe5ag" path="res://Art_PNG/AlienPlanet_V2_Props, Grass (Short), v4.png" id="3_tt6gm"]
+[ext_resource type="PackedScene" uid="uid://cqy4p7dbms0kf" path="res://Scene_Sub/LootBox.tscn" id="4_13f22"]
+[ext_resource type="Texture2D" uid="uid://dsd86fw7aoy8t" path="res://Art_PNG/AlienPlanet_V2_Props, Grass (Long).png" id="4_yftf4"]
+[ext_resource type="Resource" uid="uid://8nltaycjtb7l" path="res://Items/Contents/shop.tres" id="5_svmd1"]
+[ext_resource type="PackedScene" uid="uid://djwlpg1g4e28o" path="res://Scene_Sub/ToolBox.tscn" id="6_llbdc"]
+[ext_resource type="PackedScene" uid="uid://btcuans18pkm8" path="res://Scene_Sub/Pc.tscn" id="7_x1xad"]
+[ext_resource type="PackedScene" uid="uid://85xt1o8ygj37" path="res://Scene_Sub/Backpack.tscn" id="8_qg8l6"]
+[ext_resource type="PackedScene" uid="uid://bru61wwju326n" path="res://Scene_Sub/bunkerFront.tscn" id="9_c4ii0"]
+[ext_resource type="PackedScene" uid="uid://ct36nufjxft58" path="res://Scene_Sub/GlassPodBlue1.tscn" id="10_0l5mv"]
+[ext_resource type="PackedScene" uid="uid://cog8n63pcf2yl" path="res://Scene_Sub/GlassPodPlant2.tscn" id="13_51wks"]
+[ext_resource type="PackedScene" uid="uid://vkcwmht6mhk5" path="res://Scene_Sub/GlassPodPlant1.tscn" id="14_tcw4b"]
+[ext_resource type="Texture2D" uid="uid://btogkfpew7bvy" path="res://Art_PNG/AlienPlanet_V2_Props, Grass (Short), v1.png" id="15_gxwd6"]
+
+[node name="PlayerMovementTest" type="Node2D"]
+
+[node name="MapEarth" parent="." instance=ExtResource("1_n6nms")]
+position = Vector2(193, 228)
+
+[node name="Player" parent="." instance=ExtResource("2_8yw46")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-3204, -1390)
+scale = Vector2(1, 1)
+
+[node name="props" type="Node2D" parent="."]
+
+[node name="AlienPlanetV2Props,Grass(short),V4" type="Sprite2D" parent="props"]
+position = Vector2(-3464, -996)
+texture = ExtResource("3_tt6gm")
+
+[node name="AlienPlanetV2Props,Grass(long)" type="Sprite2D" parent="props"]
+position = Vector2(-3298, -1152)
+texture = ExtResource("4_yftf4")
+
+[node name="Bunker" parent="props" instance=ExtResource("3_f7n0n")]
+position = Vector2(-3393, -1317)
+
+[node name="LootBoxs" parent="props" instance=ExtResource("4_13f22")]
+position = Vector2(-1983, -1024)
+scale = Vector2(1, 1)
+InveentroyContent = ExtResource("5_svmd1")
+
+[node name="toolbox" parent="props" instance=ExtResource("6_llbdc")]
+position = Vector2(-3098, -1320)
+scale = Vector2(1, 1)
+
+[node name="Terminal" parent="props" instance=ExtResource("7_x1xad")]
+position = Vector2(28, 141)
+scale = Vector2(1, 1)
+
+[node name="Bunker2" parent="props" instance=ExtResource("8_qg8l6")]
+position = Vector2(-3379, -1027)
+
+[node name="Bunker3" parent="props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-3561, -1149)
+
+[node name="GlassPod" parent="props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-3582, -994)
+
+[node name="GlassPod2" parent="props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-3154, -1061)
+
+[node name="GlassPod4" parent="props" instance=ExtResource("13_51wks")]
+position = Vector2(-3076, -1060)
+
+[node name="GlassPod3" parent="props" instance=ExtResource("14_tcw4b")]
+position = Vector2(-3531, -996)
+
+[node name="AlienPlanetV2Props,Grass(short),V1" type="Sprite2D" parent="."]
+position = Vector2(-3437, -858)
+texture = ExtResource("15_gxwd6")
+
+[node name="AlienPlanetV2Props,Grass(short),V4" type="Sprite2D" parent="."]
+position = Vector2(-3171, -940)
+texture = ExtResource("3_tt6gm")

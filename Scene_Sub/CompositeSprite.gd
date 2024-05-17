@@ -37,6 +37,15 @@ var gun_reticle = {
 
 var testing_gunColor = gun_color[guns_color]
 var testing_gunReticle = gun_reticle[guns_reticle]
+@onready var sprite_player: AnimationPlayer = $SpritePlayer
+@onready var gun: Sprite2D = $Sprites/Gun
+
+
+func AnimPlayer(AnimationName, Frame):
+	sprite_player.play(AnimationName,Frame)
+
+
+
 
 func _process(delta):
 	if testing == true:

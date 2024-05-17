@@ -8,10 +8,10 @@
 
 [resource]
 script = ExtResource("5_gahei")
-GunType = 0
+GunType = "sniper"
 Sprite = ExtResource("4_yb2ck")
 CrossHairSprite = ExtResource("3_mvem7")
-BulletSpawnPoint = Vector2(26, -1)
+BulletSpawnPoint = Vector2(32, -2)
 Description = ""
 ROF = 0.1
 BaseDamage = 4

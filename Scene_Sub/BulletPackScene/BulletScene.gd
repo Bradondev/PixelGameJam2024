@@ -4,7 +4,7 @@ extends CharacterBody2D
 var SPEED = 500
 var Dir = Vector2.RIGHT
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
-
+var currentgun :Gun
 func _ready() -> void:
 	Dir = Vector2.RIGHT.rotated(global_rotation)
 	
@@ -28,4 +28,4 @@ func _on_timer_timeout() -> void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("TakeDamage"):
-		body.TakeDamage(2)
+		body.TakeDamage(currentgun.BaseDamage)

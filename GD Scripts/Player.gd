@@ -27,15 +27,20 @@ func  _ready() -> void:
 	UpdataProgress()
 	pass
 func _physics_process(delta):
-	var direction = Input.get_vector("Left", "Right", "Up", "Down")
-	velocity = direction * speed * delta
-	move_and_slide()
-	CheckForAngle()
-	
+	var Action = "walk"
 	if CurrentGunNode.global_rotation_degrees + 90 <= 0 or  CurrentGunNode.global_rotation_degrees + 90 >= 180 :
 		composite_sprite.scale.x = -1
 	else:
 		composite_sprite.scale.x = 1
+	
+	if !CurrentGunNode.isShooting:
+		var direction = Input.get_vector("Left", "Right", "Up", "Down")
+		velocity = direction * speed * delta
+		move_and_slide()
+		SetAnim(Action)
+	
+
+		
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu_inventory"):
 		FlipInventory()
@@ -121,20 +126,35 @@ func EditDescriptionAField(item_view: ItemStackView):
 
 func CheckForAngle():
 	var CurrentRoation = CurrentGunNode.global_rotation_degrees
-	
 	if CurrentRoation >=-90 and CurrentRoation <= -67.5 or CurrentRoation >= -112.5 and CurrentRoation <= -90:
-		print_debug("up")
 		
+		return "up"
 	elif CurrentRoation >-67.5 and CurrentRoation < -22.5 or CurrentRoation >= -157.5 and CurrentRoation <= -112.5:
-		print_debug("up_rigth")
-		
+		return "45up"
 	elif CurrentRoation >=-22.5 and CurrentRoation <= 22.5 or abs(CurrentRoation )>= 157.5 :
-		print_debug("middle")
-		
-	elif CurrentRoation >22.5 and CurrentRoation <=67.5 or CurrentRoation <= 157.5 and CurrentRoation >= 112.5:
-		print_debug("down_right")
+		return "R"
+	elif CurrentRoation >=22.5 and CurrentRoation <= 67.5 or CurrentRoation <= 157.5 and CurrentRoation >= 112.5:
+		return "45down"
 
-			
-	elif CurrentRoation >=67.5 and CurrentRoation <= 90 or CurrentRoation <= 112.5 and CurrentRoation >= 90:
-		print_debug("Down")
-	print_debug(CurrentRoation)
+	elif CurrentRoation >67.5 and CurrentRoation <=90 or CurrentRoation <= 112.5 and CurrentRoation >=90:
+		return "down"
+	#67.5
+	
+func SetAnim(NameOfAction):
+	if CurrentGunNode.CurrentGun:
+		
+		composite_sprite.gun.visible = true
+		var AnimationName = NameOfAction+"_" + CheckForAngle() +"_"+ CurrentGunNode.CurrentGun.GunType
+		var time =	composite_sprite.sprite_player.current_animation_position
+		composite_sprite.AnimPlayer(AnimationName,.001)
+		#if NameOfAction == "shoot":
+			#composite_sprite.sprite_player.get_animation(composite_sprite.sprite_player.current_animation).loop_mode = 0
+		composite_sprite.sprite_player.seek(time, true)
+	else: 
+		composite_sprite.gun.visible = false
+		var AnimationName = "walk"+"_" + CheckForAngle() +"_"+"pistol"
+		var time =	composite_sprite.sprite_player.current_animation_position
+		composite_sprite.AnimPlayer(AnimationName,.001)
+		composite_sprite.sprite_player.seek(time, true)
+
+
