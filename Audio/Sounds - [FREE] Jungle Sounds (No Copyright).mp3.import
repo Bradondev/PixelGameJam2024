@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3c6g0gjhy8eu"
+path="res://.godot/imported/Sounds - [FREE] Jungle Sounds (No Copyright).mp3-d8489106bb1dfc530515b60b88cdb5c3.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sounds - [FREE] Jungle Sounds (No Copyright).mp3"
+dest_files=["res://.godot/imported/Sounds - [FREE] Jungle Sounds (No Copyright).mp3-d8489106bb1dfc530515b60b88cdb5c3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,8 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://dn8xh53dpsrtp"]
+[gd_scene load_steps=21 format=3 uid="uid://dn8xh53dpsrtp"]
 
 [ext_resource type="Script" path="res://GD Scripts/main_menu.gd" id="1_a50wq"]
 [ext_resource type="Texture2D" uid="uid://tq0mjygm3nfl" path="res://Art_PNG/UI_TitleMenu_Art.png" id="1_ynfv6"]
+[ext_resource type="AudioStream" uid="uid://c1s6d825b3qxu" path="res://Audio/Song- Cyborg Ninja.mp3" id="2_vhtl4"]
 [ext_resource type="Texture2D" uid="uid://j18x6gvny58r" path="res://Art_UI/Button_TitleMenu, Start (Normal).png" id="2_xxfle"]
+[ext_resource type="AudioStream" uid="uid://dtwj04qji3ycc" path="res://Audio/Sound - coin-collect-retro-8-bit-sound-effect-145251.mp3" id="3_qotxp"]
 [ext_resource type="Texture2D" uid="uid://bcvoeindev2yr" path="res://Art_UI/Button_TitleMenu, Start (Pressed).png" id="3_xricq"]
 [ext_resource type="Texture2D" uid="uid://dig7ea2o2r2dx" path="res://Art_UI/Button_TitleMenu, Start (Hover).png" id="4_w3q7j"]
 [ext_resource type="Texture2D" uid="uid://cscwyv4ur0r7r" path="res://Art_UI/Button_TitleMenu, Options (Normal).png" id="5_8c6pa"]
@@ -17,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://d1ui8lkg8n8hk" path="res://Scene/hub.tscn" id="15_qlvyu"]
 
 [sub_resource type="Animation" id="Animation_gc1kh"]
-length = 0.001
+length = 1.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -54,10 +56,10 @@ tracks/0/path = NodePath("BG/TextureRect2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.8, 1.01296, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(830, 0), Vector2(830, 70)]
+"values": [Vector2(830, 10), Vector2(830, 50), Vector2(830, 50), Vector2(830, 10)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -66,10 +68,10 @@ tracks/1/path = NodePath("BG/TextureRect:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.8, 1, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(10, 0), Vector2(10, 70)]
+"values": [Vector2(10, 10), Vector2(10, 50), Vector2(10, 50), Vector2(10, 10)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pdxbh"]
@@ -80,6 +82,16 @@ _data = {
 
 [node name="Title_Menu" type="CanvasLayer"]
 script = ExtResource("1_a50wq")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vhtl4")
+volume_db = -2.0
+pitch_scale = 0.9
+autoplay = true
+
+[node name="MenuSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qotxp")
+pitch_scale = 0.8
 
 [node name="BG" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -159,8 +171,11 @@ offset_top = 0.0
 offset_bottom = 0.0
 Scene = ExtResource("15_qlvyu")
 
+[connection signal="mouse_entered" from="BG/BottomMargin/Hbox/StartButton" to="." method="_on_start_button_mouse_entered"]
 [connection signal="pressed" from="BG/BottomMargin/Hbox/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="BG/BottomMargin/Hbox/OptionButton" to="." method="_on_option_button_mouse_entered"]
 [connection signal="pressed" from="BG/BottomMargin/Hbox/OptionButton" to="." method="_on_option_button_pressed"]
+[connection signal="mouse_entered" from="BG/BottomMargin/Hbox/QuitButton" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="BG/BottomMargin/Hbox/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Options_Menu/Button" to="." method="_on_button_pressed"]
 

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd0hqlllt0tqs"]
+[gd_scene load_steps=4 format=3 uid="uid://dd0hqlllt0tqs"]
 
 [ext_resource type="TileSet" uid="uid://cw8wysuqqyfiq" path="res://Resources/Earthlike_Tilemap.tres" id="1_cyuvq"]
+[ext_resource type="AudioStream" uid="uid://ddx5jbf84bg77" path="res://Audio/Song - My Last Dream.mp3" id="2_s672m"]
+[ext_resource type="AudioStream" uid="uid://3c6g0gjhy8eu" path="res://Audio/Sounds - [FREE] Jungle Sounds (No Copyright).mp3" id="3_a6tk0"]
 
 [node name="MapEarth" type="Node2D"]
 
@@ -14,7 +16,6 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="MapDarken" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.254902, 0.254902, 0.254902, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -46,3 +47,12 @@ position = Vector2(4546, 2154)
 position = Vector2(211, 2404)
 
 [node name="Props" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_s672m")
+volume_db = -3.0
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_a6tk0")
+autoplay = true

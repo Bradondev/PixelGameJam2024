@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddx5jbf84bg77"
+path="res://.godot/imported/Song - My Last Dream.mp3-db7cb21ca4348b99c155b07cb86ffafd.mp3str"
+
+[deps]
+
+source_file="res://Audio/Song - My Last Dream.mp3"
+dest_files=["res://.godot/imported/Song - My Last Dream.mp3-db7cb21ca4348b99c155b07cb86ffafd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

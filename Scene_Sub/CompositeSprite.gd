@@ -31,9 +31,9 @@ var gun_reticle = {
 }
 
 @export var testing = true
-@export var test_animation = "shoot_down_sniper"
-@export var guns_color =  "camo"
-@export var guns_reticle = "smg" 
+@export var test_animation = "shoot_R_sniper"
+@export var guns_color =  "artic"
+@export var guns_reticle = "ar" 
 
 var testing_gunColor = gun_color[guns_color]
 var testing_gunReticle = gun_reticle[guns_reticle]
