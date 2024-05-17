@@ -19,7 +19,6 @@ height = 10
 width = 10
 
 [node name="LootBoxs" type="StaticBody2D" node_paths=PackedStringArray("HighLightArea", "InterArea") groups=["Bunker", "Prop"]]
-scale = Vector2(2, 2)
 script = ExtResource("1_m8dmx")
 HighLightArea = NodePath("InterActArea")
 InterArea = NodePath("InterActArea")

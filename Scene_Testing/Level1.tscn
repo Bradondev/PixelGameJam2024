@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dkrp2wctpx7k8"]
+[gd_scene load_steps=21 format=3 uid="uid://dkrp2wctpx7k8"]
 
 [ext_resource type="PackedScene" uid="uid://dd0hqlllt0tqs" path="res://Scene/Map_Earth.tscn" id="1_n6nms"]
 [ext_resource type="PackedScene" uid="uid://bpilr5la784ys" path="res://Scene_Sub/Player.tscn" id="2_8yw46"]
@@ -15,6 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://cog8n63pcf2yl" path="res://Scene_Sub/GlassPodPlant2.tscn" id="13_51wks"]
 [ext_resource type="PackedScene" uid="uid://vkcwmht6mhk5" path="res://Scene_Sub/GlassPodPlant1.tscn" id="14_tcw4b"]
 [ext_resource type="Texture2D" uid="uid://btogkfpew7bvy" path="res://Art_PNG/AlienPlanet_V2_Props, Grass (Short), v1.png" id="15_gxwd6"]
+[ext_resource type="PackedScene" uid="uid://dx6l3e6fwirv2" path="res://Scene_Sub/GlassPodRed1.tscn" id="16_not2e"]
+[ext_resource type="PackedScene" uid="uid://ieghweqpyuq5" path="res://Scene_Sub/GlassPodBlue2.tscn" id="17_wkm2c"]
+[ext_resource type="PackedScene" uid="uid://kebx2leh6uxx" path="res://Scene_Sub/GlassPod.tscn" id="18_ca0m5"]
+[ext_resource type="Texture2D" uid="uid://c2i80sv54k0k0" path="res://Art_PNG/AlienPlanet_V2_Props, Grass (Short), v3.png" id="19_xydnc"]
+[ext_resource type="Texture2D" uid="uid://bxpw71vmbac3s" path="res://Art_PNG/AlienPlanet_V2_Props, Grass (Short), v2.png" id="20_750gw"]
 
 [node name="PlayerMovementTest" type="Node2D"]
 
@@ -71,10 +76,113 @@ position = Vector2(-3076, -1060)
 [node name="GlassPod3" parent="props" instance=ExtResource("14_tcw4b")]
 position = Vector2(-3531, -996)
 
-[node name="AlienPlanetV2Props,Grass(short),V1" type="Sprite2D" parent="."]
+[node name="AlienPlanetV2Props,Grass(short),V1" type="Sprite2D" parent="props"]
 position = Vector2(-3437, -858)
 texture = ExtResource("15_gxwd6")
 
-[node name="AlienPlanetV2Props,Grass(short),V4" type="Sprite2D" parent="."]
+[node name="AlienPlanetV2Props,Grass(short),V5" type="Sprite2D" parent="props"]
 position = Vector2(-3171, -940)
 texture = ExtResource("3_tt6gm")
+
+[node name="Bunker4" parent="props" instance=ExtResource("3_f7n0n")]
+position = Vector2(-3130, -427)
+
+[node name="Bunker5" parent="props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-3294, -312)
+
+[node name="LootBoxs2" parent="props" instance=ExtResource("4_13f22")]
+position = Vector2(-3300, -419)
+
+[node name="GlassPod5" parent="props" instance=ExtResource("16_not2e")]
+position = Vector2(-2759, -434)
+
+[node name="GlassPod6" parent="props" instance=ExtResource("13_51wks")]
+position = Vector2(-2878, -431)
+
+[node name="GlassPod7" parent="props" instance=ExtResource("17_wkm2c")]
+position = Vector2(-3035, -234)
+
+[node name="GlassPod8" parent="props" instance=ExtResource("18_ca0m5")]
+position = Vector2(-3026, -349)
+
+[node name="GlassPod9" parent="props" instance=ExtResource("18_ca0m5")]
+position = Vector2(-2679, -63)
+
+[node name="GlassPod10" parent="props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-2991, -82)
+
+[node name="GlassPod11" parent="props" instance=ExtResource("14_tcw4b")]
+position = Vector2(-2914, 45)
+
+[node name="GlassPod12" parent="props" instance=ExtResource("17_wkm2c")]
+position = Vector2(-2964, 17)
+
+[node name="GlassPod13" parent="props" instance=ExtResource("17_wkm2c")]
+position = Vector2(-3200, -203)
+
+[node name="Terminal2" parent="props" instance=ExtResource("7_x1xad")]
+position = Vector2(-2589, -290)
+scale = Vector2(1, 1)
+
+[node name="Bunker6" parent="props" instance=ExtResource("8_qg8l6")]
+position = Vector2(-2509, -168)
+
+[node name="AlienPlanetV2Props,Grass(short),V3" type="Sprite2D" parent="props"]
+position = Vector2(-2737, -123)
+texture = ExtResource("19_xydnc")
+
+[node name="AlienPlanetV2Props,Grass(long)2" type="Sprite2D" parent="props"]
+position = Vector2(-2943, -183)
+texture = ExtResource("4_yftf4")
+
+[node name="AlienPlanetV2Props,Grass(short),V6" type="Sprite2D" parent="props"]
+position = Vector2(-3165, -302)
+texture = ExtResource("19_xydnc")
+
+[node name="AlienPlanetV2Props,Grass(short),V2" type="Sprite2D" parent="props"]
+position = Vector2(-2818, -553)
+texture = ExtResource("15_gxwd6")
+
+[node name="AlienPlanetV2Props,Grass(short),V7" type="Sprite2D" parent="props"]
+position = Vector2(-2817, -806)
+texture = ExtResource("20_750gw")
+
+[node name="AlienPlanetV2Props,Grass(short),V8" type="Sprite2D" parent="props"]
+position = Vector2(-2303, -1037)
+texture = ExtResource("15_gxwd6")
+
+[node name="AlienPlanetV2Props,Grass(short),V9" type="Sprite2D" parent="props"]
+position = Vector2(-2304, -1152)
+texture = ExtResource("19_xydnc")
+
+[node name="AlienPlanetV2Props,Grass(short),V10" type="Sprite2D" parent="props"]
+position = Vector2(-2164, -1362)
+texture = ExtResource("20_750gw")
+
+[node name="AlienPlanetV2Props,Grass(short),V11" type="Sprite2D" parent="props"]
+position = Vector2(-1911, -1405)
+texture = ExtResource("19_xydnc")
+
+[node name="AlienPlanetV2Props,Grass(short),V12" type="Sprite2D" parent="props"]
+position = Vector2(-1689, -1357)
+texture = ExtResource("15_gxwd6")
+
+[node name="AlienPlanetV2Props,Grass(long)3" type="Sprite2D" parent="props"]
+position = Vector2(-1734, -1324)
+texture = ExtResource("4_yftf4")
+
+[node name="AlienPlanetV2Props,Grass(short),V13" type="Sprite2D" parent="props"]
+position = Vector2(-1734, -1225)
+texture = ExtResource("15_gxwd6")
+
+[node name="GlassPod14" parent="props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-1825, -1398)
+
+[node name="GlassPod15" parent="props" instance=ExtResource("18_ca0m5")]
+position = Vector2(-2196, -1459)
+
+[node name="GlassPod16" parent="props" instance=ExtResource("18_ca0m5")]
+position = Vector2(-2055, -1075)
+
+[node name="GlassPod17" parent="props" instance=ExtResource("18_ca0m5")]
+position = Vector2(-1922, -1075)

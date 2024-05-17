@@ -19,7 +19,6 @@ height = 3
 width = 4
 
 [node name="Terminal" type="StaticBody2D" node_paths=PackedStringArray("HighLightArea", "InterArea") groups=["Bunker", "Prop"]]
-scale = Vector2(2, 2)
 script = ExtResource("1_ybxhk")
 HighLightArea = NodePath("InterActArea")
 InterArea = NodePath("InterActArea")
