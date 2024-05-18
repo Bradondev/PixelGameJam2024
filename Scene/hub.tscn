@@ -1,10 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://d1ui8lkg8n8hk"]
+[gd_scene load_steps=25 format=3 uid="uid://d1ui8lkg8n8hk"]
 
 [ext_resource type="Script" path="res://Scene/hub.gd" id="1_tbohb"]
 [ext_resource type="AudioStream" uid="uid://c2q0hvwighqiw" path="res://Audio/Song - Kevin MacLeod - 8bit Dungeon Boss NO COPYRIGHT 8-bit Music.mp3" id="2_oxanp"]
 [ext_resource type="AudioStream" uid="uid://njt5a3n8e6p4" path="res://Audio/Sound - one_beep-99630.mp3" id="3_naga3"]
 [ext_resource type="Texture2D" uid="uid://bt0b4nk6uvm0a" path="res://Art_UI/Shop_TextureButton, Normal.png" id="3_v814g"]
-[ext_resource type="Texture2D" uid="uid://c2kbx8cind26s" path="res://Art_PNG/Monster_Drowned (Gun), Placeholder.png" id="4_j0yrg"]
 [ext_resource type="Texture2D" uid="uid://brsqjv5ec7nl2" path="res://Art_UI/Shop_TextureButton, Pressed.png" id="4_repa8"]
 [ext_resource type="AudioStream" uid="uid://b58tbi8netxou" path="res://Audio/Sound Clip - game-start-6104.mp3" id="4_uh4nk"]
 [ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="5_2qcak"]
@@ -22,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://b85rvuyo3khmq" path="res://Art_UI/Shop_TextureButton, Hover, Green,png.png" id="15_vistt"]
 [ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="17_yitpx"]
 [ext_resource type="PackedScene" uid="uid://dd0hqlllt0tqs" path="res://Scene/Map_Earth.tscn" id="18_i45gf"]
+[ext_resource type="Texture2D" uid="uid://ljbieurd0dda" path="res://Art_UI/Equipment_InventoryBackground_Extended.png" id="20_qg0m4"]
+[ext_resource type="Texture2D" uid="uid://243g83cqtkxc" path="res://Art_PNG/Item_Currency_Aqua.png" id="21_yk6iy"]
 
 [sub_resource type="Theme" id="Theme_vs827"]
 
@@ -588,6 +589,7 @@ bbcode_enabled = true
 text = "[center]back"
 
 [node name="Stash" type="Control" parent="." groups=["Ui"]]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -830,19 +832,139 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="shop"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("4_j0yrg")
+[node name="Margin" type="MarginContainer" parent="shop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
 
-[node name="back" type="Button" parent="shop"]
-layout_mode = 0
-offset_left = 891.0
-offset_top = 499.0
-offset_right = 956.0
-offset_bottom = 534.0
-text = "back"
+[node name="ColorRect" type="ColorRect" parent="shop/Margin"]
+layout_mode = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="shop/Margin/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="shop/Margin/ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Hbox" type="HBoxContainer" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox"]
+layout_mode = 2
+texture = ExtResource("20_qg0m4")
+stretch_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]PLACEHOLDER FOR PLAYER INVENTORY SYSTEM"
+
+[node name="TextureRect2" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox"]
+modulate = Color(1, 1, 1, 0.254902)
+layout_mode = 2
+texture = ExtResource("20_qg0m4")
+stretch_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]PLACEHOLDER FOR SHOPKEEPER GRID ARTWORK TO SHOW BUY AND SELL
+
+OR TO HAVE PLAYER SPRITE SHOW UP
+"
+
+[node name="TextureRect3" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox"]
+layout_mode = 2
+texture = ExtResource("20_qg0m4")
+stretch_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]PLACEHOLDER FOR SHOPKEEPER GRID"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Money" type="HBoxContainer" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Money"]
+layout_mode = 2
+texture = ExtResource("21_yk6iy")
+stretch_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Money"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[right]currency:"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Money"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[left]1,000,000"
+scroll_active = false
+
+[node name="back" type="TextureButton" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_o6ojd")
+texture_normal = ExtResource("3_v814g")
+texture_pressed = ExtResource("4_repa8")
+texture_hover = ExtResource("5_2qcak")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/back"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "[center]back"
 
 [node name="Load_Screen1" parent="." instance=ExtResource("17_yitpx")]
 visible = false
@@ -889,4 +1011,4 @@ Scene = ExtResource("18_i45gf")
 [connection signal="pressed" from="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox/CompleteButton3" to="." method="_on_complete_button_3_pressed"]
 [connection signal="pressed" from="Mission/Margin/ColorRect/Margin/MissionList/MarginContainer/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="shop/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/back" to="." method="_on_back_pressed"]
