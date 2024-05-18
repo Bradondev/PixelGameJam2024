@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://bg63kcap61rmc"]
 
+[ext_resource type="Texture2D" uid="uid://cujf8p5mj0mqy" path="res://Art_PNG/UI_GunStuff/UI_Bullets_7.6mm.png" id="2_htsxv"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="3_iuas6"]
-[ext_resource type="Texture2D" uid="uid://7f0ongxi3co8" path="res://Art_UI/Inventory_ItemPlaceholder_3x1.png" id="4_22gqe"]
 
 [resource]
 script = ExtResource("3_iuas6")
 name = "7.62mm"
 description = "bullet used for sniper"
 tags = Array[StringName]([])
-texture = ExtResource("4_22gqe")
+texture = ExtResource("2_htsxv")
 texture_scale = 1.0
 max_stack_count = 8
 in_inventory_width = 1

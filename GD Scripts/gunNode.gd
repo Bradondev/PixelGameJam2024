@@ -13,7 +13,8 @@ var CanShoot = true
 var MouseR
 var Reloading = false
 var isShooting = true
-@onready var reload_bar: TextureProgressBar = $"../BotBar"
+@onready var reload_bar: TextureProgressBar = $"../UI/ReloadMargin/ReloadBar/Vbox/BotBar"
+@onready var reload_bar_ui : HBoxContainer = $"../UI/ReloadMargin/ReloadBar"
 @onready var reticle: Sprite2D =$Reticle
 
 func _physics_process(delta: float) -> void:
@@ -41,7 +42,7 @@ func ReloadCurrentGun():
 		print_debug("mag is full")
 		return
 	reload_bar.value = 0
-	reload_bar.visible = true
+	reload_bar_ui.visible = true
 	Reloading = true
 	
 	var tween  = get_tree().create_tween()
@@ -49,7 +50,7 @@ func ReloadCurrentGun():
 	await  tween.finished
 	if !CurrentGun:
 		Reloading = false
-		reload_bar.visible = false
+		reload_bar_ui.visible = false
 		UpdateAmmoText()
 		return
 	var price : Dictionary = {CurrentGun.BulletTypeItem: CurrentGun.MagSize}
@@ -62,7 +63,7 @@ func ReloadCurrentGun():
 		CurrentGun.LoadMag(Bullets[0].count)
 	else : print_debug("out of ammo")
 	Reloading = false
-	reload_bar.visible = false
+	reload_bar_ui.visible = false
 	UpdateAmmoText()
 	
 func ShootGun():

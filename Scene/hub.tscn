@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d1ui8lkg8n8hk"]
+[gd_scene load_steps=37 format=3 uid="uid://d1ui8lkg8n8hk"]
 
 [ext_resource type="Script" path="res://Scene/hub.gd" id="1_tbohb"]
 [ext_resource type="AudioStream" uid="uid://c2q0hvwighqiw" path="res://Audio/Song - Kevin MacLeod - 8bit Dungeon Boss NO COPYRIGHT 8-bit Music.mp3" id="2_oxanp"]
@@ -22,9 +22,46 @@
 [ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="17_yitpx"]
 [ext_resource type="PackedScene" uid="uid://dd0hqlllt0tqs" path="res://Scene/Map_Earth.tscn" id="18_i45gf"]
 [ext_resource type="Texture2D" uid="uid://ljbieurd0dda" path="res://Art_UI/Equipment_InventoryBackground_Extended.png" id="20_qg0m4"]
+[ext_resource type="Texture2D" uid="uid://csnkf40eamr8q" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell1.png" id="21_dqyos"]
 [ext_resource type="Texture2D" uid="uid://243g83cqtkxc" path="res://Art_PNG/Item_Currency_Aqua.png" id="21_yk6iy"]
+[ext_resource type="Texture2D" uid="uid://ctqo222sv0dn" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell2.png" id="22_7l100"]
+[ext_resource type="Texture2D" uid="uid://dbwalpk6sx547" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell11.png" id="23_8hpwy"]
+[ext_resource type="Texture2D" uid="uid://d3lx0podh5qeo" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell3.png" id="24_ghsml"]
+[ext_resource type="Texture2D" uid="uid://d4e3ii7iydm1m" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell4.png" id="25_pcs3g"]
+[ext_resource type="Texture2D" uid="uid://c8pu3j0jm7isu" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell5.png" id="26_cr1eq"]
+[ext_resource type="Texture2D" uid="uid://c7e0afjkb7w1y" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell6.png" id="27_0pykk"]
+[ext_resource type="Texture2D" uid="uid://cvabxyes7d5lo" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell7.png" id="28_qgs4b"]
+[ext_resource type="Texture2D" uid="uid://darsvxqfw1m06" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell8.png" id="29_ogfv4"]
+[ext_resource type="Texture2D" uid="uid://by1ghjgkxag1m" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell9.png" id="30_7bykd"]
+[ext_resource type="Texture2D" uid="uid://cskttdsovijkc" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell10.png" id="31_1tkjg"]
 
 [sub_resource type="Theme" id="Theme_vs827"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_n0flk"]
+frames = 11
+speed_scale = 8.0
+frame_0/texture = ExtResource("21_dqyos")
+frame_0/duration = 16.0
+frame_1/texture = ExtResource("22_7l100")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("24_ghsml")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("25_pcs3g")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("26_cr1eq")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("27_0pykk")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("28_qgs4b")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("29_ogfv4")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("30_7bykd")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("31_1tkjg")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("23_8hpwy")
+frame_10/duration = 1.0
 
 [node name="Hub" type="Control"]
 layout_mode = 3
@@ -824,7 +861,6 @@ bbcode_enabled = true
 text = "[center]back"
 
 [node name="shop" type="Control" parent="." groups=["Ui"]]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -871,7 +907,7 @@ alignment = 1
 [node name="TextureRect" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox"]
 layout_mode = 2
 texture = ExtResource("20_qg0m4")
-stretch_mode = 2
+stretch_mode = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect"]
 layout_mode = 1
@@ -884,13 +920,15 @@ grow_vertical = 2
 bbcode_enabled = true
 text = "[center]PLACEHOLDER FOR PLAYER INVENTORY SYSTEM"
 
-[node name="TextureRect2" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox"]
+[node name="BuySellAnim" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox"]
 modulate = Color(1, 1, 1, 0.254902)
+custom_minimum_size = Vector2(183, 0)
 layout_mode = 2
-texture = ExtResource("20_qg0m4")
-stretch_mode = 2
+texture = SubResource("AnimatedTexture_n0flk")
+stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/BuySellAnim"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -907,7 +945,7 @@ OR TO HAVE PLAYER SPRITE SHOW UP
 [node name="TextureRect3" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox"]
 layout_mode = 2
 texture = ExtResource("20_qg0m4")
-stretch_mode = 2
+stretch_mode = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect3"]
 layout_mode = 1

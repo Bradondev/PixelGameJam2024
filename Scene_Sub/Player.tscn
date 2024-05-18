@@ -8,10 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://b7got3qc3fi8j" path="res://Scene_Sub/gunNode.tscn" id="2_kanhx"]
 [ext_resource type="Texture2D" uid="uid://01g12v5bkbi7" path="res://Art_UI/Equipment_Header_Inventory.png" id="5_y0a5w"]
 [ext_resource type="Texture2D" uid="uid://c01fpnkhhaubx" path="res://Art_UI/Equipment_Header_Information.png" id="6_leruw"]
+[ext_resource type="Texture2D" uid="uid://breu33f3nwi5n" path="res://Art_UI/ProgressBar_Reload (Under), Bullets.png" id="6_qry5i"]
 [ext_resource type="PackedScene" uid="uid://4ohh3iq6c7uc" path="res://Scene/inventory/playerEquitment.tscn" id="7_4fhhw"]
+[ext_resource type="Texture2D" uid="uid://dcktjipdapc6b" path="res://Art_UI/ProgressBar_Reload (Over), Bullets.png" id="7_aow8d"]
 [ext_resource type="Texture2D" uid="uid://cfcc8kd3my6n1" path="res://Art_UI/Equipment_InformationBackground.png" id="7_h428q"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="7_pe8uv"]
 [ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="8_0e3s1"]
+[ext_resource type="Texture2D" uid="uid://bpt2kq6c2lbgx" path="res://Art_UI/ProgressBar_Reload (Value), Bullets.png" id="8_1ny82"]
 [ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="8_egc2v"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="9_qwigw"]
 [ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="10_3jppb"]
@@ -23,10 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://8pco4p25s6q5" path="res://Art_UI/Equipment_Footer_Inventory.png" id="17_3rjy4"]
 [ext_resource type="Resource" uid="uid://6r12xhs5o152" path="res://Items/Aqua.tres" id="17_dr0o5"]
 [ext_resource type="Resource" uid="uid://ncpu4qpolv3d" path="res://Items/Guns/ArV1.tres" id="17_nh65r"]
-[ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="20_8k8yi"]
 [ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="20_kcioh"]
-[ext_resource type="Texture2D" uid="uid://dcfxp0gtvvhyu" path="res://Art_UI/ProgressBar_PlayerResource (Over).png" id="21_o6y1b"]
-[ext_resource type="Texture2D" uid="uid://3vmgjxrcavhb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Green.png" id="22_ieffp"]
 [ext_resource type="Texture2D" uid="uid://bt0b4nk6uvm0a" path="res://Art_UI/Shop_TextureButton, Normal.png" id="25_faxl1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_278xp"]
@@ -97,6 +97,41 @@ zoom = Vector2(2, 2)
 
 [node name="UI" parent="." instance=ExtResource("1_4gmy4")]
 process_mode = 3
+
+[node name="ReloadMargin" type="MarginContainer" parent="UI"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 70
+
+[node name="ReloadBar" type="HBoxContainer" parent="UI/ReloadMargin"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="reloading texts" type="RichTextLabel" parent="UI/ReloadMargin/ReloadBar"]
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+theme = ExtResource("8_egc2v")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][color=darkred][shake]Reloading[wave]!!"
+scroll_active = false
+
+[node name="Vbox" type="VBoxContainer" parent="UI/ReloadMargin/ReloadBar"]
+layout_mode = 2
+alignment = 1
+
+[node name="BotBar" type="TextureProgressBar" parent="UI/ReloadMargin/ReloadBar/Vbox"]
+layout_mode = 2
+value = 50.0
+texture_under = ExtResource("6_qry5i")
+texture_over = ExtResource("7_aow8d")
+texture_progress = ExtResource("8_1ny82")
 
 [node name="Inventory" type="Control" parent="UI"]
 layout_mode = 3
@@ -191,6 +226,7 @@ nameplate_panel = SubResource("StyleBoxTexture_hk4p5")
 back_panel = SubResource("StyleBoxTexture_0wuuo")
 
 [node name="Item" parent="UI/Inventory" instance=ExtResource("7_pe8uv")]
+custom_minimum_size = Vector2(0, 0)
 offset_left = 3.0
 offset_top = 78.0
 offset_right = 115.0
@@ -217,27 +253,6 @@ collision_mask = 2
 position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_5h22y")
 debug_color = Color(0, 0, 0, 0.419608)
-
-[node name="BotBar" type="TextureProgressBar" parent="."]
-visible = false
-offset_left = -24.0
-offset_top = -26.0
-offset_right = 72.0
-offset_bottom = -14.0
-scale = Vector2(0.5, 0.5)
-value = 50.0
-texture_under = ExtResource("20_8k8yi")
-texture_over = ExtResource("21_o6y1b")
-texture_progress = ExtResource("22_ieffp")
-
-[node name="reloading texts" type="Label" parent="BotBar"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = -22.0
-offset_right = 87.0
-offset_bottom = 1.0
-text = "Reloading"
-horizontal_alignment = 1
 
 [connection signal="item_stack_added" from="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/Equip" to="." method="_on_equip_item_stack_added"]
 [connection signal="item_stack_changed" from="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/Equip" to="." method="_on_equip_item_stack_changed"]
