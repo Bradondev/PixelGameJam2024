@@ -14,7 +14,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1g03"]
 size = Vector2(35, 13.75)
 
-[sub_resource type="Resource" id="Resource_b4lgt"]
+[sub_resource type="Resource" id="Resource_ul8q1"]
 resource_name = "GridInventory"
 script = ExtResource("5_h04qh")
 height = 3
@@ -58,7 +58,7 @@ offset_top = 123.0
 offset_right = 738.0
 offset_bottom = 171.0
 scale = Vector2(2, 2)
-inventory = SubResource("Resource_b4lgt")
+inventory = SubResource("Resource_ul8q1")
 init_contents = true
 autosave_file_path = ""
 
