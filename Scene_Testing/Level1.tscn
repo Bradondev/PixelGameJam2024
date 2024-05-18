@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dkrp2wctpx7k8"]
+[gd_scene load_steps=25 format=3 uid="uid://dkrp2wctpx7k8"]
 
 [ext_resource type="PackedScene" uid="uid://dd0hqlllt0tqs" path="res://Scene/Map_Earth.tscn" id="1_n6nms"]
 [ext_resource type="PackedScene" uid="uid://bpilr5la784ys" path="res://Scene_Sub/Player.tscn" id="2_8yw46"]
@@ -21,6 +21,20 @@
 [ext_resource type="Texture2D" uid="uid://c2i80sv54k0k0" path="res://Art_PNG/AlienPlanet_V2_Props, Grass (Short), v3.png" id="19_xydnc"]
 [ext_resource type="Texture2D" uid="uid://bxpw71vmbac3s" path="res://Art_PNG/AlienPlanet_V2_Props, Grass (Short), v2.png" id="20_750gw"]
 [ext_resource type="PackedScene" uid="uid://dev0qboo4pbph" path="res://Scene_Menu/LevelEndZone.tscn" id="21_mnn0p"]
+[ext_resource type="Resource" uid="uid://bg63kcap61rmc" path="res://Items/Bullet/7.62mm.tres" id="22_nwmku"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="23_s6gmu"]
+
+[sub_resource type="Resource" id="Resource_rcnbb"]
+script = ExtResource("23_s6gmu")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("22_nwmku")])
+item_repeat_ranges = Array[Vector2]([Vector2(51, 521)])
+item_chances = Array[float]([100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
 
 [node name="PlayerMovementTest" type="Node2D"]
 
@@ -1155,3 +1169,4 @@ InterArea = NodePath("../LootBoxs2/InterActArea")
 position = Vector2(1028, 2499)
 HighLightArea = NodePath("../LootBoxs11/InterActArea")
 InterArea = NodePath("../LootBoxs11/InterActArea")
+InveentroyContent = SubResource("Resource_rcnbb")
