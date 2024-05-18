@@ -2,5 +2,8 @@
 
 [ext_resource type="Script" path="res://Components/Scripts/enemy_ai_component.gd" id="1_14hw0"]
 
-[node name="EnemyAiComponent" type="Node2D"]
+[node name="EnemyAiComponent" type="Node2D" node_paths=PackedStringArray("timer")]
 script = ExtResource("1_14hw0")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="."]

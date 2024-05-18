@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://cpfa5fp5y5x5l"]
+[gd_scene load_steps=66 format=3 uid="uid://cpfa5fp5y5x5l"]
 
 [ext_resource type="Script" path="res://Components/Scripts/entity_component.gd" id="1_j4kbo"]
 [ext_resource type="Script" path="res://Resources/StatResource.gd" id="2_anw5q"]
@@ -17,16 +17,220 @@
 script = ExtResource("2_anw5q")
 Health = 100
 Strength = 10
-Speed = 200.0
+Speed = 1000.0
 Acceleration = 1.0
 Friction = 1.0
+
+[sub_resource type="Resource" id="Resource_7s5vv"]
+script = ExtResource("4_xttob")
+name = "Chasing"
+metadata/graph_offset = Vector2(766, 162)
+
+[sub_resource type="Resource" id="Resource_u1738"]
+script = ExtResource("4_xttob")
+name = "Damaged"
+metadata/graph_offset = Vector2(658, 42)
+
+[sub_resource type="Resource" id="Resource_f0uih"]
+script = ExtResource("4_xttob")
+name = "Dead"
+metadata/graph_offset = Vector2(866, 42)
+
+[sub_resource type="Resource" id="Resource_74o2x"]
+script = ExtResource("4_xttob")
+name = "Entry"
+metadata/graph_offset = Vector2(366, 162)
+
+[sub_resource type="Resource" id="Resource_4vvhv"]
+script = ExtResource("4_xttob")
+name = "Exit"
+metadata/graph_offset = Vector2(1066, 42)
+
+[sub_resource type="Resource" id="Resource_4gl17"]
+script = ExtResource("4_xttob")
+name = "Idle"
+metadata/graph_offset = Vector2(566, 162)
+
+[sub_resource type="Resource" id="Resource_rrd2p"]
+script = ExtResource("4_xttob")
+name = "Attacking"
+metadata/graph_offset = Vector2(959.5, 162)
+
+[sub_resource type="Resource" id="Resource_47cg5"]
+script = ExtResource("5_wq122")
+name = "Damaged"
+
+[sub_resource type="Resource" id="Resource_w8m05"]
+script = ExtResource("5_p45ch")
+from = "Chasing"
+to = "Damaged"
+conditions = {
+"Damaged": SubResource("Resource_47cg5")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_u85kw"]
+script = ExtResource("5_wq122")
+name = "Idle"
+
+[sub_resource type="Resource" id="Resource_g1hqs"]
+script = ExtResource("5_p45ch")
+from = "Chasing"
+to = "Idle"
+conditions = {
+"Idle": SubResource("Resource_u85kw")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_t7voe"]
+script = ExtResource("5_wq122")
+name = "Attacking"
+
+[sub_resource type="Resource" id="Resource_603l6"]
+script = ExtResource("5_p45ch")
+from = "Chasing"
+to = "Attacking"
+conditions = {
+"Attacking": SubResource("Resource_t7voe")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_x5xf0"]
+script = ExtResource("5_wq122")
+name = "Chasing"
+
+[sub_resource type="Resource" id="Resource_b3wyl"]
+script = ExtResource("5_p45ch")
+from = "Damaged"
+to = "Chasing"
+conditions = {
+"Chasing": SubResource("Resource_x5xf0")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_rh2os"]
+script = ExtResource("5_wq122")
+name = "Dead"
+
+[sub_resource type="Resource" id="Resource_n8ka0"]
+script = ExtResource("5_p45ch")
+from = "Damaged"
+to = "Dead"
+conditions = {
+"Dead": SubResource("Resource_rh2os")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_qmvu0"]
+script = ExtResource("5_wq122")
+name = "Idle"
+
+[sub_resource type="Resource" id="Resource_s4fng"]
+script = ExtResource("5_p45ch")
+from = "Damaged"
+to = "Idle"
+conditions = {
+"Idle": SubResource("Resource_qmvu0")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_npb7h"]
+script = ExtResource("5_p45ch")
+from = "Dead"
+to = "Exit"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_h2hg1"]
+script = ExtResource("5_p45ch")
+from = "Entry"
+to = "Idle"
+conditions = {}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_lpwsj"]
+script = ExtResource("5_wq122")
+name = "Chasing"
+
+[sub_resource type="Resource" id="Resource_v8x4m"]
+script = ExtResource("5_p45ch")
+from = "Idle"
+to = "Chasing"
+conditions = {
+"Chasing": SubResource("Resource_lpwsj")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_krnou"]
+script = ExtResource("5_wq122")
+name = "Damaged"
+
+[sub_resource type="Resource" id="Resource_j0oeh"]
+script = ExtResource("5_p45ch")
+from = "Idle"
+to = "Damaged"
+conditions = {
+"Damaged": SubResource("Resource_krnou")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_31mvk"]
+script = ExtResource("5_wq122")
+name = "Chasing"
+
+[sub_resource type="Resource" id="Resource_qqiei"]
+script = ExtResource("5_p45ch")
+from = "Attacking"
+to = "Chasing"
+conditions = {
+"Chasing": SubResource("Resource_31mvk")
+}
+priority = 0
+
+[sub_resource type="Resource" id="Resource_vhsu5"]
+script = ExtResource("5_jwbk5")
+states = {
+"Attacking": SubResource("Resource_rrd2p"),
+"Chasing": SubResource("Resource_7s5vv"),
+"Damaged": SubResource("Resource_u1738"),
+"Dead": SubResource("Resource_f0uih"),
+"Entry": SubResource("Resource_74o2x"),
+"Exit": SubResource("Resource_4vvhv"),
+"Idle": SubResource("Resource_4gl17")
+}
+transitions = {
+"Attacking": {
+"Chasing": SubResource("Resource_qqiei")
+},
+"Chasing": {
+"Attacking": SubResource("Resource_603l6"),
+"Damaged": SubResource("Resource_w8m05"),
+"Idle": SubResource("Resource_g1hqs")
+},
+"Damaged": {
+"Chasing": SubResource("Resource_b3wyl"),
+"Dead": SubResource("Resource_n8ka0"),
+"Idle": SubResource("Resource_s4fng")
+},
+"Dead": {
+"Exit": SubResource("Resource_npb7h")
+},
+"Entry": {
+"Idle": SubResource("Resource_h2hg1")
+},
+"Idle": {
+"Chasing": SubResource("Resource_v8x4m"),
+"Damaged": SubResource("Resource_j0oeh")
+}
+}
+name = ""
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s3v1i"]
 radius = 13.0384
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gtjgq"]
 radius = 13.0
-height = 54.0
+height = 56.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_upxtm"]
 radius = 160.0
@@ -211,178 +415,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Resource" id="Resource_74o2x"]
-script = ExtResource("4_xttob")
-name = "Entry"
-metadata/graph_offset = Vector2(366, 162)
-
-[sub_resource type="Resource" id="Resource_4gl17"]
-script = ExtResource("4_xttob")
-name = "Idle"
-metadata/graph_offset = Vector2(566, 162)
-
-[sub_resource type="Resource" id="Resource_7s5vv"]
-script = ExtResource("4_xttob")
-name = "Chasing"
-metadata/graph_offset = Vector2(766, 162)
-
-[sub_resource type="Resource" id="Resource_u1738"]
-script = ExtResource("4_xttob")
-name = "Damaged"
-metadata/graph_offset = Vector2(658, 42)
-
-[sub_resource type="Resource" id="Resource_f0uih"]
-script = ExtResource("4_xttob")
-name = "Dead"
-metadata/graph_offset = Vector2(866, 42)
-
-[sub_resource type="Resource" id="Resource_4vvhv"]
-script = ExtResource("4_xttob")
-name = "Exit"
-metadata/graph_offset = Vector2(1066, 42)
-
-[sub_resource type="Resource" id="Resource_h2hg1"]
-script = ExtResource("5_p45ch")
-from = "Entry"
-to = "Idle"
-conditions = {}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_krnou"]
-script = ExtResource("5_wq122")
-name = "Dead"
-
-[sub_resource type="Resource" id="Resource_j0oeh"]
-script = ExtResource("5_p45ch")
-from = "Idle"
-to = "Damaged"
-conditions = {
-"Dead": SubResource("Resource_krnou")
-}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_lpwsj"]
-script = ExtResource("5_wq122")
-name = "Chasing"
-
-[sub_resource type="Resource" id="Resource_v8x4m"]
-script = ExtResource("5_p45ch")
-from = "Idle"
-to = "Chasing"
-conditions = {
-"Chasing": SubResource("Resource_lpwsj")
-}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_qmvu0"]
-script = ExtResource("5_wq122")
-name = "Idle"
-
-[sub_resource type="Resource" id="Resource_s4fng"]
-script = ExtResource("5_p45ch")
-from = "Damaged"
-to = "Idle"
-conditions = {
-"Idle": SubResource("Resource_qmvu0")
-}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_rh2os"]
-script = ExtResource("5_wq122")
-name = "Dead"
-
-[sub_resource type="Resource" id="Resource_n8ka0"]
-script = ExtResource("5_p45ch")
-from = "Damaged"
-to = "Dead"
-conditions = {
-"Dead": SubResource("Resource_rh2os")
-}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_x5xf0"]
-script = ExtResource("5_wq122")
-name = "Chasing"
-
-[sub_resource type="Resource" id="Resource_b3wyl"]
-script = ExtResource("5_p45ch")
-from = "Damaged"
-to = "Chasing"
-conditions = {
-"Chasing": SubResource("Resource_x5xf0")
-}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_47cg5"]
-script = ExtResource("5_wq122")
-name = "Damaged"
-
-[sub_resource type="Resource" id="Resource_w8m05"]
-script = ExtResource("5_p45ch")
-from = "Chasing"
-to = "Damaged"
-conditions = {
-"Damaged": SubResource("Resource_47cg5")
-}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_u85kw"]
-script = ExtResource("5_wq122")
-name = "Idle"
-
-[sub_resource type="Resource" id="Resource_g1hqs"]
-script = ExtResource("5_p45ch")
-from = "Chasing"
-to = "Idle"
-conditions = {
-"Idle": SubResource("Resource_u85kw")
-}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_npb7h"]
-script = ExtResource("5_p45ch")
-from = "Dead"
-to = "Exit"
-conditions = {}
-priority = 0
-
-[sub_resource type="Resource" id="Resource_vhsu5"]
-script = ExtResource("5_jwbk5")
-states = {
-"Chasing": SubResource("Resource_7s5vv"),
-"Damaged": SubResource("Resource_u1738"),
-"Dead": SubResource("Resource_f0uih"),
-"Entry": SubResource("Resource_74o2x"),
-"Exit": SubResource("Resource_4vvhv"),
-"Idle": SubResource("Resource_4gl17")
-}
-transitions = {
-"Chasing": {
-"Damaged": SubResource("Resource_w8m05"),
-"Idle": SubResource("Resource_g1hqs")
-},
-"Damaged": {
-"Chasing": SubResource("Resource_b3wyl"),
-"Dead": SubResource("Resource_n8ka0"),
-"Idle": SubResource("Resource_s4fng")
-},
-"Dead": {
-"Exit": SubResource("Resource_npb7h")
-},
-"Entry": {
-"Idle": SubResource("Resource_h2hg1")
-},
-"Idle": {
-"Chasing": SubResource("Resource_v8x4m"),
-"Damaged": SubResource("Resource_j0oeh")
-}
-}
-name = ""
-
 [node name="Lizardman" type="CharacterBody2D" node_paths=PackedStringArray("HealthComponent")]
 script = ExtResource("1_j4kbo")
 Stats = SubResource("Resource_yxk0q")
 HealthComponent = NodePath("HealthComponent")
+
+[node name="StateMachinePlayer" type="Node" parent="."]
+script = ExtResource("4_b0pi0")
+state_machine = SubResource("Resource_vhsu5")
+update_process_mode = 0
 
 [node name="EnemyAiComponent" parent="." node_paths=PackedStringArray("MovableEntity", "DetectionArea", "SMP", "sprite") instance=ExtResource("5_6ko32")]
 MovableEntity = NodePath("..")
@@ -398,6 +439,7 @@ script = ExtResource("2_y77a7")
 Entity = NodePath("..")
 
 [node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("HealthComponent")]
+position = Vector2(0, -14)
 script = ExtResource("3_x6nxu")
 HealthComponent = NodePath("../HealthComponent")
 
@@ -411,11 +453,7 @@ shape = SubResource("CapsuleShape2D_gtjgq")
 shape = SubResource("CircleShape2D_upxtm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_b6w74")
 animation = &"Idle"
 autoplay = "Idle"
-
-[node name="StateMachinePlayer" type="Node" parent="."]
-script = ExtResource("4_b0pi0")
-state_machine = SubResource("Resource_vhsu5")
-update_process_mode = 0
