@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://njt5a3n8e6p4"
+path="res://.godot/imported/Sound - one_beep-99630.mp3-f53557f66f955a6a838a0b32ac94ebe2.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sound - one_beep-99630.mp3"
+dest_files=["res://.godot/imported/Sound - one_beep-99630.mp3-f53557f66f955a6a838a0b32ac94ebe2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

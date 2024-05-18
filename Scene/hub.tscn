@@ -1,16 +1,27 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1ui8lkg8n8hk"]
+[gd_scene load_steps=24 format=3 uid="uid://d1ui8lkg8n8hk"]
 
 [ext_resource type="Script" path="res://Scene/hub.gd" id="1_tbohb"]
 [ext_resource type="AudioStream" uid="uid://c2q0hvwighqiw" path="res://Audio/Song - Kevin MacLeod - 8bit Dungeon Boss NO COPYRIGHT 8-bit Music.mp3" id="2_oxanp"]
+[ext_resource type="AudioStream" uid="uid://njt5a3n8e6p4" path="res://Audio/Sound - one_beep-99630.mp3" id="3_naga3"]
 [ext_resource type="Texture2D" uid="uid://bt0b4nk6uvm0a" path="res://Art_UI/Shop_TextureButton, Normal.png" id="3_v814g"]
 [ext_resource type="Texture2D" uid="uid://c2kbx8cind26s" path="res://Art_PNG/Monster_Drowned (Gun), Placeholder.png" id="4_j0yrg"]
 [ext_resource type="Texture2D" uid="uid://brsqjv5ec7nl2" path="res://Art_UI/Shop_TextureButton, Pressed.png" id="4_repa8"]
+[ext_resource type="AudioStream" uid="uid://b58tbi8netxou" path="res://Audio/Sound Clip - game-start-6104.mp3" id="4_uh4nk"]
 [ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="5_2qcak"]
 [ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="6_o6ojd"]
+[ext_resource type="Texture2D" uid="uid://c27xhpkqpdbwg" path="res://Art_PNG/UI_Mission.png" id="7_23aue"]
 [ext_resource type="Texture2D" uid="uid://bbktnb86mocwh" path="res://Art_UI/Equipment_EquipBackground.png" id="7_cfmhh"]
+[ext_resource type="Texture2D" uid="uid://bbx0hqgr6340o" path="res://Art_PNG/UI_Stash_2x.png" id="8_h3kmt"]
 [ext_resource type="Texture2D" uid="uid://btcmsj22xtuqh" path="res://Art_UI/Shop_TextureButton, Normal, Small.png" id="8_nef1m"]
+[ext_resource type="Texture2D" uid="uid://2ldln76m8mqx" path="res://Art_PNG/UI_Shopkeeper_2x.png" id="9_3wuke"]
 [ext_resource type="Texture2D" uid="uid://5547r6r8hhhk" path="res://Art_UI/Shop_TextureButton, Pressed, Small.png" id="9_bcvpg"]
 [ext_resource type="Texture2D" uid="uid://bun2n52oivnew" path="res://Art_UI/Shop_TextureButton, Hover, Small.png" id="10_khq45"]
+[ext_resource type="Texture2D" uid="uid://bbpn8t3jaxtdg" path="res://Art_UI/Shop_TextureButton, Normal, Red.png" id="12_ymp6m"]
+[ext_resource type="Texture2D" uid="uid://dwhw6d1s7my32" path="res://Art_UI/Shop_TextureButton, Hover, Red.png" id="13_oe8j8"]
+[ext_resource type="Texture2D" uid="uid://csbyne15x6dyu" path="res://Art_UI/Shop_TextureButton, Normal, Green.png" id="14_e2ur0"]
+[ext_resource type="Texture2D" uid="uid://b85rvuyo3khmq" path="res://Art_UI/Shop_TextureButton, Hover, Green,png.png" id="15_vistt"]
+[ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="17_yitpx"]
+[ext_resource type="PackedScene" uid="uid://dd0hqlllt0tqs" path="res://Scene/Map_Earth.tscn" id="18_i45gf"]
 
 [sub_resource type="Theme" id="Theme_vs827"]
 
@@ -27,6 +38,13 @@ script = ExtResource("1_tbohb")
 stream = ExtResource("2_oxanp")
 autoplay = true
 
+[node name="MenuSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_naga3")
+volume_db = 10.0
+
+[node name="Launch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uh4nk")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -34,7 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.156863, 0.156863, 0.156863, 1)
+color = Color(0.690196, 0.403922, 0.270588, 1)
 
 [node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -50,6 +68,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="Vbox" type="VBoxContainer" parent="Margin"]
 layout_mode = 2
+theme_override_constants/separation = 100
 
 [node name="Center" type="CenterContainer" parent="Margin/Vbox"]
 layout_mode = 2
@@ -114,6 +133,48 @@ theme = ExtResource("6_o6ojd")
 bbcode_enabled = true
 text = "[center]shop"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Margin/Vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Missions" type="TextureButton" parent="Margin/Vbox/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_23aue")
+
+[node name="Stash" type="TextureButton" parent="Margin/Vbox/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_h3kmt")
+
+[node name="Shop" type="TextureButton" parent="Margin/Vbox/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_3wuke")
+
+[node name="ColorRect" type="ColorRect" parent="Margin/Vbox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Margin/Vbox/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Margin/Vbox/ColorRect/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]Welcome back, [wave]merc[/wave]. live to tella 'nother story, heh? well, about yer business."
+
 [node name="Mission" type="Control" parent="." groups=["Ui"]]
 visible = false
 layout_mode = 1
@@ -122,6 +183,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="Margin" type="MarginContainer" parent="Mission"]
 layout_mode = 1
@@ -159,20 +221,44 @@ theme_override_constants/separation = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextureButton" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1"]
+[node name="Vbox" type="VBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1"]
 layout_mode = 2
-texture_normal = ExtResource("3_v814g")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/TextureButton"]
+[node name="DepartButton1" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/Vbox"]
+layout_mode = 2
+texture_normal = ExtResource("12_ymp6m")
+texture_pressed = ExtResource("4_repa8")
+texture_hover = ExtResource("13_oe8j8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/Vbox/DepartButton1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("6_o6ojd")
 bbcode_enabled = true
-text = "[center]placeholder"
+text = "[center]Depart"
+
+[node name="CompleteButton1" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/Vbox"]
+layout_mode = 2
+texture_normal = ExtResource("14_e2ur0")
+texture_pressed = ExtResource("4_repa8")
+texture_hover = ExtResource("15_vistt")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/Vbox/CompleteButton1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]Complete"
 
 [node name="MarginContainer" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1"]
 layout_mode = 2
@@ -186,7 +272,7 @@ theme_override_constants/margin_bottom = 1
 layout_mode = 2
 color = Color(0.137255, 0.137255, 0.137255, 1)
 
-[node name="MarginContainer3" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer/ColorRect"]
+[node name="InnerTextMargin" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -198,34 +284,96 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer/ColorRect/MarginContainer3"]
+[node name="Vbox" type="VBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer/ColorRect/InnerTextMargin"]
 layout_mode = 2
+
+[node name="Mission1FlavorText" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer/ColorRect/InnerTextMargin/Vbox"]
+layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("6_o6ojd")
 bbcode_enabled = true
-text = "Are you ready, kids?
-Aye, aye, Captain
-I can't hear you
-Aye, aye, Captain
-Ohhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhd"
+text = "wow, aren't you a load sack of aqua around here? go on, get out of camp and show us you can atleast get through a single extraction, bro."
+
+[node name="Hbox" type="HBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer/ColorRect/InnerTextMargin/Vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RewardsLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer/ColorRect/InnerTextMargin/Vbox/Hbox"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "Rewards:"
+
+[node name="RewardsFlavor" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer/ColorRect/InnerTextMargin/Vbox/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "10 aqua
+2 medkits"
+scroll_active = false
+
+[node name="MapLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer/ColorRect/InnerTextMargin/Vbox/Hbox"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "Map: "
+
+[node name="MapFlavor" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer/ColorRect/InnerTextMargin/Vbox/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "Map: test_example_map"
 
 [node name="Mission2" type="HBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextureButton" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2"]
+[node name="Vbox" type="VBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2"]
 layout_mode = 2
-texture_normal = ExtResource("3_v814g")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/TextureButton"]
+[node name="DepartButton2" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/Vbox"]
+layout_mode = 2
+texture_normal = ExtResource("12_ymp6m")
+texture_pressed = ExtResource("4_repa8")
+texture_hover = ExtResource("13_oe8j8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/Vbox/DepartButton2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("6_o6ojd")
 bbcode_enabled = true
-text = "[center]placeholder"
+text = "[center]Depart"
+
+[node name="CompleteButton2" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/Vbox"]
+layout_mode = 2
+texture_normal = ExtResource("14_e2ur0")
+texture_pressed = ExtResource("4_repa8")
+texture_hover = ExtResource("15_vistt")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/Vbox/CompleteButton2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]Complete"
 
 [node name="MarginContainer" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2"]
 layout_mode = 2
@@ -239,7 +387,7 @@ theme_override_constants/margin_bottom = 1
 layout_mode = 2
 color = Color(0.137255, 0.137255, 0.137255, 1)
 
-[node name="MarginContainer2" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer/ColorRect"]
+[node name="InnerTextMargin" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -251,33 +399,97 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer/ColorRect/MarginContainer2"]
+[node name="Vbox" type="VBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer/ColorRect/InnerTextMargin"]
 layout_mode = 2
+
+[node name="Mission2FlavorText" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer/ColorRect/InnerTextMargin/Vbox"]
+layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("6_o6ojd")
 bbcode_enabled = true
-text = "Who lives in a pineapple under the sea?
-Absorbent and yellow and porous is he"
+text = "aight, merc. you been here long enough. time to show us you got the cojones, pendejo. go into that forest over there, yea? bring me back the arm of the biggest one you can find."
+
+[node name="Hbox" type="HBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer/ColorRect/InnerTextMargin/Vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RewardsLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer/ColorRect/InnerTextMargin/Vbox/Hbox"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "Rewards:"
+
+[node name="RewardsFlavor" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer/ColorRect/InnerTextMargin/Vbox/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "20 aqua
+shotgun [green]"
+
+[node name="MapLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer/ColorRect/InnerTextMargin/Vbox/Hbox"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "Map: "
+
+[node name="MapFlavor" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer/ColorRect/InnerTextMargin/Vbox/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "Map: test_example_map"
 
 [node name="Mission3" type="HBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextureButton" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3"]
+[node name="Vbox" type="VBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3"]
 layout_mode = 2
-texture_normal = ExtResource("3_v814g")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/TextureButton"]
+[node name="DepartButton3" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox"]
+layout_mode = 2
+texture_normal = ExtResource("12_ymp6m")
+texture_pressed = ExtResource("4_repa8")
+texture_hover = ExtResource("13_oe8j8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox/DepartButton3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("6_o6ojd")
 bbcode_enabled = true
-text = "[center]placeholder"
+text = "[center]Depart"
 
-[node name="MarginContainer" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3"]
+[node name="CompleteButton3" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox"]
+layout_mode = 2
+texture_normal = ExtResource("14_e2ur0")
+texture_pressed = ExtResource("4_repa8")
+texture_hover = ExtResource("15_vistt")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox/CompleteButton3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]Complete"
+
+[node name="TextMargin" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 1
@@ -285,11 +497,11 @@ theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = 2
 
-[node name="ColorRect" type="ColorRect" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/TextMargin"]
 layout_mode = 2
 color = Color(0.137255, 0.137255, 0.137255, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/MarginContainer/ColorRect"]
+[node name="InnerTextMargin" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/TextMargin/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -301,12 +513,52 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/MarginContainer/ColorRect/MarginContainer"]
+[node name="Vbox" type="VBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/TextMargin/ColorRect/InnerTextMargin"]
 layout_mode = 2
+
+[node name="Mission3FlavorText" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/TextMargin/ColorRect/InnerTextMargin/Vbox"]
+layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("6_o6ojd")
 bbcode_enabled = true
-text = "If nautical nonsense be something you wish
-Then drop on the deck and flop like a fish"
+text = "Gonna need you to go down to the aqua planet, it's the one overrunwith gross fish monsters. i really need my hard drive that has my \"favorites\" folder backed up on it."
+
+[node name="Hbox" type="HBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/TextMargin/ColorRect/InnerTextMargin/Vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RewardsLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/TextMargin/ColorRect/InnerTextMargin/Vbox/Hbox"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "Rewards:"
+
+[node name="RewardsFlavor" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/TextMargin/ColorRect/InnerTextMargin/Vbox/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "100 aqua
+smg [blue]"
+
+[node name="MapLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/TextMargin/ColorRect/InnerTextMargin/Vbox/Hbox"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "Map: "
+
+[node name="MapFlavor" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/TextMargin/ColorRect/InnerTextMargin/Vbox/Hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "Map: test_example_map"
 
 [node name="MarginContainer" type="MarginContainer" parent="Mission/Margin/ColorRect/Margin/MissionList"]
 layout_mode = 2
@@ -318,6 +570,7 @@ theme_override_constants/margin_right = 1
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+mouse_filter = 1
 texture_normal = ExtResource("3_v814g")
 texture_pressed = ExtResource("4_repa8")
 texture_hover = ExtResource("5_2qcak")
@@ -335,7 +588,6 @@ bbcode_enabled = true
 text = "[center]back"
 
 [node name="Stash" type="Control" parent="." groups=["Ui"]]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -421,7 +673,7 @@ scroll_active = false
 layout_mode = 2
 texture_normal = ExtResource("8_nef1m")
 texture_pressed = ExtResource("9_bcvpg")
-texture_hover = ExtResource("5_2qcak")
+texture_hover = ExtResource("10_khq45")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton2"]
 layout_mode = 1
@@ -440,7 +692,7 @@ scroll_active = false
 layout_mode = 2
 texture_normal = ExtResource("8_nef1m")
 texture_pressed = ExtResource("9_bcvpg")
-texture_hover = ExtResource("5_2qcak")
+texture_hover = ExtResource("10_khq45")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton3"]
 layout_mode = 1
@@ -459,7 +711,7 @@ scroll_active = false
 layout_mode = 2
 texture_normal = ExtResource("8_nef1m")
 texture_pressed = ExtResource("9_bcvpg")
-texture_hover = ExtResource("5_2qcak")
+texture_hover = ExtResource("10_khq45")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton4"]
 layout_mode = 1
@@ -478,7 +730,7 @@ scroll_active = false
 layout_mode = 2
 texture_normal = ExtResource("8_nef1m")
 texture_pressed = ExtResource("9_bcvpg")
-texture_hover = ExtResource("5_2qcak")
+texture_hover = ExtResource("10_khq45")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton5"]
 layout_mode = 1
@@ -497,7 +749,7 @@ scroll_active = false
 layout_mode = 2
 texture_normal = ExtResource("8_nef1m")
 texture_pressed = ExtResource("9_bcvpg")
-texture_hover = ExtResource("5_2qcak")
+texture_hover = ExtResource("10_khq45")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton6"]
 layout_mode = 1
@@ -516,16 +768,15 @@ scroll_active = false
 layout_mode = 2
 texture_normal = ExtResource("8_nef1m")
 texture_pressed = ExtResource("9_bcvpg")
-texture_hover = ExtResource("5_2qcak")
+texture_hover = ExtResource("10_khq45")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton7"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton7"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.72696, 0.833255)
 mouse_filter = 1
 theme = ExtResource("6_o6ojd")
 bbcode_enabled = true
@@ -593,9 +844,49 @@ offset_right = 956.0
 offset_bottom = 534.0
 text = "back"
 
+[node name="Load_Screen1" parent="." instance=ExtResource("17_yitpx")]
+visible = false
+Scene = ExtResource("18_i45gf")
+
+[node name="Load_Screen2" parent="." instance=ExtResource("17_yitpx")]
+visible = false
+Scene = ExtResource("18_i45gf")
+
+[node name="Load_Screen3" parent="." instance=ExtResource("17_yitpx")]
+visible = false
+Scene = ExtResource("18_i45gf")
+
+[connection signal="finished" from="Launch" to="." method="_on_launch_finished"]
+[connection signal="mouse_entered" from="Margin/Vbox/Center/HubTubs/missions" to="." method="_on_missions_mouse_entered"]
+[connection signal="mouse_exited" from="Margin/Vbox/Center/HubTubs/missions" to="." method="_on_missions_mouse_exited"]
 [connection signal="pressed" from="Margin/Vbox/Center/HubTubs/missions" to="." method="_on_missions_pressed"]
+[connection signal="mouse_entered" from="Margin/Vbox/Center/HubTubs/stash" to="." method="_on_stash_mouse_entered"]
+[connection signal="mouse_exited" from="Margin/Vbox/Center/HubTubs/stash" to="." method="_on_stash_mouse_exited"]
 [connection signal="pressed" from="Margin/Vbox/Center/HubTubs/stash" to="." method="_on_stash_pressed"]
+[connection signal="mouse_entered" from="Margin/Vbox/Center/HubTubs/shop" to="." method="_on_shop_mouse_entered"]
+[connection signal="mouse_exited" from="Margin/Vbox/Center/HubTubs/shop" to="." method="_on_shop_mouse_exited"]
 [connection signal="pressed" from="Margin/Vbox/Center/HubTubs/shop" to="." method="_on_shop_pressed"]
+[connection signal="mouse_entered" from="Margin/Vbox/HBoxContainer/Missions" to="." method="_on_missions_mouse_entered"]
+[connection signal="mouse_exited" from="Margin/Vbox/HBoxContainer/Missions" to="." method="_on_missions_mouse_exited"]
+[connection signal="pressed" from="Margin/Vbox/HBoxContainer/Missions" to="." method="_on_missions_pressed"]
+[connection signal="mouse_entered" from="Margin/Vbox/HBoxContainer/Stash" to="." method="_on_stash_mouse_entered"]
+[connection signal="mouse_exited" from="Margin/Vbox/HBoxContainer/Stash" to="." method="_on_stash_mouse_exited"]
+[connection signal="pressed" from="Margin/Vbox/HBoxContainer/Stash" to="." method="_on_stash_pressed"]
+[connection signal="mouse_entered" from="Margin/Vbox/HBoxContainer/Shop" to="." method="_on_shop_mouse_entered"]
+[connection signal="mouse_exited" from="Margin/Vbox/HBoxContainer/Shop" to="." method="_on_shop_mouse_exited"]
+[connection signal="pressed" from="Margin/Vbox/HBoxContainer/Shop" to="." method="_on_shop_pressed"]
+[connection signal="mouse_entered" from="Mission/Margin/ColorRect/Margin/MissionList/Mission1/Vbox/DepartButton1" to="." method="_on_depart_button_1_mouse_entered"]
+[connection signal="pressed" from="Mission/Margin/ColorRect/Margin/MissionList/Mission1/Vbox/DepartButton1" to="." method="_on_depart_button_1_pressed"]
+[connection signal="mouse_entered" from="Mission/Margin/ColorRect/Margin/MissionList/Mission1/Vbox/CompleteButton1" to="." method="_on_complete_button_1_mouse_entered"]
+[connection signal="pressed" from="Mission/Margin/ColorRect/Margin/MissionList/Mission1/Vbox/CompleteButton1" to="." method="_on_complete_button_1_pressed"]
+[connection signal="mouse_entered" from="Mission/Margin/ColorRect/Margin/MissionList/Mission2/Vbox/DepartButton2" to="." method="_on_depart_button_2_mouse_entered"]
+[connection signal="pressed" from="Mission/Margin/ColorRect/Margin/MissionList/Mission2/Vbox/DepartButton2" to="." method="_on_depart_button_2_pressed"]
+[connection signal="mouse_entered" from="Mission/Margin/ColorRect/Margin/MissionList/Mission2/Vbox/CompleteButton2" to="." method="_on_complete_button_2_mouse_entered"]
+[connection signal="pressed" from="Mission/Margin/ColorRect/Margin/MissionList/Mission2/Vbox/CompleteButton2" to="." method="_on_complete_button_2_pressed"]
+[connection signal="mouse_entered" from="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox/DepartButton3" to="." method="_on_depart_button_3_mouse_entered"]
+[connection signal="pressed" from="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox/DepartButton3" to="." method="_on_depart_button_3_pressed"]
+[connection signal="mouse_entered" from="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox/CompleteButton3" to="." method="_on_complete_button_3_mouse_entered"]
+[connection signal="pressed" from="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox/CompleteButton3" to="." method="_on_complete_button_3_pressed"]
 [connection signal="pressed" from="Mission/Margin/ColorRect/Margin/MissionList/MarginContainer/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="shop/back" to="." method="_on_back_pressed"]
