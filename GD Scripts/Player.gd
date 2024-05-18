@@ -81,10 +81,13 @@ func UpdataProgress():
 
 
 func _on_equip_item_stack_added(item_stack: ItemStack) -> void:
+	
 	if item_stack.position_in_inventory == Vector2(0,0):
 		gun.CurrentGun =item_stack.item_type.custom_data
+		SetGun1()
 	elif item_stack.position_in_inventory == Vector2(1,0):
 		gun_2.CurrentGun =item_stack.item_type.custom_data
+		SetGun2()
 	elif item_stack.position_in_inventory == Vector2(2,0):
 		print_debug("Throwable")
 	elif item_stack.position_in_inventory == Vector2(3,0):
@@ -96,8 +99,9 @@ func _on_equip_item_stack_added(item_stack: ItemStack) -> void:
 	elif item_stack.position_in_inventory == Vector2(6,0):
 		print_debug("feet")
 
-
+	CurrentGunNode.UpdateAmmoText()
 func _on_equip_item_stack_removed(item_stack: ItemStack) -> void:
+	
 	if item_stack.position_in_inventory == Vector2(0,0):
 		gun.CurrentGun = null
 		print_debug("weapon 1")
@@ -116,7 +120,7 @@ func _on_equip_item_stack_removed(item_stack: ItemStack) -> void:
 	elif item_stack.position_in_inventory == Vector2(6,0):
 		print_debug("feet")
 
-
+	CurrentGunNode.UpdateAmmoText()
 func EditDescriptionAField(item_view: ItemStackView):
 	description.text = "[center]" +item_view.stack.item_type.description
 	Name.text = "[center]" + item_view.stack.item_type.name
@@ -158,19 +162,22 @@ func SetAnim(NameOfAction):
 
 func SwitchGuns():
 	if CurrentGunNode == gun:
-		CurrentGunNode = gun_2
-		gun_2.process_mode = Node.PROCESS_MODE_INHERIT
-		gun.process_mode = Node.PROCESS_MODE_DISABLED
-		gun_2.UpdateAmmoText()
-		gun.visible = false
-		gun_2.visible = true
-		curent_weapon.text = "[center] Current Weapon: Weapon 2"
+		SetGun2()
 	elif CurrentGunNode ==gun_2:
-		CurrentGunNode = gun
-		gun.UpdateAmmoText()
-		gun.process_mode = Node.PROCESS_MODE_INHERIT
-		gun_2.process_mode = Node.PROCESS_MODE_DISABLED
-		gun_2.visible = false
-		gun.visible = true
-		curent_weapon.text = "[center] Current Weapon: Weapon 1"
-
+		SetGun1()
+func SetGun2():
+	CurrentGunNode = gun_2
+	gun_2.process_mode = PROCESS_MODE_INHERIT
+	gun.process_mode = PROCESS_MODE_DISABLED
+	gun_2.UpdateAmmoText()
+	gun.visible = false
+	gun_2.visible = true
+	curent_weapon.text = "[center] Current Weapon: Weapon 2"
+func SetGun1():
+	CurrentGunNode = gun
+	gun.UpdateAmmoText()
+	gun.process_mode = PROCESS_MODE_INHERIT
+	gun_2.process_mode = PROCESS_MODE_DISABLED
+	gun_2.visible = false
+	gun.visible = true
+	curent_weapon.text = "[center] Current Weapon: Weapon 1"

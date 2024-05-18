@@ -18,7 +18,7 @@ script = ExtResource("5_i8wpj")
 height = 3
 width = 4
 
-[node name="Bunker" type="StaticBody2D" node_paths=PackedStringArray("HighLightArea", "InterArea") groups=["Bunker", "Prop"]]
+[node name="Backpack" type="StaticBody2D" node_paths=PackedStringArray("HighLightArea", "InterArea") groups=["Bunker", "Prop"]]
 script = ExtResource("1_7r2m2")
 HighLightArea = NodePath("InterActArea")
 InterArea = NodePath("InterActArea")
@@ -29,12 +29,14 @@ HasInventory = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_2olts")
+offset = Vector2(0, -10)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-29, -12)
+position = Vector2(-29, -20)
 polygon = PackedVector2Array(24, 3, 24, 20, 36, 20, 37, 6, 30, 0)
 
 [node name="InterActArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 256
 

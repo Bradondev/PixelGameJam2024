@@ -15,7 +15,7 @@ size = Vector2(51.5, 31)
 [sub_resource type="Resource" id="Resource_pib2a"]
 resource_name = "GridInventory"
 script = ExtResource("7_ksifh")
-height = 10
+height = 8
 width = 10
 
 [node name="LootBoxs" type="StaticBody2D" node_paths=PackedStringArray("HighLightArea", "InterArea") groups=["Bunker", "Prop"]]
@@ -29,9 +29,10 @@ HasInventory = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_s7w5k")
+offset = Vector2(0, -23)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-29, -12)
+position = Vector2(-30, -34)
 polygon = PackedVector2Array(16.5, -10.5, 13, 5, 13, 32, 45, 31.5, 44.5, 4, 42, -11.5)
 
 [node name="InterActArea" type="Area2D" parent="."]
@@ -39,7 +40,7 @@ collision_layer = 0
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
-position = Vector2(-1.75, 16.5)
+position = Vector2(-1, 11)
 shape = SubResource("RectangleShape2D_q1g03")
 debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
 
@@ -47,11 +48,11 @@ debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
 
 [node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("6_oapii")]
 visible = false
-custom_minimum_size = Vector2(160, 160)
-offset_left = 642.0
-offset_top = 123.0
-offset_right = 802.0
-offset_bottom = 283.0
+custom_minimum_size = Vector2(160, 128)
+offset_left = 318.0
+offset_top = 278.0
+offset_right = 478.0
+offset_bottom = 406.0
 scale = Vector2(2, 2)
 inventory = SubResource("Resource_pib2a")
 init_contents = true

@@ -13,7 +13,7 @@ var CanShoot = true
 @onready var bulletspawnpoint: Node2D = $bulletspawnpoint
 var MouseR
 var Reloading = false
-var isShooting = true
+var isShooting = false
 @onready var reload_bar: TextureProgressBar = $"../UI/ReloadMargin/ReloadBar/Vbox/BotBar"
 @onready var reload_bar_ui : HBoxContainer = $"../UI/ReloadMargin/ReloadBar"
 @onready var reticle: Sprite2D =$Reticle
@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	if !CurrentGun: return
 	
 	
-	if Input.is_action_pressed("Shoot"):
+	if Input.is_action_pressed("Shoot") and player.CurrentGunNode == self:
 		isShooting = true
 		ShootGun()
 	else: 
@@ -38,7 +38,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	
 	if !CurrentGun or Reloading: return
-	if event.is_action_pressed("Reload"):
+	if event.is_action_pressed("Reload")  and player.CurrentGunNode == self:
 		ReloadCurrentGun()
 		
 	
@@ -47,7 +47,7 @@ func ReloadCurrentGun():
 	if CurrentGun.MagSize == CurrentGun.CurrentMagSize:
 		print_debug("mag is full")
 		return
-	var price : Dictionary = {CurrentGun.BulletTypeItem: CurrentGun.MagSize}
+	var price : Dictionary = {CurrentGun.BulletTypeItem: CurrentGun.MagSize - CurrentGun.CurrentMagSize}
 	var items_to_check = {}
 	var counts := {}
 	
@@ -82,6 +82,7 @@ func ShootGun():
 			UpdateAmmoText()
 		else : 
 			UpdateAmmoText()
+			player.SetAnim("idle")
 			print_debug("out of ammo") 
 			return
 			

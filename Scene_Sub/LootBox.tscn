@@ -34,9 +34,10 @@ HasInventory = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_476hi")
+offset = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-29, -12)
+position = Vector2(-28.5, -19.5)
 polygon = PackedVector2Array(19, 6, 19, 17, 39, 17, 39, 6)
 
 [node name="InterActArea" type="Area2D" parent="."]
@@ -44,7 +45,7 @@ collision_layer = 0
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
-position = Vector2(0.5, 12.125)
+position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_q1g03")
 debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
 
@@ -53,10 +54,10 @@ debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
 [node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("4_jvuiq")]
 visible = false
 custom_minimum_size = Vector2(96, 48)
-offset_left = 642.0
-offset_top = 123.0
-offset_right = 738.0
-offset_bottom = 171.0
+offset_left = 393.0
+offset_top = 395.0
+offset_right = 489.0
+offset_bottom = 443.0
 scale = Vector2(2, 2)
 inventory = SubResource("Resource_ul8q1")
 init_contents = true

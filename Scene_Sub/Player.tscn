@@ -237,6 +237,7 @@ nameplate_panel = SubResource("StyleBoxTexture_hk4p5")
 back_panel = SubResource("StyleBoxTexture_0wuuo")
 
 [node name="Item" parent="UI/Inventory" instance=ExtResource("7_pe8uv")]
+visible = false
 offset_left = 68.0
 offset_top = 187.0
 offset_right = 180.0

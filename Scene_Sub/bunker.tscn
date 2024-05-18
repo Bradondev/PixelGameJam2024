@@ -29,9 +29,10 @@ HasInventory = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_53vcx")
+offset = Vector2(0, -30)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-29, -12)
+position = Vector2(-30, -42)
 polygon = PackedVector2Array(-38, -38, -39, 39, 73, 40, 73, 0, -4, -39)
 
 [node name="InterActArea" type="Area2D" parent="."]
@@ -39,7 +40,7 @@ collision_layer = 0
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
-position = Vector2(-23.5, 41.5)
+position = Vector2(-28, 12)
 shape = SubResource("RectangleShape2D_q1g03")
 debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
 
@@ -47,13 +48,14 @@ debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
 
 [node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("4_iiu71")]
 visible = false
-offset_left = 642.0
-offset_top = 123.0
-offset_right = 754.0
-offset_bottom = 235.0
-scale = Vector2(2, 2)
+custom_minimum_size = Vector2(224, 224)
+offset_left = 340.0
+offset_top = 314.0
+offset_right = 564.0
+offset_bottom = 538.0
 inventory = SubResource("Resource_b4lgt")
 init_contents = true
+cell_size = Vector2(32, 32)
 autosave_file_path = ""
 
 [node name="Label" type="Label" parent="."]

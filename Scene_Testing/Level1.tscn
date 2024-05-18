@@ -779,10 +779,10 @@ position = Vector2(-2259, 526)
 position = Vector2(-1674, 595)
 
 [node name="GlassPod58" parent="props" instance=ExtResource("17_wkm2c")]
-position = Vector2(-1909, 565)
+position = Vector2(-1912, 578)
 
 [node name="GlassPod59" parent="props" instance=ExtResource("17_wkm2c")]
-position = Vector2(-1557, 565)
+position = Vector2(-1558, 576)
 
 [node name="mission1" parent="props" instance=ExtResource("21_mnn0p")]
 position = Vector2(4212, 467)
@@ -957,10 +957,10 @@ position = Vector2(-542, -1329)
 position = Vector2(-543, -964)
 
 [node name="GlassPod32" parent="props" instance=ExtResource("13_51wks")]
-position = Vector2(-512, -1007)
+position = Vector2(-287, -995)
 
 [node name="GlassPod33" parent="props" instance=ExtResource("14_tcw4b")]
-position = Vector2(-519, -1037)
+position = Vector2(-216, -996)
 
 [node name="GlassPod34" parent="props" instance=ExtResource("14_tcw4b")]
 position = Vector2(12, -1106)

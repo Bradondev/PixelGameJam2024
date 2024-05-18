@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bc4j42x2jqd7o"]
+[gd_scene load_steps=12 format=3 uid="uid://bc4j42x2jqd7o"]
 
 [ext_resource type="Script" path="res://addons/wyvernbox/inventory_view.gd" id="1_0llpc"]
 [ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="2_62im2"]
@@ -7,8 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="5_4055m"]
 [ext_resource type="PackedScene" uid="uid://b7jlucsddt6dg" path="res://addons/wyvernbox_prefabs/inventory_cell.tscn" id="6_tdnmv"]
 [ext_resource type="Texture2D" uid="uid://c4t3h4sbhkgk4" path="res://Art_UI/Inventory _Grid, Single_16x16px.png" id="7_4ny7p"]
+[ext_resource type="AudioStream" uid="uid://cbfjg4y7qqcr5" path="res://Audio/item-equip-6904.mp3" id="8_t608r"]
+[ext_resource type="AudioStream" uid="uid://b74t6c6ywv21w" path="res://Audio/take-item-sound-effect-163073.mp3" id="9_wuc2p"]
+[ext_resource type="AudioStream" uid="uid://b58tbi8netxou" path="res://Audio/Sound Clip - game-start-6104.mp3" id="10_1f2ji"]
 
-[sub_resource type="Resource" id="Resource_plmu5"]
+[sub_resource type="Resource" id="Resource_ymvd2"]
 resource_name = "GridInventory"
 script = ExtResource("2_62im2")
 height = 7
@@ -22,7 +25,7 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_constants/margin_right = 0
 script = ExtResource("1_0llpc")
-inventory = SubResource("Resource_plmu5")
+inventory = SubResource("Resource_ymvd2")
 init_contents = false
 item_scene = ExtResource("3_b67mn")
 cell_size = Vector2(16, 16)
@@ -56,3 +59,12 @@ size_flags_stretch_ratio = 6.84
 mouse_filter = 2
 texture = ExtResource("7_4ny7p")
 stretch_mode = 1
+
+[node name="MoveItem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_t608r")
+
+[node name="SplitItem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_wuc2p")
+
+[node name="Explore" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_1f2ji")

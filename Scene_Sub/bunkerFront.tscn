@@ -6,7 +6,8 @@
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_0iumj")
+offset = Vector2(0, -45)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-29, -12)
+position = Vector2(-27.3163, -55.4954)
 polygon = PackedVector2Array(12, -21, 41, -26, 71, -21, 71, 56, 12, 57)
