@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqy4p7dbms0kf"]
+[gd_scene load_steps=13 format=3 uid="uid://cqy4p7dbms0kf"]
 
 [ext_resource type="Script" path="res://GD Scripts/LootBox.gd" id="1_6letl"]
 [ext_resource type="Texture2D" uid="uid://c152raqpp2x57" path="res://Art_PNG/Props_Lootbox_Small_Opened (Outlined).png" id="2_qwick"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cn10askpyfxeb" path="res://Art_PNG/Props_Lootbox_Small_Opened.png" id="3_5k5t3"]
 [ext_resource type="Texture2D" uid="uid://dw7v51siliyam" path="res://Art_PNG/Props_Lootbox_Small_Locked.png" id="3_476hi"]
 [ext_resource type="PackedScene" uid="uid://bc4j42x2jqd7o" path="res://Scene/inventory/bunker.tscn" id="4_jvuiq"]
+[ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="5_h04qh"]
 [ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="8_ko2bl"]
 [ext_resource type="Texture2D" uid="uid://dcfxp0gtvvhyu" path="res://Art_UI/ProgressBar_PlayerResource (Over).png" id="9_2yww2"]
 [ext_resource type="Texture2D" uid="uid://3vmgjxrcavhb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Green.png" id="10_0to0l"]
@@ -13,8 +14,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1g03"]
 size = Vector2(35, 13.75)
 
+[sub_resource type="Resource" id="Resource_4xgea"]
+resource_local_to_scene = true
+script = ExtResource("5_h04qh")
+height = 2
+width = 4
+
 [node name="LootBoxs" type="StaticBody2D" node_paths=PackedStringArray("HighLightArea", "InterArea") groups=["Bunker", "Prop"]]
-scale = Vector2(2, 2)
 script = ExtResource("1_6letl")
 OpenedSpriteHighLight = ExtResource("2_qwick")
 OpenedSprite = ExtResource("3_5k5t3")
@@ -45,11 +51,15 @@ debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("4_jvuiq")]
+visible = false
+custom_minimum_size = Vector2(128, 64)
 offset_left = 411.0
 offset_top = 363.0
-offset_right = 523.0
-offset_bottom = 475.0
+offset_right = 539.0
+offset_bottom = 427.0
+inventory = SubResource("Resource_4xgea")
 init_contents = true
+cell_size = Vector2(32, 32)
 autosave_file_path = ""
 
 [node name="Label" type="Label" parent="."]

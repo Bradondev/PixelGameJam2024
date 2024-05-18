@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://b54tbc2f6nid0"]
+[gd_scene load_steps=5 format=3 uid="uid://b54tbc2f6nid0"]
 
 [ext_resource type="Script" path="res://addons/wyvernbox/crafting/vendor.gd" id="1_2v0fv"]
-[ext_resource type="PackedScene" uid="uid://bj1vmolmsqv8k" path="res://Scene/inventory/Shop.tscn" id="3_uqs2u"]
+[ext_resource type="PackedScene" uid="uid://dp2ppss8u73op" path="res://Scene/inventory/ShopGrid.tscn" id="2_1o434"]
+[ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="3_ve6es"]
+
+[sub_resource type="Resource" id="Resource_kqser"]
+resource_local_to_scene = true
+resource_name = "GridInventory"
+script = ExtResource("3_ve6es")
+height = 9
+width = 9
 
 [node name="shop" type="Control"]
 layout_mode = 3
@@ -9,28 +17,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="MarginContainer" parent="." instance=ExtResource("2_1o434")]
+layout_mode = 0
+offset_right = 288.0
+inventory = SubResource("Resource_kqser")
+interaction_mode = 31
+autosave_file_path = ""
+
 [node name="ShopManager" type="Node" parent="."]
 script = ExtResource("1_2v0fv")
-vendor_inventory = NodePath("../shop")
-sell_reward_into_inventory = NodePath("../../player")
 stock = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([null])
 stock_counts = Array[int]([1])
 stock_restocks = Array[int]([3])
 infinite_restocks = false
-remove_price_on_buy = true
-clear_sold_items_when_hidden = false
-free_buyback = false
-
-[node name="shop" parent="." instance=ExtResource("3_uqs2u")]
-layout_mode = 0
-offset_left = 664.0
-offset_top = 122.0
-offset_right = 792.0
-offset_bottom = 250.0
-scale = Vector2(2, 2)
-init_contents = false
-interaction_mode = 15
-autosave_intensity = 0
-
-[connection signal="grab_attempted" from="shop" to="ShopManager" method="_on_Inventory_grab_attempted"]
-[connection signal="item_stack_added" from="shop" to="ShopManager" method="_on_Inventory_item_stack_added"]

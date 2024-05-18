@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://d1ui8lkg8n8hk"]
+[gd_scene load_steps=55 format=3 uid="uid://d1ui8lkg8n8hk"]
 
 [ext_resource type="Script" path="res://Scene/hub.gd" id="1_tbohb"]
 [ext_resource type="AudioStream" uid="uid://c2q0hvwighqiw" path="res://Audio/Song - Kevin MacLeod - 8bit Dungeon Boss NO COPYRIGHT 8-bit Music.mp3" id="2_oxanp"]
@@ -34,8 +34,35 @@
 [ext_resource type="Texture2D" uid="uid://darsvxqfw1m06" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell8.png" id="29_ogfv4"]
 [ext_resource type="Texture2D" uid="uid://by1ghjgkxag1m" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell9.png" id="30_7bykd"]
 [ext_resource type="Texture2D" uid="uid://cskttdsovijkc" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell10.png" id="31_1tkjg"]
+[ext_resource type="PackedScene" uid="uid://dxmu3oawxupu1" path="res://Scene/inventory/grid_inventoryPlayer.tscn" id="35_1tu8g"]
+[ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="36_dk6ra"]
+[ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="37_d8rn5"]
+[ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistolV1.tres" id="38_bpyo7"]
+[ext_resource type="Resource" uid="uid://0fxdylg7pp7g" path="res://Items/Guns/shotGunV1.tres" id="39_6b543"]
+[ext_resource type="Resource" uid="uid://dpkpknqrbljcx" path="res://Items/Guns/SmgV1.tres" id="40_p3sc0"]
+[ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/SniperV1.tres" id="41_8t5hk"]
+[ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="42_k468t"]
+[ext_resource type="PackedScene" uid="uid://b54tbc2f6nid0" path="res://Scene/inventory/shopMain.tscn" id="43_eu1ge"]
+[ext_resource type="Resource" uid="uid://6r12xhs5o152" path="res://Items/Aqua.tres" id="43_h4fex"]
+[ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="44_wwnai"]
+[ext_resource type="Resource" uid="uid://ncpu4qpolv3d" path="res://Items/Guns/ArV1.tres" id="44_y1kmj"]
+[ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="45_ictje"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="45_ycui3"]
+[ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="46_2u01f"]
 
 [sub_resource type="Theme" id="Theme_vs827"]
+
+[sub_resource type="Resource" id="Resource_bi7hn"]
+script = ExtResource("45_ycui3")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("36_dk6ra"), ExtResource("37_d8rn5"), ExtResource("38_bpyo7"), ExtResource("39_6b543"), ExtResource("40_p3sc0"), ExtResource("41_8t5hk"), ExtResource("42_k468t"), ExtResource("43_h4fex"), ExtResource("44_y1kmj")])
+item_repeat_ranges = Array[Vector2]([Vector2(50, 50), Vector2(50, 50), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(50, 60), Vector2(50, 60), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_n0flk"]
 frames = 11
@@ -62,6 +89,12 @@ frame_9/texture = ExtResource("31_1tkjg")
 frame_9/duration = 1.0
 frame_10/texture = ExtResource("23_8hpwy")
 frame_10/duration = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_26s31"]
+texture = ExtResource("45_ictje")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ahhgq"]
+texture = ExtResource("3_v814g")
 
 [node name="Hub" type="Control"]
 layout_mode = 3
@@ -906,19 +939,22 @@ alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox"]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("20_qg0m4")
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 147.0
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-text = "[center]PLACEHOLDER FOR PLAYER INVENTORY SYSTEM"
+[node name="player" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect" instance=ExtResource("35_1tu8g")]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 64.0
+offset_right = 246.0
+offset_bottom = 352.0
+size_flags_vertical = 4
+contents = SubResource("Resource_bi7hn")
+init_contents = true
+interaction_mode = 29
+autosave_file_path = ""
+autosave_intensity = 1
 
 [node name="BuySellAnim" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox"]
 modulate = Color(1, 1, 1, 0.254902)
@@ -947,16 +983,12 @@ layout_mode = 2
 texture = ExtResource("20_qg0m4")
 stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 147.0
-grow_horizontal = 2
-grow_vertical = 2
-bbcode_enabled = true
-text = "[center]PLACEHOLDER FOR SHOPKEEPER GRID"
+[node name="shop" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect3" instance=ExtResource("43_eu1ge")]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 64.0
+offset_right = 291.0
+offset_bottom = 352.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -1003,6 +1035,27 @@ grow_vertical = 2
 mouse_filter = 1
 bbcode_enabled = true
 text = "[center]back"
+
+[node name="Tooltip" parent="shop" instance=ExtResource("44_wwnai")]
+visible = false
+layout_mode = 0
+offset_left = 3.0
+offset_top = 80.0
+offset_right = 225.0
+offset_bottom = 302.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_26s31")
+compare_to_inventory = NodePath("../Margin/EquipmentAndInventory/InventoryVbox/player")
+property_scripts = Array[Script]([])
+nameplate_panel = SubResource("StyleBoxTexture_ahhgq")
+back_panel = SubResource("StyleBoxTexture_26s31")
+
+[node name="Item" parent="shop" instance=ExtResource("46_2u01f")]
+offset_left = 68.0
+offset_top = 187.0
+offset_right = 180.0
+offset_bottom = 299.0
+unit_size = Vector2(32, 32)
+hide_cursor = true
 
 [node name="Load_Screen1" parent="." instance=ExtResource("17_yitpx")]
 visible = false
