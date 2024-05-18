@@ -6,15 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://b48py1ks7spng" path="res://Scene_Sub/CompositeSprite.tscn" id="2_c03tf"]
 [ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="2_hwfff"]
 [ext_resource type="PackedScene" uid="uid://b7got3qc3fi8j" path="res://Scene_Sub/gunNode.tscn" id="2_kanhx"]
-[ext_resource type="Texture2D" path="res://Art_UI/Equipment_Header_Inventory.png" id="5_y0a5w"]
-[ext_resource type="Texture2D" path="res://Art_UI/Equipment_Header_Information.png" id="6_leruw"]
-[ext_resource type="Texture2D" path="res://Art_UI/ProgressBar_Reload (Under), Bullets.png" id="6_qry5i"]
+[ext_resource type="Texture2D" uid="uid://01g12v5bkbi7" path="res://Art_UI/Equipment_Header_Inventory.png" id="5_y0a5w"]
+[ext_resource type="Texture2D" uid="uid://c01fpnkhhaubx" path="res://Art_UI/Equipment_Header_Information.png" id="6_leruw"]
+[ext_resource type="Texture2D" uid="uid://breu33f3nwi5n" path="res://Art_UI/ProgressBar_Reload (Under), Bullets.png" id="6_qry5i"]
 [ext_resource type="PackedScene" uid="uid://4ohh3iq6c7uc" path="res://Scene/inventory/playerEquitment.tscn" id="7_4fhhw"]
-[ext_resource type="Texture2D" path="res://Art_UI/ProgressBar_Reload (Over), Bullets.png" id="7_aow8d"]
-[ext_resource type="Texture2D" path="res://Art_UI/Equipment_InformationBackground.png" id="7_h428q"]
+[ext_resource type="Texture2D" uid="uid://dcktjipdapc6b" path="res://Art_UI/ProgressBar_Reload (Over), Bullets.png" id="7_aow8d"]
+[ext_resource type="Texture2D" uid="uid://cfcc8kd3my6n1" path="res://Art_UI/Equipment_InformationBackground.png" id="7_h428q"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="7_pe8uv"]
 [ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="8_0e3s1"]
-[ext_resource type="Texture2D" path="res://Art_UI/ProgressBar_Reload (Value), Bullets.png" id="8_1ny82"]
+[ext_resource type="Texture2D" uid="uid://bpt2kq6c2lbgx" path="res://Art_UI/ProgressBar_Reload (Value), Bullets.png" id="8_1ny82"]
 [ext_resource type="Theme" path="res://HUB_FontTheme.tres" id="8_egc2v"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="9_qwigw"]
 [ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="10_3jppb"]
@@ -23,7 +23,7 @@
 [ext_resource type="Resource" uid="uid://dpkpknqrbljcx" path="res://Items/Guns/SmgV1.tres" id="14_e38q6"]
 [ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="15_7wkj2"]
 [ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/SniperV1.tres" id="15_lah56"]
-[ext_resource type="Texture2D" path="res://Art_UI/Equipment_Footer_Inventory.png" id="17_3rjy4"]
+[ext_resource type="Texture2D" uid="uid://8pco4p25s6q5" path="res://Art_UI/Equipment_Footer_Inventory.png" id="17_3rjy4"]
 [ext_resource type="Resource" uid="uid://6r12xhs5o152" path="res://Items/Aqua.tres" id="17_dr0o5"]
 [ext_resource type="Resource" uid="uid://ncpu4qpolv3d" path="res://Items/Guns/ArV1.tres" id="17_nh65r"]
 [ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="20_kcioh"]
@@ -58,19 +58,21 @@ size = Vector2(23, 34.5)
 radius = 4.5
 height = 23.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("inventory", "PlayerInventory") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("inventory", "PlayerInventory", "curent_weapon") groups=["Player"]]
 scale = Vector2(2, 2)
-collision_layer = 257
+collision_layer = 258
 script = ExtResource("1_022et")
 inventory = NodePath("UI/Inventory")
 PlayerInventory = NodePath("UI/Inventory/Margin/EquipmentAndInventory/InventoryVbox/player")
+curent_weapon = NodePath("UI/CurentWeapon")
 
 [node name="CompositeSprite" parent="." instance=ExtResource("2_c03tf")]
 testing = false
 
 [node name="Gun" parent="." node_paths=PackedStringArray("PlayerInventory", "Ui", "ammoLabel", "player") instance=ExtResource("2_kanhx")]
+process_mode = 4
+visible = false
 position = Vector2(0, -16)
-rotation = -0.0279253
 PlayerInventory = NodePath("../UI/Inventory/Margin/EquipmentAndInventory/InventoryVbox/player")
 Ui = NodePath("../UI")
 ammoLabel = NodePath("../UI/BotMargin/Hbox/Ammo/AmmoText")
@@ -80,8 +82,6 @@ player = NodePath("..")
 process_mode = 4
 visible = false
 position = Vector2(0, -16)
-rotation = -0.011148
-scale = Vector2(0.5, 0.5)
 PlayerInventory = NodePath("../UI/Inventory/Margin/EquipmentAndInventory/InventoryVbox/player")
 Ui = NodePath("../UI")
 ammoLabel = NodePath("../UI/BotMargin/Hbox/Ammo/AmmoText")
@@ -97,6 +97,17 @@ zoom = Vector2(2, 2)
 
 [node name="UI" parent="." instance=ExtResource("1_4gmy4")]
 process_mode = 3
+
+[node name="CurentWeapon" type="RichTextLabel" parent="UI"]
+offset_left = 300.0
+offset_top = 480.0
+offset_right = 555.0
+offset_bottom = 520.0
+theme = ExtResource("8_egc2v")
+bbcode_enabled = true
+text = "[center] Current: Weapon1"
+fit_content = true
+scroll_active = false
 
 [node name="ReloadMargin" type="MarginContainer" parent="UI"]
 anchors_preset = 12

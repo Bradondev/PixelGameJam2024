@@ -1,20 +1,23 @@
-[gd_scene load_steps=17 format=3 uid="uid://4ohh3iq6c7uc"]
+[gd_scene load_steps=20 format=3 uid="uid://4ohh3iq6c7uc"]
 
 [ext_resource type="Script" path="res://addons/wyvernbox/inventory_view.gd" id="1_trkmv"]
 [ext_resource type="Script" path="res://addons/wyvernbox/inventories/restricted_inventory.gd" id="2_iwicm"]
 [ext_resource type="PackedScene" uid="uid://co5ok1mm2s7vu" path="res://addons/wyvernbox_prefabs/item_stack_view.tscn" id="3_ij5su"]
 [ext_resource type="StyleBox" uid="uid://cqx3opxr50d2o" path="res://addons/wyvernbox_prefabs/graphics/selected_cell.tres" id="4_lcqrf"]
 [ext_resource type="PackedScene" uid="uid://b7jlucsddt6dg" path="res://addons/wyvernbox_prefabs/inventory_cell.tscn" id="5_flo8l"]
-[ext_resource type="Texture2D" path="res://Art_UI/Equipment_Header_Equipment.png" id="5_t0qfh"]
+[ext_resource type="Texture2D" uid="uid://c706m4p7oyn4x" path="res://Art_UI/Equipment_Header_Equipment.png" id="5_t0qfh"]
 [ext_resource type="Texture2D" uid="uid://ccc0u26heci2b" path="res://Art_UI/UI_Close_Inactive.png" id="6_2es7w"]
 [ext_resource type="Texture2D" uid="uid://dnf86xepq13c2" path="res://Art_UI/UI_Close_Active.png" id="7_7wco6"]
 [ext_resource type="Texture2D" uid="uid://3wkyukhse1gf" path="res://Art_UI/Equipment_EquipWeapon.png" id="7_bx55o"]
-[ext_resource type="Texture2D" path="res://Art_UI/Equipment_EquipBackground_V2.png" id="8_2doix"]
+[ext_resource type="Texture2D" uid="uid://b0k63ah48v8c7" path="res://Art_UI/Equipment_EquipBackground_V2.png" id="8_2doix"]
 [ext_resource type="Texture2D" uid="uid://de4sxb56jy8d7" path="res://Art_UI/Equipment_EquipThrowables.png" id="8_hg4uh"]
 [ext_resource type="Texture2D" uid="uid://c7nyobbsa7ons" path="res://Art_UI/Equipment_EquipHelmet.png" id="9_xyo4o"]
 [ext_resource type="Texture2D" uid="uid://mpq1fbxbnv7d" path="res://Art_UI/Equipment_EquipChest.png" id="10_qjtvg"]
 [ext_resource type="Texture2D" uid="uid://dwuqc3dp8naut" path="res://Art_UI/Equipment_EquipPants.png" id="11_m80og"]
 [ext_resource type="Texture2D" uid="uid://jx6k7lhfbc3h" path="res://Art_UI/Equipment_EquipBackpack.png" id="12_xlnq5"]
+[ext_resource type="AudioStream" uid="uid://cbfjg4y7qqcr5" path="res://Audio/item-equip-6904.mp3" id="16_t5e3i"]
+[ext_resource type="AudioStream" uid="uid://b74t6c6ywv21w" path="res://Audio/take-item-sound-effect-163073.mp3" id="17_7lr5t"]
+[ext_resource type="AudioStream" uid="uid://b58tbi8netxou" path="res://Audio/Sound Clip - game-start-6104.mp3" id="18_at8mh"]
 
 [sub_resource type="Resource" id="3"]
 resource_name = "RestrictedInventory"
@@ -184,3 +187,12 @@ mouse_filter = 0
 texture = ExtResource("12_xlnq5")
 expand_mode = 0
 stretch_mode = 4
+
+[node name="MoveItem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_t5e3i")
+
+[node name="SplitItem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_7lr5t")
+
+[node name="Explore" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_at8mh")

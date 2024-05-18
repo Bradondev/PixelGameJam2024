@@ -14,6 +14,7 @@ class_name  Player
 
 var CurrentGunNode : GunNode
 
+@export var curent_weapon: RichTextLabel
 
 @onready var composite_sprite: Node2D = $CompositeSprite
 
@@ -23,10 +24,10 @@ var CurrentGunNode : GunNode
 @onready var description: RichTextLabel = $UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround/Description
 
 func  _ready() -> void: 
-	CurrentGunNode = gun
+	CurrentGunNode = gun_2
 	UpdataProgress()
-
-	
+	CurrentGunNode.UpdateAmmoText()
+	SwitchGuns()
 	
 func _physics_process(delta):
 	var Action = "walk"
@@ -39,11 +40,13 @@ func _physics_process(delta):
 		var direction = Input.get_vector("Left", "Right", "Up", "Down")
 		velocity = direction * speed * delta
 		move_and_slide()
-		SetAnim(Action)
-	
-
-		
+		if velocity == Vector2(0,0):
+			SetAnim("idle")
+		else:
+			SetAnim(Action)
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("SwitchGuns") and not CurrentGunNode.Reloading and not CurrentGunNode.isShooting:
+		SwitchGuns()
 	if event.is_action_pressed("menu_inventory"):
 		FlipInventory()
 	
@@ -52,11 +55,11 @@ func FlipInventory():
 	if !inventory.visible:
 		inventory.show()
 		gun.process_mode = Node.PROCESS_MODE_DISABLED
-	
+		gun_2.process_mode = Node.PROCESS_MODE_DISABLED
 	else:
 		inventory.hide()
 		gun.process_mode = Node.PROCESS_MODE_INHERIT
-		
+		gun_2.process_mode = Node.PROCESS_MODE_INHERIT
 
 func UpdateSpirt():
 	pass
@@ -80,13 +83,8 @@ func UpdataProgress():
 func _on_equip_item_stack_added(item_stack: ItemStack) -> void:
 	if item_stack.position_in_inventory == Vector2(0,0):
 		gun.CurrentGun =item_stack.item_type.custom_data
-		gun.UpdateAmmoText()
-		print_debug("weapon 1")
 	elif item_stack.position_in_inventory == Vector2(1,0):
 		gun_2.CurrentGun =item_stack.item_type.custom_data
-		gun_2.UpdateAmmoText()
-		
-		print_debug("weapon 2")
 	elif item_stack.position_in_inventory == Vector2(2,0):
 		print_debug("Throwable")
 	elif item_stack.position_in_inventory == Vector2(3,0):
@@ -102,12 +100,10 @@ func _on_equip_item_stack_added(item_stack: ItemStack) -> void:
 func _on_equip_item_stack_removed(item_stack: ItemStack) -> void:
 	if item_stack.position_in_inventory == Vector2(0,0):
 		gun.CurrentGun = null
-		gun.UpdateAmmoText()
 		print_debug("weapon 1")
 	elif item_stack.position_in_inventory == Vector2(1,0):
 		
 		gun_2.CurrentGun = null
-		gun_2.UpdateAmmoText()
 		print_debug("weapon 2")
 	elif item_stack.position_in_inventory == Vector2(2,0):
 		print_debug("Throwable")
@@ -154,10 +150,27 @@ func SetAnim(NameOfAction):
 		composite_sprite.sprite_player.seek(time, true)
 	else: 
 		composite_sprite.gun.visible = false
-		var AnimationName = "walk"+"_" + CheckForAngle() +"_"+"pistol"
+		
+		var AnimationName = NameOfAction+"_" + CheckForAngle() +"_"+"pistol"
 		var time =	composite_sprite.sprite_player.current_animation_position
 		composite_sprite.AnimPlayer(AnimationName,.001)
 		composite_sprite.sprite_player.seek(time, true)
 
-
+func SwitchGuns():
+	if CurrentGunNode == gun:
+		CurrentGunNode = gun_2
+		gun_2.process_mode = Node.PROCESS_MODE_INHERIT
+		gun.process_mode = Node.PROCESS_MODE_DISABLED
+		gun_2.UpdateAmmoText()
+		gun.visible = false
+		gun_2.visible = true
+		curent_weapon.text = "[center] Current Weapon: Weapon 2"
+	elif CurrentGunNode ==gun_2:
+		CurrentGunNode = gun
+		gun.UpdateAmmoText()
+		gun.process_mode = Node.PROCESS_MODE_INHERIT
+		gun_2.process_mode = Node.PROCESS_MODE_DISABLED
+		gun_2.visible = false
+		gun.visible = true
+		curent_weapon.text = "[center] Current Weapon: Weapon 1"
 

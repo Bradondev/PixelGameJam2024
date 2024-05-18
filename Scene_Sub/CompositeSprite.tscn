@@ -3946,6 +3946,7 @@ enabled = false
 zoom = Vector2(6, 6)
 
 [node name="ReticleArm" type="Marker2D" parent="."]
+visible = false
 position = Vector2(0, -16)
 
 [node name="Reticle" type="Sprite2D" parent="ReticleArm"]

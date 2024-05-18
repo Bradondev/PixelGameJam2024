@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://co5ok1mm2s7vu" path="res://addons/wyvernbox_prefabs/item_stack_view.tscn" id="3_byn5b"]
 [ext_resource type="StyleBox" uid="uid://cqx3opxr50d2o" path="res://addons/wyvernbox_prefabs/graphics/selected_cell.tres" id="4_gxhb0"]
 [ext_resource type="PackedScene" uid="uid://b7jlucsddt6dg" path="res://addons/wyvernbox_prefabs/inventory_cell.tscn" id="5_6scxo"]
-[ext_resource type="Texture2D" path="res://Art_UI/Equipment_InventoryBackground.png" id="5_ujnfu"]
-[ext_resource type="Texture2D" path="res://Art_UI/Inventory _Grid, Single_32x32px.png" id="7_x1anc"]
-[ext_resource type="AudioStream" path="res://Audio/Sound Clip - game-start-6104.mp3" id="8_4tarj"]
-[ext_resource type="AudioStream" path="res://Audio/item-equip-6904.mp3" id="8_axbth"]
-[ext_resource type="AudioStream" path="res://Audio/take-item-sound-effect-163073.mp3" id="9_v6a6e"]
+[ext_resource type="Texture2D" uid="uid://bobvxde744o8g" path="res://Art_UI/Equipment_InventoryBackground.png" id="5_ujnfu"]
+[ext_resource type="Texture2D" uid="uid://cwno1mqllfxty" path="res://Art_UI/Inventory _Grid, Single_32x32px.png" id="7_x1anc"]
+[ext_resource type="AudioStream" uid="uid://b58tbi8netxou" path="res://Audio/Sound Clip - game-start-6104.mp3" id="8_4tarj"]
+[ext_resource type="AudioStream" uid="uid://cbfjg4y7qqcr5" path="res://Audio/item-equip-6904.mp3" id="8_axbth"]
+[ext_resource type="AudioStream" uid="uid://b74t6c6ywv21w" path="res://Audio/take-item-sound-effect-163073.mp3" id="9_v6a6e"]
 
 [sub_resource type="Resource" id="Resource_plmu5"]
 resource_name = "GridInventory"

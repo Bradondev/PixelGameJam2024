@@ -1,6 +1,7 @@
 extends Node2D
 class_name  GunNode
 @export var CurrentGun: Gun
+
 @export var gun: Sprite2D
 @export var PlayerInventory:InventoryView
 @export var Ui : CanvasLayer
@@ -33,14 +34,29 @@ func _ready() -> void:
 	UpdateAmmoText()
 # Called every frame. 'delta' is the elapsed time since the previous fr
 func _unhandled_input(event: InputEvent) -> void:
+	
+	
+	
 	if !CurrentGun or Reloading: return
 	if event.is_action_pressed("Reload"):
 		ReloadCurrentGun()
+		
+	
 		
 func ReloadCurrentGun():
 	if CurrentGun.MagSize == CurrentGun.CurrentMagSize:
 		print_debug("mag is full")
 		return
+	var price : Dictionary = {CurrentGun.BulletTypeItem: CurrentGun.MagSize}
+	var items_to_check = {}
+	var counts := {}
+	
+	
+	var Bullets = PlayerInventory.inventory.consume_items(price,false,items_to_check)
+	if Bullets:
+		CurrentGun.LoadMag(Bullets[0].count)
+	else : return
+	
 	reload_bar.value = 0
 	reload_bar_ui.visible = true
 	Reloading = true
@@ -53,21 +69,13 @@ func ReloadCurrentGun():
 		reload_bar_ui.visible = false
 		UpdateAmmoText()
 		return
-	var price : Dictionary = {CurrentGun.BulletTypeItem: CurrentGun.MagSize}
-	var items_to_check = {}
-	var counts := {}
-	
-	
-	var Bullets = PlayerInventory.inventory.consume_items(price,false,items_to_check)
-	if Bullets:
-		CurrentGun.LoadMag(Bullets[0].count)
-	else : print_debug("out of ammo")
+
 	Reloading = false
 	reload_bar_ui.visible = false
 	UpdateAmmoText()
 	
 func ShootGun():
-	if CanShoot:
+	if CanShoot and not Reloading:
 		
 		if CurrentGun.CurrentMagSize:
 			CurrentGun.CurrentMagSize -=1
@@ -91,7 +99,6 @@ func ShootGun():
 				newBullet.global_rotation += ApplyAccuracy()
 			newBullet.currentgun = CurrentGun
 			newBullet.global_position = bulletspawnpoint.global_position
-			print_debug(newBullet.global_position)
 			
 			get_tree().root.call_deferred("add_child", newBullet)
 		player.SetAnim("shoot")
@@ -101,8 +108,12 @@ func ShootGun():
 func UpdateAmmoText():
 	if !CurrentGun:
 		ammoLabel.text = str("No gun") 
+		
 		return
 	#gun_reticle.texture = CurrentGun.CrossHairSprite
+	bulletspawnpoint.position = CurrentGun.BulletSpawnPoint
+	reticle.texture = CurrentGun.CrossHairSprite
+
 	bulletspawnpoint.position = CurrentGun.BulletSpawnPoint
 	reticle.texture = CurrentGun.CrossHairSprite
 	ammoLabel.text = str(CurrentGun.CurrentMagSize) +"/" +  str(CurrentGun.MagSize) 
