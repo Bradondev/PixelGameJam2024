@@ -1,23 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxmu3oawxupu1"]
+[gd_scene load_steps=12 format=3 uid="uid://dxmu3oawxupu1"]
 
 [ext_resource type="Script" path="res://addons/wyvernbox/inventory_view.gd" id="1_7hlfi"]
 [ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="2_f33rt"]
 [ext_resource type="PackedScene" uid="uid://co5ok1mm2s7vu" path="res://addons/wyvernbox_prefabs/item_stack_view.tscn" id="3_byn5b"]
 [ext_resource type="StyleBox" uid="uid://cqx3opxr50d2o" path="res://addons/wyvernbox_prefabs/graphics/selected_cell.tres" id="4_gxhb0"]
 [ext_resource type="PackedScene" uid="uid://b7jlucsddt6dg" path="res://addons/wyvernbox_prefabs/inventory_cell.tscn" id="5_6scxo"]
-[ext_resource type="Texture2D" uid="uid://c4t3h4sbhkgk4" path="res://Art_UI/Inventory _Grid, Single_16x16px.png" id="6_vubyr"]
-[ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="6_wivg7"]
+[ext_resource type="Texture2D" uid="uid://bobvxde744o8g" path="res://Art_UI/Equipment_InventoryBackground.png" id="5_ujnfu"]
+[ext_resource type="Texture2D" uid="uid://cwno1mqllfxty" path="res://Art_UI/Inventory _Grid, Single_32x32px.png" id="7_x1anc"]
+[ext_resource type="AudioStream" uid="uid://b58tbi8netxou" path="res://Audio/Sound Clip - game-start-6104.mp3" id="8_4tarj"]
+[ext_resource type="AudioStream" uid="uid://cbfjg4y7qqcr5" path="res://Audio/item-equip-6904.mp3" id="8_axbth"]
+[ext_resource type="AudioStream" uid="uid://b74t6c6ywv21w" path="res://Audio/take-item-sound-effect-163073.mp3" id="9_v6a6e"]
 
 [sub_resource type="Resource" id="Resource_plmu5"]
 resource_name = "GridInventory"
 script = ExtResource("2_f33rt")
-height = 7
-width = 7
+height = 9
+width = 6
 
 [node name="MarginContainer" type="MarginContainer"]
-custom_minimum_size = Vector2(112, 112)
-offset_right = 112.0
-offset_bottom = 112.0
+custom_minimum_size = Vector2(192, 288)
+offset_right = 192.0
+offset_bottom = 288.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_constants/margin_right = 0
@@ -25,14 +28,14 @@ script = ExtResource("1_7hlfi")
 inventory = SubResource("Resource_plmu5")
 init_contents = false
 item_scene = ExtResource("3_byn5b")
-cell_size = Vector2(16, 16)
+cell_size = Vector2(32, 32)
 selected_item_style = ExtResource("4_gxhb0")
 grid_background = NodePath("BG")
 autosave_file_path = "3"
 
 [node name="Border" type="NinePatchRect" parent="."]
 layout_mode = 2
-texture = ExtResource("6_wivg7")
+texture = ExtResource("5_ujnfu")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 2
 
@@ -43,16 +46,25 @@ size = Vector2i(16, 16)
 custom_minimum_size = Vector2(0, 0)
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_vubyr")
+texture = ExtResource("7_x1anc")
 expand_mode = 0
 stretch_mode = 1
 
 [node name="BG" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(112, 112)
+custom_minimum_size = Vector2(192, 288)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 6.84
 mouse_filter = 2
-texture = ExtResource("6_vubyr")
+texture = ExtResource("7_x1anc")
 stretch_mode = 1
+
+[node name="MoveItem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_axbth")
+
+[node name="SplitItem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_v6a6e")
+
+[node name="Explore" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_4tarj")

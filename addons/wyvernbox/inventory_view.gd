@@ -737,7 +737,7 @@ func _get_quick_transfer_targets(has_price) -> Array:
 	return result
 	
 
-func _on_item_stack_mouse_entered(stack_view : ItemStackView):
+func _on_item_stack_mouse_entered(stack_view : ItemStackView): ## probably emitted when cursor enters grid
 	_deselect_signal_interrupted = false
 	var cells_node := get_node_or_null("Cells")
 	if GrabbedItemStackView.grabbed_stack == null:
@@ -747,9 +747,10 @@ func _on_item_stack_mouse_entered(stack_view : ItemStackView):
 		cells_node.get_child(stack_view.stack.position_in_inventory.x).grab_focus()
 
 
-func _item_stack_deselected(stack_view : ItemStackView):
+func _item_stack_deselected(stack_view : ItemStackView): ## emitted when cursor leaves grid
 	var stack_index := stack_view.stack.index_in_inventory
 	item_stack_deselected.emit(_view_nodes[stack_index])
+	
 
 
 func _item_stack_selected(stack_view : ItemStackView):
@@ -762,6 +763,7 @@ func _item_stack_selected(stack_view : ItemStackView):
 		_quick_transfer_anywhere(stack_view.stack)
 		force_drag(0, null)
 		_selection_node.size = Vector2.ZERO
+		
 
 
 func _on_item_stack_mouse_exited(stack_view : ItemStackView):
@@ -777,19 +779,24 @@ func _on_item_stack_gui_input(event : InputEvent, stack_view : ItemStackView):
 		if event.button_index == MOUSE_BUTTON_RIGHT && event.pressed:
 			var stack := stack_view.stack
 			_grab_stack(stack.index_in_inventory, ceili(mini(stack.count, stack.item_type.max_stack_count) * 0.5))
+			$SplitItem.play() ## Playing audio for clicking LMB on an item
+
 
 		if event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 			if !Input.is_action_pressed(&"inventory_more"):
 				_grab_stack(stack_view.stack.index_in_inventory)
+				$MoveItem.play() ## Playing audio for splitting a stack
 
 			else:
 				_quick_transfer_anywhere(stack_view.stack)
+				# AUDIO QUEUE moving using shift click, gives error going back to inventory from equipment
 
 	if event is InputEventMouseMotion:
 		GrabbedItemStackView.select_cell(self, global_position_to_cell(event.global_position, GrabbedItemStackView.grabbed_stack))
 
 	elif !event.is_pressed():
 		_last_quick_transfer = Vector2(-1, -1)
+
 
 
 func _on_cell_gui_input(event : InputEvent, cell_index : int = -1):

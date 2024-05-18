@@ -5,8 +5,9 @@ class_name  LoadScene
 # Called when the node enters the scene tree for the first time.
 func StartLoading():
 	show()
+	$AudioStreamPlayer.play()
 	var tween  = get_tree().create_tween()
-	tween.tween_property(load_bar, "value", 100,1)
+	tween.tween_property(load_bar, "value", 100,3.3)
 	await  tween.finished
 	LoadNewScene()
 	pass

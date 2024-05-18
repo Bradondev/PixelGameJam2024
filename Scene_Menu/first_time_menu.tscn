@@ -1,0 +1,148 @@
+[gd_scene load_steps=12 format=3 uid="uid://drf6quwd64if4"]
+
+[ext_resource type="AudioStream" uid="uid://b4tlb0u26vgyn" path="res://Audio/Tutorial.wav" id="1_3w2n7"]
+[ext_resource type="Script" path="res://Scene_Menu/first_time_menu.gd" id="1_07wia"]
+[ext_resource type="AudioStream" uid="uid://pfkkqogc5yjc" path="res://Audio/industrial-ambience-67112.mp3" id="2_q7owf"]
+[ext_resource type="AudioStream" uid="uid://30rfiiuitjj0" path="res://Audio/martian-131602.mp3" id="3_8hm1s"]
+[ext_resource type="AudioStream" uid="uid://ba62rjkijmo4x" path="res://Audio/helicopter-sound-41975.mp3" id="4_l0ymu"]
+[ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="5_7maj5"]
+[ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="6_xhcmm"]
+[ext_resource type="PackedScene" uid="uid://d1ui8lkg8n8hk" path="res://Scene/hub.tscn" id="7_4p2ym"]
+[ext_resource type="Texture2D" uid="uid://bt0b4nk6uvm0a" path="res://Art_UI/Shop_TextureButton, Normal.png" id="7_p5qdy"]
+[ext_resource type="Texture2D" uid="uid://brsqjv5ec7nl2" path="res://Art_UI/Shop_TextureButton, Pressed.png" id="8_7hy7o"]
+[ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="9_l4tyg"]
+
+[node name="FirstTime_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_07wia")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 42.0
+one_shot = true
+autostart = true
+
+[node name="Welcome" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_3w2n7")
+volume_db = 10.0
+pitch_scale = 0.95
+autoplay = true
+
+[node name="MachineNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_q7owf")
+volume_db = 2.754
+pitch_scale = 0.5
+autoplay = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8hm1s")
+volume_db = 4.0
+pitch_scale = 0.3
+autoplay = true
+
+[node name="Heli" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_l0ymu")
+volume_db = 8.0
+autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 540.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("5_7maj5")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[left]here, take this [color=darkgreen][wave]pistol![/wave][/color]
+you better not get caught out in these [color=blue]waters[/color] without some iron, soldier!
+Has [color=lightblue][shake]cyrosleep[/shake][/color] fried your brain? Earth is gone! The oceans dried up and they shot the last of us into space in those damn pods.
+we're dropping you off at [color=red]nearby outpost[/color], marine. Time to [color=purple][pulse]scavenge[/pulse][/color] what you can to get by, that's the best we can do for ya.
+The whole damn [color=green]planet[/color] is nearly all [color=blue]water[/color] though, but something them scienticsts said about biopolution makes most of the stuff damn near lethal.  Not to mention the [color=darkred][shake]horrific bioterrors[/shake][/color] that this planet gives birth to...
+Best of luck, merc."
+
+[node name="Intro" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 961.0
+offset_bottom = 540.0
+
+[node name="ColorRect2" type="ColorRect" parent="Intro"]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 540.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Intro/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Intro/ColorRect2/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Intro/ColorRect2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_7maj5")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center]you're here to [color=darkgreen]scavenge[/color] what you can and liquidate those assets to make a living!
+we abide by [color=purple][pulse]extraction protocol[/pulse][/color] here. get in, get what you can, and get out. they might [color=darkgreen]slap a pistol in your head every time before you head out[/color] and call it a [color=green]mission[/color], but we all know it's everyone for themselves.  dont lose your neck over a little extra cash.
+as they say... [color=blue][wave]liquidate[/wave][/color] or be [color=red][shake]liquidated.
+
+"
+scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Intro/ColorRect2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="Intro/ColorRect2/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Confirm" type="TextureButton" parent="Intro/ColorRect2/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_p5qdy")
+texture_pressed = ExtResource("8_7hy7o")
+texture_hover = ExtResource("9_l4tyg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Intro/ColorRect2/MarginContainer/VBoxContainer/HBoxContainer/Confirm"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("5_7maj5")
+bbcode_enabled = true
+text = "[center]oorah[shake]!"
+scroll_active = false
+
+[node name="Load_Screen" parent="." instance=ExtResource("6_xhcmm")]
+visible = false
+Scene = ExtResource("7_4p2ym")
+
+[connection signal="pressed" from="Intro/ColorRect2/MarginContainer/VBoxContainer/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
