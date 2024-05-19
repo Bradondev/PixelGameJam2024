@@ -16,5 +16,5 @@ func  Physics_Update(delta: float) -> void:
 	if direction.length() > 100:
 		Transitioned.emit(self, "idle")
 		
-	if direction.length() <  30:
+	if direction.length() <  40:
 		Transitioned.emit(self, "attack")

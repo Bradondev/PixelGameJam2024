@@ -66,49 +66,49 @@
 
 [sub_resource type="Theme" id="Theme_vs827"]
 
-[sub_resource type="Resource" id="Resource_dr6si"]
+[sub_resource type="Resource" id="Resource_e2thi"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_riha1"]
+[sub_resource type="Resource" id="Resource_gccsm"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_0gqnm"]
+[sub_resource type="Resource" id="Resource_86k13"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_611mi"]
+[sub_resource type="Resource" id="Resource_mgixh"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_78mxw"]
+[sub_resource type="Resource" id="Resource_tmb1x"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_m2r2t"]
+[sub_resource type="Resource" id="Resource_m2qoc"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_wrhhx"]
+[sub_resource type="Resource" id="Resource_chax5"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
@@ -945,7 +945,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_dr6si")
+inventory = SubResource("Resource_e2thi")
 autosave_file_path = "stash1"
 autosave_intensity = 3
 
@@ -957,7 +957,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_riha1")
+inventory = SubResource("Resource_gccsm")
 autosave_file_path = "stash2"
 autosave_intensity = 3
 
@@ -969,7 +969,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_0gqnm")
+inventory = SubResource("Resource_86k13")
 autosave_file_path = "stash3"
 autosave_intensity = 3
 
@@ -981,7 +981,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_611mi")
+inventory = SubResource("Resource_mgixh")
 autosave_file_path = "stash4"
 autosave_intensity = 3
 
@@ -993,7 +993,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_78mxw")
+inventory = SubResource("Resource_tmb1x")
 autosave_file_path = "stash5"
 autosave_intensity = 3
 
@@ -1005,7 +1005,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_m2r2t")
+inventory = SubResource("Resource_m2qoc")
 autosave_file_path = "stash6"
 autosave_intensity = 3
 
@@ -1017,7 +1017,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_wrhhx")
+inventory = SubResource("Resource_chax5")
 autosave_file_path = "stash7"
 autosave_intensity = 3
 

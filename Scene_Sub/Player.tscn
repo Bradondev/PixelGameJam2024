@@ -52,7 +52,7 @@ max_stack_count = 1
 in_inventory_width = 1
 in_inventory_height = 1
 slot_flags = 1
-default_properties_string = ""
+default_properties_string = "{}"
 default_properties = {}
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("clearer", "inventory", "PlayerInventory", "curent_weapon") groups=["Player"]]
@@ -279,6 +279,7 @@ stream = ExtResource("30_s76jk")
 volume_db = 16.995
 
 [node name="deathScene" parent="." node_paths=PackedStringArray("player") instance=ExtResource("22_5vsrl")]
+z_index = 1
 player = NodePath("..")
 
 [node name="clearPlayerInven" type="Node" parent="."]

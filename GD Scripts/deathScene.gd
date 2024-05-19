@@ -11,7 +11,7 @@ func PlayDeath():
 	deathmusic.play()
 	maledeathsound.play()
 	player.composite_sprite.visible = false
-	player.process_mode = Node.PROCESS_MODE_DISABLED
+	player.get_parent().process_mode = Node.PROCESS_MODE_DISABLED
 	animation_player.play("death/death", -1 , .25)
 
 
