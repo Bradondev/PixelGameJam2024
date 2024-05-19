@@ -5,22 +5,22 @@
 
 [resource]
 script = ExtResource("1_2x31a")
-name = "Cat "
-description = "has some value"
+name = "HDD"
+description = "I can think of ten good reasons to never let go of a dime boy"
 tags = Array[StringName]([])
 texture = ExtResource("2_pewyc")
 texture_scale = 1.0
-max_stack_count = 24
+max_stack_count = 4
 in_inventory_width = 1
 in_inventory_height = 1
 slot_flags = 1
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 8
+\"res://Items/Aqua.tres\": 15
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Aqua.tres": 8
+"res://Items/Aqua.tres": 15
 }
 }

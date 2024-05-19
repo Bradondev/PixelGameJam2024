@@ -5,22 +5,22 @@
 
 [resource]
 script = ExtResource("1_cf07h")
-name = "Cat "
-description = "has some value"
+name = "Circuit Board"
+description = "What is today but yesterdays tomorrow?"
 tags = Array[StringName]([])
 texture = ExtResource("2_gyt7k")
 texture_scale = 1.0
-max_stack_count = 10
+max_stack_count = 6
 in_inventory_width = 2
-in_inventory_height = 1
+in_inventory_height = 2
 slot_flags = 1
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 18
+\"res://Items/Aqua.tres\": 10
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Aqua.tres": 18
+"res://Items/Aqua.tres": 10
 }
 }

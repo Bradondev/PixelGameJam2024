@@ -12,24 +12,24 @@ Gun sprite = Gun, bullet, and gun fire effect // This texture can be swapped out
 
 var gun_color = {
 	"none" : null,
-	"desert" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Gun_Desert.png"),
-	"artic" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Gun_Artic.png"), 
-	"camo" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Gun_Camo.png"),
+	"desert" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Gun_Desert.png"),
+	"artic" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Gun_Artic.png"), 
+	"camo" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Gun_Camo.png"),
 }
 
 var helmet_color = {
 	"none" : null,
-	"desert" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Helmet_color desert.png"),
-	"camo" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Helmet_color camo.png"),
-	"smoke" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Helmet_color smoke.png"),
+	"desert" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Helmet_color desert.png"),
+	"camo" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Helmet_color camo.png"),
+	"smoke" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Helmet_color smoke.png"),
 }
 
 var chest_color = {
 	"none" : null,
-	"desert" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Chest_color desert.png"),
-	"artic" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Chest_color artic.png"),
-	"camo" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Chest_color camo.png"),
-	"smoke" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Chest_color smoke.png")
+	"desert" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Chest_color desert.png"),
+	"artic" : load("res://Art_PNGCompositeSprites//Player_CompositeSprite_SpriteSheet_Chest_color artic.png"),
+	"camo" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Chest_color camo.png"),
+	"smoke" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Chest_color smoke.png")
 }
 
 var gun_reticle = {

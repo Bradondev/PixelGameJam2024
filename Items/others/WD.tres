@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_xl7tl")
-name = "Cat "
-description = "has some value"
+name = "WD-40"
+description = "Ahgehgehgehgehgehgeh"
 tags = Array[StringName]([])
 texture = ExtResource("2_ksdyi")
 texture_scale = 1.0
@@ -16,11 +16,11 @@ in_inventory_height = 2
 slot_flags = 1
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 4
+\"res://Items/Aqua.tres\": 7
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Aqua.tres": 4
+"res://Items/Aqua.tres": 7
 }
 }
