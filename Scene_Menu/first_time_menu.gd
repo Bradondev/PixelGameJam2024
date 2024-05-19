@@ -1,12 +1,14 @@
 extends Control
 
-@onready var is_sound_on : bool = true
+signal tutorial_end 
 
-func toggleSounds(is_sound_on):
-	$Welcome.autoplay = is_sound_on
-	$MachineNoise.autoplay = is_sound_on
-	$Music.autoplay = is_sound_on
-	$Heli.autoplay = is_sound_on
+func startScene():
+	$Welcome.play()
+	$MachineNoise.play()
+	$Music.play()
+	$Heli.play()
+	$Timer.timeout.connect(loadIntroduction)
+	$Timer.start()
 
 func tutorial():
 	$Welcome.stop()
@@ -14,13 +16,12 @@ func tutorial():
 	$Heli.stop()
 	$Intro.show()
 
-func _ready():
-	toggleSounds(is_sound_on)
-	$Timer.timeout.connect(loadIntroduction)
-
 func _on_confirm_pressed():
-	$Load_Screen.StartLoading()
+	$Music.stop()
+	self.hide()
+	emit_signal("tutorial_end")
 
 func loadIntroduction():
 	tutorial()
 	$Intro.show()
+	

@@ -12,10 +12,11 @@ height = 9
 width = 9
 
 [node name="shop" type="Control"]
+custom_minimum_size = Vector2(288, 288)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 288.0
+offset_bottom = 288.0
 
 [node name="MarginContainer" parent="." instance=ExtResource("2_1o434")]
 custom_minimum_size = Vector2(288, 288)

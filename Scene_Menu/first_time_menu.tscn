@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://drf6quwd64if4"]
+[gd_scene load_steps=10 format=3 uid="uid://drf6quwd64if4"]
 
 [ext_resource type="AudioStream" uid="uid://b4tlb0u26vgyn" path="res://Audio/Tutorial.wav" id="1_3w2n7"]
 [ext_resource type="Script" path="res://Scene_Menu/first_time_menu.gd" id="1_07wia"]
@@ -6,8 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://30rfiiuitjj0" path="res://Audio/martian-131602.mp3" id="3_8hm1s"]
 [ext_resource type="AudioStream" uid="uid://ba62rjkijmo4x" path="res://Audio/helicopter-sound-41975.mp3" id="4_l0ymu"]
 [ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="5_7maj5"]
-[ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="6_xhcmm"]
-[ext_resource type="PackedScene" uid="uid://d1ui8lkg8n8hk" path="res://Scene/hub.tscn" id="7_4p2ym"]
 [ext_resource type="Texture2D" uid="uid://bt0b4nk6uvm0a" path="res://Art_UI/Shop_TextureButton, Normal.png" id="7_p5qdy"]
 [ext_resource type="Texture2D" uid="uid://brsqjv5ec7nl2" path="res://Art_UI/Shop_TextureButton, Pressed.png" id="8_7hy7o"]
 [ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="9_l4tyg"]
@@ -26,24 +24,20 @@ autostart = true
 stream = ExtResource("1_3w2n7")
 volume_db = 10.0
 pitch_scale = 0.95
-autoplay = true
 
 [node name="MachineNoise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_q7owf")
 volume_db = 2.754
 pitch_scale = 0.5
-autoplay = true
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_8hm1s")
 volume_db = 4.0
 pitch_scale = 0.3
-autoplay = true
 
 [node name="Heli" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_l0ymu")
 volume_db = 8.0
-autoplay = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -140,9 +134,5 @@ theme = ExtResource("5_7maj5")
 bbcode_enabled = true
 text = "[center]oorah[shake]!"
 scroll_active = false
-
-[node name="Load_Screen" parent="." instance=ExtResource("6_xhcmm")]
-visible = false
-Scene = ExtResource("7_4p2ym")
 
 [connection signal="pressed" from="Intro/ColorRect2/MarginContainer/VBoxContainer/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
