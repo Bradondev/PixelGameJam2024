@@ -10,24 +10,34 @@ Helmet sprite = For equipped head piece
 Gun sprite = Gun, bullet, and gun fire effect // This texture can be swapped out to showcase different guns using the dict below
 '''
 
-
-
 var gun_color = {
-	
+	"none" : null,
 	"desert" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Gun_Desert.png"),
 	"artic" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Gun_Artic.png"), 
 	"camo" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Gun_Camo.png"),
-	
+}
+
+var helmet_color = {
+	"none" : null,
+	"desert" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Helmet_color desert.png"),
+	"camo" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Helmet_color camo.png"),
+	"smoke" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Helmet_color smoke.png"),
+}
+
+var chest_color = {
+	"none" : null,
+	"desert" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Chest_color desert.png"),
+	"artic" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Chest_color artic.png"),
+	"camo" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Chest_color camo.png"),
+	"smoke" : load("res://Art_PNG/Player_CompositeSprite_SpriteSheet_Chest_color smoke.png")
 }
 
 var gun_reticle = {
-	
 	"pistol" : load("res://Art_UI/Gun_Reticle, Pistol v1.png"),
 	"smg" : load("res://Art_UI/Gun_Reticle, SMG.png"),
 	"ar" : load("res://Art_UI/Gun_Reticle, Assault Rifle.png"),
 	"shotty" : load("res://Art_UI/Gun_Reticle, Shotgun v1.png"),
 	"sniper" : load("res://Art_UI/Gun_Reticle, Sniper.png"),
-	
 }
 
 @export var testing = true
@@ -37,15 +47,15 @@ var gun_reticle = {
 
 var testing_gunColor = gun_color[guns_color]
 var testing_gunReticle = gun_reticle[guns_reticle]
-@onready var sprite_player: AnimationPlayer = $SpritePlayer
-@onready var gun: Sprite2D = $Sprites/Gun
 
+@onready var sprite_player: AnimationPlayer = $SpritePlayer
+@onready var gun : Sprite2D = $Sprites/Gun
+@onready var helmet : Sprite2D = $Sprites/Helmet
+@onready var chest : Sprite2D = $Sprites/Chest
+@onready var pants : Sprite2D = $Sprites/Bottom
 
 func AnimPlayer(AnimationName, Frame):
 	sprite_player.play(AnimationName,Frame)
-
-
-
 
 func _process(delta):
 	if testing == true:

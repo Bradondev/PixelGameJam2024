@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx7rrlcjs66qm"
-path="res://.godot/imported/Player_CompositeSprite_SpriteSheet_Arms.png-932c6e8d62f95750f0dd684c866ddd5c.ctex"
+uid="uid://b16mebx33q401"
+path="res://.godot/imported/Player_CompositeSprite_SpriteSheet_Top.png-a01dd4fe11f12f3f1f400bd2be59ae60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_PNG/Player_CompositeSprite_SpriteSheet_Arms.png"
-dest_files=["res://.godot/imported/Player_CompositeSprite_SpriteSheet_Arms.png-932c6e8d62f95750f0dd684c866ddd5c.ctex"]
+source_file="res://Art_PNG/obs/Player_CompositeSprite_SpriteSheet_Top.png"
+dest_files=["res://.godot/imported/Player_CompositeSprite_SpriteSheet_Top.png-a01dd4fe11f12f3f1f400bd2be59ae60.ctex"]
 
 [params]
 

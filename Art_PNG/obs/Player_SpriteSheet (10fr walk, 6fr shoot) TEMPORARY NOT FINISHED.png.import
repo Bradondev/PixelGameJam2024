@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b121h30fvm6hb"
-path="res://.godot/imported/Player_SpriteSheet (10fr walk, 6fr shoot) TEMPORARY NOT FINISHED.png-7309866a04e97743e9dba6096e460c9e.ctex"
+path="res://.godot/imported/Player_SpriteSheet (10fr walk, 6fr shoot) TEMPORARY NOT FINISHED.png-e8471b1cde1860680751ba73341c4c44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_PNG/Player_SpriteSheet (10fr walk, 6fr shoot) TEMPORARY NOT FINISHED.png"
-dest_files=["res://.godot/imported/Player_SpriteSheet (10fr walk, 6fr shoot) TEMPORARY NOT FINISHED.png-7309866a04e97743e9dba6096e460c9e.ctex"]
+source_file="res://Art_PNG/obs/Player_SpriteSheet (10fr walk, 6fr shoot) TEMPORARY NOT FINISHED.png"
+dest_files=["res://.godot/imported/Player_SpriteSheet (10fr walk, 6fr shoot) TEMPORARY NOT FINISHED.png-e8471b1cde1860680751ba73341c4c44.ctex"]
 
 [params]
 

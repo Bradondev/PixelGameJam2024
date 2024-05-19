@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eay24kwvtjc3"
-path="res://.godot/imported/Player_CompositeSprite_SpriteSheet_Bottom.png-1ef8b2e26866e4789b90cfde599172e6.ctex"
+uid="uid://bgbs8u7xv8rx5"
+path="res://.godot/imported/Player_CompositeSprite_SpriteSheet_Helmet_color smoke.png-4bc6f5a6a2e23d0bf3dfa5c2be42c000.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_PNG/Player_CompositeSprite_SpriteSheet_Bottom.png"
-dest_files=["res://.godot/imported/Player_CompositeSprite_SpriteSheet_Bottom.png-1ef8b2e26866e4789b90cfde599172e6.ctex"]
+source_file="res://Art_PNG/Player_CompositeSprite_SpriteSheet_Helmet_color smoke.png"
+dest_files=["res://.godot/imported/Player_CompositeSprite_SpriteSheet_Helmet_color smoke.png-4bc6f5a6a2e23d0bf3dfa5c2be42c000.ctex"]
 
 [params]
 

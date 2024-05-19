@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drfg42niyluq"
-path="res://.godot/imported/Player_CompositeSprite_SpriteSheet_Bottom V2.png-09c94baef03a164349f76d585268e49c.ctex"
+uid="uid://cxa7fula7tvya"
+path="res://.godot/imported/Player_CompositeSprite_SpriteSheet_Chest_color camo.png-2cea80b3b58d912a6bee83a481be8032.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_PNG/Player_CompositeSprite_SpriteSheet_Bottom V2.png"
-dest_files=["res://.godot/imported/Player_CompositeSprite_SpriteSheet_Bottom V2.png-09c94baef03a164349f76d585268e49c.ctex"]
+source_file="res://Art_PNG/Player_CompositeSprite_SpriteSheet_Chest_color camo.png"
+dest_files=["res://.godot/imported/Player_CompositeSprite_SpriteSheet_Chest_color camo.png-2cea80b3b58d912a6bee83a481be8032.ctex"]
 
 [params]
 
