@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dkrp2wctpx7k8"]
+[gd_scene load_steps=27 format=3 uid="uid://dkrp2wctpx7k8"]
 
 [ext_resource type="PackedScene" uid="uid://dd0hqlllt0tqs" path="res://Scene/Map_Earth.tscn" id="1_n6nms"]
 [ext_resource type="PackedScene" uid="uid://bpilr5la784ys" path="res://Scene_Sub/Player.tscn" id="2_8yw46"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="20_in2nb"]
 [ext_resource type="PackedScene" uid="uid://dev0qboo4pbph" path="res://Scene_Menu/LevelEndZone.tscn" id="21_mnn0p"]
 [ext_resource type="PackedScene" uid="uid://1pya2v87pib1" path="res://Scene_Sub/fish_man.tscn" id="22_lplrm"]
+[ext_resource type="PackedScene" uid="uid://b8okuk7yhqy0l" path="res://Scene_Sub/Angeler.tscn" id="25_gncdl"]
 
 [sub_resource type="Resource" id="Resource_oq314"]
 script = ExtResource("20_in2nb")
@@ -60,6 +61,10 @@ y_sort_enabled = true
 position = Vector2(4105, 656)
 scale = Vector2(1, 1)
 speed = 4500
+
+[node name="angler" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("25_gncdl")]
+position = Vector2(3986, 603)
+player = NodePath("../Player")
 
 [node name="FishMan" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("22_lplrm")]
 position = Vector2(4192, 639)

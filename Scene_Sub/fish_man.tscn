@@ -306,10 +306,11 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_lfc4o"]
 radius = 50.0
 
-[node name="FishMan" type="CharacterBody2D"]
+[node name="FishMan" type="CharacterBody2D" node_paths=PackedStringArray("animation_player")]
 collision_layer = 257
 platform_on_leave = 2
 script = ExtResource("1_lvy0o")
+animation_player = NodePath("AnimationPlayer")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
@@ -349,8 +350,10 @@ script = ExtResource("6_pse4c")
 animation_player = NodePath("../../AnimationPlayer")
 enemy = NodePath("../..")
 
-[node name="aggro" type="Node" parent="State Machine"]
+[node name="aggro" type="Node" parent="State Machine" node_paths=PackedStringArray("animation_player", "enemy")]
 script = ExtResource("7_k1bsq")
+animation_player = NodePath("../../AnimationPlayer")
+enemy = NodePath("../..")
 
 [node name="attackHitBox" type="Area2D" parent="."]
 position = Vector2(10, -13)

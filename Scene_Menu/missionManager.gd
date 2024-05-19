@@ -14,7 +14,8 @@ func _process(delta: float) -> void:
 
 
 func _on_inter_act_area_body_entered(body: Node2D) -> void:
-	canvas_layer.visible = true
+	if body.is_in_group("Player"):
+		canvas_layer.visible = true
 
 
 func _on_inter_act_area_body_exited(body: Node2D) -> void:
