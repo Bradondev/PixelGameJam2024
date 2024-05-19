@@ -13,6 +13,7 @@ func _physics_process(delta: float) -> void:
 	var collison = move_and_collide(velocity)
 	
 	if collison:
+		velocity = Vector2.ZERO
 		sprite_2d.play("OnHit")
 		await  get_tree().create_timer(.3).timeout
 		queue_free()
@@ -29,3 +30,9 @@ func _on_timer_timeout() -> void:
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("TakeDamage"):
 		body.TakeDamage(currentgun.BaseDamage)
+		
+
+func Dead():
+	sprite_2d.play("OnHit")
+	await  get_tree().create_timer(.3).timeout
+	queue_free()

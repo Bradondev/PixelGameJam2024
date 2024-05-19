@@ -14,6 +14,7 @@ func  randomize_wander():
 	
 
 func  Enter():
+	animation_player.play("walk")
 	randomize_wander()
 	
 func Exit():
