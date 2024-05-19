@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="7_pe8uv"]
 [ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="8_0e3s1"]
 [ext_resource type="Texture2D" uid="uid://bpt2kq6c2lbgx" path="res://Art_UI/ProgressBar_Reload (Value), Bullets.png" id="8_1ny82"]
-[ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="8_egc2v"]
+[ext_resource type="Theme" path="res://HUB_FontTheme.tres" id="8_egc2v"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="9_qwigw"]
 [ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="10_3jppb"]
 [ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistolV1.tres" id="12_2jiyi"]
@@ -208,7 +208,6 @@ theme_override_constants/separation = 0
 
 [node name="Equip" parent="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox" instance=ExtResource("7_4fhhw")]
 layout_mode = 2
-cell_size = Vector2(32, 32)
 
 [node name="InformationHeader" type="TextureRect" parent="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox"]
 layout_mode = 2

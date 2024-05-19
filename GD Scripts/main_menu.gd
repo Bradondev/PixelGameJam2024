@@ -5,6 +5,11 @@ extends CanvasLayer
 @onready var options_menu: Control = $Options_Menu
 @onready var load_screen: Control = $Load_Screen
 
+
+var master_Bus = AudioServer.get_bus_index("Master")
+var music_Bus = AudioServer.get_bus_index("Music")
+var sfx_Bus = AudioServer.get_bus_index("SFX")
+
 func sounds():
 	$MenuSound.play()
 
@@ -39,3 +44,17 @@ func _on_quit_button_mouse_entered():
 
 func fade():
 	$Music.volume_db -= 2
+
+func SetBusVolume(busName, volume):
+
+	AudioServer.set_bus_volume_db(busName, volume)
+	if volume == -30:
+		SetBusMute(busName, true)
+	else:
+		SetBusMute(busName, false)
+
+func SetBusMute(busName, bIsMuted):
+	AudioServer.set_bus_mute(busName, bIsMuted)
+
+func _on_spin_box_value_changed(value: float) -> void:
+	SetBusVolume(master_Bus, value)

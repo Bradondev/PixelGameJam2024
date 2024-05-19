@@ -17,10 +17,8 @@ in_inventory_height = 2
 slot_flags = 4
 custom_data = ExtResource("1_n1cp4")
 default_properties_string = "{
-{
 \"price\": {
-\"res://Items/Aqua.tres\": 20
-}
+\"res://Items/Guns/pistolV1.tres\": 2
 }
 }"
 default_properties = {

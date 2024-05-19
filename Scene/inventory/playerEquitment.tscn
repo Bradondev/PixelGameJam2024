@@ -38,8 +38,9 @@ size_flags_vertical = 0
 script = ExtResource("1_trkmv")
 inventory = SubResource("3")
 item_scene = ExtResource("3_ij5su")
-cell_size = Vector2(16, 16)
+cell_size = Vector2(32, 32)
 selected_item_style = ExtResource("4_lcqrf")
+selected_item_empty_only = true
 view_filter_color = Color(1, 1, 1, 0.74902)
 
 [node name="Vbox" type="VBoxContainer" parent="."]

@@ -60,49 +60,49 @@
 
 [sub_resource type="Theme" id="Theme_vs827"]
 
-[sub_resource type="Resource" id="Resource_cbwue"]
+[sub_resource type="Resource" id="Resource_bg03u"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_qn6j2"]
+[sub_resource type="Resource" id="Resource_76n0m"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_2bn3o"]
+[sub_resource type="Resource" id="Resource_xxswb"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_nrqyi"]
+[sub_resource type="Resource" id="Resource_uxywh"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_ewfpm"]
+[sub_resource type="Resource" id="Resource_s4he8"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_dkt0t"]
+[sub_resource type="Resource" id="Resource_0x0ak"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_pvpdy"]
+[sub_resource type="Resource" id="Resource_tj5qt"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
@@ -147,7 +147,7 @@ frame_9/duration = 1.0
 frame_10/texture = ExtResource("23_8hpwy")
 frame_10/duration = 1.0
 
-[sub_resource type="Resource" id="Resource_0u7eh"]
+[sub_resource type="Resource" id="Resource_v1s8d"]
 resource_local_to_scene = true
 script = ExtResource("45_ycui3")
 items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("36_dk6ra"), ExtResource("37_d8rn5"), ExtResource("38_bpyo7"), ExtResource("39_6b543"), ExtResource("40_p3sc0"), ExtResource("41_8t5hk"), ExtResource("42_k468t"), ExtResource("43_h4fex"), ExtResource("44_y1kmj")])
@@ -932,7 +932,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_cbwue")
+inventory = SubResource("Resource_bg03u")
 autosave_file_path = "stash1"
 autosave_intensity = 3
 
@@ -944,7 +944,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_qn6j2")
+inventory = SubResource("Resource_76n0m")
 autosave_file_path = "stash2"
 autosave_intensity = 3
 
@@ -956,7 +956,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_2bn3o")
+inventory = SubResource("Resource_xxswb")
 autosave_file_path = "stash3"
 autosave_intensity = 3
 
@@ -968,7 +968,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_nrqyi")
+inventory = SubResource("Resource_uxywh")
 autosave_file_path = "stash4"
 autosave_intensity = 3
 
@@ -980,7 +980,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_ewfpm")
+inventory = SubResource("Resource_s4he8")
 autosave_file_path = "stash5"
 autosave_intensity = 3
 
@@ -992,7 +992,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_dkt0t")
+inventory = SubResource("Resource_0x0ak")
 autosave_file_path = "stash6"
 autosave_intensity = 3
 
@@ -1004,7 +1004,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_pvpdy")
+inventory = SubResource("Resource_tj5qt")
 autosave_file_path = "stash7"
 autosave_intensity = 3
 
@@ -1086,7 +1086,6 @@ theme_override_constants/separation = 0
 [node name="Equip" parent="Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox" instance=ExtResource("29_54gah")]
 layout_mode = 2
 init_contents = false
-cell_size = Vector2(32, 32)
 
 [node name="InformationHeader" type="TextureRect" parent="Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox"]
 layout_mode = 2
@@ -1199,7 +1198,7 @@ offset_top = 64.0
 offset_right = -235.0
 offset_bottom = 352.0
 size_flags_vertical = 4
-contents = SubResource("Resource_0u7eh")
+contents = SubResource("Resource_v1s8d")
 interaction_mode = 29
 auto_take_priority = -31
 autosave_file_path = ""

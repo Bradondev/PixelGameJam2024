@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dev0qboo4pbph"]
+[gd_scene load_steps=7 format=3 uid="uid://dev0qboo4pbph"]
 
 [ext_resource type="Script" path="res://Scene_Menu/missionManager.gd" id="1_icfrn"]
 [ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="2_3b8y6"]
 [ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="3_s2ivh"]
 [ext_resource type="PackedScene" uid="uid://d1ui8lkg8n8hk" path="res://Scene/hub.tscn" id="4_q3xv2"]
+[ext_resource type="Theme" path="res://HUB_FontTheme.tres" id="5_fgwwp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixmot"]
 size = Vector2(234, 140)
@@ -64,14 +65,17 @@ text = "no"
 visible = false
 Scene = ExtResource("4_q3xv2")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -116.0
-offset_top = -67.0
-offset_right = 120.0
-offset_bottom = 72.0
-text = "Exit"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = -115.0
+offset_top = -37.0
+offset_right = 121.0
+offset_bottom = 36.0
+theme = ExtResource("5_fgwwp")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center]Exit"
+fit_content = true
+scroll_active = false
 
 [connection signal="body_entered" from="InterActArea" to="." method="_on_inter_act_area_body_entered"]
 [connection signal="body_exited" from="InterActArea" to="." method="_on_inter_act_area_body_exited"]

@@ -18,18 +18,18 @@
 [ext_resource type="PackedScene" uid="uid://dx6l3e6fwirv2" path="res://Scene_Sub/GlassPodRed1.tscn" id="16_not2e"]
 [ext_resource type="PackedScene" uid="uid://ieghweqpyuq5" path="res://Scene_Sub/GlassPodBlue2.tscn" id="17_wkm2c"]
 [ext_resource type="PackedScene" uid="uid://kebx2leh6uxx" path="res://Scene_Sub/GlassPod.tscn" id="18_ca0m5"]
+[ext_resource type="Resource" uid="uid://douiehmw6t3m6" path="res://Items/Contents/LootV1.tres" id="19_mxyax"]
 [ext_resource type="Texture2D" uid="uid://c2i80sv54k0k0" path="res://Art_PNG/AlienPlanet_V2_Props, Grass (Short), v3.png" id="19_xydnc"]
 [ext_resource type="Texture2D" uid="uid://bxpw71vmbac3s" path="res://Art_PNG/AlienPlanet_V2_Props, Grass (Short), v2.png" id="20_750gw"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="20_in2nb"]
 [ext_resource type="PackedScene" uid="uid://dev0qboo4pbph" path="res://Scene_Menu/LevelEndZone.tscn" id="21_mnn0p"]
-[ext_resource type="Resource" uid="uid://bg63kcap61rmc" path="res://Items/Bullet/7.62mm.tres" id="22_nwmku"]
-[ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="23_ki0bu"]
-[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="23_s6gmu"]
+[ext_resource type="PackedScene" uid="uid://1pya2v87pib1" path="res://Scene_Sub/fish_man.tscn" id="22_lplrm"]
 
-[sub_resource type="Resource" id="Resource_rcnbb"]
-script = ExtResource("23_s6gmu")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("22_nwmku"), ExtResource("23_ki0bu")])
-item_repeat_ranges = Array[Vector2]([Vector2(51, 521), Vector2(51, 521)])
-item_chances = Array[float]([100.0, 100.0])
+[sub_resource type="Resource" id="Resource_oq314"]
+script = ExtResource("20_in2nb")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("19_mxyax")])
+item_repeat_ranges = Array[Vector2]([Vector2(2, 2)])
+item_chances = Array[float]([100.0])
 repeat_post_chance = true
 randomize_locations = true
 delay_between_items = 0.0
@@ -57,17 +57,21 @@ y_sort_enabled = true
 
 [node name="Player" parent="WorldLoad" instance=ExtResource("2_8yw46")]
 y_sort_enabled = true
-position = Vector2(-2791, 537)
+position = Vector2(4105, 656)
 scale = Vector2(1, 1)
 speed = 4500
+
+[node name="FishMan" parent="WorldLoad" instance=ExtResource("22_lplrm")]
+position = Vector2(4192, 639)
 
 [node name="props" type="Node2D" parent="WorldLoad"]
 y_sort_enabled = true
 script = ExtResource("3_mqwhy")
 
-[node name="mission1" parent="WorldLoad/props" instance=ExtResource("21_mnn0p")]
+[node name="mission1" parent="WorldLoad/props" node_paths=PackedStringArray("player") instance=ExtResource("21_mnn0p")]
 y_sort_enabled = true
 position = Vector2(4212, 467)
+player = NodePath("../../Player")
 
 [node name="AlienPlanetV2Props,Grass(long)20" type="Sprite2D" parent="WorldLoad/props"]
 y_sort_enabled = true
@@ -1150,6 +1154,7 @@ position = Vector2(4273, 2586)
 [node name="Bunker43" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
 y_sort_enabled = true
 position = Vector2(4000, 2413)
+InveentroyContent = SubResource("Resource_oq314")
 
 [node name="LootBoxs12" parent="WorldLoad/props" instance=ExtResource("4_13f22")]
 y_sort_enabled = true
@@ -1607,5 +1612,20 @@ y_sort_enabled = true
 position = Vector2(1028, 2499)
 HighLightArea = NodePath("../LootBoxs11/InterActArea")
 InterArea = NodePath("../LootBoxs11/InterActArea")
+
+[node name="mission2" parent="WorldLoad/props" node_paths=PackedStringArray("player") instance=ExtResource("21_mnn0p")]
+y_sort_enabled = true
+position = Vector2(-3174, 548)
+player = NodePath("../../Player")
+
+[node name="mission3" parent="WorldLoad/props" node_paths=PackedStringArray("player") instance=ExtResource("21_mnn0p")]
+y_sort_enabled = true
+position = Vector2(-3210, -1412)
+player = NodePath("../../Player")
+
+[node name="mission4" parent="WorldLoad/props" node_paths=PackedStringArray("player") instance=ExtResource("21_mnn0p")]
+y_sort_enabled = true
+position = Vector2(4466, 2382)
+player = NodePath("../../Player")
 
 [editable path="MapEarth"]
