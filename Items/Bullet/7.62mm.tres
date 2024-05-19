@@ -18,7 +18,6 @@ default_properties_string = "{
 \"price\": {
 \"res://Items/Aqua.tres\": 1
 }
-}
 }"
 default_properties = {
 "price": {
