@@ -2,14 +2,14 @@
 
 [ext_resource type="Resource" uid="uid://d12s8vao4w8py" path="res://GD Scripts/Resources/Guns/SniperV2.tres" id="1_kbdou"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_5dxr2"]
-[ext_resource type="Texture2D" uid="uid://b4a2qaonglahb" path="res://Art_PNG/Item_Gun_Sniper, Desert, v1.png" id="3_j8o17"]
+[ext_resource type="Texture2D" uid="uid://bbpb23botpj1g" path="res://Art_PNG/Item_Gun_Sniper, Artic, v1.png" id="3_jfd04"]
 
 [resource]
 script = ExtResource("2_5dxr2")
-name = "sniper"
-description = "this is a sniper"
+name = "Karibiner V98"
+description = "No, This Is Patrick!"
 tags = Array[StringName]([])
-texture = ExtResource("3_j8o17")
+texture = ExtResource("3_jfd04")
 texture_scale = 1.0
 max_stack_count = 1
 in_inventory_width = 4

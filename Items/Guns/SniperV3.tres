@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("2_70yea")
-name = "sniper"
-description = "this is a sniper"
+name = "Dragunov SVD"
+description = "You cannot stop the unstoppable"
 tags = Array[StringName]([])
 texture = ExtResource("3_yu75u")
 texture_scale = 1.0

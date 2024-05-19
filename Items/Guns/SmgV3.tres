@@ -2,14 +2,14 @@
 
 [ext_resource type="Resource" uid="uid://bmmusf4r0isbf" path="res://GD Scripts/Resources/Guns/SmgV3.tres" id="1_pcjrr"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_sqw6q"]
-[ext_resource type="Texture2D" uid="uid://bylbp27aqtftx" path="res://Art_PNG/Item_Gun_SMG_Desert, v1.png" id="3_eql8h"]
+[ext_resource type="Texture2D" uid="uid://3qxas80bjk1i" path="res://Art_PNG/Item_Gun_SMG_Artic, v1.png" id="3_8l2pj"]
 
 [resource]
 script = ExtResource("2_sqw6q")
 name = "Colt 9mm SMG"
-description = ""
+description = "I Prefer To Be An Idiot!"
 tags = Array[StringName]([])
-texture = ExtResource("3_eql8h")
+texture = ExtResource("3_8l2pj")
 texture_scale = 1.0
 max_stack_count = 1
 in_inventory_width = 2

@@ -2,14 +2,14 @@
 
 [ext_resource type="Resource" uid="uid://c11b6w554j445" path="res://GD Scripts/Resources/Guns/SmgV4.tres" id="1_30xyg"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_hmjxf"]
-[ext_resource type="Texture2D" uid="uid://bylbp27aqtftx" path="res://Art_PNG/Item_Gun_SMG_Desert, v1.png" id="3_xe8eg"]
+[ext_resource type="Texture2D" uid="uid://c30kd7p05xvnn" path="res://Art_PNG/Item_Gun_SMG_Camo.png" id="3_dl2q1"]
 
 [resource]
 script = ExtResource("2_hmjxf")
 name = "CZ Scorpion Evo 3"
-description = ""
+description = "You Guys Talk Funny. Say More Words"
 tags = Array[StringName]([])
-texture = ExtResource("3_xe8eg")
+texture = ExtResource("3_dl2q1")
 texture_scale = 1.0
 max_stack_count = 1
 in_inventory_width = 2
