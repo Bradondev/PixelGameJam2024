@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://d1ui8lkg8n8hk"]
+[gd_scene load_steps=77 format=3 uid="uid://d1ui8lkg8n8hk"]
 
 [ext_resource type="Script" path="res://Scene/hub.gd" id="1_tbohb"]
 [ext_resource type="AudioStream" uid="uid://c2q0hvwighqiw" path="res://Audio/Song - Kevin MacLeod - 8bit Dungeon Boss NO COPYRIGHT 8-bit Music.mp3" id="2_oxanp"]
@@ -41,10 +41,11 @@
 [ext_resource type="PackedScene" uid="uid://dxmu3oawxupu1" path="res://Scene/inventory/grid_inventoryPlayer.tscn" id="35_1tu8g"]
 [ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="36_dk6ra"]
 [ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="37_d8rn5"]
-[ext_resource type="Script" path="res://Scene/shop.gd" id="38_7c51d"]
 [ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistolV1.tres" id="38_bpyo7"]
+[ext_resource type="Script" path="res://GD Scripts/shop.gd" id="38_fepcp"]
 [ext_resource type="Texture2D" uid="uid://bmuono7ikbk7o" path="res://Art_PNG/UI_Shopkeeper_Char_sprite.png" id="38_ldyp8"]
 [ext_resource type="Resource" uid="uid://0fxdylg7pp7g" path="res://Items/Guns/shotGunV1.tres" id="39_6b543"]
+[ext_resource type="Resource" uid="uid://sp77klvw5uhw" path="res://Items/Contents/BasicEqiupment.tres" id="40_0ttcj"]
 [ext_resource type="Resource" uid="uid://dpkpknqrbljcx" path="res://Items/Guns/SmgV1.tres" id="40_p3sc0"]
 [ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/SniperV1.tres" id="41_8t5hk"]
 [ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="42_k468t"]
@@ -59,54 +60,55 @@
 [ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_price.gd" id="48_26ioh"]
 [ext_resource type="Texture2D" uid="uid://b1nrvaa4kuhcg" path="res://Art_PNG/UI_Shopkeeper_sprite.png" id="50_4dv7l"]
 [ext_resource type="PackedScene" uid="uid://cag704jcu3o3i" path="res://Scene/inventory/stashgrid.tscn" id="52_1qi0f"]
+[ext_resource type="Resource" uid="uid://douiehmw6t3m6" path="res://Items/Contents/LootV1.tres" id="53_gmg0c"]
 [ext_resource type="PackedScene" uid="uid://drf6quwd64if4" path="res://Scene_Menu/first_time_menu.tscn" id="58_dyap8"]
-[ext_resource type="PackedScene" uid="uid://dkrp2wctpx7k8" path="res://Scene_Testing/Level1.tscn" id="59_tl7ft"]
+[ext_resource type="PackedScene" uid="uid://dkrp2wctpx7k8" path="res://Scene_Testing/Level1.tscn" id="61_k6801"]
 
 [sub_resource type="Theme" id="Theme_vs827"]
 
-[sub_resource type="Resource" id="Resource_ooq72"]
+[sub_resource type="Resource" id="Resource_71yxq"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_3djo4"]
+[sub_resource type="Resource" id="Resource_03k0a"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_6j4v6"]
+[sub_resource type="Resource" id="Resource_r1m2g"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_y8c1o"]
+[sub_resource type="Resource" id="Resource_nkocd"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_0rdjt"]
+[sub_resource type="Resource" id="Resource_rc0f1"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_xh6oa"]
+[sub_resource type="Resource" id="Resource_l2ewx"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_7qg50"]
+[sub_resource type="Resource" id="Resource_iq118"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
@@ -114,19 +116,6 @@ height = 12
 width = 12
 
 [sub_resource type="Resource" id="Resource_odp2x"]
-script = ExtResource("45_ycui3")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("36_dk6ra"), ExtResource("37_d8rn5"), ExtResource("38_bpyo7"), ExtResource("39_6b543"), ExtResource("40_p3sc0"), ExtResource("41_8t5hk"), ExtResource("42_k468t"), ExtResource("43_h4fex"), ExtResource("44_y1kmj")])
-item_repeat_ranges = Array[Vector2]([Vector2(50, 50), Vector2(50, 50), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(50, 60), Vector2(50, 60), Vector2(1, 1)])
-item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0])
-repeat_post_chance = true
-randomize_locations = true
-delay_between_items = 0.0
-spread_distance = 32.0
-spread_cone_degrees = 360.0
-spread_angle_degrees = 0.0
-
-[sub_resource type="Resource" id="Resource_7dhha"]
-resource_local_to_scene = true
 script = ExtResource("45_ycui3")
 items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("36_dk6ra"), ExtResource("37_d8rn5"), ExtResource("38_bpyo7"), ExtResource("39_6b543"), ExtResource("40_p3sc0"), ExtResource("41_8t5hk"), ExtResource("42_k468t"), ExtResource("43_h4fex"), ExtResource("44_y1kmj")])
 item_repeat_ranges = Array[Vector2]([Vector2(50, 50), Vector2(50, 50), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(50, 60), Vector2(50, 60), Vector2(1, 1)])
@@ -956,7 +945,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_ooq72")
+inventory = SubResource("Resource_71yxq")
 autosave_file_path = "stash1"
 autosave_intensity = 3
 
@@ -968,7 +957,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_3djo4")
+inventory = SubResource("Resource_03k0a")
 autosave_file_path = "stash2"
 autosave_intensity = 3
 
@@ -980,7 +969,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_6j4v6")
+inventory = SubResource("Resource_r1m2g")
 autosave_file_path = "stash3"
 autosave_intensity = 3
 
@@ -992,7 +981,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_y8c1o")
+inventory = SubResource("Resource_nkocd")
 autosave_file_path = "stash4"
 autosave_intensity = 3
 
@@ -1004,7 +993,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_0rdjt")
+inventory = SubResource("Resource_rc0f1")
 autosave_file_path = "stash5"
 autosave_intensity = 3
 
@@ -1016,7 +1005,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_xh6oa")
+inventory = SubResource("Resource_l2ewx")
 autosave_file_path = "stash6"
 autosave_intensity = 3
 
@@ -1028,7 +1017,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_7qg50")
+inventory = SubResource("Resource_iq118")
 autosave_file_path = "stash7"
 autosave_intensity = 3
 
@@ -1137,14 +1126,16 @@ theme = ExtResource("6_o6ojd")
 bbcode_enabled = true
 text = "[center] Description"
 
-[node name="shop" type="Control" parent="." groups=["Ui"]]
+[node name="shop" type="Control" parent="." node_paths=PackedStringArray("ShopInven", "shop_manager_2") groups=["Ui"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("38_7c51d")
+script = ExtResource("38_fepcp")
+ShopInven = NodePath("Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox2/shop/MarginContainer")
+shop_manager_2 = NodePath("Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox2/shop/ShopManager2")
 
 [node name="Margin" type="MarginContainer" parent="shop"]
 layout_mode = 1
@@ -1195,9 +1186,8 @@ stretch_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-contents = SubResource("Resource_7dhha")
+contents = ExtResource("40_0ttcj")
 init_contents = true
-auto_take_priority = -31
 autosave_file_path = ""
 
 [node name="BuySellAnim" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox"]
@@ -1237,17 +1227,56 @@ size_flags_vertical = 3
 
 [node name="MarginContainer" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox2/shop" index="0"]
 inventory = SubResource("Resource_5hy3r")
+init_contents = false
+interaction_mode = 31
 autosave_intensity = 1
 
 [node name="ShopManager2" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox2/shop" index="1"]
 sell_reward_into_inventory = NodePath("../../../Vbox/player")
-stock = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([null])
-stock_counts = Array[int]([1])
-stock_restocks = Array[int]([3])
+stock = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("53_gmg0c"), ExtResource("53_gmg0c"), ExtResource("53_gmg0c"), ExtResource("53_gmg0c"), ExtResource("53_gmg0c"), ExtResource("53_gmg0c"), ExtResource("53_gmg0c")])
+stock_counts = Array[int]([1, 1, 1, 1, 1, 1, 1])
+stock_restocks = Array[int]([0, 0, 0, 0, 0, 0, 0])
+infinite_restocks = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 500
+
+[node name="back" type="TextureButton" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_o6ojd")
+texture_normal = ExtResource("3_v814g")
+texture_pressed = ExtResource("4_repa8")
+texture_hover = ExtResource("5_2qcak")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/back"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "[center]back"
+
+[node name="refresh" type="TextureButton" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_o6ojd")
+texture_normal = ExtResource("3_v814g")
+texture_pressed = ExtResource("4_repa8")
+texture_hover = ExtResource("5_2qcak")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/refresh"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "[center]refreash"
 
 [node name="Money" type="HBoxContainer" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
 visible = false
@@ -1275,42 +1304,6 @@ bbcode_enabled = true
 text = "[left]1,000,000"
 scroll_active = false
 
-[node name="back" type="TextureButton" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("6_o6ojd")
-texture_normal = ExtResource("3_v814g")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("5_2qcak")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/back"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-bbcode_enabled = true
-text = "[center]back"
-
-[node name="back2" type="TextureButton" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("6_o6ojd")
-texture_normal = ExtResource("3_v814g")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("5_2qcak")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/back2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-bbcode_enabled = true
-text = "[center]Refresh"
-
 [node name="FirstTime_Menu" parent="." groups=["Ui"] instance=ExtResource("58_dyap8")]
 visible = false
 
@@ -1337,7 +1330,7 @@ hide_cursor = true
 
 [node name="Load_Screen1" parent="." instance=ExtResource("17_yitpx")]
 visible = false
-Scene = ExtResource("59_tl7ft")
+Scene = ExtResource("61_k6801")
 
 [node name="Load_Screen2" parent="." instance=ExtResource("17_yitpx")]
 visible = false
@@ -1398,6 +1391,7 @@ Scene = ExtResource("58_dyap8")
 [connection signal="grab_attempted" from="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox2/shop/MarginContainer" to="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox2/shop/ShopManager2" method="_on_Inventory_grab_attempted"]
 [connection signal="item_stack_added" from="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox2/shop/MarginContainer" to="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox2/shop/ShopManager2" method="_on_Inventory_item_stack_added"]
 [connection signal="pressed" from="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/refresh" to="shop" method="_on_refresh_pressed"]
 [connection signal="tutorial_end" from="FirstTime_Menu" to="." method="_on_first_time_menu_tutorial_end"]
 
 [editable path="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox2/shop"]
