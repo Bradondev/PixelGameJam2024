@@ -41,7 +41,7 @@ func _show_price(item_stack : ItemStack):
 			+ k_loaded.default_properties.get(&"back_color", Color.WHITE).to_html()
 			+ "]"
 			+ tr(k_loaded.name) + "[/color] x"
-			+ str(price[k] * multiplier)
+			+ str((price[k] * multiplier) /2 )
 		)
 		if item_for_sale:
 			add_bbcode(" [color=#%s]%s[/color] " % [

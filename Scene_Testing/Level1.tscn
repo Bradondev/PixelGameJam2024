@@ -58,7 +58,7 @@ y_sort_enabled = true
 
 [node name="Player" parent="WorldLoad" instance=ExtResource("2_8yw46")]
 y_sort_enabled = true
-position = Vector2(4105, 656)
+position = Vector2(633, -208)
 scale = Vector2(1, 1)
 speed = 4500
 

@@ -1,5 +1,7 @@
 extends Control
 
+@export var MissionList :Array[PackedScene]
+
 @onready var mission: Control = $Mission
 @onready var stash: Control = $Stash
 @onready var shop: Control = $shop
@@ -14,6 +16,8 @@ extends Control
 @onready var tutorial : Control = $Load_Screen4
 
 var destination = null
+
+
 
 func Switch(ToShow): ##  Commenting out the hide func as i want to see the UI buttons - Konscious
 	var Ui = get_tree().get_nodes_in_group("Ui")
@@ -138,6 +142,7 @@ func _on_first_time_menu_tutorial_end():
 
 #// SWITCH STATEMENT TO LOAD UP LOADING SCREEN WITH APPROPRIATE MAP DESTINATION
 func _on_launch_finished():
+	print_debug("done")
 	match destination:
 		1: mission1.StartLoading()
 		2: mission2.StartLoading()
