@@ -1,13 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://ieghweqpyuq5"]
+[gd_scene load_steps=5 format=3 uid="uid://ieghweqpyuq5"]
 
 [ext_resource type="Texture2D" uid="uid://beij8oblty7m1" path="res://Art_PNG/Props_GlassTube_Blue, v1.png" id="1_o2k4e"]
+[ext_resource type="PackedScene" uid="uid://b0bagqclhtewx" path="res://Art_Lighting/LightingTestKit.tscn" id="1_pi4rq"]
+[ext_resource type="Texture2D" uid="uid://c88bx7qyspw5b" path="res://Art_Lighting/godotLight.webp" id="3_6714u"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8acku"]
+polygon = PackedVector2Array(-0.0748825, 0.2363, -3.58806, -1.15738, -5.41424, -3.05909, -5.5811, -6.1459, -2.91142, -8.23159, -0.0331688, -9.10758, 3.26221, -7.77274, 5.47305, -5.85391, 5.55647, -3.05909, 3.92964, -1.26539)
 
 [node name="GlassPod" type="StaticBody2D" groups=["Bunker", "Prop"]]
 
+[node name="CanvasModulate" parent="." instance=ExtResource("1_pi4rq")]
+visible = false
+position = Vector2(0, 4.46457)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 4.46457)
 texture = ExtResource("1_o2k4e")
 offset = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-29, -28)
-polygon = PackedVector2Array(29, -3.5, 23.5, 0, 23.5, 25, 29, 28.5, 34.5, 25, 35, 0)
+position = Vector2(-29, -23.5354)
+polygon = PackedVector2Array(29.0071, 18.508, 23.3769, 21.894, 23.5, 25, 29, 28.5, 34.5, 25, 34.5193, 22.2484)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0, 4.46457)
+occluder = SubResource("OccluderPolygon2D_8acku")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0.0639915, -0.0151725)
+scale = Vector2(1, 0.732732)
+color = Color(0.172549, 0.403922, 1, 1)
+energy = 0.35
+texture = ExtResource("3_6714u")
+texture_scale = 0.1
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, -0.625708)
+amount = 2
+lifetime = 2.0
+preprocess = 2.0
+explosiveness = 0.25
+randomness = 0.24
+lifetime_randomness = 0.17
+emission_shape = 3
+emission_rect_extents = Vector2(4, 2)
+gravity = Vector2(0, -10)

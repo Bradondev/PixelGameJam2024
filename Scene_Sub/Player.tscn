@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bpilr5la784ys"]
+[gd_scene load_steps=37 format=3 uid="uid://bpilr5la784ys"]
 
 [ext_resource type="PackedScene" uid="uid://bhkiy4ucj30lo" path="res://Scene/UI.tscn" id="1_4gmy4"]
 [ext_resource type="Script" path="res://GD Scripts/Player.gd" id="1_022et"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b48py1ks7spng" path="res://Scene_Sub/CompositeSprite.tscn" id="2_c03tf"]
 [ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="2_hwfff"]
 [ext_resource type="PackedScene" uid="uid://b7got3qc3fi8j" path="res://Scene_Sub/gunNode.tscn" id="2_kanhx"]
+[ext_resource type="Texture2D" uid="uid://c88bx7qyspw5b" path="res://Art_Lighting/godotLight.webp" id="2_y0rv8"]
 [ext_resource type="Texture2D" uid="uid://01g12v5bkbi7" path="res://Art_UI/Equipment_Header_Inventory.png" id="5_y0a5w"]
 [ext_resource type="Texture2D" uid="uid://c01fpnkhhaubx" path="res://Art_UI/Equipment_Header_Information.png" id="6_leruw"]
 [ext_resource type="Texture2D" uid="uid://breu33f3nwi5n" path="res://Art_UI/ProgressBar_Reload (Under), Bullets.png" id="6_qry5i"]
@@ -15,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="7_pe8uv"]
 [ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="8_0e3s1"]
 [ext_resource type="Texture2D" uid="uid://bpt2kq6c2lbgx" path="res://Art_UI/ProgressBar_Reload (Value), Bullets.png" id="8_1ny82"]
-[ext_resource type="Theme" path="res://HUB_FontTheme.tres" id="8_egc2v"]
+[ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="8_egc2v"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="9_qwigw"]
 [ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="10_3jppb"]
 [ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistolV1.tres" id="12_2jiyi"]
@@ -28,10 +29,11 @@
 [ext_resource type="Resource" uid="uid://ncpu4qpolv3d" path="res://Items/Guns/ArV1.tres" id="17_nh65r"]
 [ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="20_kcioh"]
 [ext_resource type="Texture2D" uid="uid://bt0b4nk6uvm0a" path="res://Art_UI/Shop_TextureButton, Normal.png" id="25_faxl1"]
+[ext_resource type="AudioStream" uid="uid://d2hg7cqxsdhkt" path="res://Audio/crunchy-footsteps-on-leaves-88862--Edited by Konscious.wav" id="30_s76jk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_278xp"]
-radius = 5.0
-height = 10.0
+radius = 1.5
+height = 19.0
 
 [sub_resource type="Resource" id="Resource_54y7k"]
 script = ExtResource("9_qwigw")
@@ -63,8 +65,16 @@ scale = Vector2(2, 2)
 collision_layer = 258
 script = ExtResource("1_022et")
 inventory = NodePath("UI/Inventory")
+speed = 5000
 PlayerInventory = NodePath("UI/Inventory/Margin/EquipmentAndInventory/InventoryVbox/player")
 curent_weapon = NodePath("UI/CurentWeapon")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(1, 0.520508)
+color = Color(0.678431, 0.682353, 1, 1)
+energy = 0.8
+shadow_enabled = true
+texture = ExtResource("2_y0rv8")
 
 [node name="CompositeSprite" parent="." instance=ExtResource("2_c03tf")]
 testing = false
@@ -88,8 +98,8 @@ ammoLabel = NodePath("../UI/BotMargin/Hbox/Ammo/AmmoText")
 player = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-1, -3)
+position = Vector2(0, -0.5)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_278xp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -264,6 +274,11 @@ collision_mask = 2
 position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_5h22y")
 debug_color = Color(0, 0, 0, 0.419608)
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("30_s76jk")
+volume_db = 16.995
 
 [connection signal="item_stack_added" from="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/Equip" to="." method="_on_equip_item_stack_added"]
 [connection signal="item_stack_changed" from="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/Equip" to="." method="_on_equip_item_stack_changed"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://2ok2eubytq0n"
+path="res://.godot/imported/single-gunshot-62-hp-37188--cropped Konscious.wav-fa13b042ac38ac4befbe9ab08b44df35.sample"
+
+[deps]
+
+source_file="res://Audio/single-gunshot-62-hp-37188--cropped Konscious.wav"
+dest_files=["res://.godot/imported/single-gunshot-62-hp-37188--cropped Konscious.wav-fa13b042ac38ac4befbe9ab08b44df35.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

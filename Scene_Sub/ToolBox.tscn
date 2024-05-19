@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://djwlpg1g4e28o"]
+[gd_scene load_steps=14 format=3 uid="uid://djwlpg1g4e28o"]
 
 [ext_resource type="Script" path="res://GD Scripts/InterActAble.gd" id="1_m8dmx"]
 [ext_resource type="Texture2D" uid="uid://dr6v4fotjiyar" path="res://Art_PNG/Props_Toolbox (Outlined).png" id="2_uhj47"]
@@ -6,8 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://bc4j42x2jqd7o" path="res://Scene/inventory/bunker.tscn" id="6_oapii"]
 [ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="7_ksifh"]
 [ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="8_o8vic"]
+[ext_resource type="FontFile" uid="uid://dmo6e5w4r5tmf" path="res://Fonts/Pixels (16px).ttf" id="9_jqs77"]
 [ext_resource type="Texture2D" uid="uid://dcfxp0gtvvhyu" path="res://Art_UI/ProgressBar_PlayerResource (Over).png" id="9_xtcno"]
 [ext_resource type="Texture2D" uid="uid://3vmgjxrcavhb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Green.png" id="10_gyq87"]
+[ext_resource type="PackedScene" uid="uid://bm88u0af736iq" path="res://Scene_Sub/InteractParticles_Gold.tscn" id="10_o8ivd"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2wti5"]
+polygon = PackedVector2Array(16, -4, -16, -4, -16, -19, 16, -19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1g03"]
 size = Vector2(51.5, 31)
@@ -32,8 +37,13 @@ texture = ExtResource("3_s7w5k")
 offset = Vector2(0, -23)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(-30, -34)
 polygon = PackedVector2Array(16.5, -10.5, 13, 5, 13, 32, 45, 31.5, 44.5, 4, 42, -11.5)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource("OccluderPolygon2D_2wti5")
 
 [node name="InterActArea" type="Area2D" parent="."]
 collision_layer = 0
@@ -68,11 +78,10 @@ text = "E"
 horizontal_alignment = 1
 
 [node name="BotBar" type="TextureProgressBar" parent="."]
-visible = false
-offset_left = -25.5
-offset_top = -16.0
-offset_right = 70.5
-offset_bottom = -4.0
+offset_left = -25.0
+offset_top = -55.0
+offset_right = 71.0
+offset_bottom = -43.0
 scale = Vector2(0.5, 0.5)
 value = 50.0
 texture_under = ExtResource("8_o8vic")
@@ -86,8 +95,12 @@ offset_left = 10.0
 offset_top = -22.0
 offset_right = 87.0
 offset_bottom = 1.0
+theme_override_fonts/font = ExtResource("9_jqs77")
 text = "opening"
 horizontal_alignment = 1
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("10_o8ivd")]
+position = Vector2(0, 6)
 
 [connection signal="body_entered" from="InterActArea" to="." method="_on_inter_act_area_body_entered"]
 [connection signal="body_exited" from="InterActArea" to="." method="_on_inter_act_area_body_exited"]

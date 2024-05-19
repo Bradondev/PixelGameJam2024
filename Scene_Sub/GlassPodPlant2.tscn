@@ -1,13 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cog8n63pcf2yl"]
+[gd_scene load_steps=3 format=3 uid="uid://cog8n63pcf2yl"]
 
 [ext_resource type="Texture2D" uid="uid://ca2on6cb07o51" path="res://Art_PNG/Props_GlassTube.png" id="1_gxhm6"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w3u3q"]
+polygon = PackedVector2Array(28.7404, 28.2884, 23.3131, 24.9848, 23.1361, 20.8553, 26.0268, 19.3216, 28.7994, 18.0827, 32.2799, 19.4985, 34.4626, 21.1503, 34.3447, 24.8668)
 
 [node name="GlassPod" type="StaticBody2D" groups=["Bunker", "Prop"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.0499992, 5.1)
 texture = ExtResource("1_gxhm6")
 offset = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-29, -28)
-polygon = PackedVector2Array(29, -3.5, 23.5, 0, 23.5, 25, 29, 28.5, 34.5, 25, 35, 0)
+position = Vector2(-29.05, -22.9)
+polygon = PackedVector2Array(28.9173, 18.0827, 23.3131, 20.8553, 23.5, 25, 29, 28.5, 34.5, 25, 34.5806, 21.0913)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(-28.7825, -22.6923)
+occluder = SubResource("OccluderPolygon2D_w3u3q")

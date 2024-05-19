@@ -1,12 +1,24 @@
 extends CharacterBody2D
 class_name  Player
 
+#// Controller Pattern
+var move_left : String = "Left"
+var move_right : String = "Right"
+var move_up : String = "Up"
+var move_down : String = "Down"
+var shoot_gun : String = "Shoot"
+var switch_gun : String = "SwitchGuns"
+var reload_gun : String = "Reload"
+var interact : String = "InterAct"
+
 
 @export var MaxHealth :int = 100
 @export var CurrentHealth: int = 100
 @export var inventory: Control
 @export var BasicItems : ItemInstantiator
-@export var speed :int = 10000 # speed in pixels/sec
+
+#// 10000 speed for testing purposes, for runtime it should be 4,500 to match player animations
+@export var speed :int = 10000 # speed in pixels/sec 
 @export var PlayerInventory:InventoryView
 @export var ui: CanvasLayer 
 @onready var gun: Node2D = $Gun
@@ -44,6 +56,7 @@ func _physics_process(delta):
 			SetAnim("idle")
 		else:
 			SetAnim(Action)
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("SwitchGuns") and not CurrentGunNode.Reloading and not CurrentGunNode.isShooting:
 		SwitchGuns()
