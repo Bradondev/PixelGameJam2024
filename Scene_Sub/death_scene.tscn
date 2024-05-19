@@ -1,0 +1,240 @@
+[gd_scene load_steps=19 format=3 uid="uid://cvnww5vgs2hxb"]
+
+[ext_resource type="Script" path="res://GD Scripts/deathScene.gd" id="1_onj5h"]
+[ext_resource type="Texture2D" uid="uid://bkuqaqmwqxctd" path="res://Art_UI/Player_dropshadow.png" id="2_stw0w"]
+[ext_resource type="Texture2D" uid="uid://drfg42niyluq" path="res://Art_PNG/Player_CompositeSprite_SpriteSheet_Bottom V2.png" id="3_enrwb"]
+[ext_resource type="Texture2D" uid="uid://cme1gtewx8nkn" path="res://Art_PNG/Player_CompositeSprite_SpriteSheet_Top_v2.png" id="4_hw3en"]
+[ext_resource type="Texture2D" uid="uid://87316xhraio7" path="res://Art_PNG/Player_CompositeSprite_SpriteSheet_Gun_Desert.png" id="5_5i3ji"]
+[ext_resource type="Texture2D" uid="uid://efph4q6jr5c1" path="res://Art_PNG/Player_CompositeSprite_SpriteSheet_Arms_v2.png" id="6_v17ny"]
+[ext_resource type="Theme" path="res://HUB_FontTheme.tres" id="7_sviyf"]
+[ext_resource type="Texture2D" uid="uid://bt0b4nk6uvm0a" path="res://Art_UI/Shop_TextureButton, Normal.png" id="8_0du7f"]
+[ext_resource type="Texture2D" uid="uid://brsqjv5ec7nl2" path="res://Art_UI/Shop_TextureButton, Pressed.png" id="9_3y1wb"]
+[ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="10_1utta"]
+[ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="11_w5x4w"]
+[ext_resource type="AudioStream" uid="uid://dxv8w3qnkq5b2" path="res://Audio/dramatic-synth-echo-43970.mp3" id="11_w7qql"]
+[ext_resource type="PackedScene" uid="uid://d1ui8lkg8n8hk" path="res://Scene/hub.tscn" id="12_hadpg"]
+[ext_resource type="AudioStream" uid="uid://bbobxxr626qjv" path="res://Audio/male-death-sound-128357.mp3" id="12_nurym"]
+
+[sub_resource type="Animation" id="Animation_uady3"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_whd0v"]
+_data = {
+"RESET": SubResource("Animation_uady3")
+}
+
+[sub_resource type="Animation" id="Animation_fixmo"]
+resource_name = "death"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Bottom:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 10]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/Body:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [500, 502, 502]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/Gun:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [499]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/Arms:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [500, 501, 502, 503]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.0823529), Color(0, 0, 0, 0.815686)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RichTextLabel:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HBoxContainer/return to hub:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_26lau"]
+_data = {
+"death": SubResource("Animation_fixmo")
+}
+
+[node name="deathScene" type="Node2D" node_paths=PackedStringArray("animation_player", "load_screen_1", "deathmusic", "maledeathsound")]
+process_mode = 3
+visible = false
+script = ExtResource("1_onj5h")
+animation_player = NodePath("AnimationPlayer")
+load_screen_1 = NodePath("CanvasLayer/Load_Screen1")
+deathmusic = NodePath("deathman")
+maledeathsound = NodePath("deathman2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_whd0v"),
+"death": SubResource("AnimationLibrary_26lau")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -524.0
+offset_top = -332.0
+offset_right = 537.0
+offset_bottom = 297.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.0823529)
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="Sprites"]
+position = Vector2(0, 0.490712)
+texture = ExtResource("2_stw0w")
+offset = Vector2(0, -1)
+
+[node name="Bottom" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("3_enrwb")
+offset = Vector2(0, -16)
+hframes = 11
+
+[node name="Body" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("4_hw3en")
+offset = Vector2(0, -16)
+hframes = 10
+vframes = 51
+frame = 500
+
+[node name="Chest" type="Sprite2D" parent="Sprites"]
+
+[node name="Gun" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("5_5i3ji")
+offset = Vector2(0, -16)
+hframes = 10
+vframes = 50
+frame = 499
+
+[node name="Arms" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("6_v17ny")
+offset = Vector2(0, -16)
+hframes = 10
+vframes = 51
+frame = 500
+
+[node name="Helmet" type="Sprite2D" parent="Sprites"]
+
+[node name="deathman" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_w7qql")
+
+[node name="deathman2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_nurym")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -524.0
+offset_top = -107.0
+offset_right = 537.0
+offset_bottom = 30.0
+theme = ExtResource("7_sviyf")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[center][color=red][shake]liquidated."
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = -48.0
+offset_top = 24.0
+offset_right = 47.0
+offset_bottom = 62.0
+theme_override_constants/separation = 50
+metadata/_edit_group_ = true
+
+[node name="return to hub" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_sviyf")
+texture_normal = ExtResource("8_0du7f")
+texture_pressed = ExtResource("9_3y1wb")
+texture_hover = ExtResource("10_1utta")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/return to hub"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "[center]Hub"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Load_Screen1" parent="CanvasLayer" instance=ExtResource("11_w5x4w")]
+visible = false
+Scene = ExtResource("12_hadpg")
+
+[connection signal="pressed" from="HBoxContainer/return to hub" to="." method="_on_return_to_hub_pressed"]

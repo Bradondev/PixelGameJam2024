@@ -62,53 +62,53 @@
 [ext_resource type="PackedScene" uid="uid://cag704jcu3o3i" path="res://Scene/inventory/stashgrid.tscn" id="52_1qi0f"]
 [ext_resource type="Resource" uid="uid://douiehmw6t3m6" path="res://Items/Contents/LootV1.tres" id="53_gmg0c"]
 [ext_resource type="PackedScene" uid="uid://drf6quwd64if4" path="res://Scene_Menu/first_time_menu.tscn" id="58_dyap8"]
-[ext_resource type="PackedScene" uid="uid://c6nocpurjjcau" path="res://Scene_Testing/player_movement_test.tscn" id="61_k6801"]
+[ext_resource type="PackedScene" uid="uid://ofeodv7xg8ye" path="res://Scene_Testing/Level2.tscn" id="61_k6801"]
 
 [sub_resource type="Theme" id="Theme_vs827"]
 
-[sub_resource type="Resource" id="Resource_5n4al"]
+[sub_resource type="Resource" id="Resource_dr6si"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_usl1u"]
+[sub_resource type="Resource" id="Resource_riha1"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_7yne0"]
+[sub_resource type="Resource" id="Resource_0gqnm"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_18ybj"]
+[sub_resource type="Resource" id="Resource_611mi"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_rmfom"]
+[sub_resource type="Resource" id="Resource_78mxw"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_i353d"]
+[sub_resource type="Resource" id="Resource_m2r2t"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_gmleu"]
+[sub_resource type="Resource" id="Resource_wrhhx"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
@@ -945,7 +945,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_5n4al")
+inventory = SubResource("Resource_dr6si")
 autosave_file_path = "stash1"
 autosave_intensity = 3
 
@@ -957,7 +957,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_usl1u")
+inventory = SubResource("Resource_riha1")
 autosave_file_path = "stash2"
 autosave_intensity = 3
 
@@ -969,7 +969,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_7yne0")
+inventory = SubResource("Resource_0gqnm")
 autosave_file_path = "stash3"
 autosave_intensity = 3
 
@@ -981,7 +981,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_18ybj")
+inventory = SubResource("Resource_611mi")
 autosave_file_path = "stash4"
 autosave_intensity = 3
 
@@ -993,7 +993,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_rmfom")
+inventory = SubResource("Resource_78mxw")
 autosave_file_path = "stash5"
 autosave_intensity = 3
 
@@ -1005,7 +1005,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_i353d")
+inventory = SubResource("Resource_m2r2t")
 autosave_file_path = "stash6"
 autosave_intensity = 3
 
@@ -1017,7 +1017,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_gmleu")
+inventory = SubResource("Resource_wrhhx")
 autosave_file_path = "stash7"
 autosave_intensity = 3
 
@@ -1187,7 +1187,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 contents = ExtResource("40_0ttcj")
-init_contents = true
 autosave_file_path = ""
 
 [node name="BuySellAnim" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox"]

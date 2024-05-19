@@ -36,7 +36,6 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	
 	
-	
 	if !CurrentGun or Reloading: return
 	if event.is_action_pressed("Reload")  and player.CurrentGunNode == self:
 		ReloadCurrentGun()

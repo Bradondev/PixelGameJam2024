@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://c1csamo060lwc"]
+
+[ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="1_xl7tl"]
+[ext_resource type="Texture2D" uid="uid://ddpgh36os1b5f" path="res://Art_PNG/Item_Sell_WD40.png" id="2_ksdyi"]
+
+[resource]
+script = ExtResource("1_xl7tl")
+name = "Cat "
+description = "has some value"
+tags = Array[StringName]([])
+texture = ExtResource("2_ksdyi")
+texture_scale = 1.0
+max_stack_count = 24
+in_inventory_width = 1
+in_inventory_height = 2
+slot_flags = 1
+default_properties_string = "{
+\"price\": {
+\"res://Items/Aqua.tres\": 4
+}
+}"
+default_properties = {
+"price": {
+"res://Items/Aqua.tres": 4
+}
+}

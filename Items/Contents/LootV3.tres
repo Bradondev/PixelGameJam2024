@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ItemGenerator" load_steps=13 format=3 uid="uid://c0gklvo5tb8jn"]
+
+[ext_resource type="Resource" uid="uid://qb5w6woyq7ur" path="res://Items/Guns/ArV2.tres" id="1_5f435"]
+[ext_resource type="Resource" uid="uid://b0budqwoq0p0j" path="res://Items/Guns/pistolV2.tres" id="2_j6vxj"]
+[ext_resource type="Resource" uid="uid://bg4lhkbyfvf4r" path="res://Items/Guns/shotGunV2.tres" id="3_demu4"]
+[ext_resource type="Resource" uid="uid://v0pjp1xp6582" path="res://Items/Guns/shotGunV3.tres" id="4_f4u16"]
+[ext_resource type="Resource" uid="uid://borygqqdk0pf4" path="res://Items/Guns/SmgV2.tres" id="5_6i8j0"]
+[ext_resource type="Resource" uid="uid://b4tp616feo5ow" path="res://Items/Guns/SniperV2.tres" id="6_fspuh"]
+[ext_resource type="Resource" uid="uid://c7xy7x1sm2xcw" path="res://Items/Guns/SmgV3.tres" id="7_l5jv3"]
+[ext_resource type="Resource" uid="uid://basndsdc45t7l" path="res://Items/Guns/SniperV3.tres" id="8_0depr"]
+[ext_resource type="Resource" uid="uid://db1adotbc42qi" path="res://Items/Guns/pistolV3.tres" id="9_2o6dv"]
+[ext_resource type="Resource" uid="uid://sviody1my0p5" path="res://Items/Guns/pistolV4.tres" id="10_nw3rg"]
+[ext_resource type="Resource" uid="uid://clifr3joxabgm" path="res://Items/Guns/ArV3.tres" id="11_byggs"]
+[ext_resource type="Script" path="res://addons/wyvernbox/crafting/item_generator.gd" id="12_xectj"]
+
+[resource]
+script = ExtResource("12_xectj")
+name = "LootV3"
+results = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_5f435"), ExtResource("2_j6vxj"), ExtResource("3_demu4"), ExtResource("4_f4u16"), ExtResource("5_6i8j0"), ExtResource("6_fspuh"), ExtResource("7_l5jv3"), ExtResource("8_0depr"), ExtResource("9_2o6dv"), ExtResource("10_nw3rg"), ExtResource("11_byggs")])
+weights = Array[float]([15.0, 15.0, 15.0, 10.0, 15.0, 15.0, 5.0, 5.0, 5.0, 1.0, 5.0])
+count_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])

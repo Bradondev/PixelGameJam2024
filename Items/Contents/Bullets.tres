@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemGenerator" load_steps=8 format=3 uid="uid://u6cm4c1s2oup"]
+
+[ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="1_vdiau"]
+[ext_resource type="Resource" uid="uid://bg63kcap61rmc" path="res://Items/Bullet/7.62mm.tres" id="2_2l33a"]
+[ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="3_ndpw4"]
+[ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="4_psnhs"]
+[ext_resource type="Resource" uid="uid://dolh3xcwag5dg" path="res://Items/Bullet/5.7mm.tres" id="5_ietbg"]
+[ext_resource type="Script" path="res://addons/wyvernbox/crafting/item_generator.gd" id="6_4r7q5"]
+[ext_resource type="Texture2D" uid="uid://cujf8p5mj0mqy" path="res://Art_PNG/UI_GunStuff/UI_Bullets_7.6mm.png" id="7_1iniv"]
+
+[resource]
+script = ExtResource("6_4r7q5")
+name = "Bullets"
+texture = ExtResource("7_1iniv")
+results = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_vdiau"), ExtResource("2_2l33a"), ExtResource("3_ndpw4"), ExtResource("4_psnhs"), ExtResource("5_ietbg")])
+weights = Array[float]([20.0, 20.0, 20.0, 20.0, 20.0])
+count_ranges = Array[Vector2]([Vector2(8, 30), Vector2(6, 30), Vector2(6, 30), Vector2(6, 30), Vector2(6, 30)])

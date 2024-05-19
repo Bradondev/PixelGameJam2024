@@ -28,7 +28,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/imjp94.yafsm/plugin.cfg", "res://addons/wyvernbox/editor/plugin.cfg")
+enabled=PackedStringArray("res://addons/wyvernbox/editor/plugin.cfg")
 
 [input]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bpilr5la784ys"]
+[gd_scene load_steps=31 format=3 uid="uid://bpilr5la784ys"]
 
 [ext_resource type="PackedScene" uid="uid://bhkiy4ucj30lo" path="res://Scene/UI.tscn" id="1_4gmy4"]
 [ext_resource type="Script" path="res://GD Scripts/Player.gd" id="1_022et"]
@@ -19,6 +19,9 @@
 [ext_resource type="Resource" uid="uid://sp77klvw5uhw" path="res://Items/Contents/BasicEqiupment.tres" id="12_b6p14"]
 [ext_resource type="Texture2D" uid="uid://8pco4p25s6q5" path="res://Art_UI/Equipment_Footer_Inventory.png" id="17_3rjy4"]
 [ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="20_kcioh"]
+[ext_resource type="PackedScene" uid="uid://cvnww5vgs2hxb" path="res://Scene_Sub/death_scene.tscn" id="22_5vsrl"]
+[ext_resource type="Script" path="res://addons/wyvernbox/crafting/vendor.gd" id="23_p0b8c"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="24_a4vag"]
 [ext_resource type="Texture2D" uid="uid://bt0b4nk6uvm0a" path="res://Art_UI/Shop_TextureButton, Normal.png" id="25_faxl1"]
 [ext_resource type="AudioStream" uid="uid://d2hg7cqxsdhkt" path="res://Audio/crunchy-footsteps-on-leaves-88862--Edited by Konscious.wav" id="30_s76jk"]
 
@@ -39,10 +42,24 @@ size = Vector2(23, 34.5)
 radius = 4.5
 height = 23.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("inventory", "PlayerInventory", "curent_weapon") groups=["Player"]]
+[sub_resource type="Resource" id="Resource_fmt5u"]
+script = ExtResource("24_a4vag")
+name = ""
+description = ""
+tags = Array[StringName]([])
+texture_scale = 1.0
+max_stack_count = 1
+in_inventory_width = 1
+in_inventory_height = 1
+slot_flags = 1
+default_properties_string = ""
+default_properties = {}
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("clearer", "inventory", "PlayerInventory", "curent_weapon") groups=["Player"]]
 scale = Vector2(2, 2)
 collision_layer = 258
 script = ExtResource("1_022et")
+clearer = NodePath("clearPlayerInven")
 inventory = NodePath("UI/Inventory")
 speed = 5000
 PlayerInventory = NodePath("UI/Inventory/Margin/EquipmentAndInventory/InventoryVbox/player")
@@ -260,6 +277,20 @@ debug_color = Color(0, 0, 0, 0.419608)
 unique_name_in_owner = true
 stream = ExtResource("30_s76jk")
 volume_db = 16.995
+
+[node name="deathScene" parent="." node_paths=PackedStringArray("player") instance=ExtResource("22_5vsrl")]
+player = NodePath("..")
+
+[node name="clearPlayerInven" type="Node" parent="."]
+script = ExtResource("23_p0b8c")
+vendor_inventory = NodePath("../UI/Inventory/Margin/EquipmentAndInventory/InventoryVbox/player")
+price_markup = 0.0
+stock = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([SubResource("Resource_fmt5u")])
+stock_counts = Array[int]([1])
+stock_restocks = Array[int]([0])
+infinite_restocks = false
+clear_sold_items_when_hidden = false
+free_buyback = false
 
 [connection signal="item_stack_added" from="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/Equip" to="." method="_on_equip_item_stack_added"]
 [connection signal="item_stack_changed" from="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/Equip" to="." method="_on_equip_item_stack_changed"]

@@ -11,11 +11,12 @@ var switch_gun : String = "SwitchGuns"
 var reload_gun : String = "Reload"
 var interact : String = "InterAct"
 
-
+@export var clearer: InventoryVendor 
 @export var MaxHealth :int = 100
 @export var CurrentHealth: int = 100
 @export var inventory: Control
 @export var BasicItems : ItemInstantiator
+@onready var death_scene: DeathScene = $deathScene
 
 #// 10000 speed for testing purposes, for runtime it should be 4,500 to match player animations
 @export var speed :int = 10000 # speed in pixels/sec 
@@ -35,6 +36,8 @@ var CurrentGunNode : GunNode
 @onready var Name: RichTextLabel = $UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround/name
 @onready var description: RichTextLabel = $UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround/Description
 
+
+
 func  _ready() -> void: 
 	CurrentGunNode = gun_2
 	UpdataProgress()
@@ -43,6 +46,7 @@ func  _ready() -> void:
 	FlipInventory()
 	
 func _physics_process(delta):
+
 	var Action = "walk"
 	if CurrentGunNode.global_rotation_degrees + 90 <= 0 or  CurrentGunNode.global_rotation_degrees + 90 >= 180 :
 		composite_sprite.scale.x = -1
@@ -59,6 +63,7 @@ func _physics_process(delta):
 			SetAnim(Action)
 
 func _unhandled_input(event: InputEvent) -> void:
+
 	if event.is_action_pressed("SwitchGuns") and not CurrentGunNode.Reloading and not CurrentGunNode.isShooting:
 		SwitchGuns()
 	if event.is_action_pressed("menu_inventory"):
@@ -82,6 +87,9 @@ func TakeDamage(Amount:int):
 	CurrentHealth -= Amount
 	if CurrentHealth <=0:
 		CurrentHealth = 0
+		clearPlayerInven()
+		death_scene.PlayDeath()
+		
 	UpdataProgress()
 	
 func UpdataProgress():
@@ -170,9 +178,11 @@ func SetAnim(NameOfAction):
 		composite_sprite.gun.visible = false
 		
 		var AnimationName = NameOfAction+"_" + CheckForAngle() +"_"+"pistol"
-		var time =	composite_sprite.sprite_player.current_animation_position
+		
 		composite_sprite.AnimPlayer(AnimationName,.001)
-		composite_sprite.sprite_player.seek(time, true)
+		if composite_sprite.sprite_player.current_animation:
+			var time =	composite_sprite.sprite_player.current_animation_position
+			composite_sprite.sprite_player.seek(time, true)
 
 func SwitchGuns():
 	if CurrentGunNode == gun:
@@ -195,3 +205,6 @@ func SetGun1():
 	gun_2.visible = false
 	gun.visible = true
 	curent_weapon.text = "[center] Current Weapon: Weapon 1"
+
+func clearPlayerInven():
+	clearer.refill_stock()
