@@ -7,9 +7,11 @@ extends Control
 @onready var sounds : AudioStreamPlayer = $MenuSound
 @onready var npcTalk : RichTextLabel = $Margin/Vbox/ColorRect/MarginContainer/RichTextLabel
 
-@onready var load_screen1 : Control = $Load_Screen1
-@onready var load_screen2 : Control = $Load_Screen2
-@onready var load_screen3 : Control = $Load_Screen3
+#// LOADING_SCREEN mechanism
+@onready var mission1 : Control = $Load_Screen1
+@onready var mission2 : Control = $Load_Screen2
+@onready var mission3 : Control = $Load_Screen3
+@onready var tutorial : Control = $Load_Screen4
 
 var destination = null
 
@@ -70,6 +72,11 @@ func _on_missions_mouse_entered():
 	SoundEffects()
 	ColorSwap("317791")
 	npcTalk.text = "Aw yeah! Time to go scavenge! Time to kick butt and get paid!"
+func _on_tutorial_mouse_entered():
+	SoundEffects()
+	ColorSwap("000000")
+	npcTalk.text = "First time here? time to learn WHY you're here!"
+
 
 #// MOUSE EXITED // SET BACK TO DEFAULT COLOR AND DEFAULT FLAVOR TEXT
 func _on_shop_mouse_exited():
@@ -79,6 +86,9 @@ func _on_stash_mouse_exited():
 	ColorSwap("282828")
 	npcTalk.text = "What's your business here?!"
 func _on_missions_mouse_exited():
+	ColorSwap("282828")
+	npcTalk.text = "What's your business here?!"
+func _on_tutorial_mouse_exited():
 	ColorSwap("282828")
 	npcTalk.text = "What's your business here?!"
 
@@ -113,12 +123,25 @@ func _on_complete_button_3_mouse_entered():
 func _on_complete_button_3_pressed():
 	print("############ Mission 3 completion not coded yet!")
 
+'''
+LAUNCH TUTORIAL
+'''
+func _on_tutorial_pressed():
+	$FirstTime_Menu.startScene()
+	$Music.stop()
+	$FirstTime_Menu.show()
+'''
+RESUME HUB MUSIC AT END OF TUTORIAL
+'''
+func _on_first_time_menu_tutorial_end():
+	$Music.play()
+
 #// SWITCH STATEMENT TO LOAD UP LOADING SCREEN WITH APPROPRIATE MAP DESTINATION
 func _on_launch_finished():
 	match destination:
-		1: load_screen1.StartLoading()
-		2: load_screen2.StartLoading()
-		3: load_screen3.StartLoading()
+		1: mission1.StartLoading()
+		2: mission2.StartLoading()
+		3: mission3.StartLoading()
 
 
 
@@ -126,3 +149,9 @@ func _on_launch_finished():
 func _on_player_item_stack_selected(item_view: ItemStackView) -> void:
 	$Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround/name.text = "[center]" +item_view.stack.item_type.description
 	$Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround/Description.text= "[center]" + item_view.stack.item_type.name
+
+
+
+
+
+
