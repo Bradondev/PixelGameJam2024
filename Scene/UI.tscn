@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://bhkiy4ucj30lo"]
 
-[ext_resource type="Texture2D" uid="uid://c6654jxqrhpmf" path="res://Art_PNG/UI_Player Token, Normal.png" id="1_snjcd"]
+[ext_resource type="Texture2D" uid="uid://c6654jxqrhpmf" path="res://Art_PNG/UI__Artwork/UI_Player Token, Normal.png" id="1_snjcd"]
 [ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="2_brpdq"]
 [ext_resource type="Texture2D" uid="uid://dcfxp0gtvvhyu" path="res://Art_UI/ProgressBar_PlayerResource (Over).png" id="3_8tpyf"]
 [ext_resource type="Texture2D" uid="uid://3vmgjxrcavhb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Green.png" id="4_gmflh"]
 [ext_resource type="Texture2D" uid="uid://blci8p2pk46kb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Red.png" id="5_c2l54"]
 [ext_resource type="Texture2D" uid="uid://cttyvchnc16nr" path="res://Art_UI/ProgressBar_PlayerResource (Value), Blue.png" id="6_kt6gp"]
-[ext_resource type="Texture2D" uid="uid://ds3cqx1dk14we" path="res://Art_PNG/UI_Ammo.png" id="7_nytj8"]
+[ext_resource type="Texture2D" uid="uid://ds3cqx1dk14we" path="res://Art_PNG/UI__Artwork/UI_Ammo.png" id="7_nytj8"]
 [ext_resource type="FontFile" uid="uid://dmo6e5w4r5tmf" path="res://Fonts/Pixels (16px).ttf" id="8_skyss"]
 
 [node name="UI" type="CanvasLayer"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://f2kwdnipichc"]
+
+[ext_resource type="PackedScene" uid="uid://cpfa5fp5y5x5l" path="res://Obsolete/Aliens/Tall/Lizardman.tscn" id="1_w0wf0"]
+[ext_resource type="Script" path="res://Obsolete/Scene_Testing/AI Testing/BasicPlayerControllerTesting.gd" id="2_3b614"]
+[ext_resource type="Texture2D" uid="uid://p68mqv46x1tl" path="res://Obsolete/Scene_Testing/Tilemap_Testing/Placeholder_PC.png" id="3_4tw4y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4m7mx"]
+radius = 6.32456
+
+[node name="FrogsAiTesting" type="Node2D"]
+
+[node name="Lizard" parent="." instance=ExtResource("1_w0wf0")]
+position = Vector2(365, 0)
+speed = 200.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_3b614")
+friction = 0.1
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_4tw4y")
+centered = false
+offset = Vector2(-6.5, -29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_4m7mx")

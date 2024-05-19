@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b8cw3jl23kt0p"
+
+[deps]
+
+files=["res://Obsolete/example/translation/items.en.translation", "res://Obsolete/example/translation/items.eo.translation", "res://Obsolete/example/translation/items.uk.translation"]
+
+source_file="res://Obsolete/example/translation/items.csv"
+dest_files=["res://Obsolete/example/translation/items.en.translation", "res://Obsolete/example/translation/items.eo.translation", "res://Obsolete/example/translation/items.uk.translation"]
+
+[params]
+
+compress=true
+delimiter=1

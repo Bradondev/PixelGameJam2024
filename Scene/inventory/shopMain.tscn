@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://addons/wyvernbox/crafting/vendor.gd" id="1_2v0fv"]
 [ext_resource type="PackedScene" uid="uid://dp2ppss8u73op" path="res://Scene/inventory/ShopGrid.tscn" id="2_1o434"]
 [ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="3_ve6es"]
-[ext_resource type="Resource" uid="uid://bd1ddeel6achx" path="res://example/wyvernbox/item_types/consumable/potion_blue.tres" id="4_8m26d"]
+[ext_resource type="Resource" uid="uid://bd1ddeel6achx" path="res://Obsolete/example/wyvernbox/item_types/consumable/potion_blue.tres" id="4_8m26d"]
 
 [sub_resource type="Resource" id="Resource_0bk5u"]
 resource_name = "GridInventory"

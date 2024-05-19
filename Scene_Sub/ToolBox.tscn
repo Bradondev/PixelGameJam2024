@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://djwlpg1g4e28o"]
 
 [ext_resource type="Script" path="res://GD Scripts/InterActAble.gd" id="1_m8dmx"]
-[ext_resource type="Texture2D" uid="uid://dr6v4fotjiyar" path="res://Art_PNG/Props_Toolbox (Outlined).png" id="2_uhj47"]
-[ext_resource type="Texture2D" uid="uid://c4nbrplquuh2j" path="res://Art_PNG/Props_Toolbox.png" id="3_s7w5k"]
+[ext_resource type="Texture2D" uid="uid://dr6v4fotjiyar" path="res://Art_PNG/Map_Props/Props_Toolbox (Outlined).png" id="2_uhj47"]
+[ext_resource type="Texture2D" uid="uid://c4nbrplquuh2j" path="res://Art_PNG/Map_Props/Props_Toolbox.png" id="3_s7w5k"]
 [ext_resource type="PackedScene" uid="uid://bc4j42x2jqd7o" path="res://Scene/inventory/bunker.tscn" id="6_oapii"]
 [ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="7_ksifh"]
 [ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="8_o8vic"]

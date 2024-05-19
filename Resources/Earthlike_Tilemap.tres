@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cw8wysuqqyfiq"]
 
-[ext_resource type="Texture2D" uid="uid://b63bkjlpcrp2g" path="res://Art_PNG/Tilemap_AlienPlanet_128px, Earthlike V2.png" id="1_replq"]
+[ext_resource type="Texture2D" uid="uid://b63bkjlpcrp2g" path="res://Art_PNG/Tilemaps/Tilemap_AlienPlanet_128px, Earthlike V2.png" id="1_replq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n8x54"]
 resource_name = "Earthlike V2"

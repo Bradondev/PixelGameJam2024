@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ieghweqpyuq5"]
 
-[ext_resource type="Texture2D" uid="uid://beij8oblty7m1" path="res://Art_PNG/Props_GlassTube_Blue, v1.png" id="1_o2k4e"]
+[ext_resource type="Texture2D" uid="uid://beij8oblty7m1" path="res://Art_PNG/Map_Props/Props_GlassTube_Blue, v1.png" id="1_o2k4e"]
 [ext_resource type="PackedScene" uid="uid://b0bagqclhtewx" path="res://Art_Lighting/LightingTestKit.tscn" id="1_pi4rq"]
 [ext_resource type="Texture2D" uid="uid://c88bx7qyspw5b" path="res://Art_Lighting/godotLight.webp" id="3_6714u"]
 

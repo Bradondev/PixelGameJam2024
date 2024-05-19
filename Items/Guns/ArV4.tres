@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://bqujs5cptgqcw" path="res://GD Scripts/Resources/Guns/ArV4.tres" id="1_jon06"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_0u467"]
-[ext_resource type="Texture2D" uid="uid://dn0hcllva33os" path="res://Art_PNG/Item_Gun_AR, Camo.png" id="3_iysmu"]
+[ext_resource type="Texture2D" uid="uid://dn0hcllva33os" path="res://Art_PNG/Item_Gun/Item_Gun_AR, Camo.png" id="3_iysmu"]
 
 [resource]
 script = ExtResource("2_0u467")

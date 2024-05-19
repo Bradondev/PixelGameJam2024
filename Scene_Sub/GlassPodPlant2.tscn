@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cog8n63pcf2yl"]
 
-[ext_resource type="Texture2D" uid="uid://ca2on6cb07o51" path="res://Art_PNG/Props_GlassTube.png" id="1_gxhm6"]
+[ext_resource type="Texture2D" uid="uid://ca2on6cb07o51" path="res://Art_PNG/Map_Props/Props_GlassTube.png" id="1_gxhm6"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w3u3q"]
 polygon = PackedVector2Array(28.7404, 28.2884, 23.3131, 24.9848, 23.1361, 20.8553, 26.0268, 19.3216, 28.7994, 18.0827, 32.2799, 19.4985, 34.4626, 21.1503, 34.3447, 24.8668)

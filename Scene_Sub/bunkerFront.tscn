@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bru61wwju326n"]
 
-[ext_resource type="Texture2D" uid="uid://c71ivr81rfurv" path="res://Art_PNG/Props_Bunker_Down.png" id="1_0iumj"]
+[ext_resource type="Texture2D" uid="uid://c71ivr81rfurv" path="res://Art_PNG/Map_Props/Props_Bunker_Down.png" id="1_0iumj"]
 [ext_resource type="Texture2D" uid="uid://djm5ckr4yibiq" path="res://Art_Lighting/godotLight_half.png" id="3_6pqlg"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6x1gx"]

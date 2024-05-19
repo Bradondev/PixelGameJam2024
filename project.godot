@@ -30,6 +30,22 @@ window/vsync/vsync_mode=0
 
 enabled=PackedStringArray("res://addons/wyvernbox/editor/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://Art_Aseprite/": "gray",
+"res://Art_Lighting/": "green",
+"res://Art_PNG/": "green",
+"res://Art_UI/": "green",
+"res://Audio/": "green",
+"res://Fonts/": "green",
+"res://Items/": "green",
+"res://Obsolete/": "red",
+"res://Scene/": "teal",
+"res://Scene_Menu/": "blue",
+"res://Scene_Sub/": "teal"
+}
+
 [input]
 
 menu_inventory={

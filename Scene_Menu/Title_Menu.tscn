@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://dn8xh53dpsrtp"]
 
 [ext_resource type="Script" path="res://GD Scripts/main_menu.gd" id="1_a50wq"]
-[ext_resource type="Texture2D" uid="uid://tq0mjygm3nfl" path="res://Art_PNG/UI_TitleMenu_Art.png" id="1_ynfv6"]
+[ext_resource type="Texture2D" uid="uid://tq0mjygm3nfl" path="res://Art_PNG/UI__Artwork/UI_TitleMenu_Art.png" id="1_ynfv6"]
 [ext_resource type="AudioStream" uid="uid://c1s6d825b3qxu" path="res://Audio/Song- Cyborg Ninja.mp3" id="2_vhtl4"]
 [ext_resource type="Texture2D" uid="uid://j18x6gvny58r" path="res://Art_UI/Button_TitleMenu, Start (Normal).png" id="2_xxfle"]
 [ext_resource type="AudioStream" uid="uid://dtwj04qji3ycc" path="res://Audio/Sound - coin-collect-retro-8-bit-sound-effect-145251.mp3" id="3_qotxp"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://15eqnriwggmi" path="res://Art_UI/Button_TitleMenu, Quit (Normal).png" id="8_axeml"]
 [ext_resource type="Texture2D" uid="uid://dfehem3xdi7rb" path="res://Art_UI/Button_TitleMenu, Quit (Pressed).png" id="9_g0hqw"]
 [ext_resource type="Texture2D" uid="uid://cd5xrcedh8nov" path="res://Art_UI/Button_TitleMenu, Quit (Hover).png" id="10_1f1jy"]
-[ext_resource type="Texture2D" uid="uid://c5mabavm86o5x" path="res://Art_PNG/UI_TitleMenu_Gun.png" id="11_4sbf0"]
+[ext_resource type="Texture2D" uid="uid://c5mabavm86o5x" path="res://Art_PNG/UI__Artwork/UI_TitleMenu_Gun.png" id="11_4sbf0"]
 [ext_resource type="PackedScene" uid="uid://46dh7w8axvql" path="res://Scene_Menu/Options_Menu.tscn" id="13_10nno"]
 [ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="14_b2fyb"]
 [ext_resource type="PackedScene" uid="uid://d1ui8lkg8n8hk" path="res://Scene/hub.tscn" id="15_qlvyu"]

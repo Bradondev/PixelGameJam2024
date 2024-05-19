@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="1_qsbbl"]
 [ext_resource type="Resource" uid="uid://gvubuypvpq84" path="res://GD Scripts/Resources/Guns/SniperV1.tres" id="1_uo0kk"]
-[ext_resource type="Texture2D" uid="uid://b4a2qaonglahb" path="res://Art_PNG/Item_Gun_Sniper, Desert, v1.png" id="2_lyn12"]
+[ext_resource type="Texture2D" uid="uid://b4a2qaonglahb" path="res://Art_PNG/Item_Gun/Item_Gun_Sniper, Desert, v1.png" id="2_lyn12"]
 
 [resource]
 script = ExtResource("1_qsbbl")

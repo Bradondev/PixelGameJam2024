@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://c11b6w554j445" path="res://GD Scripts/Resources/Guns/SmgV4.tres" id="1_30xyg"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_hmjxf"]
-[ext_resource type="Texture2D" uid="uid://c30kd7p05xvnn" path="res://Art_PNG/Item_Gun_SMG_Camo.png" id="3_dl2q1"]
+[ext_resource type="Texture2D" uid="uid://c30kd7p05xvnn" path="res://Art_PNG/Item_Gun/Item_Gun_SMG_Camo.png" id="3_dl2q1"]
 
 [resource]
 script = ExtResource("2_hmjxf")

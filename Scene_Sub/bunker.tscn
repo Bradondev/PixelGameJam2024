@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://qjsl7x5vcuya"]
 
 [ext_resource type="Script" path="res://GD Scripts/InterActAble.gd" id="1_rlumb"]
-[ext_resource type="Texture2D" uid="uid://bvudj8mamjji8" path="res://Art_PNG/Props_Bunker_Left (Outlined).png" id="2_4pgw5"]
-[ext_resource type="Texture2D" uid="uid://dav1gby0lp1dn" path="res://Art_PNG/Props_Bunker_Left.png" id="3_53vcx"]
+[ext_resource type="Texture2D" uid="uid://bvudj8mamjji8" path="res://Art_PNG/Map_Props/Props_Bunker_Left (Outlined).png" id="2_4pgw5"]
+[ext_resource type="Texture2D" uid="uid://dav1gby0lp1dn" path="res://Art_PNG/Map_Props/Props_Bunker_Left.png" id="3_53vcx"]
 [ext_resource type="Texture2D" uid="uid://djm5ckr4yibiq" path="res://Art_Lighting/godotLight_half.png" id="4_cqm5q"]
 [ext_resource type="PackedScene" uid="uid://bc4j42x2jqd7o" path="res://Scene/inventory/bunker.tscn" id="4_iiu71"]
 [ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="5_fbdim"]
