@@ -2,17 +2,17 @@
 
 [ext_resource type="Resource" uid="uid://p1ltotsn40q2" path="res://GD Scripts/Resources/Guns/ArV5.tres" id="1_8pcwg"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_1juor"]
-[ext_resource type="Texture2D" uid="uid://5mlquwt4ufnu" path="res://Art_PNG/Item_Gun_AR_Blue, v1.png" id="3_yt4m3"]
+[ext_resource type="Texture2D" uid="uid://d11hqoqx8obo6" path="res://Art_PNG/Item_Gun_AR, Desert, v1.png" id="3_pdgnx"]
 
 [resource]
 script = ExtResource("2_1juor")
 name = "SC-2010"
-description = ""
+description = "Is mayonnaise an instrument?"
 tags = Array[StringName]([])
-texture = ExtResource("3_yt4m3")
+texture = ExtResource("3_pdgnx")
 texture_scale = 1.0
 max_stack_count = 1
-in_inventory_width = 1
+in_inventory_width = 3
 in_inventory_height = 1
 slot_flags = 4
 custom_data = ExtResource("1_8pcwg")

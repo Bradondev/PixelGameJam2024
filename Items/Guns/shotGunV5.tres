@@ -2,14 +2,14 @@
 
 [ext_resource type="Resource" uid="uid://oksgyhpi0euw" path="res://GD Scripts/Resources/Guns/ShotGunV5.tres" id="1_nwp4b"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_2k10r"]
-[ext_resource type="Texture2D" uid="uid://bw0olar15pkkj" path="res://Art_PNG/Item_Gun_Shotgun, Desert, v1.png" id="3_kq2l0"]
+[ext_resource type="Texture2D" uid="uid://dafesqc1hcved" path="res://Art_PNG/Item_Gun_Shotgun, Camo.png" id="3_5ttit"]
 
 [resource]
 script = ExtResource("2_2k10r")
 name = "UTS-15"
-description = ""
+description = "A SECRET STRING!"
 tags = Array[StringName]([])
-texture = ExtResource("3_kq2l0")
+texture = ExtResource("3_5ttit")
 texture_scale = 1.0
 max_stack_count = 1
 in_inventory_width = 3

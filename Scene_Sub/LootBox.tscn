@@ -16,7 +16,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1g03"]
 size = Vector2(35, 13.75)
 
-[sub_resource type="Resource" id="Resource_asut5"]
+[sub_resource type="Resource" id="Resource_m6fdd"]
 resource_local_to_scene = true
 script = ExtResource("5_h04qh")
 height = 2
@@ -37,11 +37,12 @@ Opentime = 1.0
 HasInventory = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(0, -3)
 texture = ExtResource("3_476hi")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-28.5, -13.2)
+visible = false
+position = Vector2(-29, -13)
 polygon = PackedVector2Array(17.5, 11.2, 17.5, 18.7, 39.5, 18.7, 39.5, 11.2)
 
 [node name="InterActArea" type="Area2D" parent="."]
@@ -64,7 +65,7 @@ offset_left = 411.0
 offset_top = 363.0
 offset_right = 539.0
 offset_bottom = 427.0
-inventory = SubResource("Resource_asut5")
+inventory = SubResource("Resource_m6fdd")
 init_contents = true
 cell_size = Vector2(32, 32)
 autosave_file_path = ""

@@ -2,14 +2,14 @@
 
 [ext_resource type="Resource" uid="uid://dcs3xpldmvg2a" path="res://GD Scripts/Resources/Guns/ShotGunV3.tres" id="1_kwgub"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_h00gs"]
-[ext_resource type="Texture2D" uid="uid://bw0olar15pkkj" path="res://Art_PNG/Item_Gun_Shotgun, Desert, v1.png" id="3_dr1l3"]
+[ext_resource type="Texture2D" uid="uid://dafesqc1hcved" path="res://Art_PNG/Item_Gun_Shotgun, Camo.png" id="3_ttjds"]
 
 [resource]
 script = ExtResource("2_h00gs")
 name = "Saiga-12"
-description = ""
+description = "rectangles!"
 tags = Array[StringName]([])
-texture = ExtResource("3_dr1l3")
+texture = ExtResource("3_ttjds")
 texture_scale = 1.0
 max_stack_count = 1
 in_inventory_width = 3

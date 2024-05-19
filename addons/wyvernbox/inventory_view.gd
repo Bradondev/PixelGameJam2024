@@ -3,6 +3,8 @@
 class_name InventoryView
 extends Control
 
+signal flipInventoryButton
+
 ## A view into an [Inventory]. Allows to edit and save the inventory's contents.
 ##
 ## This node automatically arranges child nodes according to the inventory's type and settings. For non-grids, changing the type of the created [Container] node
@@ -90,7 +92,6 @@ signal selection_out_of_bounds(old_cell : Vector2, direction : Vector2)
 @export var view_filter_patterns : Array: set = _set_view_filter
 
 @export_group("Autosave")
-
 
 ## File path to autosave into. [br]
 ## Only supports "user://" paths.
@@ -881,3 +882,7 @@ func _on_visibility_changed():
 
 func _on_focus_entered():
 	GrabbedItemStackView.select_cell_nearest(self)
+
+
+func _on_close_button_pressed():
+	emit_signal("FlipInventoryButton")

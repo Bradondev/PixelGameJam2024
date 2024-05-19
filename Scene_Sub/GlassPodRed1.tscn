@@ -11,10 +11,12 @@ polygon = PackedVector2Array(-0.089241, 16.365, -3.82072, 15.1037, -5.55507, 12.
 texture = ExtResource("1_75cl6")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(-29, -12)
 polygon = PackedVector2Array(29.0684, 21.1648, 23.3398, 23.6875, 23.5, 25, 29, 28.5, 34.5, 25, 34.4817, 23.5299)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
 occluder = SubResource("OccluderPolygon2D_7rorp")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]

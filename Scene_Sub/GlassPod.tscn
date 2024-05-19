@@ -6,7 +6,6 @@
 polygon = PackedVector2Array(0, 0, -4.5, -2, -6, -5.5, -3, -8.5, 0, -9.5, 3, -8.5, 5.5, -5, 4, -2)
 
 [node name="GlassPod" type="StaticBody2D" groups=["Bunker", "Prop"]]
-scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-0.200001, 5.5)
