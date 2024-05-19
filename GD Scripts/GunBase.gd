@@ -10,6 +10,7 @@ class_name  Gun
 @export var ROF : float =.2 # Bullets per seconds
 @export var BaseDamage : int
 @export var MagSize: int
+@export var ShotSound: AudioStreamMP3
 @export_range(0, 360) var Arc: int= 0 # in degrees 
 @export var ButtetCount: int =1
 @export var BulletTypeItem : ItemType
@@ -18,6 +19,7 @@ class_name  Gun
 @export_range(0, 100) var Accuracy : int = 100
 var CurrentMagSize: int = 0
 
+var nobulletsound: AudioStreamMP3
 
 
 func LoadMag(Size:int):

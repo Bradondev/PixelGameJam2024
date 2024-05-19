@@ -89,7 +89,6 @@ func TakeDamage(Amount:int):
 		CurrentHealth = 0
 		clearPlayerInven()
 		death_scene.PlayDeath()
-		
 	UpdataProgress()
 	
 func UpdataProgress():

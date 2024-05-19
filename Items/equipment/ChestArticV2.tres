@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://k8tv6nra6ulm"]
+
+[ext_resource type="Resource" uid="uid://066t6sxua2q7" path="res://GD Scripts/Resources/equipment/chest/ChestArticV2.tres" id="1_74lla"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_ooeyu"]
+
+[resource]
+script = ExtResource("2_ooeyu")
+name = "Artic vest V2"
+description = ""
+tags = Array[StringName]([])
+texture_scale = 1.0
+max_stack_count = 1
+in_inventory_width = 1
+in_inventory_height = 1
+slot_flags = 524289
+custom_data = ExtResource("1_74lla")
+default_properties_string = "{
+\"price\": {
+\"res://Items/Aqua.tres\": 8
+}
+}"
+default_properties = {
+"price": {
+"res://Items/Aqua.tres": 8
+}
+}

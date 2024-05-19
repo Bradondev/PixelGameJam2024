@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://7adkk3c7p83k"]
+
+[ext_resource type="Resource" uid="uid://b5x27f18ccyso" path="res://GD Scripts/Resources/equipment/pants/PantCamo.tres" id="1_wx8g7"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_be4dp"]
+
+[resource]
+script = ExtResource("2_be4dp")
+name = "pants "
+description = ""
+tags = Array[StringName]([])
+texture_scale = 1.0
+max_stack_count = 1
+in_inventory_width = 1
+in_inventory_height = 1
+slot_flags = 4194305
+custom_data = ExtResource("1_wx8g7")
+default_properties_string = ""
+default_properties = {}

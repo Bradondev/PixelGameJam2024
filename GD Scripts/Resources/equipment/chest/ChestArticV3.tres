@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Chest" load_steps=2 format=3 uid="uid://bvihyt82jk8we"]
+
+[ext_resource type="Script" path="res://GD Scripts/Chest.gd" id="1_8lodx"]
+
+[resource]
+script = ExtResource("1_8lodx")
+HealthBuff = 5
+Type = "Artic"

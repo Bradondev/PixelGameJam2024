@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Helmet" load_steps=2 format=3 uid="uid://cc7cld13467po"]
+
+[ext_resource type="Script" path="res://GD Scripts/helmet.gd" id="1_dvciq"]
+
+[resource]
+script = ExtResource("1_dvciq")
+HealthBuff = 5
+Type = "Camo"

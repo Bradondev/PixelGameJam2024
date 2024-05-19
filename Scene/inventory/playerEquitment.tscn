@@ -23,7 +23,7 @@
 resource_name = "RestrictedInventory"
 script = ExtResource("2_iwicm")
 allow_rotation = false
-restricted_to_types = Array[int]([4, 4, 2097152, 262144, 524288, 4194304, 16777216])
+restricted_to_types = Array[int]([4, 4, 262144, 524288, 4194304, 2097152, 16777216])
 width = 7
 
 [node name="Equip" type="Control" groups=["inventory_view"]]
@@ -109,22 +109,6 @@ texture = ExtResource("7_bx55o")
 expand_mode = 0
 stretch_mode = 4
 
-[node name="Throwable" parent="Cells" instance=ExtResource("5_flo8l")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 33.0
-offset_top = 87.0
-offset_right = 65.0
-offset_bottom = 119.0
-size_flags_horizontal = 3
-focus_mode = 2
-mouse_filter = 0
-texture = ExtResource("8_hg4uh")
-expand_mode = 0
-stretch_mode = 4
-
 [node name="Helm" parent="Cells" instance=ExtResource("5_flo8l")]
 layout_mode = 0
 anchors_preset = 0
@@ -173,7 +157,25 @@ texture = ExtResource("11_m80og")
 expand_mode = 0
 stretch_mode = 4
 
+[node name="Throwable" parent="Cells" instance=ExtResource("5_flo8l")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 33.0
+offset_top = 87.0
+offset_right = 65.0
+offset_bottom = 119.0
+size_flags_horizontal = 3
+focus_mode = 2
+mouse_filter = 0
+texture = ExtResource("8_hg4uh")
+expand_mode = 0
+stretch_mode = 4
+
 [node name="Feet" parent="Cells" instance=ExtResource("5_flo8l")]
+visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0

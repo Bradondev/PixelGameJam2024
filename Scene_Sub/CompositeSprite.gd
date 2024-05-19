@@ -52,7 +52,7 @@ var testing_gunReticle = gun_reticle[guns_reticle]
 @onready var gun : Sprite2D = $Sprites/Gun
 @onready var helmet : Sprite2D = $Sprites/Helmet
 @onready var chest : Sprite2D = $Sprites/Chest
-@onready var pants : Sprite2D = $Sprites/Bottom
+@onready var pant : Sprite2D = $Sprites/Bottom
 
 func AnimPlayer(AnimationName, Frame):
 	sprite_player.play(AnimationName,Frame)
@@ -72,3 +72,12 @@ func _cameraToggle(status):
 		$Sprites/Gun.texture = testing_gunColor
 	else: 
 		pass
+
+func SwitchOutChest(type:String):
+	chest.texture = chest_color[type]
+	
+func SwitchOutHelmet(type:String):
+	helmet.texture = chest_color[type]
+	
+func SwitchOutPant(type:String):
+	pant.texture = chest_color[type]

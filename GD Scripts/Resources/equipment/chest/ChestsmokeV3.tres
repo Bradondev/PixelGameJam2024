@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Chest" load_steps=2 format=3 uid="uid://bfhbpv0ei7n58"]
+
+[ext_resource type="Script" path="res://GD Scripts/Chest.gd" id="1_p1p26"]
+
+[resource]
+script = ExtResource("1_p1p26")
+Type = "Smoke"

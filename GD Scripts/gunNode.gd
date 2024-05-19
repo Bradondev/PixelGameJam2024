@@ -10,6 +10,8 @@ class_name  GunNode
 
 
 var CanShoot = true
+@export var audio_stream_player: AudioStreamPlayer
+
 @onready var bulletspawnpoint: Node2D = $bulletspawnpoint
 var MouseR
 var Reloading = false
@@ -28,6 +30,8 @@ func _physics_process(delta: float) -> void:
 		ShootGun()
 	else: 
 		isShooting = false
+	if !isShooting:
+		audio_stream_player.stop()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 
@@ -102,18 +106,19 @@ func ShootGun():
 			
 			get_tree().root.call_deferred("add_child", newBullet)
 		player.SetAnim("shoot")
+		audio_stream_player.play()
 		CanShoot = false
 		await  get_tree().create_timer(1/CurrentGun.ROF).timeout
 		CanShoot = true
 func UpdateAmmoText():
 	if !CurrentGun:
 		ammoLabel.text = str("No gun") 
-		
+		audio_stream_player.stream = null
 		return
 	#gun_reticle.texture = CurrentGun.CrossHairSprite
 	bulletspawnpoint.position = CurrentGun.BulletSpawnPoint
 	reticle.texture = CurrentGun.CrossHairSprite
-
+	audio_stream_player.stream = CurrentGun.ShotSound
 	bulletspawnpoint.position = CurrentGun.BulletSpawnPoint
 	reticle.texture = CurrentGun.CrossHairSprite
 	ammoLabel.text = str(CurrentGun.CurrentMagSize) +"/" +  str(CurrentGun.MagSize) 

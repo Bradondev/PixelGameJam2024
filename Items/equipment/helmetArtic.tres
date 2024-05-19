@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://bw15kfvw5iv4j"]
+
+[ext_resource type="Resource" uid="uid://dysrbiod6auj0" path="res://GD Scripts/Resources/equipment/helmet/HelmetArtic.tres" id="1_lvjw7"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="1_vnpb0"]
+
+[resource]
+script = ExtResource("1_vnpb0")
+name = "Helmet "
+description = ""
+tags = Array[StringName]([])
+texture_scale = 1.0
+max_stack_count = 1
+in_inventory_width = 1
+in_inventory_height = 1
+slot_flags = 262145
+custom_data = ExtResource("1_lvjw7")
+default_properties_string = "{}"
+default_properties = {}

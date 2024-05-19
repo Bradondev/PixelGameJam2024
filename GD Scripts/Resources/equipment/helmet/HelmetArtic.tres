@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Helmet" load_steps=2 format=3 uid="uid://dysrbiod6auj0"]
+
+[ext_resource type="Script" path="res://GD Scripts/helmet.gd" id="1_yonec"]
+
+[resource]
+script = ExtResource("1_yonec")
+HealthBuff = 5
+Type = "Artic"

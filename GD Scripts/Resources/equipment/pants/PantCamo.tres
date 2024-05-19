@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="pants" load_steps=2 format=3 uid="uid://b5x27f18ccyso"]
+
+[ext_resource type="Script" path="res://GD Scripts/pants.gd" id="1_dvhj8"]
+
+[resource]
+script = ExtResource("1_dvhj8")
+HealthBuff = 5
+Type = ""

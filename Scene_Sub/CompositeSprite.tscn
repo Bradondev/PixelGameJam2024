@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://b48py1ks7spng"]
+[gd_scene load_steps=93 format=3 uid="uid://b48py1ks7spng"]
 
 [ext_resource type="Script" path="res://Scene_Sub/CompositeSprite.gd" id="1_aeq0t"]
 [ext_resource type="Texture2D" uid="uid://dr1ugetgchvc1" path="res://Art_UI/Gun_Reticle, Pistol v1.png" id="2_kugdu"]

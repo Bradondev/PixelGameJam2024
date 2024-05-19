@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://GD Scripts/gunNode.gd" id="1_uy531"]
 [ext_resource type="Texture2D" uid="uid://dr1ugetgchvc1" path="res://Art_UI/Gun_Reticle, Pistol v1.png" id="2_whn5t"]
 
-[node name="Gun" type="Node2D"]
+[node name="Gun" type="Node2D" node_paths=PackedStringArray("audio_stream_player")]
 script = ExtResource("1_uy531")
+audio_stream_player = NodePath("AudioStreamPlayer")
 
 [node name="bulletspawnpoint" type="Node2D" parent="."]
 position = Vector2(26, -1)
@@ -12,3 +13,5 @@ position = Vector2(26, -1)
 [node name="Reticle" type="Sprite2D" parent="."]
 position = Vector2(45, 0)
 texture = ExtResource("2_whn5t")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
