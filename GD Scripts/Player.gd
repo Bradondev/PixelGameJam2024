@@ -40,6 +40,7 @@ func  _ready() -> void:
 	UpdataProgress()
 	CurrentGunNode.UpdateAmmoText()
 	SwitchGuns()
+	FlipInventory()
 	
 func _physics_process(delta):
 	var Action = "walk"

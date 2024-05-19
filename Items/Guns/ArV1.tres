@@ -2,14 +2,14 @@
 
 [ext_resource type="Resource" uid="uid://bh3w6gq1pbvnm" path="res://GD Scripts/Resources/Guns/ArV1.tres" id="1_uy6vb"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="1_wqenn"]
-[ext_resource type="Texture2D" uid="uid://5mlquwt4ufnu" path="res://Art_PNG/Item_Gun_AR_Blue, v1.png" id="3_cn2m8"]
+[ext_resource type="Texture2D" uid="uid://d11hqoqx8obo6" path="res://Art_PNG/Item_Gun_AR, Desert, v1.png" id="3_kc4ir"]
 
 [resource]
 script = ExtResource("1_wqenn")
 name = "Colt ACR"
-description = ""
+description = "i dont know, spongebob"
 tags = Array[StringName]([])
-texture = ExtResource("3_cn2m8")
+texture = ExtResource("3_kc4ir")
 texture_scale = 1.0
 max_stack_count = 1
 in_inventory_width = 3

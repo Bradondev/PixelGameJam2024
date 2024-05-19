@@ -2,17 +2,17 @@
 
 [ext_resource type="Resource" uid="uid://bqujs5cptgqcw" path="res://GD Scripts/Resources/Guns/ArV4.tres" id="1_jon06"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_0u467"]
-[ext_resource type="Texture2D" uid="uid://5mlquwt4ufnu" path="res://Art_PNG/Item_Gun_AR_Blue, v1.png" id="3_tvq2k"]
+[ext_resource type="Texture2D" uid="uid://dn0hcllva33os" path="res://Art_PNG/Item_Gun_AR, Camo.png" id="3_iysmu"]
 
 [resource]
 script = ExtResource("2_0u467")
 name = "FAD"
-description = ""
+description = "I can't see my forehead!"
 tags = Array[StringName]([])
-texture = ExtResource("3_tvq2k")
+texture = ExtResource("3_iysmu")
 texture_scale = 1.0
 max_stack_count = 1
-in_inventory_width = 1
+in_inventory_width = 3
 in_inventory_height = 1
 slot_flags = 4
 custom_data = ExtResource("1_jon06")

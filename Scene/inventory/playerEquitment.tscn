@@ -197,3 +197,5 @@ stream = ExtResource("17_7lr5t")
 
 [node name="Explore" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_at8mh")
+
+[connection signal="pressed" from="Vbox/Equipheader/CloseButton" to="." method="_on_close_button_pressed"]

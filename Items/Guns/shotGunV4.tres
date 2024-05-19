@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_wo6fr")
 name = "USAS-12"
-description = ""
+description = "now that were men, i changed my undewear!"
 tags = Array[StringName]([])
 texture = ExtResource("3_gbk08")
 texture_scale = 1.0

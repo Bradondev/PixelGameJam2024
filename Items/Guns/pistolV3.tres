@@ -2,16 +2,16 @@
 
 [ext_resource type="Resource" uid="uid://blrqo3mg8e0mm" path="res://GD Scripts/Resources/Guns/PistolV3.tres" id="1_nw3im"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_2ho01"]
-[ext_resource type="Texture2D" uid="uid://cjka1k5lddr4x" path="res://Art_PNG/Item_Gun_Pistol_Desert, v1.png" id="3_y632j"]
+[ext_resource type="Texture2D" uid="uid://d1ky22gnuejth" path="res://Art_PNG/Item_Gun_Pistol_Camo.png" id="3_o5qm3"]
 
 [resource]
 script = ExtResource("2_2ho01")
 name = "Colt M1911"
-description = "small gun"
+description = "I have 3 dollars"
 tags = Array[StringName]([])
-texture = ExtResource("3_y632j")
+texture = ExtResource("3_o5qm3")
 texture_scale = 1.0
-max_stack_count = 10
+max_stack_count = 1
 in_inventory_width = 1
 in_inventory_height = 1
 slot_flags = 69

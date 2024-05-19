@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_jqfnj")
 name = "Benelli M3"
-description = ""
+description = "Uh.. i gotta draw a new battery for this"
 tags = Array[StringName]([])
 texture = ExtResource("3_8ibpi")
 texture_scale = 1.0

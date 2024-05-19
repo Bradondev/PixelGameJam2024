@@ -143,9 +143,6 @@ func _on_launch_finished():
 		2: mission2.StartLoading()
 		3: mission3.StartLoading()
 
-
-
-
 func _on_player_item_stack_selected(item_view: ItemStackView) -> void:
 	$Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround/name.text = "[center]" +item_view.stack.item_type.description
 	$Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround/Description.text= "[center]" + item_view.stack.item_type.name

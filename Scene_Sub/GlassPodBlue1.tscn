@@ -8,6 +8,7 @@
 polygon = PackedVector2Array(0, 0, -4, -1, -6, -3, -6, -6, -3, -8, 0, -9, 3, -8, 6, -6, 6, -3, 4, -1)
 
 [node name="GlassPod" type="StaticBody2D" groups=["Bunker", "Prop"]]
+y_sort_enabled = true
 
 [node name="CanvasModulate" parent="." instance=ExtResource("1_biixy")]
 visible = false

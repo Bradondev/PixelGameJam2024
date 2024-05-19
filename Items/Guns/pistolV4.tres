@@ -7,11 +7,11 @@
 [resource]
 script = ExtResource("2_s4rlf")
 name = "Fort 12"
-description = "small gun"
+description = "Who you callin Pinhead?"
 tags = Array[StringName]([])
 texture = ExtResource("3_jvlp5")
 texture_scale = 1.0
-max_stack_count = 10
+max_stack_count = 1
 in_inventory_width = 1
 in_inventory_height = 1
 slot_flags = 69

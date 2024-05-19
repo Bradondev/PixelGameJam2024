@@ -18,7 +18,7 @@ height = 9
 width = 6
 
 [node name="shop" type="MarginContainer"]
-custom_minimum_size = Vector2(192, 288)
+custom_minimum_size = Vector2(384, 288)
 offset_right = 192.0
 offset_bottom = 288.0
 size_flags_horizontal = 6

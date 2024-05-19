@@ -7,11 +7,11 @@
 [resource]
 script = ExtResource("2_7hg7i")
 name = "BUL M-5"
-description = "small gun"
+description = "Firmly grasp it"
 tags = Array[StringName]([])
 texture = ExtResource("3_54log")
 texture_scale = 1.0
-max_stack_count = 10
+max_stack_count = 1
 in_inventory_width = 1
 in_inventory_height = 1
 slot_flags = 69

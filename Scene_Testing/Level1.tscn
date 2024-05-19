@@ -1190,17 +1190,14 @@ position = Vector2(2282, 405)
 [node name="GlassPod119" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
 y_sort_enabled = true
 position = Vector2(3895, 723)
-scale = Vector2(4, 4)
 
 [node name="GlassPod118" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
 y_sort_enabled = true
 position = Vector2(3623, 1070)
-scale = Vector2(4, 4)
 
 [node name="GlassPod120" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
 y_sort_enabled = true
 position = Vector2(15379, 4087)
-scale = Vector2(8, 8)
 
 [node name="GlassPod115" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
 y_sort_enabled = true
