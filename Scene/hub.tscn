@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://d1ui8lkg8n8hk"]
+[gd_scene load_steps=72 format=3 uid="uid://d1ui8lkg8n8hk"]
 
 [ext_resource type="Script" path="res://Scene/hub.gd" id="1_tbohb"]
 [ext_resource type="AudioStream" uid="uid://c2q0hvwighqiw" path="res://Audio/Song - Kevin MacLeod - 8bit Dungeon Boss NO COPYRIGHT 8-bit Music.mp3" id="2_oxanp"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="5_2qcak"]
 [ext_resource type="Theme" path="res://HUB_FontTheme.tres" id="6_o6ojd"]
 [ext_resource type="Texture2D" uid="uid://c27xhpkqpdbwg" path="res://Art_PNG/UI_Mission.png" id="7_23aue"]
-[ext_resource type="Texture2D" uid="uid://bbktnb86mocwh" path="res://Art_UI/Equipment_EquipBackground.png" id="7_cfmhh"]
 [ext_resource type="Texture2D" uid="uid://bbx0hqgr6340o" path="res://Art_PNG/UI_Stash_2x.png" id="8_h3kmt"]
 [ext_resource type="Texture2D" uid="uid://btcmsj22xtuqh" path="res://Art_UI/Shop_TextureButton, Normal, Small.png" id="8_nef1m"]
 [ext_resource type="Texture2D" uid="uid://2ldln76m8mqx" path="res://Art_PNG/UI_Shopkeeper_2x.png" id="9_3wuke"]
@@ -19,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://dwhw6d1s7my32" path="res://Art_UI/Shop_TextureButton, Hover, Red.png" id="13_oe8j8"]
 [ext_resource type="Texture2D" uid="uid://csbyne15x6dyu" path="res://Art_UI/Shop_TextureButton, Normal, Green.png" id="14_e2ur0"]
 [ext_resource type="Texture2D" uid="uid://b85rvuyo3khmq" path="res://Art_UI/Shop_TextureButton, Hover, Green,png.png" id="15_vistt"]
+[ext_resource type="Texture2D" uid="uid://01g12v5bkbi7" path="res://Art_UI/Equipment_Header_Inventory.png" id="16_52o3i"]
+[ext_resource type="Script" path="res://GD Scripts/Stash.gd" id="16_vhla5"]
 [ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="17_yitpx"]
 [ext_resource type="PackedScene" uid="uid://dd0hqlllt0tqs" path="res://Scene/Map_Earth.tscn" id="18_i45gf"]
 [ext_resource type="Texture2D" uid="uid://ljbieurd0dda" path="res://Art_UI/Equipment_InventoryBackground_Extended.png" id="20_qg0m4"]
@@ -30,10 +31,14 @@
 [ext_resource type="Texture2D" uid="uid://d4e3ii7iydm1m" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell4.png" id="25_pcs3g"]
 [ext_resource type="Texture2D" uid="uid://c8pu3j0jm7isu" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell5.png" id="26_cr1eq"]
 [ext_resource type="Texture2D" uid="uid://c7e0afjkb7w1y" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell6.png" id="27_0pykk"]
+[ext_resource type="Texture2D" uid="uid://8pco4p25s6q5" path="res://Art_UI/Equipment_Footer_Inventory.png" id="28_0aymo"]
 [ext_resource type="Texture2D" uid="uid://cvabxyes7d5lo" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell7.png" id="28_qgs4b"]
+[ext_resource type="PackedScene" uid="uid://4ohh3iq6c7uc" path="res://Scene/inventory/playerEquitment.tscn" id="29_54gah"]
 [ext_resource type="Texture2D" uid="uid://darsvxqfw1m06" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell8.png" id="29_ogfv4"]
 [ext_resource type="Texture2D" uid="uid://by1ghjgkxag1m" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell9.png" id="30_7bykd"]
+[ext_resource type="Texture2D" uid="uid://c01fpnkhhaubx" path="res://Art_UI/Equipment_Header_Information.png" id="30_n61il"]
 [ext_resource type="Texture2D" uid="uid://cskttdsovijkc" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell10.png" id="31_1tkjg"]
+[ext_resource type="Texture2D" uid="uid://cfcc8kd3my6n1" path="res://Art_UI/Equipment_InformationBackground.png" id="31_sekhr"]
 [ext_resource type="PackedScene" uid="uid://dxmu3oawxupu1" path="res://Scene/inventory/grid_inventoryPlayer.tscn" id="35_1tu8g"]
 [ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="36_dk6ra"]
 [ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="37_d8rn5"]
@@ -44,15 +49,67 @@
 [ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="42_k468t"]
 [ext_resource type="PackedScene" uid="uid://b54tbc2f6nid0" path="res://Scene/inventory/shopMain.tscn" id="43_eu1ge"]
 [ext_resource type="Resource" uid="uid://6r12xhs5o152" path="res://Items/Aqua.tres" id="43_h4fex"]
+[ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="44_fynms"]
 [ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="44_wwnai"]
 [ext_resource type="Resource" uid="uid://ncpu4qpolv3d" path="res://Items/Guns/ArV1.tres" id="44_y1kmj"]
 [ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="45_ictje"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="45_ycui3"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="46_2u01f"]
+[ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_price.gd" id="48_26ioh"]
+[ext_resource type="PackedScene" uid="uid://cag704jcu3o3i" path="res://Scene/inventory/stashgrid.tscn" id="52_1qi0f"]
 
 [sub_resource type="Theme" id="Theme_vs827"]
 
-[sub_resource type="Resource" id="Resource_bi7hn"]
+[sub_resource type="Resource" id="Resource_cbwue"]
+resource_local_to_scene = true
+resource_name = "GridInventory"
+script = ExtResource("44_fynms")
+height = 12
+width = 12
+
+[sub_resource type="Resource" id="Resource_qn6j2"]
+resource_local_to_scene = true
+resource_name = "GridInventory"
+script = ExtResource("44_fynms")
+height = 12
+width = 12
+
+[sub_resource type="Resource" id="Resource_2bn3o"]
+resource_local_to_scene = true
+resource_name = "GridInventory"
+script = ExtResource("44_fynms")
+height = 12
+width = 12
+
+[sub_resource type="Resource" id="Resource_nrqyi"]
+resource_local_to_scene = true
+resource_name = "GridInventory"
+script = ExtResource("44_fynms")
+height = 12
+width = 12
+
+[sub_resource type="Resource" id="Resource_ewfpm"]
+resource_local_to_scene = true
+resource_name = "GridInventory"
+script = ExtResource("44_fynms")
+height = 12
+width = 12
+
+[sub_resource type="Resource" id="Resource_dkt0t"]
+resource_local_to_scene = true
+resource_name = "GridInventory"
+script = ExtResource("44_fynms")
+height = 12
+width = 12
+
+[sub_resource type="Resource" id="Resource_pvpdy"]
+resource_local_to_scene = true
+resource_name = "GridInventory"
+script = ExtResource("44_fynms")
+height = 12
+width = 12
+
+[sub_resource type="Resource" id="Resource_odp2x"]
 script = ExtResource("45_ycui3")
 items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("36_dk6ra"), ExtResource("37_d8rn5"), ExtResource("38_bpyo7"), ExtResource("39_6b543"), ExtResource("40_p3sc0"), ExtResource("41_8t5hk"), ExtResource("42_k468t"), ExtResource("43_h4fex"), ExtResource("44_y1kmj")])
 item_repeat_ranges = Array[Vector2]([Vector2(50, 50), Vector2(50, 50), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(50, 60), Vector2(50, 60), Vector2(1, 1)])
@@ -90,6 +147,26 @@ frame_9/duration = 1.0
 frame_10/texture = ExtResource("23_8hpwy")
 frame_10/duration = 1.0
 
+[sub_resource type="Resource" id="Resource_0u7eh"]
+resource_local_to_scene = true
+script = ExtResource("45_ycui3")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("36_dk6ra"), ExtResource("37_d8rn5"), ExtResource("38_bpyo7"), ExtResource("39_6b543"), ExtResource("40_p3sc0"), ExtResource("41_8t5hk"), ExtResource("42_k468t"), ExtResource("43_h4fex"), ExtResource("44_y1kmj")])
+item_repeat_ranges = Array[Vector2]([Vector2(50, 50), Vector2(50, 50), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(50, 60), Vector2(50, 60), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[sub_resource type="Resource" id="Resource_5hy3r"]
+resource_local_to_scene = true
+resource_name = "GridInventory"
+script = ExtResource("44_fynms")
+height = 9
+width = 9
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_26s31"]
 texture = ExtResource("45_ictje")
 
@@ -123,6 +200,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.690196, 0.403922, 0.270588, 1)
 
 [node name="Margin" type="MarginContainer" parent="."]
@@ -659,13 +737,13 @@ bbcode_enabled = true
 text = "[center]back"
 
 [node name="Stash" type="Control" parent="." groups=["Ui"]]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("16_vhla5")
 
 [node name="Margin" type="MarginContainer" parent="Stash"]
 layout_mode = 1
@@ -681,6 +759,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="ColorRect" type="ColorRect" parent="Stash/Margin"]
 layout_mode = 2
+mouse_filter = 2
 color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="Stash/Margin/ColorRect"]
@@ -698,25 +777,10 @@ theme_override_constants/margin_bottom = 4
 [node name="HBoxContainer" type="HBoxContainer" parent="Stash/Margin/ColorRect/MarginContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("7_cfmhh")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/TextureRect"]
-custom_minimum_size = Vector2(200, 100)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "PLACEHOLDER
-WHY DOESNT INVENTORY SCENE HAVE A SIZE"
-scroll_active = false
-
 [node name="VBoxContainer" type="VBoxContainer" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
 [node name="StashTabs" type="HBoxContainer" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -858,20 +922,91 @@ scroll_active = false
 [node name="ColorRect" type="ColorRect" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 color = Color(0.352941, 0.176471, 0.14902, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -154.0
-offset_top = 64.0
-offset_right = 190.0
-offset_bottom = 181.0
-grow_horizontal = 2
-bbcode_enabled = true
-text = "[center]PLACEHOLDER FOR GRIDS FOR STASH"
+[node name="stash1" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
+custom_minimum_size = Vector2(384, 384)
+layout_mode = 2
+offset_left = 242.0
+offset_top = 5.0
+offset_right = 626.0
+offset_bottom = 389.0
+inventory = SubResource("Resource_cbwue")
+autosave_file_path = "stash1"
+autosave_intensity = 3
+
+[node name="stash2" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
+visible = false
+custom_minimum_size = Vector2(384, 384)
+layout_mode = 0
+offset_left = 242.0
+offset_top = 5.0
+offset_right = 626.0
+offset_bottom = 389.0
+inventory = SubResource("Resource_qn6j2")
+autosave_file_path = "stash2"
+autosave_intensity = 3
+
+[node name="stash3" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
+visible = false
+custom_minimum_size = Vector2(384, 384)
+layout_mode = 0
+offset_left = 242.0
+offset_top = 5.0
+offset_right = 626.0
+offset_bottom = 389.0
+inventory = SubResource("Resource_2bn3o")
+autosave_file_path = "stash3"
+autosave_intensity = 3
+
+[node name="stash4" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
+visible = false
+custom_minimum_size = Vector2(384, 384)
+layout_mode = 0
+offset_left = 242.0
+offset_top = 5.0
+offset_right = 626.0
+offset_bottom = 389.0
+inventory = SubResource("Resource_nrqyi")
+autosave_file_path = "stash4"
+autosave_intensity = 3
+
+[node name="stash5" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
+visible = false
+custom_minimum_size = Vector2(384, 384)
+layout_mode = 0
+offset_left = 242.0
+offset_top = 5.0
+offset_right = 626.0
+offset_bottom = 389.0
+inventory = SubResource("Resource_ewfpm")
+autosave_file_path = "stash5"
+autosave_intensity = 3
+
+[node name="stash6" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
+visible = false
+custom_minimum_size = Vector2(384, 384)
+layout_mode = 0
+offset_left = 242.0
+offset_top = 5.0
+offset_right = 626.0
+offset_bottom = 389.0
+inventory = SubResource("Resource_dkt0t")
+autosave_file_path = "stash6"
+autosave_intensity = 3
+
+[node name="stash7" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
+visible = false
+custom_minimum_size = Vector2(384, 384)
+layout_mode = 0
+offset_left = 242.0
+offset_top = 5.0
+offset_right = 626.0
+offset_bottom = 389.0
+inventory = SubResource("Resource_pvpdy")
+autosave_file_path = "stash7"
+autosave_intensity = 3
 
 [node name="back" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -893,7 +1028,94 @@ theme = ExtResource("6_o6ojd")
 bbcode_enabled = true
 text = "[center]back"
 
+[node name="Inventory" type="Control" parent="Stash"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 24.0
+offset_top = 99.0
+offset_right = 936.0
+offset_bottom = 503.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="Stash/Inventory"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -18.0
+offset_right = 18.0
+offset_bottom = 310.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="EquipmentAndInventory" type="HBoxContainer" parent="Stash/Inventory/Margin"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 400
+alignment = 1
+
+[node name="InventoryVbox" type="VBoxContainer" parent="Stash/Inventory/Margin/EquipmentAndInventory"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="Stash/Inventory/Margin/EquipmentAndInventory/InventoryVbox"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("16_52o3i")
+
+[node name="player" parent="Stash/Inventory/Margin/EquipmentAndInventory/InventoryVbox" instance=ExtResource("35_1tu8g")]
+layout_mode = 2
+size_flags_vertical = 4
+contents = SubResource("Resource_odp2x")
+interaction_mode = 29
+autosave_file_path = ""
+autosave_intensity = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Stash/Inventory/Margin/EquipmentAndInventory/InventoryVbox"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("28_0aymo")
+
+[node name="EquipmentVbox" type="VBoxContainer" parent="Stash/Inventory/Margin/EquipmentAndInventory"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Equip" parent="Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox" instance=ExtResource("29_54gah")]
+layout_mode = 2
+init_contents = false
+cell_size = Vector2(32, 32)
+
+[node name="InformationHeader" type="TextureRect" parent="Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox"]
+layout_mode = 2
+texture = ExtResource("30_n61il")
+
+[node name="DescriptionbackGround" type="TextureRect" parent="Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox"]
+layout_mode = 2
+texture = ExtResource("31_sekhr")
+
+[node name="name" type="RichTextLabel" parent="Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 232.0
+offset_bottom = 33.0
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center]Name"
+
+[node name="Description" type="RichTextLabel" parent="Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround"]
+layout_mode = 0
+offset_top = 33.0
+offset_right = 233.0
+offset_bottom = 195.0
+theme = ExtResource("6_o6ojd")
+bbcode_enabled = true
+text = "[center] Description"
+
 [node name="shop" type="Control" parent="." groups=["Ui"]]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -943,19 +1165,6 @@ mouse_filter = 2
 texture = ExtResource("20_qg0m4")
 stretch_mode = 5
 
-[node name="player" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect" instance=ExtResource("35_1tu8g")]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 64.0
-offset_right = 246.0
-offset_bottom = 352.0
-size_flags_vertical = 4
-contents = SubResource("Resource_bi7hn")
-init_contents = true
-interaction_mode = 29
-autosave_file_path = ""
-autosave_intensity = 1
-
 [node name="BuySellAnim" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox"]
 modulate = Color(1, 1, 1, 0.254902)
 custom_minimum_size = Vector2(183, 0)
@@ -983,12 +1192,31 @@ layout_mode = 2
 texture = ExtResource("20_qg0m4")
 stretch_mode = 5
 
+[node name="player" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect3" instance=ExtResource("35_1tu8g")]
+layout_mode = 0
+offset_left = -427.0
+offset_top = 64.0
+offset_right = -235.0
+offset_bottom = 352.0
+size_flags_vertical = 4
+contents = SubResource("Resource_0u7eh")
+interaction_mode = 29
+auto_take_priority = -31
+autosave_file_path = ""
+
 [node name="shop" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect3" instance=ExtResource("43_eu1ge")]
 layout_mode = 2
 offset_left = 1.0
 offset_top = 64.0
 offset_right = 291.0
 offset_bottom = 352.0
+
+[node name="MarginContainer" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect3/shop" index="0"]
+inventory = SubResource("Resource_5hy3r")
+autosave_intensity = 1
+
+[node name="ShopManager2" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect3/shop" index="1"]
+sell_reward_into_inventory = NodePath("../../player")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -1036,7 +1264,11 @@ mouse_filter = 1
 bbcode_enabled = true
 text = "[center]back"
 
-[node name="Tooltip" parent="shop" instance=ExtResource("44_wwnai")]
+[node name="Load_Screen1" parent="." instance=ExtResource("17_yitpx")]
+visible = false
+Scene = ExtResource("18_i45gf")
+
+[node name="Tooltip" parent="." instance=ExtResource("44_wwnai")]
 visible = false
 layout_mode = 0
 offset_left = 3.0
@@ -1045,21 +1277,17 @@ offset_right = 225.0
 offset_bottom = 302.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_26s31")
 compare_to_inventory = NodePath("../Margin/EquipmentAndInventory/InventoryVbox/player")
-property_scripts = Array[Script]([])
+property_scripts = Array[Script]([ExtResource("48_26ioh")])
 nameplate_panel = SubResource("StyleBoxTexture_ahhgq")
 back_panel = SubResource("StyleBoxTexture_26s31")
 
-[node name="Item" parent="shop" instance=ExtResource("46_2u01f")]
+[node name="Item" parent="." instance=ExtResource("46_2u01f")]
 offset_left = 68.0
 offset_top = 187.0
 offset_right = 180.0
 offset_bottom = 299.0
 unit_size = Vector2(32, 32)
 hide_cursor = true
-
-[node name="Load_Screen1" parent="." instance=ExtResource("17_yitpx")]
-visible = false
-Scene = ExtResource("18_i45gf")
 
 [node name="Load_Screen2" parent="." instance=ExtResource("17_yitpx")]
 visible = false
@@ -1101,5 +1329,15 @@ Scene = ExtResource("18_i45gf")
 [connection signal="mouse_entered" from="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox/CompleteButton3" to="." method="_on_complete_button_3_mouse_entered"]
 [connection signal="pressed" from="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox/CompleteButton3" to="." method="_on_complete_button_3_pressed"]
 [connection signal="pressed" from="Mission/Margin/ColorRect/Margin/MissionList/MarginContainer/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton" to="Stash" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton2" to="Stash" method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton3" to="Stash" method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton4" to="Stash" method="_on_texture_button_4_pressed"]
+[connection signal="pressed" from="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton5" to="Stash" method="_on_texture_button_5_pressed"]
+[connection signal="pressed" from="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton6" to="Stash" method="_on_texture_button_6_pressed"]
+[connection signal="pressed" from="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton7" to="Stash" method="_on_texture_button_7_pressed"]
 [connection signal="pressed" from="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/back" to="." method="_on_back_pressed"]
+[connection signal="item_stack_selected" from="Stash/Inventory/Margin/EquipmentAndInventory/InventoryVbox/player" to="." method="_on_player_item_stack_selected"]
 [connection signal="pressed" from="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/back" to="." method="_on_back_pressed"]
+
+[editable path="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/TextureRect3/shop"]

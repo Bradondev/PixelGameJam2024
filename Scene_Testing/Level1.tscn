@@ -799,8 +799,9 @@ position = Vector2(-1912, 578)
 [node name="GlassPod59" parent="props" instance=ExtResource("17_wkm2c")]
 position = Vector2(-1558, 576)
 
-[node name="mission1" parent="props" instance=ExtResource("21_mnn0p")]
+[node name="mission1" parent="props" node_paths=PackedStringArray("player") instance=ExtResource("21_mnn0p")]
 position = Vector2(4212, 467)
+player = NodePath("../../Player")
 
 [node name="AlienPlanetV2Props,Grass(short),V14" type="Sprite2D" parent="props"]
 position = Vector2(-2431, 394)

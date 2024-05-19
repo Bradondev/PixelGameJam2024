@@ -69,7 +69,6 @@ interaction_mode = 7
 [node name="ShopManager" type="Node" parent="TabContainer/Consumables"]
 script = ExtResource("33")
 vendor_inventory = NodePath("../Inventory")
-sell_reward_into_inventory = NodePath("../../../../../../Inventory")
 stock = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("2"), null])
 stock_counts = Array[int]([1, 0])
 stock_restocks = Array[int]([3, 0])

@@ -24,8 +24,8 @@ spread_angle_degrees = 0.0
 [node name="MarginContainer" parent="." instance=ExtResource("2_p8u3q")]
 offset_left = 184.0
 offset_top = 213.0
-offset_right = 296.0
-offset_bottom = 325.0
+offset_right = 376.0
+offset_bottom = 501.0
 scale = Vector2(2, 2)
 contents = SubResource("Resource_ln40m")
 init_contents = true

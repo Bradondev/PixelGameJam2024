@@ -98,6 +98,9 @@ zoom = Vector2(2, 2)
 [node name="UI" parent="." instance=ExtResource("1_4gmy4")]
 process_mode = 3
 
+[node name="BotMargin" parent="UI" index="0"]
+metadata/_edit_use_anchors_ = true
+
 [node name="CurentWeapon" type="RichTextLabel" parent="UI"]
 offset_left = 300.0
 offset_top = 480.0

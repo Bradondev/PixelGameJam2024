@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b54tbc2f6nid0"]
+[gd_scene load_steps=6 format=3 uid="uid://b54tbc2f6nid0"]
 
 [ext_resource type="Script" path="res://addons/wyvernbox/crafting/vendor.gd" id="1_2v0fv"]
 [ext_resource type="PackedScene" uid="uid://dp2ppss8u73op" path="res://Scene/inventory/ShopGrid.tscn" id="2_1o434"]
 [ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="3_ve6es"]
+[ext_resource type="Resource" uid="uid://bd1ddeel6achx" path="res://example/wyvernbox/item_types/consumable/potion_blue.tres" id="4_8m26d"]
 
-[sub_resource type="Resource" id="Resource_kqser"]
-resource_local_to_scene = true
+[sub_resource type="Resource" id="Resource_0bk5u"]
 resource_name = "GridInventory"
 script = ExtResource("3_ve6es")
 height = 9
@@ -18,15 +18,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="MarginContainer" parent="." instance=ExtResource("2_1o434")]
+custom_minimum_size = Vector2(288, 288)
 layout_mode = 0
 offset_right = 288.0
-inventory = SubResource("Resource_kqser")
-interaction_mode = 31
-autosave_file_path = ""
+inventory = SubResource("Resource_0bk5u")
+init_contents = true
+interaction_mode = 7
 
-[node name="ShopManager" type="Node" parent="."]
+[node name="ShopManager2" type="Node" parent="."]
 script = ExtResource("1_2v0fv")
-stock = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([null])
-stock_counts = Array[int]([1])
-stock_restocks = Array[int]([3])
-infinite_restocks = false
+vendor_inventory = NodePath("../MarginContainer")
+stock = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("4_8m26d"), null])
+stock_counts = Array[int]([1, 0])
+stock_restocks = Array[int]([3, 0])

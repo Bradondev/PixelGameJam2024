@@ -17,7 +17,7 @@ script = ExtResource("2_cfl7f")
 height = 9
 width = 6
 
-[node name="MarginContainer" type="MarginContainer"]
+[node name="shop" type="MarginContainer"]
 custom_minimum_size = Vector2(192, 288)
 offset_right = 192.0
 offset_bottom = 288.0
@@ -31,7 +31,6 @@ item_scene = ExtResource("3_4g2ey")
 cell_size = Vector2(32, 32)
 selected_item_style = ExtResource("4_afkgr")
 grid_background = NodePath("BG")
-autosave_file_path = "3"
 
 [node name="Border" type="NinePatchRect" parent="."]
 layout_mode = 2

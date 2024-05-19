@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var load_screen: LoadScene = $CanvasLayer/Load_Screen
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
+@export var player: Player
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -22,6 +23,7 @@ func _on_inter_act_area_body_exited(body: Node2D) -> void:
 
 func _on_button_pressed() -> void:
 	load_screen.StartLoading()
+	player.inventory.hide()
 
 
 func _on_button_2_pressed() -> void:

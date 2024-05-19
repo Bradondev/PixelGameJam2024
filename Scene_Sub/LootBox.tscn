@@ -14,7 +14,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1g03"]
 size = Vector2(35, 13.75)
 
-[sub_resource type="Resource" id="Resource_4xgea"]
+[sub_resource type="Resource" id="Resource_asut5"]
 resource_local_to_scene = true
 script = ExtResource("5_h04qh")
 height = 2
@@ -57,7 +57,7 @@ offset_left = 411.0
 offset_top = 363.0
 offset_right = 539.0
 offset_bottom = 427.0
-inventory = SubResource("Resource_4xgea")
+inventory = SubResource("Resource_asut5")
 init_contents = true
 cell_size = Vector2(32, 32)
 autosave_file_path = ""

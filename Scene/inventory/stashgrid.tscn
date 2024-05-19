@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3 uid="uid://cag704jcu3o3i"]
+
+[ext_resource type="Script" path="res://addons/wyvernbox/inventory_view.gd" id="1_ltfeo"]
+[ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="2_put7p"]
+[ext_resource type="PackedScene" uid="uid://co5ok1mm2s7vu" path="res://addons/wyvernbox_prefabs/item_stack_view.tscn" id="3_qamof"]
+[ext_resource type="StyleBox" uid="uid://cqx3opxr50d2o" path="res://addons/wyvernbox_prefabs/graphics/selected_cell.tres" id="4_vyuxh"]
+[ext_resource type="Texture2D" uid="uid://bobvxde744o8g" path="res://Art_UI/Equipment_InventoryBackground.png" id="5_c0lnp"]
+[ext_resource type="PackedScene" uid="uid://b7jlucsddt6dg" path="res://addons/wyvernbox_prefabs/inventory_cell.tscn" id="6_58kby"]
+[ext_resource type="Texture2D" uid="uid://cwno1mqllfxty" path="res://Art_UI/Inventory _Grid, Single_32x32px.png" id="7_pd85a"]
+[ext_resource type="AudioStream" uid="uid://cbfjg4y7qqcr5" path="res://Audio/item-equip-6904.mp3" id="8_e1wqx"]
+[ext_resource type="AudioStream" uid="uid://b74t6c6ywv21w" path="res://Audio/take-item-sound-effect-163073.mp3" id="9_inyrd"]
+[ext_resource type="AudioStream" uid="uid://b58tbi8netxou" path="res://Audio/Sound Clip - game-start-6104.mp3" id="10_rif2f"]
+
+[sub_resource type="Resource" id="Resource_plmu5"]
+resource_name = "GridInventory"
+script = ExtResource("2_put7p")
+height = 9
+width = 6
+
+[node name="MarginContainer" type="MarginContainer"]
+custom_minimum_size = Vector2(192, 288)
+offset_right = 192.0
+offset_bottom = 288.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/margin_right = 0
+script = ExtResource("1_ltfeo")
+inventory = SubResource("Resource_plmu5")
+init_contents = false
+item_scene = ExtResource("3_qamof")
+cell_size = Vector2(32, 32)
+selected_item_style = ExtResource("4_vyuxh")
+grid_background = NodePath("BG")
+autosave_file_path = "3"
+
+[node name="Border" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("5_c0lnp")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(16, 16)
+
+[node name="Cell" parent="SubViewport" instance=ExtResource("6_58kby")]
+custom_minimum_size = Vector2(0, 0)
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_pd85a")
+expand_mode = 0
+stretch_mode = 1
+
+[node name="BG" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(192, 288)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 6.84
+mouse_filter = 2
+texture = ExtResource("7_pd85a")
+stretch_mode = 1
+
+[node name="MoveItem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_e1wqx")
+
+[node name="SplitItem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_inyrd")
+
+[node name="Explore" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_rif2f")
