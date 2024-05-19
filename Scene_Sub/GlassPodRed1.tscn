@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dx6l3e6fwirv2"]
+[gd_scene load_steps=3 format=3 uid="uid://dx6l3e6fwirv2"]
 
 [ext_resource type="Texture2D" uid="uid://bhcxpf5t1wojw" path="res://Art_PNG/Props_GlassTube_Red, v1.png" id="1_75cl6"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7rorp"]
+polygon = PackedVector2Array(-0.089241, 16.365, -3.82072, 15.1037, -5.55507, 12.3182, -3.08493, 10.1108, 0.068428, 9.05973, 3.11668, 10.216, 5.53426, 12.4233, 3.53712, 14.7883)
 
 [node name="GlassPod" type="StaticBody2D" groups=["Bunker", "Prop"]]
 
@@ -9,4 +12,30 @@ texture = ExtResource("1_75cl6")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-29, -12)
-polygon = PackedVector2Array(29, -3.5, 23.5, 0, 23.5, 25, 29, 28.5, 34.5, 25, 35, 0)
+polygon = PackedVector2Array(29.0684, 21.1648, 23.3398, 23.6875, 23.5, 25, 29, 28.5, 34.5, 25, 34.4817, 23.5299)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_7rorp")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0.0610809, 11.4543)
+lifetime = 3.0
+preprocess = 3.0
+explosiveness = 0.15
+randomness = 0.14
+emission_shape = 3
+emission_rect_extents = Vector2(3, -2)
+gravity = Vector2(0, -1)
+color = Color(0.403922, 0.054902, 0.0470588, 1)
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(0.0298309, 12.1418)
+amount = 4
+lifetime = 5.0
+preprocess = 3.0
+explosiveness = 0.15
+randomness = 0.21
+emission_shape = 3
+emission_rect_extents = Vector2(3, -2)
+gravity = Vector2(0, -1)
+color = Color(0.992157, 0.631373, 0.584314, 1)

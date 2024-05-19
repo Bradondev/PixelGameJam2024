@@ -1,13 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://bru61wwju326n"]
+[gd_scene load_steps=5 format=3 uid="uid://bru61wwju326n"]
 
 [ext_resource type="Texture2D" uid="uid://c71ivr81rfurv" path="res://Art_PNG/Props_Bunker_Down.png" id="1_0iumj"]
+[ext_resource type="Texture2D" uid="uid://djm5ckr4yibiq" path="res://Art_Lighting/godotLight_half.png" id="3_6pqlg"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6x1gx"]
+polygon = PackedVector2Array(-28, 55, -28, 57, -17, 57, -15, 55, 20, 55, 22, 57, 31, 57, 32, 56, 32, -19, 19, -24, -13, -24, -28, -20)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5u2us"]
+polygon = PackedVector2Array(-66, 6, -54, 6, -54, -1, -66, -1, -66, 5)
 
 [node name="Bunker" type="StaticBody2D" groups=["Bunker", "Prop"]]
+y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-11, 12)
 texture = ExtResource("1_0iumj")
-offset = Vector2(0, -45)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-27.3163, -55.4954)
-polygon = PackedVector2Array(12, -21, 41, -26, 71, -21, 71, 56, 12, 57)
+position = Vector2(-38.8163, 1.9)
+polygon = PackedVector2Array(9.8163, -22.9, 26.8163, -26.9, 57.8163, -26.9, 70.8163, -23.9, 71.8163, 55.1, 9.8163, 55.1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(2.05113, 66.1826)
+rotation = 4.71239
+scale = Vector2(0.159104, 0.237938)
+color = Color(0.301961, 0.356863, 0.247059, 1)
+texture = ExtResource("3_6pqlg")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource("OccluderPolygon2D_6x1gx")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource("OccluderPolygon2D_5u2us")

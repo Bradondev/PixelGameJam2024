@@ -21,6 +21,7 @@ shape = SubResource("RectangleShape2D_ixmot")
 debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 offset_left = 395.0

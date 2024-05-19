@@ -1,13 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://qjsl7x5vcuya"]
+[gd_scene load_steps=14 format=3 uid="uid://qjsl7x5vcuya"]
 
 [ext_resource type="Script" path="res://GD Scripts/InterActAble.gd" id="1_rlumb"]
 [ext_resource type="Texture2D" uid="uid://bvudj8mamjji8" path="res://Art_PNG/Props_Bunker_Left (Outlined).png" id="2_4pgw5"]
 [ext_resource type="Texture2D" uid="uid://dav1gby0lp1dn" path="res://Art_PNG/Props_Bunker_Left.png" id="3_53vcx"]
+[ext_resource type="Texture2D" uid="uid://djm5ckr4yibiq" path="res://Art_Lighting/godotLight_half.png" id="4_cqm5q"]
 [ext_resource type="PackedScene" uid="uid://bc4j42x2jqd7o" path="res://Scene/inventory/bunker.tscn" id="4_iiu71"]
 [ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="5_fbdim"]
 [ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="6_gw4pr"]
 [ext_resource type="Texture2D" uid="uid://dcfxp0gtvvhyu" path="res://Art_UI/ProgressBar_PlayerResource (Over).png" id="7_its3g"]
 [ext_resource type="Texture2D" uid="uid://3vmgjxrcavhb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Green.png" id="8_2w6o4"]
+[ext_resource type="PackedScene" uid="uid://bm88u0af736iq" path="res://Scene_Sub/InteractParticles_Gold.tscn" id="10_y4wih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1g03"]
 size = Vector2(75, 31)
@@ -18,6 +20,9 @@ script = ExtResource("5_fbdim")
 height = 7
 width = 7
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2fj08"]
+polygon = PackedVector2Array(-66.78, 19.2, 48, 20, 48, -21, -66.78, -21.8, -66.78, -9.8)
+
 [node name="Bunker" type="StaticBody2D" node_paths=PackedStringArray("HighLightArea", "InterArea") groups=["Bunker", "Prop"]]
 script = ExtResource("1_rlumb")
 HighLightArea = NodePath("InterActArea")
@@ -27,15 +32,24 @@ OgSprite = ExtResource("3_53vcx")
 Opentime = 1.0
 HasInventory = true
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-83.72, 18.3)
+scale = Vector2(0.210938, 0.160156)
+color = Color(0.301961, 0.356863, 0.247059, 1)
+range_z_min = -10
+range_z_max = 10
+texture = ExtResource("4_cqm5q")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 11)
 texture = ExtResource("3_53vcx")
-offset = Vector2(0, -30)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-30, -42)
-polygon = PackedVector2Array(-38, -38, -39, 39, 73, 40, 73, 0, -4, -39)
+position = Vector2(-29.62, -0.5)
+polygon = PackedVector2Array(-42.38, -1.5, -42.38, 40.5, 73, 40, 72.62, -1.5, 9.39999, -0.699997)
 
 [node name="InterActArea" type="Area2D" parent="."]
+position = Vector2(0.380005, 41.5)
 collision_layer = 0
 collision_mask = 256
 
@@ -86,6 +100,14 @@ offset_right = 87.0
 offset_bottom = 1.0
 text = "opening"
 horizontal_alignment = 1
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("10_y4wih")]
+position = Vector2(-28.22, 44.8)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+position = Vector2(-5.22, 19.8)
+occluder = SubResource("OccluderPolygon2D_2fj08")
 
 [connection signal="body_entered" from="InterActArea" to="." method="_on_inter_act_area_body_entered"]
 [connection signal="body_exited" from="InterActArea" to="." method="_on_inter_act_area_body_exited"]

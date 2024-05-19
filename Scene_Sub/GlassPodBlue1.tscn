@@ -1,13 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://ct36nufjxft58"]
+[gd_scene load_steps=5 format=3 uid="uid://ct36nufjxft58"]
 
+[ext_resource type="PackedScene" uid="uid://b0bagqclhtewx" path="res://Art_Lighting/LightingTestKit.tscn" id="1_biixy"]
 [ext_resource type="Texture2D" uid="uid://b00vos6d58jnk" path="res://Art_PNG/Props_GlassTube_Plant, v2.png" id="1_fyp66"]
+[ext_resource type="Texture2D" uid="uid://c88bx7qyspw5b" path="res://Art_Lighting/godotLight.webp" id="3_3l6fy"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vk6q1"]
+polygon = PackedVector2Array(0, 0, -4, -1, -6, -3, -6, -6, -3, -8, 0, -9, 3, -8, 6, -6, 6, -3, 4, -1)
 
 [node name="GlassPod" type="StaticBody2D" groups=["Bunker", "Prop"]]
 
+[node name="CanvasModulate" parent="." instance=ExtResource("1_biixy")]
+visible = false
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.200001, 4.5)
 texture = ExtResource("1_fyp66")
 offset = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-29, -28)
-polygon = PackedVector2Array(29, -3.5, 23.5, 0, 23.5, 25, 29, 28.5, 34.5, 25, 35, 0)
+position = Vector2(-29.2, -23.5)
+polygon = PackedVector2Array(29, 19, 24, 22, 23.5, 25, 29, 28.5, 34.5, 25, 34, 22)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(-0.200001, 4.5)
+occluder = SubResource("OccluderPolygon2D_vk6q1")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(1, 0.653883)
+color = Color(0.117647, 0.737255, 0.027451, 1)
+energy = 0.6
+texture = ExtResource("3_3l6fy")
+texture_scale = 0.1
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 4
+lifetime = 4.0
+preprocess = 3.0
+explosiveness = 0.4
+randomness = 0.77
+lifetime_randomness = 0.75
+fixed_fps = 30
+emission_shape = 3
+emission_rect_extents = Vector2(8, -20)
+direction = Vector2(1, -10)
+gravity = Vector2(0, 2)
+orbit_velocity_max = 0.1
+tangential_accel_min = 5.0
+tangential_accel_max = 10.0
+color = Color(0.180392, 0.713726, 0.517647, 1)

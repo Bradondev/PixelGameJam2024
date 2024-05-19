@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfm0be5xuoob3"
-path="res://.godot/imported/Props_Log, long.png-296e657ccd681a8331f0b76e0bd2ae2f.ctex"
+uid="uid://bkuqaqmwqxctd"
+path="res://.godot/imported/Player_dropshadow.png-1297881f1dbe9068b708783145c4bd47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art_PNG/Props_Log, long.png"
-dest_files=["res://.godot/imported/Props_Log, long.png-296e657ccd681a8331f0b76e0bd2ae2f.ctex"]
+source_file="res://Art_UI/Player_dropshadow.png"
+dest_files=["res://.godot/imported/Player_dropshadow.png-1297881f1dbe9068b708783145c4bd47.ctex"]
 
 [params]
 

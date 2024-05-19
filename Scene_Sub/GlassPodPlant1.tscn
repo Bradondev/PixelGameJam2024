@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://vkcwmht6mhk5"]
+[gd_scene load_steps=5 format=3 uid="uid://vkcwmht6mhk5"]
 
 [ext_resource type="Texture2D" uid="uid://b00vos6d58jnk" path="res://Art_PNG/Props_GlassTube_Plant, v2.png" id="1_4xtqo"]
+[ext_resource type="PackedScene" uid="uid://b0bagqclhtewx" path="res://Art_Lighting/LightingTestKit.tscn" id="1_268oa"]
+[ext_resource type="Texture2D" uid="uid://c88bx7qyspw5b" path="res://Art_Lighting/godotLight.webp" id="3_k8vth"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_366w7"]
+polygon = PackedVector2Array(0, 0, -4, -2, -6, -5, -3, -8, 0, -10, 3, -8, 6, -5, 4, -1)
 
 [node name="GlassPod" type="StaticBody2D" groups=["Bunker", "Prop"]]
+
+[node name="CanvasModulate" parent="." instance=ExtResource("1_268oa")]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_4xtqo")
@@ -10,4 +18,16 @@ offset = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-29, -29)
-polygon = PackedVector2Array(29, -3.5, 23.5, 0, 23.5, 25, 29, 28.5, 34.5, 25, 35, 0)
+polygon = PackedVector2Array(29, 19, 23, 23, 23.5, 25, 29, 28.5, 34.5, 25, 35, 23)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_366w7")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -16)
+rotation = 1.5708
+scale = Vector2(1.37737, 0.662088)
+color = Color(0, 0.87451, 0, 0.360784)
+energy = 0.7
+texture = ExtResource("3_k8vth")
+texture_scale = 0.1
