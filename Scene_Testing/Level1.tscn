@@ -914,15 +914,12 @@ y_sort_enabled = true
 position = Vector2(2803, -712)
 
 [node name="GlassPod70" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(2543, -620)
 
 [node name="GlassPod71" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(2742, -622)
 
 [node name="GlassPod72" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(2799, -789)
 
 [node name="GlassPod73" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
@@ -1312,7 +1309,6 @@ y_sort_enabled = true
 position = Vector2(-1186, 1303)
 
 [node name="GlassPod52" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-1157, 1516)
 
 [node name="LootBoxs6" parent="WorldLoad/props" instance=ExtResource("6_llbdc")]
@@ -1320,15 +1316,12 @@ y_sort_enabled = true
 position = Vector2(-1282, 1052)
 
 [node name="GlassPod53" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-2360, 681)
 
 [node name="GlassPod54" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-2034, 547)
 
 [node name="GlassPod55" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-2513, 521)
 
 [node name="GlassPod56" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
@@ -1348,7 +1341,6 @@ y_sort_enabled = true
 position = Vector2(-1558, 576)
 
 [node name="GlassPod19" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-1834, -933)
 
 [node name="GlassPod20" parent="WorldLoad/props" instance=ExtResource("16_not2e")]
@@ -1368,7 +1360,6 @@ y_sort_enabled = true
 position = Vector2(-1026, -767)
 
 [node name="GlassPod22" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-2667, 58)
 
 [node name="GlassPod23" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
@@ -1414,27 +1405,21 @@ y_sort_enabled = true
 position = Vector2(92, -1297)
 
 [node name="GlassPod26" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-541, -1008)
 
 [node name="GlassPod27" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-541, -1064)
 
 [node name="GlassPod28" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-540, -1188)
 
 [node name="GlassPod29" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-541, -1248)
 
 [node name="GlassPod30" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-542, -1329)
 
 [node name="GlassPod31" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-543, -964)
 
 [node name="GlassPod32" parent="WorldLoad/props" instance=ExtResource("13_51wks")]
@@ -1489,11 +1474,9 @@ position = Vector2(-3379, -1027)
 position = Vector2(-3561, -1149)
 
 [node name="GlassPod" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-3582, -994)
 
 [node name="GlassPod2" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-3154, -1061)
 
 [node name="GlassPod4" parent="WorldLoad/props" instance=ExtResource("13_51wks")]
@@ -1536,7 +1519,6 @@ y_sort_enabled = true
 position = Vector2(-2679, -63)
 
 [node name="GlassPod10" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-2991, -82)
 
 [node name="GlassPod11" parent="WorldLoad/props" instance=ExtResource("14_tcw4b")]
@@ -1570,7 +1552,6 @@ y_sort_enabled = true
 position = Vector2(-819, 513)
 
 [node name="GlassPod14" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
-y_sort_enabled = true
 position = Vector2(-1825, -1398)
 
 [node name="GlassPod15" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]

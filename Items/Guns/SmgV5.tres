@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_dgmfs")
 name = "MP5"
-description = ""
+description = "Well, I've Done All I Can Do"
 tags = Array[StringName]([])
 texture = ExtResource("3_kjjq6")
 texture_scale = 1.0
