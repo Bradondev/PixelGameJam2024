@@ -142,16 +142,17 @@ libraries = {
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "enemy")]
 script = ExtResource("1_7gy1m")
-initial_state = NodePath("EnemyIdle")
+initial_state = NodePath("Idle")
 enemy = NodePath("..")
 
-[node name="EnemyIdle" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "animation_player")]
+[node name="Idle" type="Node" parent="State Machine" node_paths=PackedStringArray("animation_player", "enemy")]
 script = ExtResource("2_1idvk")
-enemy = NodePath("../..")
 move_speed = 20.0
 animation_player = NodePath("../../AnimationPlayer")
-
-[node name="Chase" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "animation_player")]
-script = ExtResource("5_pofjo")
 enemy = NodePath("../..")
+
+[node name="Chase" type="Node" parent="State Machine" node_paths=PackedStringArray("animation_player", "enemy")]
+script = ExtResource("5_pofjo")
+move_speed = 40.0
 animation_player = NodePath("../../AnimationPlayer")
+enemy = NodePath("../..")

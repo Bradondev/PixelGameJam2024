@@ -61,8 +61,9 @@ position = Vector2(4105, 656)
 scale = Vector2(1, 1)
 speed = 4500
 
-[node name="FishMan" parent="WorldLoad" instance=ExtResource("22_lplrm")]
+[node name="FishMan" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("22_lplrm")]
 position = Vector2(4192, 639)
+player = NodePath("../Player")
 
 [node name="props" type="Node2D" parent="WorldLoad"]
 y_sort_enabled = true
