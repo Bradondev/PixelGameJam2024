@@ -18,11 +18,11 @@ slot_flags = 4
 custom_data = ExtResource("1_e4613")
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 8
+\"res://Items/Aqua.tres\": 175
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Aqua.tres": 8
+"res://Items/Aqua.tres": 175
 }
 }

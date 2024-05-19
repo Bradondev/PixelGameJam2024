@@ -1,16 +1,26 @@
-[gd_resource type="Resource" script_class="ItemType" load_steps=2 format=3 uid="uid://3q0x5qcnqv1g"]
+[gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://3q0x5qcnqv1g"]
 
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="1_4ewyr"]
+[ext_resource type="Texture2D" uid="uid://bdq7gkri12xoj" path="res://Art_PNG/Item_Sell/Item_Sell_Cat.png" id="2_rx3rx"]
 
 [resource]
 script = ExtResource("1_4ewyr")
 name = ""
-description = ""
+description = "Hello, I like money!"
 tags = Array[StringName]([])
+texture = ExtResource("2_rx3rx")
 texture_scale = 1.0
 max_stack_count = 1
 in_inventory_width = 1
-in_inventory_height = 1
+in_inventory_height = 2
 slot_flags = 1
-default_properties_string = "{}"
-default_properties = {}
+default_properties_string = "{
+\"price\": {
+\"res://Items/Aqua.tres\": 30
+}
+}"
+default_properties = {
+"price": {
+"res://Items/Aqua.tres": 30
+}
+}

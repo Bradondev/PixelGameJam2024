@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_qsbbl")
-name = "sniper"
+name = "HK G28 S"
 description = "24!"
 tags = Array[StringName]([])
 texture = ExtResource("2_lyn12")
@@ -18,11 +18,11 @@ slot_flags = 4
 custom_data = ExtResource("1_uo0kk")
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 10
+\"res://Items/Aqua.tres\": 230
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Aqua.tres": 10
+"res://Items/Aqua.tres": 230
 }
 }

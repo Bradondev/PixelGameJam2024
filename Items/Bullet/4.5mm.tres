@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("3_vwbb6")
 name = "4.5mm"
-description = "bullets used for a smg"
+description = "For an SMG. "
 tags = Array[StringName]([])
 texture = ExtResource("2_5vxn3")
 texture_scale = 1.0
@@ -16,11 +16,11 @@ in_inventory_height = 1
 slot_flags = 1
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 1
+\"res://Items/Aqua.tres\": 2
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Aqua.tres": 1
+"res://Items/Aqua.tres": 2
 }
 }

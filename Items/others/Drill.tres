@@ -6,21 +6,23 @@
 [resource]
 script = ExtResource("1_v3owd")
 name = "Cat "
-description = "has some value"
+description = "That pennys coming out of your paycheck!"
 tags = Array[StringName]([])
 texture = ExtResource("2_6lwxs")
 texture_scale = 1.0
-max_stack_count = 24
+max_stack_count = 2
 in_inventory_width = 1
 in_inventory_height = 1
 slot_flags = 1
 default_properties_string = "{
+\"back_color\": Color(1, 1, 1, 1),
 \"price\": {
-\"res://Items/Aqua.tres\": 10
+\"res://Items/Aqua.tres\": 20
 }
 }"
 default_properties = {
+"back_color": Color(1, 1, 1, 1),
 "price": {
-"res://Items/Aqua.tres": 10
+"res://Items/Aqua.tres": 20
 }
 }

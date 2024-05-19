@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_0x4d3")
 name = "Barrett M98B"
-description = "this is a sniper"
+description = "I know, lets get naked!"
 tags = Array[StringName]([])
 texture = ExtResource("3_roei7")
 texture_scale = 1.0
@@ -18,11 +18,11 @@ slot_flags = 4
 custom_data = ExtResource("1_2mevv")
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 8
+\"res://Items/Aqua.tres\": 190
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Aqua.tres": 8
+"res://Items/Aqua.tres": 190
 }
 }
