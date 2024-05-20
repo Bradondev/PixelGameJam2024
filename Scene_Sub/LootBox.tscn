@@ -14,9 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://bm88u0af736iq" path="res://Scene_Sub/InteractParticles_Gold.tscn" id="12_bdnmh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1g03"]
-size = Vector2(35, 13.75)
+size = Vector2(46, 37)
 
-[sub_resource type="Resource" id="Resource_m6fdd"]
+[sub_resource type="Resource" id="Resource_5f5qm"]
 resource_local_to_scene = true
 script = ExtResource("5_h04qh")
 height = 2
@@ -46,13 +46,12 @@ position = Vector2(-29, -13)
 polygon = PackedVector2Array(17.5, 11.2, 17.5, 18.7, 39.5, 18.7, 39.5, 11.2)
 
 [node name="InterActArea" type="Area2D" parent="."]
-visible = false
 position = Vector2(0, 6.3)
 collision_layer = 0
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
-position = Vector2(0, 4.7)
+position = Vector2(0, -8.8)
 shape = SubResource("RectangleShape2D_q1g03")
 debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
 
@@ -65,7 +64,7 @@ offset_left = 411.0
 offset_top = 363.0
 offset_right = 539.0
 offset_bottom = 427.0
-inventory = SubResource("Resource_m6fdd")
+inventory = SubResource("Resource_5f5qm")
 init_contents = true
 cell_size = Vector2(32, 32)
 autosave_file_path = ""

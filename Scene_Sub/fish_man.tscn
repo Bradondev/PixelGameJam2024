@@ -332,6 +332,7 @@ animation = &"attack"
 frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(24, 15)
 rotation = 2.13898
 shape = SubResource("CapsuleShape2D_7j53l")
@@ -369,6 +370,7 @@ animation_player = NodePath("../../AnimationPlayer")
 enemy = NodePath("../..")
 
 [node name="attackHitBox" type="Area2D" parent="."]
+visible = false
 position = Vector2(10, -13)
 collision_layer = 0
 collision_mask = 15

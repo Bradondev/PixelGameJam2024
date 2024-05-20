@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://btcuans18pkm8"]
+[gd_scene load_steps=14 format=3 uid="uid://btcuans18pkm8"]
 
 [ext_resource type="Script" path="res://GD Scripts/InterActAble.gd" id="1_ybxhk"]
 [ext_resource type="Texture2D" uid="uid://c5kpbl71cojah" path="res://Art_PNG/Map_Props/Props_Terminal.png" id="2_1n82y"]
@@ -7,7 +7,9 @@
 [ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="7_dnlqv"]
 [ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="8_fmvn1"]
 [ext_resource type="Texture2D" uid="uid://dcfxp0gtvvhyu" path="res://Art_UI/ProgressBar_PlayerResource (Over).png" id="9_hgkxm"]
+[ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="9_posug"]
 [ext_resource type="Texture2D" uid="uid://3vmgjxrcavhb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Green.png" id="10_7t6hp"]
+[ext_resource type="PackedScene" uid="uid://bm88u0af736iq" path="res://Scene_Sub/InteractParticles_Gold.tscn" id="10_q7vq2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1g03"]
 size = Vector2(58, 26.25)
@@ -17,6 +19,9 @@ resource_name = "GridInventory"
 script = ExtResource("7_dnlqv")
 height = 3
 width = 4
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3pr38"]
+polygon = PackedVector2Array(-24, -1, -26, -1, -26, -22, -24, -22, -24, -12.4797)
 
 [node name="Terminal" type="StaticBody2D" node_paths=PackedStringArray("HighLightArea", "InterArea") groups=["Bunker", "Prop"]]
 script = ExtResource("1_ybxhk")
@@ -70,10 +75,10 @@ horizontal_alignment = 1
 
 [node name="BotBar" type="TextureProgressBar" parent="."]
 visible = false
-offset_left = -28.0
-offset_top = -31.5
-offset_right = 68.0
-offset_bottom = -19.5
+offset_left = -27.0
+offset_top = -51.0
+offset_right = 69.0
+offset_bottom = -39.0
 scale = Vector2(0.5, 0.5)
 value = 50.0
 texture_under = ExtResource("8_fmvn1")
@@ -87,8 +92,19 @@ offset_left = 10.0
 offset_top = -22.0
 offset_right = 87.0
 offset_bottom = 1.0
+theme = ExtResource("9_posug")
 text = "hacking"
 horizontal_alignment = 1
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_3pr38")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(50, 1)
+occluder = SubResource("OccluderPolygon2D_3pr38")
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("10_q7vq2")]
+position = Vector2(0, 4)
 
 [connection signal="body_entered" from="InterActArea" to="." method="_on_inter_act_area_body_entered"]
 [connection signal="body_exited" from="InterActArea" to="." method="_on_inter_act_area_body_exited"]

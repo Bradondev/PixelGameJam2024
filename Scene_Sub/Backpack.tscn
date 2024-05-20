@@ -36,12 +36,11 @@ position = Vector2(-29, -20)
 polygon = PackedVector2Array(24, 3, 24, 20, 36, 20, 37, 6, 30, 0)
 
 [node name="InterActArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
-position = Vector2(1, -1)
+position = Vector2(1, -7)
 shape = SubResource("RectangleShape2D_q1g03")
 debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
 

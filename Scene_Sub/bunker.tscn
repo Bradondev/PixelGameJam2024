@@ -106,7 +106,6 @@ horizontal_alignment = 1
 position = Vector2(-28.22, 44.8)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-visible = false
 position = Vector2(-5.22, 19.8)
 occluder = SubResource("OccluderPolygon2D_2fj08")
 

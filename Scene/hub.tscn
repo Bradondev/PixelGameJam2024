@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://brsqjv5ec7nl2" path="res://Art_UI/Shop_TextureButton, Pressed.png" id="4_repa8"]
 [ext_resource type="AudioStream" uid="uid://b58tbi8netxou" path="res://Audio/Sound Clip - game-start-6104.mp3" id="4_uh4nk"]
 [ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="5_2qcak"]
-[ext_resource type="Theme" path="res://HUB_FontTheme.tres" id="6_o6ojd"]
+[ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="6_o6ojd"]
 [ext_resource type="Texture2D" uid="uid://c27xhpkqpdbwg" path="res://Art_PNG/UI__Artwork/UI_Mission.png" id="7_23aue"]
 [ext_resource type="Texture2D" uid="uid://bbx0hqgr6340o" path="res://Art_PNG/UI__Artwork/UI_Stash_2x.png" id="8_h3kmt"]
 [ext_resource type="Texture2D" uid="uid://btcmsj22xtuqh" path="res://Art_UI/Shop_TextureButton, Normal, Small.png" id="8_nef1m"]
@@ -62,7 +62,7 @@
 [ext_resource type="PackedScene" uid="uid://cag704jcu3o3i" path="res://Scene/inventory/stashgrid.tscn" id="52_1qi0f"]
 [ext_resource type="Resource" uid="uid://douiehmw6t3m6" path="res://Items/Contents/LootV1.tres" id="53_gmg0c"]
 [ext_resource type="PackedScene" uid="uid://drf6quwd64if4" path="res://Scene_Menu/first_time_menu.tscn" id="58_dyap8"]
-[ext_resource type="PackedScene" uid="uid://ofeodv7xg8ye" path="res://Scene/Level2.tscn" id="61_k6801"]
+[ext_resource type="PackedScene" uid="uid://dd0hqlllt0tqs" path="res://Scene/Map_Earth.tscn" id="61_k6801"]
 
 [sub_resource type="Theme" id="Theme_vs827"]
 
