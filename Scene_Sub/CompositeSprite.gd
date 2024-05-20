@@ -12,7 +12,7 @@ Gun sprite = Gun, bullet, and gun fire effect // This texture can be swapped out
 
 var gun_color = {
 	"none" : null,
-	"desert" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Gun_Desert.png"),
+	"desert" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Top_v2.png"),
 	"artic" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Gun_Artic.png"), 
 	"camo" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Gun_Camo.png"),
 }
@@ -27,11 +27,16 @@ var helmet_color = {
 var chest_color = {
 	"none" : null,
 	"desert" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Chest_color desert.png"),
-	"artic" : load("res://Art_PNGCompositeSprites//Player_CompositeSprite_SpriteSheet_Chest_color artic.png"),
+	"artic" : load("res://Art_PNG/CompositeSprites//Player_CompositeSprite_SpriteSheet_Chest_color artic.png"),
 	"camo" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Chest_color camo.png"),
 	"smoke" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Chest_color smoke.png")
 }
 
+var pant_color ={ #// This is part of the core sprite and cannot be set to null, use "camo" for default values
+	"desert" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Bottom_color_desert.png"),
+	"artic" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Bottom_color artic.png"),
+	"camo" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Bottom_color camo.png"),
+}
 var gun_reticle = {
 	"pistol" : load("res://Art_UI/Gun_Reticle, Pistol v1.png"),
 	"smg" : load("res://Art_UI/Gun_Reticle, SMG.png"),
@@ -39,14 +44,6 @@ var gun_reticle = {
 	"shotty" : load("res://Art_UI/Gun_Reticle, Shotgun v1.png"),
 	"sniper" : load("res://Art_UI/Gun_Reticle, Sniper.png"),
 }
-
-@export var testing = true
-@export var test_animation = "shoot_R_sniper"
-@export var guns_color =  "artic"
-@export var guns_reticle = "ar" 
-
-var testing_gunColor = gun_color[guns_color]
-var testing_gunReticle = gun_reticle[guns_reticle]
 
 @onready var sprite_player: AnimationPlayer = $SpritePlayer
 @onready var gun : Sprite2D = $Sprites/Gun
@@ -57,27 +54,11 @@ var testing_gunReticle = gun_reticle[guns_reticle]
 func AnimPlayer(AnimationName, Frame):
 	sprite_player.play(AnimationName,Frame)
 
-func _process(delta):
-	if testing == true:
-		$ReticleArm.look_at(get_global_mouse_position())
-		$SpritePlayer.play(test_animation)
-
-func _ready():
-	_cameraToggle(testing)
-
-func _cameraToggle(status):
-	$"Camera (testing)" .enabled = status
-	if status == true:
-		$ReticleArm/Reticle.texture = testing_gunReticle
-		$Sprites/Gun.texture = testing_gunColor
-	else: 
-		pass
-
 func SwitchOutChest(type:String):
 	chest.texture = chest_color[type]
 	
 func SwitchOutHelmet(type:String):
-	helmet.texture = chest_color[type]
+	helmet.texture = helmet_color[type]
 	
 func SwitchOutPant(type:String):
-	pant.texture = chest_color[type]
+	pant.texture = pant_color[type]
