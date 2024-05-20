@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://dpxgg5yntds5l"]
+[gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://dpxgg5yntds5l"]
 
 [ext_resource type="Resource" uid="uid://c62pt3g5ektis" path="res://GD Scripts/Resources/equipment/chest/ChestCamoV4.tres" id="1_8mapj"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="1_tvwjh"]
+[ext_resource type="Texture2D" uid="uid://bp4ndo7a1t1bt" path="res://Art_PNG/Item_Equipment_Vest1v2_Camo.png" id="3_t64j0"]
 
 [resource]
 script = ExtResource("1_tvwjh")
 name = "Camo vest V4"
 description = ""
 tags = Array[StringName]([])
+texture = ExtResource("3_t64j0")
 texture_scale = 1.0
 max_stack_count = 1
 in_inventory_width = 1

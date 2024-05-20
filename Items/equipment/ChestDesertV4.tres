@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://dmhw5na3w2cc5"]
+[gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://dmhw5na3w2cc5"]
 
 [ext_resource type="Resource" uid="uid://cjyo2peo30gs7" path="res://GD Scripts/Resources/equipment/chest/ChestDesertV4.tres" id="1_nqln0"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_bbo1o"]
+[ext_resource type="Texture2D" uid="uid://clseyyie7dn04" path="res://Art_PNG/Item_Equipment_Vest1v2_Desert.png" id="3_peeci"]
 
 [resource]
 script = ExtResource("2_bbo1o")
 name = "Desert Vest V4"
 description = ""
 tags = Array[StringName]([])
+texture = ExtResource("3_peeci")
 texture_scale = 1.0
 max_stack_count = 1
 in_inventory_width = 1

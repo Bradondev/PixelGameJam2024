@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ofeodv7xg8ye"]
+[gd_scene load_steps=12 format=3 uid="uid://ofeodv7xg8ye"]
 
 [ext_resource type="TileSet" uid="uid://cw8wysuqqyfiq" path="res://Resources/Earthlike_Tilemap.tres" id="1_tx0un"]
 [ext_resource type="PackedScene" uid="uid://bru61wwju326n" path="res://Scene_Sub/bunkerFront.tscn" id="2_021tj"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://ieghweqpyuq5" path="res://Scene_Sub/GlassPodBlue2.tscn" id="7_go4xj"]
 [ext_resource type="Texture2D" uid="uid://ihf73yyu0jor" path="res://Art_PNG/Map_Props/Props_Table_KnockedOverUp.png" id="8_xkx00"]
 [ext_resource type="PackedScene" uid="uid://dx6l3e6fwirv2" path="res://Scene_Sub/GlassPodRed1.tscn" id="11_o040p"]
-[ext_resource type="PackedScene" uid="uid://dkrp2wctpx7k8" path="res://Scene/Level1.tscn" id="12_u2y33"]
 
 [node name="Level2" type="Node2D"]
 
@@ -123,6 +122,3 @@ position = Vector2(2123, -299)
 
 [node name="GlassPod12" parent="World/Props" instance=ExtResource("11_o040p")]
 position = Vector2(2107, -299)
-
-[node name="PlayerMovementTest" parent="." instance=ExtResource("12_u2y33")]
-position = Vector2(-651, 769)

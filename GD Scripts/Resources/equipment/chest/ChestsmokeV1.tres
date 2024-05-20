@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_yycbj")
 HealthBuff = 5
-Type = "Smoke"
+Type = "smoke"

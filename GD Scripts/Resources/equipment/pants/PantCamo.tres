@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_dvhj8")
 HealthBuff = 5
-Type = ""
+Type = "camo"

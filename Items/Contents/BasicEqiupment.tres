@@ -1,17 +1,25 @@
-[gd_resource type="Resource" script_class="ItemInstantiator" load_steps=7 format=3 uid="uid://sp77klvw5uhw"]
+[gd_resource type="Resource" script_class="ItemInstantiator" load_steps=15 format=3 uid="uid://sp77klvw5uhw"]
 
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="1_ml375"]
 [ext_resource type="Resource" uid="uid://de31fb1dl4jek" path="res://Items/Guns/SmgVB.tres" id="2_dmtc1"]
 [ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="3_26kuc"]
 [ext_resource type="Resource" uid="uid://djl0dccuo81i1" path="res://Items/Guns/pistolVB.tres" id="4_8ys78"]
 [ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="4_yabge"]
-[ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistolV1.tres" id="5_0yout"]
+[ext_resource type="Resource" uid="uid://c48mshlkty4qu" path="res://Items/equipment/ChestArticV1.tres" id="5_vf8bv"]
+[ext_resource type="Resource" uid="uid://bnx5gl3anjwt" path="res://Items/equipment/ChestCamoV1.tres" id="6_vd6n5"]
+[ext_resource type="Resource" uid="uid://brrakgqui32ih" path="res://Items/equipment/ChestDesertV2.tres" id="7_gd444"]
+[ext_resource type="Resource" uid="uid://ryqb78p71t88" path="res://Items/equipment/ChestSmokeV1.tres" id="8_qxqg3"]
+[ext_resource type="Resource" uid="uid://bnp2ytb0p8ika" path="res://Items/equipment/pantArtic.tres" id="9_ikb3j"]
+[ext_resource type="Resource" uid="uid://7adkk3c7p83k" path="res://Items/equipment/pantCamo.tres" id="10_fi0dk"]
+[ext_resource type="Resource" uid="uid://bhg3lnh8a2b0q" path="res://Items/equipment/pantDesert.tres" id="11_0qwkd"]
+[ext_resource type="Resource" uid="uid://dukahfjr1wm4g" path="res://Items/equipment/helmetCamo.tres" id="12_mn6pb"]
+[ext_resource type="Resource" uid="uid://bi5dkrr5n837" path="res://Items/equipment/helmetDesert.tres" id="13_o4upv"]
 
 [resource]
 script = ExtResource("1_ml375")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("2_dmtc1"), ExtResource("4_yabge"), ExtResource("3_26kuc"), ExtResource("4_8ys78"), ExtResource("5_0yout"), ExtResource("4_yabge"), ExtResource("4_yabge"), ExtResource("4_yabge"), ExtResource("4_yabge")])
-item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(60, 60), Vector2(30, 30), Vector2(1, 1), Vector2(1, 1), Vector2(60, 60), Vector2(60, 60), Vector2(60, 60), Vector2(60, 60)])
-item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0])
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("2_dmtc1"), ExtResource("4_yabge"), ExtResource("3_26kuc"), ExtResource("4_8ys78"), ExtResource("5_vf8bv"), ExtResource("6_vd6n5"), ExtResource("7_gd444"), ExtResource("8_qxqg3"), ExtResource("9_ikb3j"), ExtResource("10_fi0dk"), ExtResource("11_0qwkd"), ExtResource("12_mn6pb"), ExtResource("13_o4upv")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(60, 60), Vector2(30, 30), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0])
 repeat_post_chance = false
 randomize_locations = false
 delay_between_items = 0.0
