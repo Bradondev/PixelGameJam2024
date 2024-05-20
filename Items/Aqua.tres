@@ -6,11 +6,11 @@
 [resource]
 script = ExtResource("1_u6knn")
 name = "Aqua"
-description = ""
+description = "A five-letter word for happiness is money!"
 tags = Array[StringName]([])
 texture = ExtResource("2_bx4t5")
 texture_scale = 1.0
-max_stack_count = 1000
+max_stack_count = 999
 in_inventory_width = 1
 in_inventory_height = 1
 slot_flags = 64

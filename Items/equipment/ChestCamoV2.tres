@@ -6,23 +6,23 @@
 
 [resource]
 script = ExtResource("1_22f4h")
-name = "Camo vest V2"
-description = ""
+name = "Patron Vest"
+description = "The boy cries you a sweater of tears... And you kill him. "
 tags = Array[StringName]([])
 texture = ExtResource("3_jxef5")
 texture_scale = 1.0
 max_stack_count = 1
 in_inventory_width = 1
-in_inventory_height = 1
+in_inventory_height = 2
 slot_flags = 524289
 custom_data = ExtResource("1_njwql")
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 8
+\"res://Items/Aqua.tres\": 110
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Aqua.tres": 8
+"res://Items/Aqua.tres": 110
 }
 }

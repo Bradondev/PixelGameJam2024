@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_rp7dj")
-HealthBuff = 5
+HealthBuff = 25
 Type = "artic"

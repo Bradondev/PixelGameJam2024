@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_yonec")
-HealthBuff = 5
-Type = "artic"
+HealthBuff = 65
+Type = "smoke"

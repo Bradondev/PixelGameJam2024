@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("2_i22ds")
-name = "Desert Vest V3"
-description = ""
+name = "Bargain Armor"
+description = "shut your mouth you mediocre clarinet player "
 tags = Array[StringName]([])
 texture = ExtResource("3_xcooj")
 texture_scale = 1.0
@@ -18,11 +18,11 @@ slot_flags = 524289
 custom_data = ExtResource("1_4uwby")
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 8
+\"res://Items/Aqua.tres\": 50
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Aqua.tres": 8
+"res://Items/Aqua.tres": 50
 }
 }

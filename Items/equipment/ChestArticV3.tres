@@ -1,23 +1,24 @@
-[gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://dd3q421cs4mxx"]
+[gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://dd3q421cs4mxx"]
 
 [ext_resource type="Resource" uid="uid://bvihyt82jk8we" path="res://GD Scripts/Resources/equipment/chest/ChestArticV3.tres" id="1_r7c6s"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_uf7ck"]
+[ext_resource type="Texture2D" uid="uid://138sqd3fa8e0" path="res://Art_PNG/Item_Equipment_Vest1v2_Artic.png" id="3_46c4n"]
 
 [resource]
 script = ExtResource("2_uf7ck")
-name = "Artic vest V3"
-description = ""
+name = "Plate Carrier"
+description = "Another day, another migraine"
 tags = Array[StringName]([])
+texture = ExtResource("3_46c4n")
 texture_scale = 1.0
 max_stack_count = 1
 in_inventory_width = 1
-in_inventory_height = 1
+in_inventory_height = 2
 slot_flags = 524289
 custom_data = ExtResource("1_r7c6s")
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 8
-}
+\"res://Items/Aqua.tres\": 375
 }"
 default_properties = {
 "price": {

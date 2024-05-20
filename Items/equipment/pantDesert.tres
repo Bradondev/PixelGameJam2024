@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_ax1mp")
-name = "pants "
-description = ""
+name = "Tactical Trousers"
+description = "Stupidity isn't a virus, but it sure is spreading like one"
 tags = Array[StringName]([])
 texture = ExtResource("3_fsbva")
 texture_scale = 1.0
@@ -16,5 +16,13 @@ in_inventory_width = 3
 in_inventory_height = 3
 slot_flags = 4194305
 custom_data = ExtResource("1_lso8d")
-default_properties_string = "{}"
-default_properties = {}
+default_properties_string = "{
+\"price\": {
+\"res://Items/Aqua.tres\": 200
+}
+}"
+default_properties = {
+"price": {
+"res://Items/Aqua.tres": 200
+}
+}

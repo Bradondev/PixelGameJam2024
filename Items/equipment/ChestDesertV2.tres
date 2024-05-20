@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("2_4oc5x")
-name = "Desert Vest V2"
-description = ""
+name = "Maximum Overdrive"
+description = "you wont catch me when I shift into MAXIMUM OVERDRIVE!"
 tags = Array[StringName]([])
 texture = ExtResource("3_776ik")
 texture_scale = 1.0
@@ -18,11 +18,11 @@ slot_flags = 524289
 custom_data = ExtResource("1_nv24k")
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 8
+\"res://Items/Aqua.tres\": 450
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Aqua.tres": 8
+"res://Items/Aqua.tres": 450
 }
 }

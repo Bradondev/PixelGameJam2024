@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://d1ui8lkg8n8hk"]
+[gd_scene load_steps=78 format=3 uid="uid://d1ui8lkg8n8hk"]
 
 [ext_resource type="Script" path="res://Scene/hub.gd" id="1_tbohb"]
 [ext_resource type="AudioStream" uid="uid://c2q0hvwighqiw" path="res://Audio/Song - Kevin MacLeod - 8bit Dungeon Boss NO COPYRIGHT 8-bit Music.mp3" id="2_oxanp"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://brsqjv5ec7nl2" path="res://Art_UI/Shop_TextureButton, Pressed.png" id="4_repa8"]
 [ext_resource type="AudioStream" uid="uid://b58tbi8netxou" path="res://Audio/Sound Clip - game-start-6104.mp3" id="4_uh4nk"]
 [ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="5_2qcak"]
-[ext_resource type="Theme" uid="uid://cwptlbkrmqhn4" path="res://HUB_FontTheme.tres" id="6_o6ojd"]
+[ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="6_o6ojd"]
 [ext_resource type="Texture2D" uid="uid://c27xhpkqpdbwg" path="res://Art_PNG/UI__Artwork/UI_Mission.png" id="7_23aue"]
 [ext_resource type="Texture2D" uid="uid://bbx0hqgr6340o" path="res://Art_PNG/UI__Artwork/UI_Stash_2x.png" id="8_h3kmt"]
 [ext_resource type="Texture2D" uid="uid://btcmsj22xtuqh" path="res://Art_UI/Shop_TextureButton, Normal, Small.png" id="8_nef1m"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://01g12v5bkbi7" path="res://Art_UI/Equipment_Header_Inventory.png" id="16_52o3i"]
 [ext_resource type="Script" path="res://GD Scripts/Stash.gd" id="16_vhla5"]
 [ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="17_yitpx"]
-[ext_resource type="PackedScene" uid="uid://dd0hqlllt0tqs" path="res://Scene/Map_Earth.tscn" id="18_i45gf"]
 [ext_resource type="Texture2D" uid="uid://csnkf40eamr8q" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell1.png" id="21_dqyos"]
 [ext_resource type="Texture2D" uid="uid://243g83cqtkxc" path="res://Art_PNG/Item_Currency_Aqua.png" id="21_yk6iy"]
 [ext_resource type="Texture2D" uid="uid://ctqo222sv0dn" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell2.png" id="22_7l100"]
@@ -62,52 +61,55 @@
 [ext_resource type="PackedScene" uid="uid://cag704jcu3o3i" path="res://Scene/inventory/stashgrid.tscn" id="52_1qi0f"]
 [ext_resource type="Resource" uid="uid://douiehmw6t3m6" path="res://Items/Contents/LootV1.tres" id="53_gmg0c"]
 [ext_resource type="PackedScene" uid="uid://drf6quwd64if4" path="res://Scene_Menu/first_time_menu.tscn" id="58_dyap8"]
+[ext_resource type="PackedScene" uid="uid://dkrp2wctpx7k8" path="res://Scene/Level1.tscn" id="62_gjham"]
+[ext_resource type="PackedScene" uid="uid://ofeodv7xg8ye" path="res://Scene/Level2.tscn" id="63_6idl0"]
+[ext_resource type="PackedScene" uid="uid://cd3hwjp6q5eg8" path="res://Scene/level3.tscn" id="64_kdnkp"]
 
 [sub_resource type="Theme" id="Theme_vs827"]
 
-[sub_resource type="Resource" id="Resource_rai3h"]
+[sub_resource type="Resource" id="Resource_u7dvs"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_l5xgi"]
+[sub_resource type="Resource" id="Resource_1utbf"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_hl1tj"]
+[sub_resource type="Resource" id="Resource_50u3d"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_v22h1"]
+[sub_resource type="Resource" id="Resource_tuvd2"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_gc7os"]
+[sub_resource type="Resource" id="Resource_ps86a"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_sluw4"]
+[sub_resource type="Resource" id="Resource_6ty02"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_irak3"]
+[sub_resource type="Resource" id="Resource_337ci"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
@@ -403,6 +405,7 @@ bbcode_enabled = true
 text = "[center]Depart"
 
 [node name="CompleteButton1" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/Vbox"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("14_e2ur0")
 texture_pressed = ExtResource("4_repa8")
@@ -455,6 +458,7 @@ bbcode_enabled = true
 text = "wow, aren't you a load sack of aqua around here? go on, get out of camp and show us you can atleast get through a single extraction, bro."
 
 [node name="Hbox" type="HBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer/ColorRect/InnerTextMargin/Vbox"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -518,6 +522,7 @@ bbcode_enabled = true
 text = "[center]Depart"
 
 [node name="CompleteButton2" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/Vbox"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("14_e2ur0")
 texture_pressed = ExtResource("4_repa8")
@@ -570,6 +575,7 @@ bbcode_enabled = true
 text = "aight, merc. you been here long enough. time to show us you got the cojones, pendejo. go into that forest over there, yea? bring me back the arm of the biggest one you can find."
 
 [node name="Hbox" type="HBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer/ColorRect/InnerTextMargin/Vbox"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -632,6 +638,7 @@ bbcode_enabled = true
 text = "[center]Depart"
 
 [node name="CompleteButton3" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("14_e2ur0")
 texture_pressed = ExtResource("4_repa8")
@@ -681,9 +688,10 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("6_o6ojd")
 bbcode_enabled = true
-text = "Gonna need you to go down to the aqua planet, it's the one overrunwith gross fish monsters. i really need my hard drive that has my \"favorites\" folder backed up on it."
+text = "Gonna need you to go down to the aqua planet, it's the one over run with gross fish monsters. i really need my hard drive that has my \"favorites\" folder backed up on it."
 
 [node name="Hbox" type="HBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/TextMargin/ColorRect/InnerTextMargin/Vbox"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -748,6 +756,7 @@ bbcode_enabled = true
 text = "[center]back"
 
 [node name="Stash" type="Control" parent="." groups=["Ui"]]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -939,11 +948,11 @@ color = Color(0.352941, 0.176471, 0.14902, 1)
 [node name="stash1" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 2
-offset_left = 273.0
+offset_left = 242.0
 offset_top = 5.0
-offset_right = 657.0
+offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_rai3h")
+inventory = SubResource("Resource_u7dvs")
 autosave_file_path = "stash1"
 autosave_intensity = 3
 
@@ -951,11 +960,11 @@ autosave_intensity = 3
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
-offset_left = 273.0
+offset_left = 242.0
 offset_top = 5.0
-offset_right = 657.0
+offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_l5xgi")
+inventory = SubResource("Resource_1utbf")
 autosave_file_path = "stash2"
 autosave_intensity = 3
 
@@ -963,11 +972,11 @@ autosave_intensity = 3
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
-offset_left = 273.0
+offset_left = 242.0
 offset_top = 5.0
-offset_right = 657.0
+offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_hl1tj")
+inventory = SubResource("Resource_50u3d")
 autosave_file_path = "stash3"
 autosave_intensity = 3
 
@@ -975,11 +984,11 @@ autosave_intensity = 3
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
-offset_left = 273.0
+offset_left = 242.0
 offset_top = 5.0
-offset_right = 657.0
+offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_v22h1")
+inventory = SubResource("Resource_tuvd2")
 autosave_file_path = "stash4"
 autosave_intensity = 3
 
@@ -987,11 +996,11 @@ autosave_intensity = 3
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
-offset_left = 273.0
+offset_left = 242.0
 offset_top = 5.0
-offset_right = 657.0
+offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_gc7os")
+inventory = SubResource("Resource_ps86a")
 autosave_file_path = "stash5"
 autosave_intensity = 3
 
@@ -999,11 +1008,11 @@ autosave_intensity = 3
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
-offset_left = 273.0
+offset_left = 242.0
 offset_top = 5.0
-offset_right = 657.0
+offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_sluw4")
+inventory = SubResource("Resource_6ty02")
 autosave_file_path = "stash6"
 autosave_intensity = 3
 
@@ -1011,11 +1020,11 @@ autosave_intensity = 3
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
-offset_left = 273.0
+offset_left = 242.0
 offset_top = 5.0
-offset_right = 657.0
+offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_irak3")
+inventory = SubResource("Resource_337ci")
 autosave_file_path = "stash7"
 autosave_intensity = 3
 
@@ -1329,15 +1338,15 @@ hide_cursor = true
 
 [node name="Load_Screen1" parent="." instance=ExtResource("17_yitpx")]
 visible = false
-Scene = ExtResource("18_i45gf")
+Scene = ExtResource("62_gjham")
 
 [node name="Load_Screen2" parent="." instance=ExtResource("17_yitpx")]
 visible = false
-Scene = ExtResource("18_i45gf")
+Scene = ExtResource("63_6idl0")
 
 [node name="Load_Screen3" parent="." instance=ExtResource("17_yitpx")]
 visible = false
-Scene = ExtResource("18_i45gf")
+Scene = ExtResource("64_kdnkp")
 
 [node name="Load_Screen4" parent="." instance=ExtResource("17_yitpx")]
 visible = false

@@ -6,23 +6,23 @@
 
 [resource]
 script = ExtResource("2_bbo1o")
-name = "Desert Vest V4"
-description = ""
+name = "Soft Armor"
+description = "im ugly and im proud"
 tags = Array[StringName]([])
 texture = ExtResource("3_peeci")
 texture_scale = 1.0
 max_stack_count = 1
 in_inventory_width = 1
-in_inventory_height = 1
+in_inventory_height = 2
 slot_flags = 524289
 custom_data = ExtResource("1_nqln0")
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 8
+\"res://Items/Aqua.tres\": 290
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Aqua.tres": 8
+"res://Items/Aqua.tres": 290
 }
 }
