@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bpilr5la784ys"]
+[gd_scene load_steps=31 format=3 uid="uid://bpilr5la784ys"]
 
 [ext_resource type="PackedScene" uid="uid://bhkiy4ucj30lo" path="res://Scene/UI.tscn" id="1_4gmy4"]
 [ext_resource type="Script" path="res://GD Scripts/Player.gd" id="1_022et"]
@@ -15,38 +15,19 @@
 [ext_resource type="Texture2D" uid="uid://cfcc8kd3my6n1" path="res://Art_UI/Equipment_InformationBackground.png" id="7_h428q"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="7_pe8uv"]
 [ext_resource type="Texture2D" uid="uid://bpt2kq6c2lbgx" path="res://Art_UI/ProgressBar_Reload (Value), Bullets.png" id="8_1ny82"]
-[ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="8_egc2v"]
-[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="9_qwigw"]
-[ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="10_3jppb"]
-[ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="15_7wkj2"]
-[ext_resource type="Resource" uid="uid://dolh3xcwag5dg" path="res://Items/Bullet/5.7mm.tres" id="15_08f2r"]
-[ext_resource type="Resource" uid="uid://bg63kcap61rmc" path="res://Items/Bullet/7.62mm.tres" id="16_n8tbu"]
+[ext_resource type="Theme" uid="uid://cwptlbkrmqhn4" path="res://HUB_FontTheme.tres" id="8_egc2v"]
+[ext_resource type="Resource" uid="uid://sp77klvw5uhw" path="res://Items/Contents/BasicEqiupment.tres" id="12_b6p14"]
 [ext_resource type="Texture2D" uid="uid://8pco4p25s6q5" path="res://Art_UI/Equipment_Footer_Inventory.png" id="17_3rjy4"]
-[ext_resource type="Resource" uid="uid://qb5w6woyq7ur" path="res://Items/Guns/ArV2.tres" id="18_6mhbe"]
-[ext_resource type="Resource" uid="uid://b0budqwoq0p0j" path="res://Items/Guns/pistolV2.tres" id="18_p71g7"]
-[ext_resource type="Resource" uid="uid://brugdbkd8vq3a" path="res://Items/Guns/ArV4.tres" id="20_dpvys"]
 [ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="20_kcioh"]
+[ext_resource type="PackedScene" uid="uid://cvnww5vgs2hxb" path="res://Scene_Sub/death_scene.tscn" id="22_5vsrl"]
+[ext_resource type="Script" path="res://addons/wyvernbox/crafting/vendor.gd" id="23_p0b8c"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="24_a4vag"]
 [ext_resource type="Texture2D" uid="uid://bt0b4nk6uvm0a" path="res://Art_UI/Shop_TextureButton, Normal.png" id="25_faxl1"]
-[ext_resource type="Resource" uid="uid://v0pjp1xp6582" path="res://Items/Guns/shotGunV3.tres" id="30_6qb8c"]
 [ext_resource type="AudioStream" uid="uid://d2hg7cqxsdhkt" path="res://Audio/crunchy-footsteps-on-leaves-88862--Edited by Konscious.wav" id="30_s76jk"]
-[ext_resource type="Resource" uid="uid://cfhf02jcwngtd" path="res://Items/Guns/shotGunV4.tres" id="31_vq5ke"]
-[ext_resource type="Resource" uid="uid://bj2vnrppqbww3" path="res://Items/Guns/shotGunV5.tres" id="32_hvy50"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_278xp"]
 radius = 1.5
 height = 19.0
-
-[sub_resource type="Resource" id="Resource_54y7k"]
-script = ExtResource("9_qwigw")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("8_0e3s1"), ExtResource("10_3jppb"), ExtResource("15_7wkj2"), ExtResource("15_08f2r"), ExtResource("16_n8tbu"), ExtResource("30_6qb8c"), ExtResource("31_vq5ke"), ExtResource("32_hvy50"), ExtResource("18_p71g7"), ExtResource("18_6mhbe"), ExtResource("20_dpvys")])
-item_repeat_ranges = Array[Vector2]([Vector2(50, 50), Vector2(50, 50), Vector2(50, 60), Vector2(50, 60), Vector2(50, 55), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
-item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0])
-repeat_post_chance = true
-randomize_locations = true
-delay_between_items = 0.0
-spread_distance = 32.0
-spread_cone_degrees = 360.0
-spread_angle_degrees = 0.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0wuuo"]
 texture = ExtResource("20_kcioh")
@@ -61,10 +42,24 @@ size = Vector2(23, 34.5)
 radius = 4.5
 height = 23.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("inventory", "PlayerInventory", "curent_weapon") groups=["Player"]]
+[sub_resource type="Resource" id="Resource_fmt5u"]
+script = ExtResource("24_a4vag")
+name = ""
+description = ""
+tags = Array[StringName]([])
+texture_scale = 1.0
+max_stack_count = 1
+in_inventory_width = 1
+in_inventory_height = 1
+slot_flags = 1
+default_properties_string = "{}"
+default_properties = {}
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("clearer", "inventory", "PlayerInventory", "curent_weapon") groups=["Player"]]
 scale = Vector2(2, 2)
 collision_layer = 258
 script = ExtResource("1_022et")
+clearer = NodePath("clearPlayerInven")
 inventory = NodePath("UI/Inventory")
 speed = 5000
 PlayerInventory = NodePath("UI/Inventory/Margin/EquipmentAndInventory/InventoryVbox/player")
@@ -220,26 +215,21 @@ texture = ExtResource("7_h428q")
 
 [node name="name" type="RichTextLabel" parent="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 235.0
-offset_bottom = 29.0
+offset_left = -1.0
+offset_right = 232.0
+offset_bottom = 33.0
 theme = ExtResource("8_egc2v")
 bbcode_enabled = true
 text = "[center]Name"
-scroll_active = false
 
 [node name="Description" type="RichTextLabel" parent="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 29.0
-offset_right = 235.0
-offset_bottom = 95.0
+offset_top = 33.0
+offset_right = 233.0
+offset_bottom = 195.0
 theme = ExtResource("8_egc2v")
-theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[center]Description"
-scroll_active = false
+text = "[center] Description"
 
 [node name="Tooltip" parent="UI/Inventory" instance=ExtResource("2_hwfff")]
 visible = false
@@ -287,6 +277,21 @@ debug_color = Color(0, 0, 0, 0.419608)
 unique_name_in_owner = true
 stream = ExtResource("30_s76jk")
 volume_db = 16.995
+
+[node name="deathScene" parent="." node_paths=PackedStringArray("player") instance=ExtResource("22_5vsrl")]
+z_index = 1
+player = NodePath("..")
+
+[node name="clearPlayerInven" type="Node" parent="."]
+script = ExtResource("23_p0b8c")
+vendor_inventory = NodePath("../UI/Inventory/Margin/EquipmentAndInventory/InventoryVbox/player")
+price_markup = 0.0
+stock = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([SubResource("Resource_fmt5u")])
+stock_counts = Array[int]([1])
+stock_restocks = Array[int]([0])
+infinite_restocks = false
+clear_sold_items_when_hidden = false
+free_buyback = false
 
 [connection signal="item_stack_added" from="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/Equip" to="." method="_on_equip_item_stack_added"]
 [connection signal="item_stack_changed" from="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/Equip" to="." method="_on_equip_item_stack_changed"]

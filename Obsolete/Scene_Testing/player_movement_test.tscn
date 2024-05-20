@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c6nocpurjjcau"]
 
 [ext_resource type="PackedScene" uid="uid://dd0hqlllt0tqs" path="res://Scene/Map_Earth.tscn" id="1_pd02m"]
-[ext_resource type="PackedScene" uid="uid://bpilr5la784ys" path="res://Scene/Player.tscn" id="2_l0b7f"]
+[ext_resource type="PackedScene" path="res://Scene_Sub/Player.tscn" id="2_l0b7f"]
 [ext_resource type="PackedScene" uid="uid://qjsl7x5vcuya" path="res://Scene_Sub/bunker.tscn" id="3_jdx2m"]
 [ext_resource type="PackedScene" uid="uid://cqy4p7dbms0kf" path="res://Scene_Sub/LootBox.tscn" id="4_l6rkj"]
 [ext_resource type="PackedScene" uid="uid://djwlpg1g4e28o" path="res://Scene_Sub/ToolBox.tscn" id="5_15cq1"]

@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://pfkkqogc5yjc" path="res://Audio/industrial-ambience-67112.mp3" id="2_q7owf"]
 [ext_resource type="AudioStream" uid="uid://30rfiiuitjj0" path="res://Audio/martian-131602.mp3" id="3_8hm1s"]
 [ext_resource type="AudioStream" uid="uid://ba62rjkijmo4x" path="res://Audio/helicopter-sound-41975.mp3" id="4_l0ymu"]
-[ext_resource type="Theme" path="res://HUB_FontTheme.tres" id="5_7maj5"]
+[ext_resource type="Theme" uid="uid://cwptlbkrmqhn4" path="res://HUB_FontTheme.tres" id="5_7maj5"]
 [ext_resource type="Texture2D" uid="uid://bt0b4nk6uvm0a" path="res://Art_UI/Shop_TextureButton, Normal.png" id="7_p5qdy"]
 [ext_resource type="Texture2D" uid="uid://brsqjv5ec7nl2" path="res://Art_UI/Shop_TextureButton, Pressed.png" id="8_7hy7o"]
 [ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="9_l4tyg"]

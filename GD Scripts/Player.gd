@@ -136,7 +136,7 @@ func _on_equip_item_stack_removed(item_stack: ItemStack) -> void:
 	elif item_stack.position_in_inventory == Vector2(3,0):
 		composite_sprite.SwitchOutChest("none")
 	elif item_stack.position_in_inventory == Vector2(4,0):
-		composite_sprite.SwitchOutPant("none")
+		composite_sprite.SwitchOutPant("camo")
 	elif item_stack.position_in_inventory == Vector2(5,0):
 		print_debug("plants")
 	elif item_stack.position_in_inventory == Vector2(6,0):
