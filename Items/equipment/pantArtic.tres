@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_1s6nn")
-name = "pants "
-description = ""
+name = "Combat Pants"
+description = "mess with the bull and youll get the horns"
 tags = Array[StringName]([])
 texture = ExtResource("3_8lofy")
 texture_scale = 1.0
@@ -16,5 +16,13 @@ in_inventory_width = 3
 in_inventory_height = 3
 slot_flags = 4194305
 custom_data = ExtResource("1_4ah10")
-default_properties_string = "{}"
-default_properties = {}
+default_properties_string = "{
+\"price\": {
+\"res://Items/Aqua.tres\": 350
+}
+}"
+default_properties = {
+"price": {
+"res://Items/Aqua.tres": 350
+}
+}

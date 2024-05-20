@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_kkt2g")
-HealthBuff = 5
+HealthBuff = 20
 Type = "camo"

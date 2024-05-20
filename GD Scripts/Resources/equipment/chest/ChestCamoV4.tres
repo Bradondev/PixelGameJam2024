@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_ocbxx")
-HealthBuff = 5
+HealthBuff = 40
 Type = "camo"

@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("2_e06a2")
-name = "Artic vest v1"
-description = ""
+name = "Kevlar"
+description = "Why must every 11 minutes of my life be filled with misery!?"
 tags = Array[StringName]([])
 texture = ExtResource("3_pcg0k")
 texture_scale = 1.0
@@ -18,11 +18,11 @@ slot_flags = 524289
 custom_data = ExtResource("1_comjc")
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 8
+\"res://Items/Aqua.tres\": 200
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Aqua.tres": 8
+"res://Items/Aqua.tres": 200
 }
 }

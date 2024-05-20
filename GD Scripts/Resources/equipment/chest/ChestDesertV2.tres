@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_cqxcm")
-HealthBuff = 5
+HealthBuff = 85
 Type = "desert"

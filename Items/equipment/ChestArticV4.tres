@@ -1,26 +1,28 @@
-[gd_resource type="Resource" script_class="ItemType" load_steps=3 format=3 uid="uid://ddugm555wqoa"]
+[gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://ddugm555wqoa"]
 
 [ext_resource type="Resource" uid="uid://v3mrwki2d2tj" path="res://GD Scripts/Resources/equipment/chest/ChestArticV4.tres" id="1_4xvmw"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_e06a2"]
+[ext_resource type="Texture2D" uid="uid://138sqd3fa8e0" path="res://Art_PNG/Item_Equipment_Vest1v2_Artic.png" id="3_m6lln"]
 
 [resource]
 script = ExtResource("2_e06a2")
-name = "Artic vest V4"
-description = ""
+name = "Stab-proof Vest"
+description = "Is it time already for you to ruin my day? "
 tags = Array[StringName]([])
+texture = ExtResource("3_m6lln")
 texture_scale = 1.0
 max_stack_count = 1
 in_inventory_width = 1
-in_inventory_height = 1
+in_inventory_height = 2
 slot_flags = 524289
 custom_data = ExtResource("1_4xvmw")
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 8
+\"res://Items/Aqua.tres\": 420
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Aqua.tres": 8
+"res://Items/Aqua.tres": 420
 }
 }

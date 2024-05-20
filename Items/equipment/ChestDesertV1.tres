@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("2_8ay1b")
-name = "Desert Vest 1"
-description = ""
+name = "Tactical Vest"
+description = "Dont touch me Im sterile"
 tags = Array[StringName]([])
 texture = ExtResource("3_txbg5")
 texture_scale = 1.0
@@ -18,11 +18,11 @@ slot_flags = 524289
 custom_data = ExtResource("1_04qf1")
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 8
+\"res://Items/Aqua.tres\": 260
 }
 }"
 default_properties = {
 "price": {
-"res://Items/Aqua.tres": 8
+"res://Items/Aqua.tres": 260
 }
 }

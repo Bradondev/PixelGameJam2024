@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://brsqjv5ec7nl2" path="res://Art_UI/Shop_TextureButton, Pressed.png" id="4_repa8"]
 [ext_resource type="AudioStream" uid="uid://b58tbi8netxou" path="res://Audio/Sound Clip - game-start-6104.mp3" id="4_uh4nk"]
 [ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="5_2qcak"]
-[ext_resource type="Theme" path="res://HUB_FontTheme.tres" id="6_o6ojd"]
+[ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="6_o6ojd"]
 [ext_resource type="Texture2D" uid="uid://c27xhpkqpdbwg" path="res://Art_PNG/UI__Artwork/UI_Mission.png" id="7_23aue"]
 [ext_resource type="Texture2D" uid="uid://bbx0hqgr6340o" path="res://Art_PNG/UI__Artwork/UI_Stash_2x.png" id="8_h3kmt"]
 [ext_resource type="Texture2D" uid="uid://btcmsj22xtuqh" path="res://Art_UI/Shop_TextureButton, Normal, Small.png" id="8_nef1m"]
@@ -65,49 +65,49 @@
 
 [sub_resource type="Theme" id="Theme_vs827"]
 
-[sub_resource type="Resource" id="Resource_qgikx"]
+[sub_resource type="Resource" id="Resource_50woj"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_61hq2"]
+[sub_resource type="Resource" id="Resource_cvyjc"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_j2k4j"]
+[sub_resource type="Resource" id="Resource_s5pyg"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_vhjyj"]
+[sub_resource type="Resource" id="Resource_jkavv"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_de6hp"]
+[sub_resource type="Resource" id="Resource_kp78x"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_n28xr"]
+[sub_resource type="Resource" id="Resource_g2wio"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_f60k0"]
+[sub_resource type="Resource" id="Resource_p83ab"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
@@ -336,7 +336,6 @@ bbcode_enabled = true
 text = "[center]Welcome back, [wave]merc[/wave]. live to tella 'nother story, heh? well, about yer business."
 
 [node name="Mission" type="Control" parent="." groups=["Ui"]]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -403,6 +402,7 @@ bbcode_enabled = true
 text = "[center]Depart"
 
 [node name="CompleteButton1" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/Vbox"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("14_e2ur0")
 texture_pressed = ExtResource("4_repa8")
@@ -455,6 +455,7 @@ bbcode_enabled = true
 text = "wow, aren't you a load sack of aqua around here? go on, get out of camp and show us you can atleast get through a single extraction, bro."
 
 [node name="Hbox" type="HBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer/ColorRect/InnerTextMargin/Vbox"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -518,6 +519,7 @@ bbcode_enabled = true
 text = "[center]Depart"
 
 [node name="CompleteButton2" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/Vbox"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("14_e2ur0")
 texture_pressed = ExtResource("4_repa8")
@@ -570,6 +572,7 @@ bbcode_enabled = true
 text = "aight, merc. you been here long enough. time to show us you got the cojones, pendejo. go into that forest over there, yea? bring me back the arm of the biggest one you can find."
 
 [node name="Hbox" type="HBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer/ColorRect/InnerTextMargin/Vbox"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -632,6 +635,7 @@ bbcode_enabled = true
 text = "[center]Depart"
 
 [node name="CompleteButton3" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("14_e2ur0")
 texture_pressed = ExtResource("4_repa8")
@@ -681,9 +685,10 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("6_o6ojd")
 bbcode_enabled = true
-text = "Gonna need you to go down to the aqua planet, it's the one overrunwith gross fish monsters. i really need my hard drive that has my \"favorites\" folder backed up on it."
+text = "Gonna need you to go down to the aqua planet, it's the one over run with gross fish monsters. i really need my hard drive that has my \"favorites\" folder backed up on it."
 
 [node name="Hbox" type="HBoxContainer" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/TextMargin/ColorRect/InnerTextMargin/Vbox"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -944,7 +949,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_qgikx")
+inventory = SubResource("Resource_50woj")
 autosave_file_path = "stash1"
 autosave_intensity = 3
 
@@ -956,7 +961,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_61hq2")
+inventory = SubResource("Resource_cvyjc")
 autosave_file_path = "stash2"
 autosave_intensity = 3
 
@@ -968,7 +973,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_j2k4j")
+inventory = SubResource("Resource_s5pyg")
 autosave_file_path = "stash3"
 autosave_intensity = 3
 
@@ -980,7 +985,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_vhjyj")
+inventory = SubResource("Resource_jkavv")
 autosave_file_path = "stash4"
 autosave_intensity = 3
 
@@ -992,7 +997,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_de6hp")
+inventory = SubResource("Resource_kp78x")
 autosave_file_path = "stash5"
 autosave_intensity = 3
 
@@ -1004,7 +1009,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_n28xr")
+inventory = SubResource("Resource_g2wio")
 autosave_file_path = "stash6"
 autosave_intensity = 3
 
@@ -1016,7 +1021,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_f60k0")
+inventory = SubResource("Resource_p83ab")
 autosave_file_path = "stash7"
 autosave_intensity = 3
 
@@ -1126,6 +1131,7 @@ bbcode_enabled = true
 text = "[center] Description"
 
 [node name="shop" type="Control" parent="." node_paths=PackedStringArray("ShopInven", "shop_manager_2") groups=["Ui"]]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://bw15kfvw5iv4j"]
+
+[ext_resource type="Resource" uid="uid://dysrbiod6auj0" path="res://GD Scripts/Resources/equipment/helmet/HelmetArtic.tres" id="1_oyirj"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_mbgpi"]
+[ext_resource type="Texture2D" uid="uid://ddlaho7fx62vl" path="res://Art_PNG/Item_Equipment_Helmet2v2_Smoke.png" id="3_f84bb"]
+
+[resource]
+script = ExtResource("2_mbgpi")
+name = "Steel Pot"
+description = "goodbye everyone Ill remember you all in therapy"
+tags = Array[StringName]([])
+texture = ExtResource("3_f84bb")
+texture_scale = 1.0
+max_stack_count = 1
+in_inventory_width = 2
+in_inventory_height = 2
+slot_flags = 262145
+custom_data = ExtResource("1_oyirj")
+default_properties_string = "{
+\"price\": {
+\"res://Items/Aqua.tres\": 350
+}
+}"
+default_properties = {
+"price": {
+"res://Items/Aqua.tres": 350
+}
+}

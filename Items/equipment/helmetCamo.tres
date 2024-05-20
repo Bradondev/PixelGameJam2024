@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_2d28a")
-name = "Helmet "
-description = ""
+name = "Kevlar Helmet "
+description = "This isn’t your average every day darkness. This is....ADVANCED darkness"
 tags = Array[StringName]([])
 texture = ExtResource("3_c6bwb")
 texture_scale = 1.0
@@ -16,5 +16,13 @@ in_inventory_width = 2
 in_inventory_height = 2
 slot_flags = 262145
 custom_data = ExtResource("1_do18y")
-default_properties_string = "{}"
-default_properties = {}
+default_properties_string = "{
+\"price\": {
+\"res://Items/Aqua.tres\": 110
+}
+}"
+default_properties = {
+"price": {
+"res://Items/Aqua.tres": 110
+}
+}
