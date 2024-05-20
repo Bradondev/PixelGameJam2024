@@ -1,13 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://1qnppnv1aduu"]
+[gd_scene load_steps=17 format=3 uid="uid://1qnppnv1aduu"]
 
 [ext_resource type="Script" path="res://GD Scripts/LootBox.gd" id="1_85p3c"]
 [ext_resource type="Texture2D" uid="uid://c152raqpp2x57" path="res://Art_PNG/Map_Props/Props_Lootbox_Small_Opened (Outlined).png" id="2_bdkm1"]
 [ext_resource type="Texture2D" uid="uid://cn10askpyfxeb" path="res://Art_PNG/Map_Props/Props_Lootbox_Small_Opened.png" id="3_o7f58"]
 [ext_resource type="Texture2D" uid="uid://83vrxel4as5h" path="res://Art_PNG/Map_Props/Props_Lootbox_Small_Locked (Outlined).png" id="4_l6uq6"]
 [ext_resource type="Texture2D" uid="uid://dw7v51siliyam" path="res://Art_PNG/Map_Props/Props_Lootbox_Small_Locked.png" id="5_bbrgm"]
-[ext_resource type="Resource" uid="uid://b0x03nmjjk3ur" path="res://Items/Contents/LootV2.tres" id="6_acajs"]
-[ext_resource type="Resource" uid="uid://u6cm4c1s2oup" path="res://Items/Contents/Bullets.tres" id="7_j06fx"]
-[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="8_urjr1"]
+[ext_resource type="Resource" uid="uid://cpa013vmp2atu" path="res://Items/Contents/LootBox3.tres" id="6_aqmwk"]
 [ext_resource type="PackedScene" uid="uid://bc4j42x2jqd7o" path="res://Scene/inventory/bunker.tscn" id="9_3e8ma"]
 [ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="10_v3t5l"]
 [ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="11_gh3eg"]
@@ -16,22 +14,10 @@
 [ext_resource type="FontFile" uid="uid://dmo6e5w4r5tmf" path="res://Fonts/Pixels (16px).ttf" id="14_adi28"]
 [ext_resource type="PackedScene" uid="uid://bm88u0af736iq" path="res://Scene_Sub/InteractParticles_Gold.tscn" id="15_r5kfk"]
 
-[sub_resource type="Resource" id="Resource_mgxy1"]
-script = ExtResource("8_urjr1")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("6_acajs"), ExtResource("6_acajs"), ExtResource("6_acajs"), ExtResource("7_j06fx"), ExtResource("7_j06fx"), ExtResource("7_j06fx"), ExtResource("7_j06fx")])
-item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
-item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0])
-repeat_post_chance = true
-randomize_locations = true
-delay_between_items = 0.0
-spread_distance = 32.0
-spread_cone_degrees = 360.0
-spread_angle_degrees = 0.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1g03"]
 size = Vector2(35, 21)
 
-[sub_resource type="Resource" id="Resource_ji7rk"]
+[sub_resource type="Resource" id="Resource_j3wr0"]
 resource_local_to_scene = true
 script = ExtResource("10_v3t5l")
 height = 6
@@ -50,7 +36,7 @@ HighLightSprite = ExtResource("4_l6uq6")
 OgSprite = ExtResource("5_bbrgm")
 Opentime = 1.0
 HasInventory = true
-InveentroyContent = SubResource("Resource_mgxy1")
+InveentroyContent = ExtResource("6_aqmwk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -3)
@@ -80,7 +66,7 @@ offset_left = 374.0
 offset_top = 299.0
 offset_right = 566.0
 offset_bottom = 491.0
-inventory = SubResource("Resource_ji7rk")
+inventory = SubResource("Resource_j3wr0")
 init_contents = true
 autosave_file_path = ""
 
