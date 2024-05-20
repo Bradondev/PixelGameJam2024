@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://d1ui8lkg8n8hk"]
+[gd_scene load_steps=76 format=3 uid="uid://d1ui8lkg8n8hk"]
 
 [ext_resource type="Script" path="res://Scene/hub.gd" id="1_tbohb"]
 [ext_resource type="AudioStream" uid="uid://c2q0hvwighqiw" path="res://Audio/Song - Kevin MacLeod - 8bit Dungeon Boss NO COPYRIGHT 8-bit Music.mp3" id="2_oxanp"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://brsqjv5ec7nl2" path="res://Art_UI/Shop_TextureButton, Pressed.png" id="4_repa8"]
 [ext_resource type="AudioStream" uid="uid://b58tbi8netxou" path="res://Audio/Sound Clip - game-start-6104.mp3" id="4_uh4nk"]
 [ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="5_2qcak"]
-[ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="6_o6ojd"]
+[ext_resource type="Theme" path="res://HUB_FontTheme.tres" id="6_o6ojd"]
 [ext_resource type="Texture2D" uid="uid://c27xhpkqpdbwg" path="res://Art_PNG/UI__Artwork/UI_Mission.png" id="7_23aue"]
 [ext_resource type="Texture2D" uid="uid://bbx0hqgr6340o" path="res://Art_PNG/UI__Artwork/UI_Stash_2x.png" id="8_h3kmt"]
 [ext_resource type="Texture2D" uid="uid://btcmsj22xtuqh" path="res://Art_UI/Shop_TextureButton, Normal, Small.png" id="8_nef1m"]
@@ -62,53 +62,52 @@
 [ext_resource type="PackedScene" uid="uid://cag704jcu3o3i" path="res://Scene/inventory/stashgrid.tscn" id="52_1qi0f"]
 [ext_resource type="Resource" uid="uid://douiehmw6t3m6" path="res://Items/Contents/LootV1.tres" id="53_gmg0c"]
 [ext_resource type="PackedScene" uid="uid://drf6quwd64if4" path="res://Scene_Menu/first_time_menu.tscn" id="58_dyap8"]
-[ext_resource type="PackedScene" uid="uid://dd0hqlllt0tqs" path="res://Scene/Map_Earth.tscn" id="61_k6801"]
 
 [sub_resource type="Theme" id="Theme_vs827"]
 
-[sub_resource type="Resource" id="Resource_qieah"]
+[sub_resource type="Resource" id="Resource_qgikx"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_u4hvf"]
+[sub_resource type="Resource" id="Resource_61hq2"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_oaweq"]
+[sub_resource type="Resource" id="Resource_j2k4j"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_60j3v"]
+[sub_resource type="Resource" id="Resource_vhjyj"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_q0aid"]
+[sub_resource type="Resource" id="Resource_de6hp"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_hb7vt"]
+[sub_resource type="Resource" id="Resource_n28xr"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_7tts8"]
+[sub_resource type="Resource" id="Resource_f60k0"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
@@ -945,7 +944,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_qieah")
+inventory = SubResource("Resource_qgikx")
 autosave_file_path = "stash1"
 autosave_intensity = 3
 
@@ -957,7 +956,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_u4hvf")
+inventory = SubResource("Resource_61hq2")
 autosave_file_path = "stash2"
 autosave_intensity = 3
 
@@ -969,7 +968,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_oaweq")
+inventory = SubResource("Resource_j2k4j")
 autosave_file_path = "stash3"
 autosave_intensity = 3
 
@@ -981,7 +980,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_60j3v")
+inventory = SubResource("Resource_vhjyj")
 autosave_file_path = "stash4"
 autosave_intensity = 3
 
@@ -993,7 +992,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_q0aid")
+inventory = SubResource("Resource_de6hp")
 autosave_file_path = "stash5"
 autosave_intensity = 3
 
@@ -1005,7 +1004,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_hb7vt")
+inventory = SubResource("Resource_n28xr")
 autosave_file_path = "stash6"
 autosave_intensity = 3
 
@@ -1017,7 +1016,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_7tts8")
+inventory = SubResource("Resource_f60k0")
 autosave_file_path = "stash7"
 autosave_intensity = 3
 
@@ -1330,7 +1329,7 @@ hide_cursor = true
 
 [node name="Load_Screen1" parent="." instance=ExtResource("17_yitpx")]
 visible = false
-Scene = ExtResource("61_k6801")
+Scene = ExtResource("18_i45gf")
 
 [node name="Load_Screen2" parent="." instance=ExtResource("17_yitpx")]
 visible = false

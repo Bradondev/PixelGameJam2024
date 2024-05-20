@@ -110,11 +110,12 @@ func _on_equip_item_stack_added(item_stack: ItemStack) -> void:
 		gun_2.CurrentGun =item_stack.item_type.custom_data
 		SetGun2()
 	elif item_stack.position_in_inventory == Vector2(2,0):
-		print_debug("Throwable")
-	elif item_stack.position_in_inventory == Vector2(3,0):
 		print_debug("Helm")
+		composite_sprite.SwitchOutHelmet(item_stack.item_type.custom_data.Type)
+	elif item_stack.position_in_inventory == Vector2(3,0):
+		composite_sprite.SwitchOutChest(item_stack.item_type.custom_data.Type)
 	elif item_stack.position_in_inventory == Vector2(4,0):
-		print_debug("Chest")
+		composite_sprite.SwitchOutPant(item_stack.item_type.custom_data.Type)
 	elif item_stack.position_in_inventory == Vector2(5,0):
 		print_debug("plants")
 	elif item_stack.position_in_inventory == Vector2(6,0):
@@ -131,11 +132,11 @@ func _on_equip_item_stack_removed(item_stack: ItemStack) -> void:
 		gun_2.CurrentGun = null
 		print_debug("weapon 2")
 	elif item_stack.position_in_inventory == Vector2(2,0):
-		print_debug("Throwable")
+		composite_sprite.SwitchOutHelmet("none")
 	elif item_stack.position_in_inventory == Vector2(3,0):
-		print_debug("Helm")
+		composite_sprite.SwitchOutChest("none")
 	elif item_stack.position_in_inventory == Vector2(4,0):
-		print_debug("Chest")
+		composite_sprite.SwitchOutPant("none")
 	elif item_stack.position_in_inventory == Vector2(5,0):
 		print_debug("plants")
 	elif item_stack.position_in_inventory == Vector2(6,0):

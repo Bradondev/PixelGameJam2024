@@ -74,8 +74,6 @@ texture = ExtResource("2_y0rv8")
 
 [node name="CompositeSprite" parent="." instance=ExtResource("2_c03tf")]
 testing = false
-guns_color = null
-guns_reticle = null
 
 [node name="Gun" parent="." node_paths=PackedStringArray("PlayerInventory", "Ui", "ammoLabel", "player") instance=ExtResource("2_kanhx")]
 process_mode = 4

@@ -66,7 +66,7 @@ func _ready():
 	_cameraToggle(testing)
 
 func _cameraToggle(status):
-	$"Camera (testing)".enabled = status
+	$"Camera (testing)" .enabled = status
 	if status == true:
 		$ReticleArm/Reticle.texture = testing_gunReticle
 		$Sprites/Gun.texture = testing_gunColor

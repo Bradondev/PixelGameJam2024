@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_gp2n1")
 HealthBuff = 5
-Type = "Artic"
+Type = "artic"
