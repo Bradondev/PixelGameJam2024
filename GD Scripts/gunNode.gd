@@ -20,6 +20,7 @@ var isShooting = false
 @onready var reload_bar_ui : HBoxContainer = $"../UI/ReloadMargin/ReloadBar"
 @onready var reticle: Sprite2D =$Reticle
 
+var CanMove = true
 func _physics_process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 	if !CurrentGun: return
@@ -88,7 +89,7 @@ func ShootGun():
 			player.SetAnim("idle")
 			print_debug("out of ammo") 
 			return
-			
+		CanMove = false
 		for i in CurrentGun.ButtetCount:
 			var newBullet = CurrentGun.BulletScene.instantiate()
 			if CurrentGun.ButtetCount == 1:
@@ -106,6 +107,7 @@ func ShootGun():
 			
 			get_tree().root.call_deferred("add_child", newBullet)
 		player.SetAnim("shoot")
+		
 		audio_stream_player.play()
 		CanShoot = false
 		await  get_tree().create_timer(1/CurrentGun.ROF).timeout

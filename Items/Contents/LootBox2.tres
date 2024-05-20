@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemInstantiator" load_steps=4 format=3 uid="uid://dyqh60j5moq11"]
+
+[ext_resource type="Resource" uid="uid://b0x03nmjjk3ur" path="res://Items/Contents/LootV2.tres" id="1_csbl2"]
+[ext_resource type="Resource" uid="uid://u6cm4c1s2oup" path="res://Items/Contents/Bullets.tres" id="1_fhuri"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="3_cfgkg"]
+
+[resource]
+script = ExtResource("3_cfgkg")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_csbl2"), ExtResource("1_csbl2"), ExtResource("1_fhuri"), ExtResource("1_fhuri"), ExtResource("1_csbl2")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0

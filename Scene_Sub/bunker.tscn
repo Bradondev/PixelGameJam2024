@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://qjsl7x5vcuya"]
+[gd_scene load_steps=15 format=3 uid="uid://qjsl7x5vcuya"]
 
 [ext_resource type="Script" path="res://GD Scripts/InterActAble.gd" id="1_rlumb"]
 [ext_resource type="Texture2D" uid="uid://bvudj8mamjji8" path="res://Art_PNG/Map_Props/Props_Bunker_Left (Outlined).png" id="2_4pgw5"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bc4j42x2jqd7o" path="res://Scene/inventory/bunker.tscn" id="4_iiu71"]
 [ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="5_fbdim"]
 [ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="6_gw4pr"]
+[ext_resource type="Resource" uid="uid://pw58bob4vyby" path="res://Items/Contents/SellAble.tres" id="7_2wicm"]
 [ext_resource type="Texture2D" uid="uid://dcfxp0gtvvhyu" path="res://Art_UI/ProgressBar_PlayerResource (Over).png" id="7_its3g"]
 [ext_resource type="Texture2D" uid="uid://3vmgjxrcavhb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Green.png" id="8_2w6o4"]
 [ext_resource type="PackedScene" uid="uid://bm88u0af736iq" path="res://Scene_Sub/InteractParticles_Gold.tscn" id="10_y4wih"]
@@ -15,6 +16,7 @@
 size = Vector2(75, 31)
 
 [sub_resource type="Resource" id="Resource_b4lgt"]
+resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("5_fbdim")
 height = 7
@@ -62,14 +64,13 @@ debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
 
 [node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("4_iiu71")]
 visible = false
-custom_minimum_size = Vector2(224, 224)
 offset_left = 340.0
 offset_top = 314.0
 offset_right = 564.0
 offset_bottom = 538.0
 inventory = SubResource("Resource_b4lgt")
+contents = ExtResource("7_2wicm")
 init_contents = true
-cell_size = Vector2(32, 32)
 autosave_file_path = ""
 
 [node name="Label" type="Label" parent="."]

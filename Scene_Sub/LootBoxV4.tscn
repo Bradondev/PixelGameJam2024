@@ -1,0 +1,127 @@
+[gd_scene load_steps=20 format=3 uid="uid://dqrnk6nnbvg5t"]
+
+[ext_resource type="Script" path="res://GD Scripts/LootBox.gd" id="1_me5ir"]
+[ext_resource type="Texture2D" uid="uid://c152raqpp2x57" path="res://Art_PNG/Map_Props/Props_Lootbox_Small_Opened (Outlined).png" id="2_45mfp"]
+[ext_resource type="Texture2D" uid="uid://cn10askpyfxeb" path="res://Art_PNG/Map_Props/Props_Lootbox_Small_Opened.png" id="3_53wyl"]
+[ext_resource type="Texture2D" uid="uid://83vrxel4as5h" path="res://Art_PNG/Map_Props/Props_Lootbox_Small_Locked (Outlined).png" id="4_5mt55"]
+[ext_resource type="Texture2D" uid="uid://dw7v51siliyam" path="res://Art_PNG/Map_Props/Props_Lootbox_Small_Locked.png" id="5_22hhd"]
+[ext_resource type="Resource" uid="uid://b0x03nmjjk3ur" path="res://Items/Contents/LootV2.tres" id="6_4oop8"]
+[ext_resource type="Resource" uid="uid://u6cm4c1s2oup" path="res://Items/Contents/Bullets.tres" id="7_rpra3"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="8_0okwc"]
+[ext_resource type="PackedScene" uid="uid://bc4j42x2jqd7o" path="res://Scene/inventory/bunker.tscn" id="9_trjv7"]
+[ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="10_dynfq"]
+[ext_resource type="Texture2D" uid="uid://bthc3a6dnmkgh" path="res://Art_UI/ProgressBar_PlayerResource (Under), v2.png" id="11_ne11a"]
+[ext_resource type="Texture2D" uid="uid://dcfxp0gtvvhyu" path="res://Art_UI/ProgressBar_PlayerResource (Over).png" id="12_vg4bi"]
+[ext_resource type="Texture2D" uid="uid://3vmgjxrcavhb" path="res://Art_UI/ProgressBar_PlayerResource (Value), Green.png" id="13_nfegt"]
+[ext_resource type="FontFile" uid="uid://dmo6e5w4r5tmf" path="res://Fonts/Pixels (16px).ttf" id="14_bw5nq"]
+[ext_resource type="PackedScene" uid="uid://bm88u0af736iq" path="res://Scene_Sub/InteractParticles_Gold.tscn" id="15_byfo2"]
+
+[sub_resource type="Resource" id="Resource_mgxy1"]
+script = ExtResource("8_0okwc")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("6_4oop8"), ExtResource("6_4oop8"), ExtResource("6_4oop8"), ExtResource("7_rpra3"), ExtResource("7_rpra3"), ExtResource("7_rpra3"), ExtResource("7_rpra3")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1g03"]
+size = Vector2(35, 21)
+
+[sub_resource type="Resource" id="Resource_ji7rk"]
+resource_local_to_scene = true
+script = ExtResource("10_dynfq")
+height = 6
+width = 6
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r0vh5"]
+polygon = PackedVector2Array(-10.5, 4.5, 11, 4.5, 11, 0, -11, 0, -11, 4.5)
+
+[node name="LootBoxs" type="StaticBody2D" node_paths=PackedStringArray("HighLightArea", "InterArea") groups=["Bunker", "Prop"]]
+script = ExtResource("1_me5ir")
+OpenedSpriteHighLight = ExtResource("2_45mfp")
+OpenedSprite = ExtResource("3_53wyl")
+HighLightArea = NodePath("InterActArea")
+InterArea = NodePath("InterActArea")
+HighLightSprite = ExtResource("4_5mt55")
+OgSprite = ExtResource("5_22hhd")
+Opentime = 1.0
+HasInventory = true
+InveentroyContent = SubResource("Resource_mgxy1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("5_22hhd")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(-29, -13)
+polygon = PackedVector2Array(17.5, 11.2, 17.5, 18.7, 39.5, 18.7, 39.5, 11.2)
+
+[node name="InterActArea" type="Area2D" parent="."]
+position = Vector2(0, 6.3)
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
+position = Vector2(0, -7.8)
+shape = SubResource("RectangleShape2D_q1g03")
+debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("9_trjv7")]
+visible = false
+custom_minimum_size = Vector2(192, 192)
+offset_left = 374.0
+offset_top = 299.0
+offset_right = 566.0
+offset_bottom = 491.0
+inventory = SubResource("Resource_ji7rk")
+init_contents = true
+autosave_file_path = ""
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 3.0
+offset_top = -21.0
+offset_right = 28.0
+offset_bottom = 2.0
+text = "E"
+horizontal_alignment = 1
+
+[node name="BotBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -25.5
+offset_top = -16.0
+offset_right = 70.5
+offset_bottom = -4.0
+scale = Vector2(0.5, 0.5)
+value = 50.0
+texture_under = ExtResource("11_ne11a")
+texture_over = ExtResource("12_vg4bi")
+texture_progress = ExtResource("13_nfegt")
+metadata/_edit_group_ = true
+
+[node name="reloading texts" type="Label" parent="BotBar"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -22.0
+offset_right = 87.0
+offset_bottom = 1.0
+theme_override_fonts/font = ExtResource("14_bw5nq")
+text = "opening"
+horizontal_alignment = 1
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("15_byfo2")]
+position = Vector2(0, 6.5)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource("OccluderPolygon2D_r0vh5")
+
+[connection signal="body_entered" from="InterActArea" to="." method="_on_inter_act_area_body_entered"]
+[connection signal="body_exited" from="InterActArea" to="." method="_on_inter_act_area_body_exited"]

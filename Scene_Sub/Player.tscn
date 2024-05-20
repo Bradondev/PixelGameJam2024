@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cfcc8kd3my6n1" path="res://Art_UI/Equipment_InformationBackground.png" id="7_h428q"]
 [ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="7_pe8uv"]
 [ext_resource type="Texture2D" uid="uid://bpt2kq6c2lbgx" path="res://Art_UI/ProgressBar_Reload (Value), Bullets.png" id="8_1ny82"]
-[ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="8_egc2v"]
+[ext_resource type="Theme" uid="uid://cwptlbkrmqhn4" path="res://HUB_FontTheme.tres" id="8_egc2v"]
 [ext_resource type="Resource" uid="uid://sp77klvw5uhw" path="res://Items/Contents/BasicEqiupment.tres" id="12_b6p14"]
 [ext_resource type="Texture2D" uid="uid://8pco4p25s6q5" path="res://Art_UI/Equipment_Footer_Inventory.png" id="17_3rjy4"]
 [ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="20_kcioh"]

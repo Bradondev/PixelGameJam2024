@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemInstantiator" load_steps=9 format=3 uid="uid://pw58bob4vyby"]
+[gd_resource type="Resource" script_class="ItemInstantiator" load_steps=10 format=3 uid="uid://pw58bob4vyby"]
 
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="1_bxskb"]
 [ext_resource type="Resource" uid="uid://3q0x5qcnqv1g" path="res://Items/others/cat.tres" id="1_d7yi2"]
@@ -8,12 +8,13 @@
 [ext_resource type="Resource" uid="uid://xvt0mrxa1myv" path="res://Items/others/GPUBoard.tres" id="5_e2s7h"]
 [ext_resource type="Resource" uid="uid://b5u47wrake4p0" path="res://Items/others/HDD.tres" id="6_43gve"]
 [ext_resource type="Resource" uid="uid://c1csamo060lwc" path="res://Items/others/WD.tres" id="7_miast"]
+[ext_resource type="Resource" uid="uid://u6cm4c1s2oup" path="res://Items/Contents/Bullets.tres" id="8_qgmma"]
 
 [resource]
 script = ExtResource("1_bxskb")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_d7yi2"), ExtResource("2_qgh16"), ExtResource("3_x4r36"), ExtResource("4_3f6b7"), ExtResource("5_e2s7h"), ExtResource("6_43gve"), ExtResource("7_miast")])
-item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 2), Vector2(1, 2), Vector2(2, 4), Vector2(1, 2), Vector2(3, 5), Vector2(2, 5)])
-item_chances = Array[float]([5.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0])
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_d7yi2"), ExtResource("2_qgh16"), ExtResource("3_x4r36"), ExtResource("4_3f6b7"), ExtResource("5_e2s7h"), ExtResource("6_43gve"), ExtResource("7_miast"), ExtResource("8_qgmma"), ExtResource("8_qgmma")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 2), Vector2(1, 2), Vector2(2, 4), Vector2(1, 2), Vector2(3, 5), Vector2(2, 5), Vector2(2, 5), Vector2(2, 5)])
+item_chances = Array[float]([5.0, 10.0, 10.0, 10.0, 10.0, 10.0, 15.0, 20.0, 20.0])
 repeat_post_chance = true
 randomize_locations = true
 delay_between_items = 0.0

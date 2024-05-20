@@ -51,6 +51,10 @@ var gun_reticle = {
 @onready var chest : Sprite2D = $Sprites/Chest
 @onready var pant : Sprite2D = $Sprites/Bottom
 
+
+func _ready() -> void:
+	chest.texture = null
+	helmet.texture = null
 func AnimPlayer(AnimationName, Frame):
 	sprite_player.play(AnimationName,Frame)
 
