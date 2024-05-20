@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://d1ui8lkg8n8hk"]
+[gd_scene load_steps=78 format=3 uid="uid://d1ui8lkg8n8hk"]
 
 [ext_resource type="Script" path="res://Scene/hub.gd" id="1_tbohb"]
 [ext_resource type="AudioStream" uid="uid://c2q0hvwighqiw" path="res://Audio/Song - Kevin MacLeod - 8bit Dungeon Boss NO COPYRIGHT 8-bit Music.mp3" id="2_oxanp"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://01g12v5bkbi7" path="res://Art_UI/Equipment_Header_Inventory.png" id="16_52o3i"]
 [ext_resource type="Script" path="res://GD Scripts/Stash.gd" id="16_vhla5"]
 [ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="17_yitpx"]
-[ext_resource type="PackedScene" uid="uid://dd0hqlllt0tqs" path="res://Scene/Map_Earth.tscn" id="18_i45gf"]
 [ext_resource type="Texture2D" uid="uid://csnkf40eamr8q" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell1.png" id="21_dqyos"]
 [ext_resource type="Texture2D" uid="uid://243g83cqtkxc" path="res://Art_PNG/Item_Currency_Aqua.png" id="21_yk6iy"]
 [ext_resource type="Texture2D" uid="uid://ctqo222sv0dn" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell2.png" id="22_7l100"]
@@ -62,52 +61,55 @@
 [ext_resource type="PackedScene" uid="uid://cag704jcu3o3i" path="res://Scene/inventory/stashgrid.tscn" id="52_1qi0f"]
 [ext_resource type="Resource" uid="uid://douiehmw6t3m6" path="res://Items/Contents/LootV1.tres" id="53_gmg0c"]
 [ext_resource type="PackedScene" uid="uid://drf6quwd64if4" path="res://Scene_Menu/first_time_menu.tscn" id="58_dyap8"]
+[ext_resource type="PackedScene" uid="uid://dkrp2wctpx7k8" path="res://Scene/Level1.tscn" id="62_gjham"]
+[ext_resource type="PackedScene" uid="uid://ofeodv7xg8ye" path="res://Scene/Level2.tscn" id="63_6idl0"]
+[ext_resource type="PackedScene" uid="uid://cd3hwjp6q5eg8" path="res://Scene/level3.tscn" id="64_kdnkp"]
 
 [sub_resource type="Theme" id="Theme_vs827"]
 
-[sub_resource type="Resource" id="Resource_50woj"]
+[sub_resource type="Resource" id="Resource_u7dvs"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_cvyjc"]
+[sub_resource type="Resource" id="Resource_1utbf"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_s5pyg"]
+[sub_resource type="Resource" id="Resource_50u3d"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_jkavv"]
+[sub_resource type="Resource" id="Resource_tuvd2"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_kp78x"]
+[sub_resource type="Resource" id="Resource_ps86a"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_g2wio"]
+[sub_resource type="Resource" id="Resource_6ty02"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_p83ab"]
+[sub_resource type="Resource" id="Resource_337ci"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
@@ -336,6 +338,7 @@ bbcode_enabled = true
 text = "[center]Welcome back, [wave]merc[/wave]. live to tella 'nother story, heh? well, about yer business."
 
 [node name="Mission" type="Control" parent="." groups=["Ui"]]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -949,7 +952,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_50woj")
+inventory = SubResource("Resource_u7dvs")
 autosave_file_path = "stash1"
 autosave_intensity = 3
 
@@ -961,7 +964,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_cvyjc")
+inventory = SubResource("Resource_1utbf")
 autosave_file_path = "stash2"
 autosave_intensity = 3
 
@@ -973,7 +976,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_s5pyg")
+inventory = SubResource("Resource_50u3d")
 autosave_file_path = "stash3"
 autosave_intensity = 3
 
@@ -985,7 +988,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_jkavv")
+inventory = SubResource("Resource_tuvd2")
 autosave_file_path = "stash4"
 autosave_intensity = 3
 
@@ -997,7 +1000,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_kp78x")
+inventory = SubResource("Resource_ps86a")
 autosave_file_path = "stash5"
 autosave_intensity = 3
 
@@ -1009,7 +1012,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_g2wio")
+inventory = SubResource("Resource_6ty02")
 autosave_file_path = "stash6"
 autosave_intensity = 3
 
@@ -1021,7 +1024,7 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_p83ab")
+inventory = SubResource("Resource_337ci")
 autosave_file_path = "stash7"
 autosave_intensity = 3
 
@@ -1335,15 +1338,15 @@ hide_cursor = true
 
 [node name="Load_Screen1" parent="." instance=ExtResource("17_yitpx")]
 visible = false
-Scene = ExtResource("18_i45gf")
+Scene = ExtResource("62_gjham")
 
 [node name="Load_Screen2" parent="." instance=ExtResource("17_yitpx")]
 visible = false
-Scene = ExtResource("18_i45gf")
+Scene = ExtResource("63_6idl0")
 
 [node name="Load_Screen3" parent="." instance=ExtResource("17_yitpx")]
 visible = false
-Scene = ExtResource("18_i45gf")
+Scene = ExtResource("64_kdnkp")
 
 [node name="Load_Screen4" parent="." instance=ExtResource("17_yitpx")]
 visible = false
