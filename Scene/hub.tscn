@@ -65,49 +65,49 @@
 
 [sub_resource type="Theme" id="Theme_vs827"]
 
-[sub_resource type="Resource" id="Resource_xaxap"]
+[sub_resource type="Resource" id="Resource_rai3h"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_g3eww"]
+[sub_resource type="Resource" id="Resource_l5xgi"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_6khro"]
+[sub_resource type="Resource" id="Resource_hl1tj"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_vf7nt"]
+[sub_resource type="Resource" id="Resource_v22h1"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_8d0ra"]
+[sub_resource type="Resource" id="Resource_gc7os"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_bhsjj"]
+[sub_resource type="Resource" id="Resource_sluw4"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_a25ot"]
+[sub_resource type="Resource" id="Resource_irak3"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("44_fynms")
@@ -748,7 +748,6 @@ bbcode_enabled = true
 text = "[center]back"
 
 [node name="Stash" type="Control" parent="." groups=["Ui"]]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -940,11 +939,11 @@ color = Color(0.352941, 0.176471, 0.14902, 1)
 [node name="stash1" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 2
-offset_left = 242.0
+offset_left = 273.0
 offset_top = 5.0
-offset_right = 626.0
+offset_right = 657.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_xaxap")
+inventory = SubResource("Resource_rai3h")
 autosave_file_path = "stash1"
 autosave_intensity = 3
 
@@ -952,11 +951,11 @@ autosave_intensity = 3
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
-offset_left = 242.0
+offset_left = 273.0
 offset_top = 5.0
-offset_right = 626.0
+offset_right = 657.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_g3eww")
+inventory = SubResource("Resource_l5xgi")
 autosave_file_path = "stash2"
 autosave_intensity = 3
 
@@ -964,11 +963,11 @@ autosave_intensity = 3
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
-offset_left = 242.0
+offset_left = 273.0
 offset_top = 5.0
-offset_right = 626.0
+offset_right = 657.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_6khro")
+inventory = SubResource("Resource_hl1tj")
 autosave_file_path = "stash3"
 autosave_intensity = 3
 
@@ -976,11 +975,11 @@ autosave_intensity = 3
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
-offset_left = 242.0
+offset_left = 273.0
 offset_top = 5.0
-offset_right = 626.0
+offset_right = 657.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_vf7nt")
+inventory = SubResource("Resource_v22h1")
 autosave_file_path = "stash4"
 autosave_intensity = 3
 
@@ -988,11 +987,11 @@ autosave_intensity = 3
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
-offset_left = 242.0
+offset_left = 273.0
 offset_top = 5.0
-offset_right = 626.0
+offset_right = 657.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_8d0ra")
+inventory = SubResource("Resource_gc7os")
 autosave_file_path = "stash5"
 autosave_intensity = 3
 
@@ -1000,11 +999,11 @@ autosave_intensity = 3
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
-offset_left = 242.0
+offset_left = 273.0
 offset_top = 5.0
-offset_right = 626.0
+offset_right = 657.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_bhsjj")
+inventory = SubResource("Resource_sluw4")
 autosave_file_path = "stash6"
 autosave_intensity = 3
 
@@ -1012,11 +1011,11 @@ autosave_intensity = 3
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
-offset_left = 242.0
+offset_left = 273.0
 offset_top = 5.0
-offset_right = 626.0
+offset_right = 657.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_a25ot")
+inventory = SubResource("Resource_irak3")
 autosave_file_path = "stash7"
 autosave_intensity = 3
 
@@ -1126,6 +1125,7 @@ bbcode_enabled = true
 text = "[center] Description"
 
 [node name="shop" type="Control" parent="." node_paths=PackedStringArray("ShopInven", "shop_manager_2") groups=["Ui"]]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

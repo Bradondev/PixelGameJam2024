@@ -7,9 +7,9 @@
 [sub_resource type="Resource" id="Resource_om0lg"]
 script = ExtResource("2_wl4ds")
 name = ""
-results = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([])
-weights = Array[float]([])
-count_ranges = Array[Vector2]([])
+results = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([null])
+weights = Array[float]([1.0])
+count_ranges = Array[Vector2]([Vector2(1, 1)])
 
 [resource]
 script = ExtResource("2_qw5vt")

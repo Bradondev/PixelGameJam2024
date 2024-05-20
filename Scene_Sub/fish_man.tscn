@@ -324,6 +324,7 @@ collision_layer = 257
 platform_on_leave = 2
 script = ExtResource("1_lvy0o")
 animation_player = NodePath("AnimationPlayer")
+CurrentHealth = 90
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)

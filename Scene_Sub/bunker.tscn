@@ -15,7 +15,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1g03"]
 size = Vector2(75, 31)
 
-[sub_resource type="Resource" id="Resource_b4lgt"]
+[sub_resource type="Resource" id="Resource_8lcl7"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
 script = ExtResource("5_fbdim")
@@ -33,6 +33,7 @@ HighLightSprite = ExtResource("2_4pgw5")
 OgSprite = ExtResource("3_53vcx")
 Opentime = 1.0
 HasInventory = true
+InveentroyContent = ExtResource("7_2wicm")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-83.72, 18.3)
@@ -68,7 +69,7 @@ offset_left = 340.0
 offset_top = 314.0
 offset_right = 564.0
 offset_bottom = 538.0
-inventory = SubResource("Resource_b4lgt")
+inventory = SubResource("Resource_8lcl7")
 contents = ExtResource("7_2wicm")
 init_contents = true
 autosave_file_path = ""

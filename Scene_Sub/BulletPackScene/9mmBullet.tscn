@@ -59,6 +59,7 @@ size = Vector2(4, 1)
 size = Vector2(4, 1)
 
 [node name="9MmBullet" type="CharacterBody2D"]
+collision_layer = 0
 script = ExtResource("1_iuxtd")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

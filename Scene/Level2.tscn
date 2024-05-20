@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ofeodv7xg8ye"]
+[gd_scene load_steps=17 format=3 uid="uid://ofeodv7xg8ye"]
 
 [ext_resource type="TileSet" uid="uid://cw8wysuqqyfiq" path="res://Resources/Earthlike_Tilemap.tres" id="1_tx0un"]
 [ext_resource type="PackedScene" uid="uid://bru61wwju326n" path="res://Scene_Sub/bunkerFront.tscn" id="2_021tj"]
@@ -6,11 +6,28 @@
 [ext_resource type="PackedScene" uid="uid://qjsl7x5vcuya" path="res://Scene_Sub/bunker.tscn" id="4_iu8rs"]
 [ext_resource type="PackedScene" uid="uid://cqy4p7dbms0kf" path="res://Scene_Sub/LootBox.tscn" id="4_odoyk"]
 [ext_resource type="PackedScene" uid="uid://85xt1o8ygj37" path="res://Scene_Sub/Backpack.tscn" id="5_1a74d"]
+[ext_resource type="Resource" uid="uid://u6cm4c1s2oup" path="res://Items/Contents/Bullets.tres" id="5_jl6ma"]
+[ext_resource type="Resource" uid="uid://douiehmw6t3m6" path="res://Items/Contents/LootV1.tres" id="6_lxw2p"]
 [ext_resource type="Texture2D" uid="uid://c0x81ue55tq45" path="res://Art_PNG/Map_Props/Props_HDD.png" id="6_obexs"]
 [ext_resource type="PackedScene" uid="uid://ct36nufjxft58" path="res://Scene_Sub/GlassPodBlue1.tscn" id="7_b40o8"]
 [ext_resource type="PackedScene" uid="uid://ieghweqpyuq5" path="res://Scene_Sub/GlassPodBlue2.tscn" id="7_go4xj"]
+[ext_resource type="Resource" uid="uid://b0x03nmjjk3ur" path="res://Items/Contents/LootV2.tres" id="7_yy5pm"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="8_0o7pr"]
 [ext_resource type="Texture2D" uid="uid://ihf73yyu0jor" path="res://Art_PNG/Map_Props/Props_Table_KnockedOverUp.png" id="8_xkx00"]
 [ext_resource type="PackedScene" uid="uid://dx6l3e6fwirv2" path="res://Scene_Sub/GlassPodRed1.tscn" id="11_o040p"]
+
+[sub_resource type="Resource" id="Resource_xxgeg"]
+resource_local_to_scene = true
+script = ExtResource("8_0o7pr")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("5_jl6ma"), ExtResource("6_lxw2p"), ExtResource("6_lxw2p"), ExtResource("7_yy5pm")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
 
 [node name="Level2" type="Node2D"]
 
@@ -50,6 +67,7 @@ position = Vector2(-2764, 1049)
 [node name="LootBoxs" parent="World/Loot" instance=ExtResource("4_odoyk")]
 y_sort_enabled = true
 position = Vector2(1989, 1595)
+InveentroyContent = SubResource("Resource_xxgeg")
 
 [node name="Bunker2" parent="World/Loot" instance=ExtResource("4_iu8rs")]
 position = Vector2(2634, -435)

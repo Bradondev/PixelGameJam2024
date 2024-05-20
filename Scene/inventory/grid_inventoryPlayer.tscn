@@ -14,13 +14,13 @@
 [sub_resource type="Resource" id="Resource_plmu5"]
 resource_name = "GridInventory"
 script = ExtResource("2_f33rt")
-height = 9
-width = 6
+height = 11
+width = 8
 
 [node name="MarginContainer" type="MarginContainer" groups=["playerInv"]]
-custom_minimum_size = Vector2(192, 288)
-offset_right = 192.0
-offset_bottom = 288.0
+custom_minimum_size = Vector2(256, 352)
+offset_right = 256.0
+offset_bottom = 352.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_constants/margin_right = 0
@@ -51,7 +51,7 @@ expand_mode = 0
 stretch_mode = 1
 
 [node name="BG" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(192, 288)
+custom_minimum_size = Vector2(256, 352)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

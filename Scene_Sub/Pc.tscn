@@ -57,11 +57,10 @@ debug_color = Color(0.521569, 0.572549, 0.0666667, 0.419608)
 [node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("6_a6v2t")]
 visible = false
 custom_minimum_size = Vector2(128, 96)
-offset_left = 642.0
-offset_top = 123.0
-offset_right = 770.0
-offset_bottom = 219.0
-scale = Vector2(2, 2)
+offset_left = 360.0
+offset_top = 382.0
+offset_right = 488.0
+offset_bottom = 478.0
 inventory = SubResource("Resource_b4lgt")
 init_contents = true
 autosave_file_path = ""

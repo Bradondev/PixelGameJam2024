@@ -1,14 +1,16 @@
-[gd_resource type="Resource" script_class="ItemInstantiator" load_steps=3 format=3 uid="uid://cbespv4y0u4lh"]
+[gd_resource type="Resource" script_class="ItemInstantiator" load_steps=5 format=3 uid="uid://cbespv4y0u4lh"]
 
 [ext_resource type="Resource" uid="uid://u6cm4c1s2oup" path="res://Items/Contents/Bullets.tres" id="1_0fgd7"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="1_8kcl7"]
+[ext_resource type="Resource" uid="uid://douiehmw6t3m6" path="res://Items/Contents/LootV1.tres" id="2_rqi8i"]
+[ext_resource type="Resource" uid="uid://b0x03nmjjk3ur" path="res://Items/Contents/LootV2.tres" id="3_fcjlp"]
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_8kcl7")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_0fgd7")])
-item_repeat_ranges = Array[Vector2]([Vector2(1, 1)])
-item_chances = Array[float]([100.0])
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_0fgd7"), ExtResource("2_rqi8i"), ExtResource("2_rqi8i"), ExtResource("3_fcjlp")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
 repeat_post_chance = true
 randomize_locations = true
 delay_between_items = 0.0

@@ -61,7 +61,7 @@ collision_layer = 258
 script = ExtResource("1_022et")
 clearer = NodePath("clearPlayerInven")
 inventory = NodePath("UI/Inventory")
-speed = 5000
+speed = 6000
 PlayerInventory = NodePath("UI/Inventory/Margin/EquipmentAndInventory/InventoryVbox/player")
 curent_weapon = NodePath("UI/CurentWeapon")
 
@@ -171,7 +171,7 @@ theme_override_constants/margin_right = 10
 
 [node name="EquipmentAndInventory" type="HBoxContainer" parent="UI/Inventory/Margin"]
 layout_mode = 2
-theme_override_constants/separation = 500
+theme_override_constants/separation = 450
 alignment = 1
 
 [node name="InventoryVbox" type="VBoxContainer" parent="UI/Inventory/Margin/EquipmentAndInventory"]
@@ -188,7 +188,7 @@ layout_mode = 2
 size_flags_vertical = 4
 contents = ExtResource("12_b6p14")
 init_contents = true
-interaction_mode = 29
+interaction_mode = 13
 autosave_file_path = ""
 autosave_intensity = 1
 

@@ -24,11 +24,13 @@ func _ready() -> void:
 	pass
 
 func _on_inter_act_area_body_entered(body: Node2D) -> void:
+	if !body.is_in_group("Player") : return
 	print_debug(body)
 	CanBeInteractedWIth = true
 	sprite_2d.texture = HighLightSprite
 	label.visible = true
 func _on_inter_act_area_body_exited(body: Node2D) -> void:
+	if !body.is_in_group("Player") : return
 	CanBeInteractedWIth = false
 	inventory.hide()
 	sprite_2d.texture = OgSprite

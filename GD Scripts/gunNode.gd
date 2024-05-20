@@ -87,7 +87,6 @@ func ShootGun():
 		else : 
 			UpdateAmmoText()
 			player.SetAnim("idle")
-			print_debug("out of ammo") 
 			return
 		CanMove = false
 		for i in CurrentGun.ButtetCount:
@@ -106,8 +105,8 @@ func ShootGun():
 			newBullet.global_position = bulletspawnpoint.global_position
 			
 			get_tree().root.call_deferred("add_child", newBullet)
-		player.SetAnim("shoot")
 		
+		player.SetAnim("shoot")
 		audio_stream_player.play()
 		CanShoot = false
 		await  get_tree().create_timer(1/CurrentGun.ROF).timeout
