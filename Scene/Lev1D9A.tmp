@@ -1,0 +1,1817 @@
+[gd_scene load_steps=40 format=3 uid="uid://dkrp2wctpx7k8"]
+
+[ext_resource type="PackedScene" uid="uid://dd0hqlllt0tqs" path="res://Scene/Map_Earth.tscn" id="1_n6nms"]
+[ext_resource type="PackedScene" uid="uid://bpilr5la784ys" path="res://Scene_Sub/Player.tscn" id="2_8yw46"]
+[ext_resource type="PackedScene" uid="uid://qjsl7x5vcuya" path="res://Scene_Sub/bunker.tscn" id="3_f7n0n"]
+[ext_resource type="Script" path="res://GD Scripts/props.gd" id="3_mqwhy"]
+[ext_resource type="Texture2D" uid="uid://7ngkl4xpe5ag" path="res://Art_PNG/Map_Props/AlienPlanet_V2_Props, Grass (Short), v4.png" id="3_tt6gm"]
+[ext_resource type="PackedScene" uid="uid://cqy4p7dbms0kf" path="res://Scene_Sub/LootBox.tscn" id="4_13f22"]
+[ext_resource type="Texture2D" uid="uid://dsd86fw7aoy8t" path="res://Art_PNG/Map_Props/AlienPlanet_V2_Props, Grass (Long).png" id="4_yftf4"]
+[ext_resource type="PackedScene" uid="uid://djwlpg1g4e28o" path="res://Scene_Sub/ToolBox.tscn" id="6_llbdc"]
+[ext_resource type="PackedScene" uid="uid://btcuans18pkm8" path="res://Scene_Sub/Pc.tscn" id="7_x1xad"]
+[ext_resource type="PackedScene" uid="uid://85xt1o8ygj37" path="res://Scene_Sub/Backpack.tscn" id="8_qg8l6"]
+[ext_resource type="PackedScene" uid="uid://bru61wwju326n" path="res://Scene_Sub/bunkerFront.tscn" id="9_c4ii0"]
+[ext_resource type="PackedScene" uid="uid://ct36nufjxft58" path="res://Scene_Sub/GlassPodBlue1.tscn" id="10_0l5mv"]
+[ext_resource type="PackedScene" uid="uid://cog8n63pcf2yl" path="res://Scene_Sub/GlassPodPlant2.tscn" id="13_51wks"]
+[ext_resource type="PackedScene" uid="uid://vkcwmht6mhk5" path="res://Scene_Sub/GlassPodPlant1.tscn" id="14_tcw4b"]
+[ext_resource type="Texture2D" uid="uid://btogkfpew7bvy" path="res://Art_PNG/Map_Props/AlienPlanet_V2_Props, Grass (Short), v1.png" id="15_gxwd6"]
+[ext_resource type="PackedScene" uid="uid://dx6l3e6fwirv2" path="res://Scene_Sub/GlassPodRed1.tscn" id="16_not2e"]
+[ext_resource type="PackedScene" uid="uid://ieghweqpyuq5" path="res://Scene_Sub/GlassPodBlue2.tscn" id="17_wkm2c"]
+[ext_resource type="PackedScene" uid="uid://kebx2leh6uxx" path="res://Scene_Sub/GlassPod.tscn" id="18_ca0m5"]
+[ext_resource type="Resource" uid="uid://u6cm4c1s2oup" path="res://Items/Contents/Bullets.tres" id="19_gdqo7"]
+[ext_resource type="Resource" uid="uid://douiehmw6t3m6" path="res://Items/Contents/LootV1.tres" id="19_mxyax"]
+[ext_resource type="Texture2D" uid="uid://c2i80sv54k0k0" path="res://Art_PNG/Map_Props/AlienPlanet_V2_Props, Grass (Short), v3.png" id="19_xydnc"]
+[ext_resource type="Texture2D" uid="uid://bxpw71vmbac3s" path="res://Art_PNG/Map_Props/AlienPlanet_V2_Props, Grass (Short), v2.png" id="20_750gw"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="20_in2nb"]
+[ext_resource type="Resource" uid="uid://b0x03nmjjk3ur" path="res://Items/Contents/LootV2.tres" id="21_4sgiw"]
+[ext_resource type="PackedScene" uid="uid://dev0qboo4pbph" path="res://Scene_Menu/LevelEndZone.tscn" id="21_mnn0p"]
+[ext_resource type="PackedScene" uid="uid://1pya2v87pib1" path="res://Scene_Sub/fish_man.tscn" id="22_lplrm"]
+[ext_resource type="PackedScene" uid="uid://b8okuk7yhqy0l" path="res://Scene_Sub/Angeler.tscn" id="25_gncdl"]
+[ext_resource type="PackedScene" uid="uid://bmp1u35uq0eio" path="res://Scene_Sub/LootBoxV2.tscn" id="27_g3uyx"]
+[ext_resource type="PackedScene" uid="uid://1qnppnv1aduu" path="res://Scene_Sub/LootBoxV3.tscn" id="28_dsrwg"]
+
+[sub_resource type="Resource" id="Resource_1i5ie"]
+resource_local_to_scene = true
+script = ExtResource("20_in2nb")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("19_gdqo7"), ExtResource("19_mxyax"), ExtResource("19_mxyax"), ExtResource("21_4sgiw")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[sub_resource type="Resource" id="Resource_5ufp6"]
+resource_local_to_scene = true
+script = ExtResource("20_in2nb")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("19_gdqo7"), ExtResource("19_mxyax"), ExtResource("19_mxyax"), ExtResource("21_4sgiw")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[sub_resource type="Resource" id="Resource_w4kms"]
+resource_local_to_scene = true
+script = ExtResource("20_in2nb")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("19_gdqo7"), ExtResource("19_mxyax"), ExtResource("19_mxyax"), ExtResource("21_4sgiw")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[sub_resource type="Resource" id="Resource_oq314"]
+script = ExtResource("20_in2nb")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("19_mxyax")])
+item_repeat_ranges = Array[Vector2]([Vector2(2, 2)])
+item_chances = Array[float]([100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[sub_resource type="Resource" id="Resource_1gqks"]
+resource_local_to_scene = true
+script = ExtResource("20_in2nb")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("19_gdqo7"), ExtResource("19_mxyax"), ExtResource("19_mxyax"), ExtResource("21_4sgiw")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[sub_resource type="Resource" id="Resource_htxaj"]
+resource_local_to_scene = true
+script = ExtResource("20_in2nb")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("19_gdqo7"), ExtResource("19_mxyax"), ExtResource("19_mxyax"), ExtResource("21_4sgiw")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[sub_resource type="Resource" id="Resource_m6b5d"]
+resource_local_to_scene = true
+script = ExtResource("20_in2nb")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("19_gdqo7"), ExtResource("19_mxyax"), ExtResource("19_mxyax"), ExtResource("21_4sgiw")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[sub_resource type="Resource" id="Resource_phiuo"]
+resource_local_to_scene = true
+script = ExtResource("20_in2nb")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("19_gdqo7"), ExtResource("19_mxyax"), ExtResource("19_mxyax"), ExtResource("21_4sgiw")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[sub_resource type="Resource" id="Resource_kgvvb"]
+resource_local_to_scene = true
+script = ExtResource("20_in2nb")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("19_gdqo7"), ExtResource("19_mxyax"), ExtResource("19_mxyax"), ExtResource("21_4sgiw")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[sub_resource type="Resource" id="Resource_p6gym"]
+resource_local_to_scene = true
+script = ExtResource("20_in2nb")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("19_gdqo7"), ExtResource("19_mxyax"), ExtResource("19_mxyax"), ExtResource("21_4sgiw")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[node name="PlayerMovementTest" type="Node2D"]
+
+[node name="MapEarth" parent="." instance=ExtResource("1_n6nms")]
+position = Vector2(193, 228)
+
+[node name="Black BG" parent="MapEarth" index="0"]
+offset_left = -3519.0
+offset_top = -2083.0
+offset_right = 6335.0
+offset_bottom = 4002.0
+
+[node name="MapDarken" parent="MapEarth" index="1"]
+visible = true
+color = Color(0.223529, 0.223529, 0.223529, 1)
+
+[node name="WorldLoad" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="FishMan2" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("22_lplrm")]
+position = Vector2(3802, 2834)
+player = NodePath("../Player")
+
+[node name="FishMan3" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("22_lplrm")]
+position = Vector2(4158, 2697)
+player = NodePath("../Player")
+
+[node name="angler2" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("25_gncdl")]
+position = Vector2(4093, 2227)
+player = NodePath("../Player")
+
+[node name="angler3" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("25_gncdl")]
+position = Vector2(3289, 2042)
+player = NodePath("../Player")
+
+[node name="FishMan4" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("22_lplrm")]
+position = Vector2(2852, 881)
+player = NodePath("../Player")
+
+[node name="FishMan5" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("22_lplrm")]
+position = Vector2(2558, -563)
+player = NodePath("../Player")
+
+[node name="FishMan6" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("22_lplrm")]
+position = Vector2(2868, -617)
+player = NodePath("../Player")
+
+[node name="FishMan7" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("22_lplrm")]
+position = Vector2(1064, 268)
+player = NodePath("../Player")
+
+[node name="angler4" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("25_gncdl")]
+position = Vector2(774, 2294)
+player = NodePath("../Player")
+
+[node name="FishMan8" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("22_lplrm")]
+position = Vector2(-1599, 1166)
+player = NodePath("../Player")
+
+[node name="FishMan9" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("22_lplrm")]
+position = Vector2(-2806, 504)
+player = NodePath("../Player")
+
+[node name="FishMan10" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("22_lplrm")]
+position = Vector2(-2908, -328)
+player = NodePath("../Player")
+
+[node name="angler5" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("25_gncdl")]
+position = Vector2(-2611, -21)
+player = NodePath("../Player")
+
+[node name="FishMan11" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("22_lplrm")]
+position = Vector2(-2828, -931)
+player = NodePath("../Player")
+
+[node name="angler6" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("25_gncdl")]
+position = Vector2(-1963, -930)
+player = NodePath("../Player")
+
+[node name="angler7" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("25_gncdl")]
+position = Vector2(-664, -152)
+player = NodePath("../Player")
+
+[node name="angler8" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("25_gncdl")]
+position = Vector2(-221, 1366)
+player = NodePath("../Player")
+
+[node name="FishMan12" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("22_lplrm")]
+position = Vector2(2540, 548)
+player = NodePath("../Player")
+
+[node name="Player" parent="WorldLoad" instance=ExtResource("2_8yw46")]
+y_sort_enabled = true
+position = Vector2(418, 216)
+scale = Vector2(1, 1)
+speed = 7000
+
+[node name="angler" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("25_gncdl")]
+position = Vector2(4527, 138)
+player = NodePath("../Player")
+
+[node name="FishMan" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("22_lplrm")]
+position = Vector2(4192, 639)
+player = NodePath("../Player")
+
+[node name="props" type="Node2D" parent="WorldLoad"]
+y_sort_enabled = true
+script = ExtResource("3_mqwhy")
+
+[node name="mission1" parent="WorldLoad/props" node_paths=PackedStringArray("player") instance=ExtResource("21_mnn0p")]
+y_sort_enabled = true
+position = Vector2(4212, 467)
+player = NodePath("../../Player")
+
+[node name="AlienPlanetV2Props,Grass(long)20" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-902, -561)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V45" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-732, -338)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)21" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-648, -196)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V46" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-569, -497)
+texture = ExtResource("20_750gw")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V47" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-255, -692)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V48" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-252, -807)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V49" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(258, -337)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V50" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(259, -458)
+texture = ExtResource("20_750gw")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V51" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(259, -218)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)22" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(2665, -88)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)23" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(2858, -143)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)24" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(2657, 157)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V52" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(2958, 97)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)25" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(2885, 15)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)26" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(2621, 55)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)30" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(1287, 455)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)31" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(1217, 188)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V58" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(826, -26)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)32" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(1053, -80)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)33" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(71, -29)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V59" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-84, 380)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)34" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(220, 743)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)35" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(564, 1171)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V60" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(874, 1040)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)36" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(934, 875)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)37" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(427, 992)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V61" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(650, 942)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)38" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(784, 2855)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)39" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(463, 2234)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V62" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(524, 1820)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V63" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(916, 1618)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V64" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(507, 1496)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V65" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(912, 1284)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)40" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(620, 1571)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)41" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(803, 1400)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V4" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-3464, -996)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-3298, -1152)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V1" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-3437, -858)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V5" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-3171, -940)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V3" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2737, -123)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)2" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2943, -183)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V6" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-3165, -302)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V2" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2818, -553)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V7" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2817, -806)
+texture = ExtResource("20_750gw")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V8" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2303, -1037)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V9" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2304, -1152)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V10" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2164, -1362)
+texture = ExtResource("20_750gw")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V11" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1911, -1405)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V12" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1689, -1357)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)3" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1734, -1324)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V13" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1734, -1225)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)42" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(2778, 1709)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)43" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(3133, 1714)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V66" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(2827, 1565)
+texture = ExtResource("20_750gw")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V67" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(3067, 1563)
+texture = ExtResource("20_750gw")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V68" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(3459, 1651)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V69" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(3461, 1406)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V70" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(3462, 1279)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V71" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(3461, 1747)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V72" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(3458, 1881)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V73" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(3459, 1536)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V74" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(3974, 1508)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V75" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(3965, 1291)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V76" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(2225, 752)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)44" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(2156, 608)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)45" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(2651, 440)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)46" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(2627, 779)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)47" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(3025, 1076)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)48" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(3350, 882)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)49" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(3682, 684)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)50" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(3918, 902)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)51" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(4140, 753)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)52" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(1792, 427)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)53" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(741, 2450)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)54" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(807, 2078)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)55" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(806, 1747)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)56" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(720, 2664)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V53" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(2633, -267)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V54" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(2807, -297)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V55" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(2913, -645)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V56" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-247, 472)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)27" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-158, 558)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)28" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(616, -362)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)29" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(755, -292)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V57" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(316, 224)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V28" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2084, 1546)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V29" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2013, 1462)
+texture = ExtResource("20_750gw")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V30" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1938, 1554)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V31" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2074, 1245)
+texture = ExtResource("20_750gw")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V32" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1911, 1283)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V33" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2100, 1146)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V34" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1234, 1546)
+texture = ExtResource("20_750gw")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V35" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1099, 1485)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)14" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1009, 1298)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)15" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-860, 1445)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)16" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-704, 1376)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)17" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-601, 1249)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)18" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-492, 1440)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V36" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-976, 1368)
+texture = ExtResource("20_750gw")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V37" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-778, 1296)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V38" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-455, 1354)
+texture = ExtResource("20_750gw")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V39" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-636, 1317)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V40" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1572, 1117)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V41" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1452, 1196)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V42" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1237, 1164)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V43" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1518, 1283)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)19" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1242, 1240)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V44" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1039, 1163)
+texture = ExtResource("20_750gw")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V14" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2431, 394)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V15" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2433, 243)
+texture = ExtResource("20_750gw")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V16" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2166, 292)
+texture = ExtResource("19_xydnc")
+offset = Vector2(-10, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V17" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1722, -904)
+texture = ExtResource("3_tt6gm")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)4" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1884, -856)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)5" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1508, -945)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V18" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1576, -861)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)6" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1995, -961)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V19" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2181, 886)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V20" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-249, 906)
+texture = ExtResource("20_750gw")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V21" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-255, 1067)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V22" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-876, 321)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V23" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-781, 262)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V24" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1347, 517)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)7" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-1252, 592)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)8" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2620, 564)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V25" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-3361, 654)
+texture = ExtResource("20_750gw")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)9" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-3295, 482)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)10" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-3126, 690)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V26" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2852, 472)
+texture = ExtResource("19_xydnc")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)11" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-2798, 105)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(short),V27" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-196, -1164)
+texture = ExtResource("15_gxwd6")
+offset = Vector2(0, -14)
+
+[node name="AlienPlanetV2Props,Grass(long)13" type="Sprite2D" parent="WorldLoad/props"]
+y_sort_enabled = true
+position = Vector2(-405, -1164)
+texture = ExtResource("4_yftf4")
+offset = Vector2(0, -14)
+
+[node name="GlassPod60" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-791, -88)
+
+[node name="GlassPod61" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-789, -247)
+
+[node name="GlassPod62" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-1018, -467)
+
+[node name="GlassPod63" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-909, -469)
+
+[node name="GlassPod64" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-890, 145)
+
+[node name="GlassPod65" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-790, 56)
+
+[node name="GlassPod66" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-788, -357)
+
+[node name="Bunker23" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(544, -479)
+
+[node name="Bunker24" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(692, -479)
+
+[node name="Bunker25" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(838, -485)
+
+[node name="GlassPod67" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(2446, -630)
+
+[node name="GlassPod68" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(2661, -630)
+
+[node name="GlassPod69" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(2803, -712)
+
+[node name="GlassPod70" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(2543, -620)
+
+[node name="GlassPod71" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(2742, -622)
+
+[node name="GlassPod72" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(2799, -789)
+
+[node name="GlassPod73" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(2795, -888)
+
+[node name="Bunker26" parent="WorldLoad/props" instance=ExtResource("8_qg8l6")]
+y_sort_enabled = true
+position = Vector2(2561, -14)
+
+[node name="Bunker27" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(2589, -365)
+
+[node name="Bunker28" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(2736, -364)
+
+[node name="Bunker29" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(2898, -338)
+
+[node name="Bunker30" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(2892, -868)
+
+[node name="LootBoxs9" parent="WorldLoad/props" instance=ExtResource("4_13f22")]
+y_sort_enabled = true
+position = Vector2(2599, -615)
+InveentroyContent = SubResource("Resource_1i5ie")
+
+[node name="LootBoxs10" parent="WorldLoad/props" instance=ExtResource("4_13f22")]
+y_sort_enabled = true
+position = Vector2(2830, -840)
+InveentroyContent = SubResource("Resource_5ufp6")
+
+[node name="Bunker31" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(338, 560)
+
+[node name="Bunker32" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(948, 567)
+
+[node name="Bunker33" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(844, 125)
+
+[node name="Bunker34" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(338, 58)
+
+[node name="Bunker35" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(468, 707)
+
+[node name="Bunker36" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(647, 705)
+
+[node name="Bunker37" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(813, 701)
+
+[node name="Terminal5" parent="WorldLoad/props" instance=ExtResource("7_x1xad")]
+y_sort_enabled = true
+position = Vector2(384, -157)
+
+[node name="GlassPod74" parent="WorldLoad/props" instance=ExtResource("14_tcw4b")]
+y_sort_enabled = true
+position = Vector2(932, -178)
+
+[node name="GlassPod75" parent="WorldLoad/props" instance=ExtResource("14_tcw4b")]
+y_sort_enabled = true
+position = Vector2(448, -82)
+
+[node name="GlassPod76" parent="WorldLoad/props" instance=ExtResource("14_tcw4b")]
+y_sort_enabled = true
+position = Vector2(521, -79)
+
+[node name="GlassPod77" parent="WorldLoad/props" instance=ExtResource("14_tcw4b")]
+y_sort_enabled = true
+position = Vector2(615, -80)
+
+[node name="GlassPod78" parent="WorldLoad/props" instance=ExtResource("14_tcw4b")]
+y_sort_enabled = true
+position = Vector2(680, -84)
+
+[node name="GlassPod79" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(344, 291)
+
+[node name="GlassPod80" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(353, 1075)
+
+[node name="GlassPod81" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(106, 826)
+
+[node name="GlassPod82" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(225, 955)
+
+[node name="GlassPod83" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(1042, 956)
+
+[node name="GlassPod84" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(1164, 811)
+
+[node name="GlassPod85" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(1297, 689)
+
+[node name="GlassPod86" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(1428, 568)
+
+[node name="LootBoxs11" parent="WorldLoad/props" instance=ExtResource("4_13f22")]
+y_sort_enabled = true
+position = Vector2(1021, 2737)
+InveentroyContent = SubResource("Resource_w4kms")
+
+[node name="Bunker38" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(1004, 2604)
+
+[node name="GlassPod87" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(793, 1610)
+scale = Vector2(2.00119, 1.96984)
+
+[node name="GlassPod88" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(892, 1928)
+
+[node name="GlassPod89" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(541, 2022)
+
+[node name="GlassPod90" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2912, 1759)
+
+[node name="GlassPod91" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2976, 1758)
+
+[node name="GlassPod92" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2911, 1799)
+
+[node name="GlassPod93" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2974, 1804)
+
+[node name="GlassPod94" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2910, 1860)
+
+[node name="GlassPod95" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2973, 1863)
+
+[node name="GlassPod96" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2909, 1927)
+
+[node name="GlassPod97" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2972, 1932)
+
+[node name="GlassPod98" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2911, 1998)
+
+[node name="GlassPod99" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2974, 2002)
+
+[node name="GlassPod100" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2909, 2110)
+
+[node name="GlassPod101" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2972, 2113)
+
+[node name="GlassPod102" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2906, 2223)
+
+[node name="GlassPod103" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2974, 2221)
+
+[node name="GlassPod104" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2914, 2381)
+
+[node name="GlassPod105" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(3105, 2383)
+
+[node name="GlassPod106" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(3103, 2307)
+
+[node name="GlassPod107" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(3290, 2379)
+
+[node name="GlassPod108" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(3291, 2306)
+
+[node name="GlassPod109" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(2988, 2307)
+
+[node name="Bunker39" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(3187, 1951)
+
+[node name="Bunker40" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(3760, 2596)
+
+[node name="Bunker41" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(4043, 2586)
+
+[node name="Bunker42" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(4273, 2586)
+
+[node name="Bunker43" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(4000, 2413)
+InveentroyContent = SubResource("Resource_oq314")
+
+[node name="LootBoxs12" parent="WorldLoad/props" instance=ExtResource("4_13f22")]
+y_sort_enabled = true
+position = Vector2(3740, 2723)
+InveentroyContent = SubResource("Resource_1gqks")
+
+[node name="GlassPod110" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(3652, 2084)
+
+[node name="GlassPod111" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(4358, 2315)
+
+[node name="GlassPod112" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(3820, 1852)
+
+[node name="GlassPod113" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(3696, 1969)
+
+[node name="GlassPod114" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(4246, 1817)
+
+[node name="Bunker44" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(3133, 525)
+
+[node name="Bunker45" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(2282, 405)
+
+[node name="GlassPod119" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(3895, 723)
+
+[node name="GlassPod118" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(3623, 1070)
+
+[node name="GlassPod120" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(15379, 4087)
+
+[node name="GlassPod115" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(1688, 531)
+
+[node name="GlassPod116" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(3380, 766)
+
+[node name="GlassPod117" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(3189, 1012)
+
+[node name="Bunker46" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(2600, 1000)
+
+[node name="Bunker47" parent="WorldLoad/props" instance=ExtResource("8_qg8l6")]
+y_sort_enabled = true
+position = Vector2(4224, 32)
+
+[node name="Bunker15" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-1952, 1369)
+
+[node name="Bunker16" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-1500, 1365)
+
+[node name="Bunker17" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(-1797, 1505)
+
+[node name="Bunker18" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(-1795, 1357)
+
+[node name="Bunker19" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(-1808, 1173)
+
+[node name="Bunker20" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-2115, 1372)
+
+[node name="GlassPod38" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-1788, 1590)
+
+[node name="GlassPod39" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-1785, 1437)
+
+[node name="GlassPod40" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-1793, 1275)
+
+[node name="GlassPod41" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-1706, 1185)
+
+[node name="GlassPod42" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-2172, 1586)
+
+[node name="GlassPod43" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-2176, 1473)
+
+[node name="GlassPod44" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-2178, 1259)
+
+[node name="Bunker21" parent="WorldLoad/props" instance=ExtResource("8_qg8l6")]
+y_sort_enabled = true
+position = Vector2(-2035, 1297)
+
+[node name="Terminal4" parent="WorldLoad/props" instance=ExtResource("7_x1xad")]
+y_sort_enabled = true
+position = Vector2(-1404, 1405)
+
+[node name="Bunker22" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-1328, 1362)
+
+[node name="GlassPod45" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(-884, 1362)
+
+[node name="GlassPod46" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(-534, 1365)
+
+[node name="GlassPod47" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(-717, 1312)
+
+[node name="GlassPod48" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(-853, 1281)
+
+[node name="GlassPod49" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(-430, 1242)
+
+[node name="GlassPod50" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(-363, 1397)
+
+[node name="GlassPod51" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-1186, 1303)
+
+[node name="GlassPod52" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-1157, 1516)
+
+[node name="LootBoxs6" parent="WorldLoad/props" instance=ExtResource("6_llbdc")]
+y_sort_enabled = true
+position = Vector2(-1282, 1052)
+
+[node name="GlassPod53" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-2360, 681)
+
+[node name="GlassPod54" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-2034, 547)
+
+[node name="GlassPod55" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-2513, 521)
+
+[node name="GlassPod56" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-2259, 526)
+
+[node name="GlassPod57" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-1674, 595)
+
+[node name="GlassPod58" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-1912, 578)
+
+[node name="GlassPod59" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-1558, 576)
+
+[node name="GlassPod19" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-1834, -933)
+
+[node name="GlassPod20" parent="WorldLoad/props" instance=ExtResource("16_not2e")]
+y_sort_enabled = true
+position = Vector2(-2057, -882)
+
+[node name="GlassPod21" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(-1354, -1102)
+
+[node name="Bunker9" parent="WorldLoad/props" instance=ExtResource("8_qg8l6")]
+y_sort_enabled = true
+position = Vector2(-1812, -880)
+
+[node name="LootBoxs4" parent="WorldLoad/props" instance=ExtResource("4_13f22")]
+y_sort_enabled = true
+position = Vector2(-1026, -767)
+InveentroyContent = SubResource("Resource_htxaj")
+
+[node name="GlassPod22" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-2667, 58)
+
+[node name="GlassPod23" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(-2958, 135)
+
+[node name="LootBoxs14" parent="WorldLoad/props" instance=ExtResource("6_llbdc")]
+y_sort_enabled = true
+position = Vector2(-17, -1442)
+
+[node name="LootBoxs5" parent="WorldLoad/props" instance=ExtResource("6_llbdc")]
+y_sort_enabled = true
+position = Vector2(-119, -1442)
+
+[node name="GlassPod24" parent="WorldLoad/props" instance=ExtResource("14_tcw4b")]
+y_sort_enabled = true
+position = Vector2(-87, -1378)
+
+[node name="GlassPod25" parent="WorldLoad/props" instance=ExtResource("13_51wks")]
+y_sort_enabled = true
+position = Vector2(-55, -1380)
+
+[node name="Bunker10" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-481, -1329)
+
+[node name="Bunker11" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-345, -1329)
+
+[node name="Bunker12" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-224, -1334)
+
+[node name="Bunker51" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-347, -1125)
+
+[node name="Bunker52" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-222, -1126)
+
+[node name="Bunker13" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-491, -1122)
+
+[node name="Terminal3" parent="WorldLoad/props" instance=ExtResource("7_x1xad")]
+y_sort_enabled = true
+position = Vector2(92, -1297)
+
+[node name="GlassPod26" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-541, -1008)
+
+[node name="GlassPod27" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-541, -1064)
+
+[node name="GlassPod28" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-540, -1188)
+
+[node name="GlassPod29" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-541, -1248)
+
+[node name="GlassPod30" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-542, -1329)
+
+[node name="GlassPod31" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-543, -964)
+
+[node name="GlassPod32" parent="WorldLoad/props" instance=ExtResource("13_51wks")]
+y_sort_enabled = true
+position = Vector2(-287, -995)
+
+[node name="GlassPod33" parent="WorldLoad/props" instance=ExtResource("14_tcw4b")]
+y_sort_enabled = true
+position = Vector2(-216, -996)
+
+[node name="GlassPod34" parent="WorldLoad/props" instance=ExtResource("14_tcw4b")]
+y_sort_enabled = true
+position = Vector2(12, -1106)
+
+[node name="GlassPod35" parent="WorldLoad/props" instance=ExtResource("14_tcw4b")]
+y_sort_enabled = true
+position = Vector2(14, -1033)
+
+[node name="GlassPod36" parent="WorldLoad/props" instance=ExtResource("14_tcw4b")]
+y_sort_enabled = true
+position = Vector2(90, -1103)
+
+[node name="GlassPod37" parent="WorldLoad/props" instance=ExtResource("14_tcw4b")]
+y_sort_enabled = true
+position = Vector2(93, -1031)
+
+[node name="Bunker14" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(62, -1182)
+
+[node name="Bunker" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(-3393, -1317)
+
+[node name="LootBoxs" parent="WorldLoad/props" instance=ExtResource("4_13f22")]
+y_sort_enabled = true
+position = Vector2(-1983, -1024)
+InveentroyContent = SubResource("Resource_m6b5d")
+
+[node name="toolbox" parent="WorldLoad/props" instance=ExtResource("6_llbdc")]
+y_sort_enabled = true
+position = Vector2(-3098, -1320)
+
+[node name="Terminal" parent="WorldLoad/props" instance=ExtResource("7_x1xad")]
+y_sort_enabled = true
+position = Vector2(28, 141)
+
+[node name="Bunker2" parent="WorldLoad/props" instance=ExtResource("8_qg8l6")]
+y_sort_enabled = true
+position = Vector2(-3379, -1027)
+
+[node name="Bunker3" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-3561, -1149)
+
+[node name="GlassPod" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-3582, -994)
+
+[node name="GlassPod2" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-3154, -1061)
+
+[node name="GlassPod4" parent="WorldLoad/props" instance=ExtResource("13_51wks")]
+y_sort_enabled = true
+position = Vector2(-3076, -1060)
+
+[node name="GlassPod3" parent="WorldLoad/props" instance=ExtResource("14_tcw4b")]
+y_sort_enabled = true
+position = Vector2(-3531, -996)
+
+[node name="Bunker4" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(-3130, -427)
+
+[node name="Bunker5" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-3294, -312)
+
+[node name="LootBoxs2" parent="WorldLoad/props" instance=ExtResource("4_13f22")]
+y_sort_enabled = true
+position = Vector2(-3300, -419)
+InveentroyContent = SubResource("Resource_phiuo")
+
+[node name="GlassPod5" parent="WorldLoad/props" instance=ExtResource("16_not2e")]
+y_sort_enabled = true
+position = Vector2(-2759, -434)
+
+[node name="GlassPod6" parent="WorldLoad/props" instance=ExtResource("13_51wks")]
+y_sort_enabled = true
+position = Vector2(-2878, -431)
+
+[node name="GlassPod7" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-3035, -234)
+
+[node name="GlassPod8" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(-3026, -349)
+
+[node name="GlassPod9" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(-2679, -63)
+
+[node name="GlassPod10" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-2991, -82)
+
+[node name="GlassPod11" parent="WorldLoad/props" instance=ExtResource("14_tcw4b")]
+y_sort_enabled = true
+position = Vector2(-2914, 45)
+
+[node name="GlassPod12" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-2964, 17)
+
+[node name="GlassPod13" parent="WorldLoad/props" instance=ExtResource("17_wkm2c")]
+y_sort_enabled = true
+position = Vector2(-3200, -203)
+
+[node name="Terminal2" parent="WorldLoad/props" instance=ExtResource("7_x1xad")]
+y_sort_enabled = true
+position = Vector2(-2589, -290)
+
+[node name="Bunker6" parent="WorldLoad/props" instance=ExtResource("8_qg8l6")]
+y_sort_enabled = true
+position = Vector2(-2509, -168)
+
+[node name="Bunker48" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-663, 507)
+
+[node name="Bunker49" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-1023, 502)
+
+[node name="Bunker50" parent="WorldLoad/props" instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(-819, 513)
+
+[node name="GlassPod14" parent="WorldLoad/props" instance=ExtResource("10_0l5mv")]
+position = Vector2(-1825, -1398)
+
+[node name="GlassPod15" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(-2196, -1459)
+
+[node name="GlassPod16" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(-2055, -1075)
+
+[node name="GlassPod17" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(-1922, -1075)
+
+[node name="GlassPod18" parent="WorldLoad/props" instance=ExtResource("18_ca0m5")]
+y_sort_enabled = true
+position = Vector2(-3310, 564)
+scale = Vector2(1.9963, 2)
+
+[node name="Bunker7" parent="WorldLoad/props" node_paths=PackedStringArray("HighLightArea", "InterArea") instance=ExtResource("3_f7n0n")]
+y_sort_enabled = true
+position = Vector2(-2968, 517)
+HighLightArea = NodePath("../Bunker4/InterActArea")
+InterArea = NodePath("../Bunker4/InterActArea")
+
+[node name="Bunker8" parent="WorldLoad/props" instance=ExtResource("9_c4ii0")]
+position = Vector2(-3132, 632)
+
+[node name="LootBoxs3" parent="WorldLoad/props" node_paths=PackedStringArray("HighLightArea", "InterArea") instance=ExtResource("4_13f22")]
+y_sort_enabled = true
+position = Vector2(-3138, 525)
+HighLightArea = NodePath("../LootBoxs2/InterActArea")
+InterArea = NodePath("../LootBoxs2/InterActArea")
+InveentroyContent = SubResource("Resource_kgvvb")
+
+[node name="LootBoxs7" parent="WorldLoad/props" node_paths=PackedStringArray("HighLightArea", "InterArea") instance=ExtResource("4_13f22")]
+y_sort_enabled = true
+position = Vector2(1028, 2499)
+HighLightArea = NodePath("../LootBoxs11/InterActArea")
+InterArea = NodePath("../LootBoxs11/InterActArea")
+InveentroyContent = SubResource("Resource_p6gym")
+
+[node name="LootBoxs8" parent="WorldLoad/props" instance=ExtResource("27_g3uyx")]
+position = Vector2(253, -535)
+
+[node name="LootBoxs15" parent="WorldLoad/props" instance=ExtResource("27_g3uyx")]
+position = Vector2(3044, 2313)
+
+[node name="mission2" parent="WorldLoad/props" node_paths=PackedStringArray("player") instance=ExtResource("21_mnn0p")]
+y_sort_enabled = true
+position = Vector2(-3174, 548)
+player = NodePath("../../Player")
+
+[node name="LootBoxs13" parent="WorldLoad/props" instance=ExtResource("28_dsrwg")]
+position = Vector2(4663, 155)
+
+[node name="LootBoxs16" parent="WorldLoad/props" instance=ExtResource("28_dsrwg")]
+position = Vector2(2744, -554)
+
+[node name="mission3" parent="WorldLoad/props" node_paths=PackedStringArray("player") instance=ExtResource("21_mnn0p")]
+y_sort_enabled = true
+position = Vector2(-3210, -1412)
+player = NodePath("../../Player")
+
+[node name="mission4" parent="WorldLoad/props" node_paths=PackedStringArray("player") instance=ExtResource("21_mnn0p")]
+y_sort_enabled = true
+position = Vector2(4466, 2382)
+player = NodePath("../../Player")
+
+[editable path="MapEarth"]

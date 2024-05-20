@@ -1,6 +1,4 @@
 extends Node
-
-
 @export var initial_state :State
 @export var enemy: CharacterBody2D
 
