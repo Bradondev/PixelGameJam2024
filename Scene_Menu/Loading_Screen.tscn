@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://eonhf4dyqswi"]
+[gd_scene load_steps=8 format=3 uid="uid://eonhf4dyqswi"]
 
 [ext_resource type="FontFile" uid="uid://dmo6e5w4r5tmf" path="res://Fonts/Pixels (16px).ttf" id="1_b6jva"]
 [ext_resource type="Script" path="res://Scene_Menu/Loading_Screen.gd" id="1_evb7t"]
+[ext_resource type="PackedScene" uid="uid://d1ui8lkg8n8hk" path="res://Scene/hub.tscn" id="2_7vkyc"]
 [ext_resource type="Texture2D" uid="uid://oo364js5nujk" path="res://Art_UI/ProgressBar_General (Under), Blue, Large.png" id="2_mqobg"]
 [ext_resource type="Texture2D" uid="uid://5ro5q4g01jny" path="res://Art_UI/ProgressBar_General (Over), Blue,, Large.png" id="3_ka2lo"]
 [ext_resource type="Texture2D" uid="uid://b3j02m0cjmdmu" path="res://Art_UI/ProgressBar_General (Value), Dark Blue, Large.png" id="5_2mn0p"]
@@ -13,6 +14,7 @@ anchors_preset = 0
 offset_top = 1.0
 offset_bottom = 1.0
 script = ExtResource("1_evb7t")
+Scene = ExtResource("2_7vkyc")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

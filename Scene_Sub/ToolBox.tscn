@@ -80,6 +80,7 @@ text = "E"
 horizontal_alignment = 1
 
 [node name="BotBar" type="TextureProgressBar" parent="."]
+visible = false
 offset_left = -25.0
 offset_top = -55.0
 offset_right = 71.0

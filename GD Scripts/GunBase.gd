@@ -17,6 +17,7 @@ class_name  Gun
 @export var BulletScene: PackedScene
 @export var ReloadTime : float
 @export_range(0, 100) var Accuracy : int = 100
+@export_enum("camo","desert","artic") var Type: String
 var CurrentMagSize: int = 0
 
 var nobulletsound: AudioStreamMP3

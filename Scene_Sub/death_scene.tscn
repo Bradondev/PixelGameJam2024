@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cme1gtewx8nkn" path="res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Top_v2.png" id="4_hw3en"]
 [ext_resource type="Texture2D" uid="uid://87316xhraio7" path="res://Art_PNG/obs/Player_CompositeSprite_SpriteSheet_Gun_Desert.png" id="5_5i3ji"]
 [ext_resource type="Texture2D" uid="uid://efph4q6jr5c1" path="res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Arms_v2.png" id="6_v17ny"]
-[ext_resource type="Theme" uid="uid://cojp6qytrit1i" path="res://HUB_FontTheme.tres" id="7_sviyf"]
+[ext_resource type="Theme" uid="uid://cwptlbkrmqhn4" path="res://HUB_FontTheme.tres" id="7_sviyf"]
 [ext_resource type="Texture2D" uid="uid://bt0b4nk6uvm0a" path="res://Art_UI/Shop_TextureButton, Normal.png" id="8_0du7f"]
 [ext_resource type="Texture2D" uid="uid://brsqjv5ec7nl2" path="res://Art_UI/Shop_TextureButton, Pressed.png" id="9_3y1wb"]
 [ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="10_1utta"]

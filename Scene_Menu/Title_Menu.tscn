@@ -134,6 +134,7 @@ texture_pressed = ExtResource("3_xricq")
 texture_hover = ExtResource("4_w3q7j")
 
 [node name="OptionButton" type="TextureButton" parent="BG/BottomMargin/Hbox"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("5_8c6pa")
 texture_pressed = ExtResource("6_85b8o")

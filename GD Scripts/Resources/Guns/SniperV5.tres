@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Gun" load_steps=6 format=3 uid="uid://v6aeapwcavpi"]
+[gd_resource type="Resource" script_class="Gun" load_steps=7 format=3 uid="uid://v6aeapwcavpi"]
 
 [ext_resource type="PackedScene" uid="uid://br2il8di536b8" path="res://Scene_Sub/BulletPackScene/9mmBullet.tscn" id="1_nuhwr"]
 [ext_resource type="Resource" uid="uid://bg63kcap61rmc" path="res://Items/Bullet/7.62mm.tres" id="2_6va0l"]
 [ext_resource type="Texture2D" uid="uid://sqcvml55oqno" path="res://Art_UI/Gun_Reticle, Sniper.png" id="3_uhco0"]
 [ext_resource type="Texture2D" uid="uid://b4a2qaonglahb" path="res://Art_PNG/Item_Gun/Item_Gun_Sniper, Desert, v1.png" id="4_fwwmy"]
+[ext_resource type="AudioStream" uid="uid://dhidqk1vkusny" path="res://Audio/sniper-rifle-firing-shot-1-39789.mp3" id="4_gtoms"]
 [ext_resource type="Script" path="res://GD Scripts/GunBase.gd" id="5_qm7gc"]
 
 [resource]
@@ -16,9 +17,11 @@ Description = ""
 ROF = 0.1
 BaseDamage = 20
 MagSize = 1
+ShotSound = ExtResource("4_gtoms")
 Arc = 0
 ButtetCount = 1
 BulletTypeItem = ExtResource("2_6va0l")
 BulletScene = ExtResource("1_nuhwr")
 ReloadTime = 7.0
 Accuracy = 100
+Type = "desert"

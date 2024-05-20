@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Gun" load_steps=6 format=3 uid="uid://c11b6w554j445"]
+[gd_resource type="Resource" script_class="Gun" load_steps=7 format=3 uid="uid://c11b6w554j445"]
 
 [ext_resource type="PackedScene" uid="uid://br2il8di536b8" path="res://Scene_Sub/BulletPackScene/9mmBullet.tscn" id="1_xl540"]
 [ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="2_hxrvu"]
 [ext_resource type="Texture2D" uid="uid://br8gmcbybk1rx" path="res://Art_UI/Gun_Reticle, SMG.png" id="3_m6ymk"]
 [ext_resource type="Texture2D" uid="uid://bylbp27aqtftx" path="res://Art_PNG/Item_Gun/Item_Gun_SMG_Desert, v1.png" id="4_crnie"]
+[ext_resource type="AudioStream" uid="uid://d3agn27f2pwww" path="res://Audio/heavymachinegun-6998.mp3" id="4_hosv6"]
 [ext_resource type="Script" path="res://GD Scripts/GunBase.gd" id="5_jffw5"]
 
 [resource]
@@ -16,9 +17,11 @@ Description = ""
 ROF = 7.0
 BaseDamage = 5
 MagSize = 24
+ShotSound = ExtResource("4_hosv6")
 Arc = 3
 ButtetCount = 1
 BulletTypeItem = ExtResource("2_hxrvu")
 BulletScene = ExtResource("1_xl540")
 ReloadTime = 1.0
 Accuracy = 80
+Type = "camo"

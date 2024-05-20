@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Gun" load_steps=6 format=3 uid="uid://c0ecpitiagjpj"]
+[gd_resource type="Resource" script_class="Gun" load_steps=7 format=3 uid="uid://c0ecpitiagjpj"]
 
 [ext_resource type="PackedScene" uid="uid://br2il8di536b8" path="res://Scene_Sub/BulletPackScene/9mmBullet.tscn" id="1_7f21l"]
 [ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="2_203ec"]
 [ext_resource type="Texture2D" uid="uid://qj27yop0ib1s" path="res://Art_UI/Gun_Reticle_Pistol_v1.png" id="3_104yj"]
+[ext_resource type="AudioStream" uid="uid://cdg2ppvoko003" path="res://Audio/single-gunshot-62-hp-37188.mp3" id="4_b60we"]
 [ext_resource type="Texture2D" uid="uid://cjka1k5lddr4x" path="res://Art_PNG/Item_Gun/Item_Gun_Pistol_Desert, v1.png" id="4_v6g57"]
 [ext_resource type="Script" path="res://GD Scripts/GunBase.gd" id="5_7juhm"]
 
@@ -13,12 +14,14 @@ Sprite = ExtResource("4_v6g57")
 CrossHairSprite = ExtResource("3_104yj")
 BulletSpawnPoint = Vector2(19, -3)
 Description = ""
-ROF = 0.5
-BaseDamage = 2
+ROF = 1.0
+BaseDamage = 3
 MagSize = 4
+ShotSound = ExtResource("4_b60we")
 Arc = 0
 ButtetCount = 3
 BulletTypeItem = ExtResource("2_203ec")
 BulletScene = ExtResource("1_7f21l")
 ReloadTime = 2.0
 Accuracy = 45
+Type = "desert"

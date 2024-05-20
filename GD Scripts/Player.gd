@@ -106,15 +106,20 @@ func _on_equip_item_stack_added(item_stack: ItemStack) -> void:
 	if item_stack.position_in_inventory == Vector2(0,0):
 		gun.CurrentGun =item_stack.item_type.custom_data
 		SetGun1()
+		composite_sprite.SwitchOutGun(item_stack.item_type.custom_data.Type)
 	elif item_stack.position_in_inventory == Vector2(1,0):
 		gun_2.CurrentGun =item_stack.item_type.custom_data
 		SetGun2()
+		composite_sprite.SwitchOutGun(item_stack.item_type.custom_data.Type)
 	elif item_stack.position_in_inventory == Vector2(2,0):
+		UpdateHealth(item_stack.item_type.custom_data.HealthBuff)
 		print_debug("Helm")
 		composite_sprite.SwitchOutHelmet(item_stack.item_type.custom_data.Type)
 	elif item_stack.position_in_inventory == Vector2(3,0):
+		UpdateHealth(item_stack.item_type.custom_data.HealthBuff)
 		composite_sprite.SwitchOutChest(item_stack.item_type.custom_data.Type)
 	elif item_stack.position_in_inventory == Vector2(4,0):
+		UpdateHealth(item_stack.item_type.custom_data.HealthBuff)
 		composite_sprite.SwitchOutPant(item_stack.item_type.custom_data.Type)
 	elif item_stack.position_in_inventory == Vector2(5,0):
 		print_debug("plants")
@@ -122,21 +127,28 @@ func _on_equip_item_stack_added(item_stack: ItemStack) -> void:
 		print_debug("feet")
 
 	CurrentGunNode.UpdateAmmoText()
+	
+
+		
 func _on_equip_item_stack_removed(item_stack: ItemStack) -> void:
 	
 	if item_stack.position_in_inventory == Vector2(0,0):
+		composite_sprite.SwitchOutGun("none")
 		gun.CurrentGun = null
 		print_debug("weapon 1")
 	elif item_stack.position_in_inventory == Vector2(1,0):
-		
+		composite_sprite.SwitchOutGun("none")
 		gun_2.CurrentGun = null
 		print_debug("weapon 2")
 	elif item_stack.position_in_inventory == Vector2(2,0):
 		composite_sprite.SwitchOutHelmet("none")
+		DecreaseUpdateHealth(item_stack.item_type.custom_data.HealthBuff)
 	elif item_stack.position_in_inventory == Vector2(3,0):
 		composite_sprite.SwitchOutChest("none")
+		DecreaseUpdateHealth(item_stack.item_type.custom_data.HealthBuff)
 	elif item_stack.position_in_inventory == Vector2(4,0):
 		composite_sprite.SwitchOutPant("camo")
+		DecreaseUpdateHealth(item_stack.item_type.custom_data.HealthBuff)		
 	elif item_stack.position_in_inventory == Vector2(5,0):
 		print_debug("plants")
 	elif item_stack.position_in_inventory == Vector2(6,0):
@@ -187,8 +199,13 @@ func SetAnim(NameOfAction):
 func SwitchGuns():
 	if CurrentGunNode == gun:
 		SetGun2()
-	elif CurrentGunNode ==gun_2:
+		if CurrentGunNode.CurrentGun:
+			composite_sprite.SwitchOutGun(CurrentGunNode.CurrentGun.Type)
+	elif CurrentGunNode == gun_2:
 		SetGun1()
+		if CurrentGunNode.CurrentGun:
+			composite_sprite.SwitchOutGun(CurrentGunNode.CurrentGun.Type)
+		
 func SetGun2():
 	CurrentGunNode = gun_2
 	gun_2.process_mode = PROCESS_MODE_INHERIT
@@ -208,3 +225,10 @@ func SetGun1():
 
 func clearPlayerInven():
 	clearer.refill_stock()
+func UpdateHealth(amount):
+	MaxHealth += amount
+	CurrentHealth += amount
+	
+func DecreaseUpdateHealth(amount):
+	MaxHealth -= amount
+	CurrentHealth -= amount

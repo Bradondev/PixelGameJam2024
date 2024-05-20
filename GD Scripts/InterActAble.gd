@@ -55,12 +55,12 @@ func FlipInventory():
 	if !inventory.visible:
 		inventory.show()
 		player.inventory.show()
-		player.gun.process_mode = Node.PROCESS_MODE_DISABLED
+		player.CurrentGunNode.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	else:
 		inventory.hide()
 		player.inventory.hide()
-		player.gun.process_mode = Node.PROCESS_MODE_INHERIT
+		player.CurrentGunNode.process_mode = Node.PROCESS_MODE_INHERIT
 func LoadInventory():
 	if Opened:
 		FlipInventory() 

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ItemGenerator" load_steps=7 format=3 uid="uid://cny1ty3xnyb4q"]
+[gd_resource type="Resource" script_class="ItemGenerator" load_steps=8 format=3 uid="uid://cny1ty3xnyb4q"]
 
+[ext_resource type="Resource" uid="uid://dnbuhg1ymuiwe" path="res://Items/Contents/equipment.tres" id="6_88l7t"]
 [ext_resource type="Resource" uid="uid://c4f7ja8u47jwm" path="res://Items/Guns/ArV5.tres" id="7_spvjy"]
 [ext_resource type="Resource" uid="uid://ef2ck3t68lfc" path="res://Items/Guns/SmgV5.tres" id="8_k5t4h"]
 [ext_resource type="Resource" uid="uid://cvisf1p22fgw6" path="res://Items/Guns/SniperV5.tres" id="9_336xw"]
@@ -10,6 +11,6 @@
 [resource]
 script = ExtResource("12_3g65b")
 name = "LootV4"
-results = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("7_spvjy"), ExtResource("8_k5t4h"), ExtResource("9_336xw"), ExtResource("10_qpxyi"), ExtResource("11_tysh7")])
-weights = Array[float]([20.0, 20.0, 20.0, 20.0, 20.0])
-count_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+results = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("7_spvjy"), ExtResource("8_k5t4h"), ExtResource("9_336xw"), ExtResource("10_qpxyi"), ExtResource("11_tysh7"), ExtResource("6_88l7t")])
+weights = Array[float]([20.0, 20.0, 20.0, 20.0, 20.0, 10.0])
+count_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])

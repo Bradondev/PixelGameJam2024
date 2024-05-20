@@ -29,6 +29,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("Shoot") and player.CurrentGunNode == self:
 		isShooting = true
 		ShootGun()
+			
+
 	else: 
 		isShooting = false
 	if !isShooting:
@@ -80,7 +82,6 @@ func ReloadCurrentGun():
 	
 func ShootGun():
 	if CanShoot and not Reloading:
-		
 		if CurrentGun.CurrentMagSize:
 			CurrentGun.CurrentMagSize -=1
 			UpdateAmmoText()
@@ -106,11 +107,15 @@ func ShootGun():
 			
 			get_tree().root.call_deferred("add_child", newBullet)
 		
+		
 		player.SetAnim("shoot")
 		audio_stream_player.play()
 		CanShoot = false
 		await  get_tree().create_timer(1/CurrentGun.ROF).timeout
 		CanShoot = true
+	
+	
+	
 func UpdateAmmoText():
 	if !CurrentGun:
 		ammoLabel.text = str("No gun") 

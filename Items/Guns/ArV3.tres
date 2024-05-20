@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemType" load_steps=4 format=3 uid="uid://clifr3joxabgm"]
 
-[ext_resource type="Resource" uid="uid://bh3w6gq1pbvnm" path="res://GD Scripts/Resources/Guns/ArV1.tres" id="1_ojkml"]
+[ext_resource type="Resource" uid="uid://c5kx230p4hq0q" path="res://GD Scripts/Resources/Guns/ArV3.tres" id="1_pijeu"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_type.gd" id="2_ejxod"]
 [ext_resource type="Texture2D" uid="uid://5mlquwt4ufnu" path="res://Art_PNG/Item_Gun/Item_Gun_AR_Blue, v1.png" id="3_5bldw"]
 
@@ -15,7 +15,7 @@ max_stack_count = 1
 in_inventory_width = 3
 in_inventory_height = 1
 slot_flags = 4
-custom_data = ExtResource("1_ojkml")
+custom_data = ExtResource("1_pijeu")
 default_properties_string = "{
 \"price\": {
 \"res://Items/Aqua.tres\": 225

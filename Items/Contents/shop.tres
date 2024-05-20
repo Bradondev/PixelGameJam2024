@@ -1,13 +1,17 @@
-[gd_resource type="Resource" script_class="ItemInstantiator" load_steps=3 format=3 uid="uid://8nltaycjtb7l"]
+[gd_resource type="Resource" script_class="ItemInstantiator" load_steps=7 format=3 uid="uid://8nltaycjtb7l"]
 
 [ext_resource type="Resource" uid="uid://douiehmw6t3m6" path="res://Items/Contents/LootV1.tres" id="1_5la67"]
+[ext_resource type="Resource" uid="uid://cew8meuuxgme8" path="res://Items/Contents/LootV4.tres" id="2_sumde"]
+[ext_resource type="Resource" uid="uid://cny1ty3xnyb4q" path="res://Items/Contents/LootV5.tres" id="3_g56pg"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="4_78e6i"]
+[ext_resource type="Resource" uid="uid://c0gklvo5tb8jn" path="res://Items/Contents/LootV3.tres" id="4_s13ft"]
+[ext_resource type="Resource" uid="uid://b0x03nmjjk3ur" path="res://Items/Contents/LootV2.tres" id="5_esjxw"]
 
 [resource]
 script = ExtResource("4_78e6i")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_5la67"), ExtResource("1_5la67"), ExtResource("1_5la67"), ExtResource("1_5la67"), ExtResource("1_5la67"), ExtResource("1_5la67"), ExtResource("1_5la67")])
-item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
-item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0])
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_5la67"), ExtResource("1_5la67"), ExtResource("1_5la67"), ExtResource("1_5la67"), ExtResource("2_sumde"), ExtResource("2_sumde"), ExtResource("2_sumde"), ExtResource("3_g56pg"), ExtResource("3_g56pg"), ExtResource("4_s13ft"), ExtResource("4_s13ft"), ExtResource("4_s13ft"), ExtResource("5_esjxw"), ExtResource("5_esjxw"), ExtResource("5_esjxw"), ExtResource("4_s13ft"), ExtResource("2_sumde"), ExtResource("3_g56pg"), ExtResource("1_5la67"), ExtResource("5_esjxw"), ExtResource("3_g56pg")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0])
 repeat_post_chance = true
 randomize_locations = true
 delay_between_items = 0.0

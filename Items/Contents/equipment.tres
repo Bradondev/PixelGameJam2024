@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="ItemGenerator" load_steps=24 format=3 uid="uid://dnbuhg1ymuiwe"]
+
+[ext_resource type="Resource" uid="uid://c48mshlkty4qu" path="res://Items/equipment/ChestArticV1.tres" id="1_23c0o"]
+[ext_resource type="Script" path="res://addons/wyvernbox/crafting/item_generator.gd" id="1_dcea6"]
+[ext_resource type="Resource" uid="uid://k8tv6nra6ulm" path="res://Items/equipment/ChestArticV2.tres" id="2_cm36r"]
+[ext_resource type="Resource" uid="uid://dd3q421cs4mxx" path="res://Items/equipment/ChestArticV3.tres" id="3_64gq0"]
+[ext_resource type="Resource" uid="uid://ddugm555wqoa" path="res://Items/equipment/ChestArticV4.tres" id="4_ey670"]
+[ext_resource type="Resource" uid="uid://bnx5gl3anjwt" path="res://Items/equipment/ChestCamoV1.tres" id="5_p2vg8"]
+[ext_resource type="Resource" uid="uid://byv3tjoyd3urq" path="res://Items/equipment/ChestCamoV2.tres" id="6_muo6k"]
+[ext_resource type="Resource" uid="uid://cl1s56qu77fyd" path="res://Items/equipment/ChestCamoV3.tres" id="7_f8n6g"]
+[ext_resource type="Resource" uid="uid://dpxgg5yntds5l" path="res://Items/equipment/ChestCamoV4.tres" id="8_wd306"]
+[ext_resource type="Resource" uid="uid://cbfoxjxnmu5js" path="res://Items/equipment/ChestDesertV1.tres" id="9_pkube"]
+[ext_resource type="Resource" uid="uid://brrakgqui32ih" path="res://Items/equipment/ChestDesertV2.tres" id="10_oi0di"]
+[ext_resource type="Resource" uid="uid://d377wuthbricm" path="res://Items/equipment/ChestDesertV3.tres" id="11_77xnh"]
+[ext_resource type="Resource" uid="uid://dmhw5na3w2cc5" path="res://Items/equipment/ChestDesertV4.tres" id="12_01ip2"]
+[ext_resource type="Resource" uid="uid://ryqb78p71t88" path="res://Items/equipment/ChestSmokeV1.tres" id="13_q3cx7"]
+[ext_resource type="Resource" uid="uid://d15i4usmkpfx6" path="res://Items/equipment/ChestSmokeV2.tres" id="14_d3ws3"]
+[ext_resource type="Resource" uid="uid://ckem252kvxvhg" path="res://Items/equipment/ChestSmokeV3.tres" id="15_65a6g"]
+[ext_resource type="Resource" uid="uid://dy0ab1td7fv06" path="res://Items/equipment/ChestSmokeV4.tres" id="16_on5wt"]
+[ext_resource type="Resource" uid="uid://dukahfjr1wm4g" path="res://Items/equipment/helmetCamo.tres" id="17_ff6tg"]
+[ext_resource type="Resource" uid="uid://bi5dkrr5n837" path="res://Items/equipment/helmetDesert.tres" id="18_jjpol"]
+[ext_resource type="Resource" path="res://Items/equipment/helmetSmoke.tres" id="19_63xu8"]
+[ext_resource type="Resource" uid="uid://bnp2ytb0p8ika" path="res://Items/equipment/pantArtic.tres" id="20_u2h0h"]
+[ext_resource type="Resource" uid="uid://7adkk3c7p83k" path="res://Items/equipment/pantCamo.tres" id="21_lt5l1"]
+[ext_resource type="Resource" uid="uid://bhg3lnh8a2b0q" path="res://Items/equipment/pantDesert.tres" id="22_a47sg"]
+
+[resource]
+script = ExtResource("1_dcea6")
+name = ""
+results = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_23c0o"), ExtResource("2_cm36r"), ExtResource("3_64gq0"), ExtResource("4_ey670"), ExtResource("5_p2vg8"), ExtResource("6_muo6k"), ExtResource("7_f8n6g"), ExtResource("8_wd306"), ExtResource("9_pkube"), ExtResource("10_oi0di"), ExtResource("11_77xnh"), ExtResource("12_01ip2"), ExtResource("13_q3cx7"), ExtResource("14_d3ws3"), ExtResource("15_65a6g"), ExtResource("16_on5wt"), ExtResource("17_ff6tg"), ExtResource("18_jjpol"), ExtResource("19_63xu8"), ExtResource("20_u2h0h"), ExtResource("21_lt5l1"), ExtResource("22_a47sg")])
+weights = Array[float]([10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0])
+count_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])

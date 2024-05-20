@@ -24,3 +24,4 @@ BulletTypeItem = ExtResource("2_vc8gp")
 BulletScene = ExtResource("1_5aik1")
 ReloadTime = 1.0
 Accuracy = 95
+Type = "artic"

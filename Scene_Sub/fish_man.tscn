@@ -307,6 +307,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [&"walk"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_7j53l")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_op50r"]
 _data = {
@@ -317,7 +329,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lfc4o"]
-radius = 50.0
+radius = 11.7047
 
 [node name="FishMan" type="CharacterBody2D" node_paths=PackedStringArray("animation_player")]
 collision_layer = 257
@@ -329,11 +341,10 @@ CurrentHealth = 90
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_40fwq")
-animation = &"attack"
-frame = 4
+animation = &"walk"
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(24, 15)
 rotation = 2.13898
 shape = SubResource("CapsuleShape2D_7j53l")
@@ -371,7 +382,6 @@ animation_player = NodePath("../../AnimationPlayer")
 enemy = NodePath("../..")
 
 [node name="attackHitBox" type="Area2D" parent="."]
-visible = false
 position = Vector2(10, -13)
 collision_layer = 0
 collision_mask = 15

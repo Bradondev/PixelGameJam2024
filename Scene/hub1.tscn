@@ -1,124 +1,124 @@
-[gd_scene load_steps=78 format=3 uid="uid://d1ui8lkg8n8hk"]
+[gd_scene load_steps=78 format=3 uid="uid://csv7jvxeomqh5"]
 
-[ext_resource type="Script" path="res://Scene/hub.gd" id="1_tbohb"]
-[ext_resource type="AudioStream" uid="uid://c2q0hvwighqiw" path="res://Audio/Song - Kevin MacLeod - 8bit Dungeon Boss NO COPYRIGHT 8-bit Music.mp3" id="2_oxanp"]
-[ext_resource type="AudioStream" uid="uid://njt5a3n8e6p4" path="res://Audio/Sound - one_beep-99630.mp3" id="3_naga3"]
-[ext_resource type="Texture2D" uid="uid://bt0b4nk6uvm0a" path="res://Art_UI/Shop_TextureButton, Normal.png" id="3_v814g"]
-[ext_resource type="Texture2D" uid="uid://brsqjv5ec7nl2" path="res://Art_UI/Shop_TextureButton, Pressed.png" id="4_repa8"]
-[ext_resource type="AudioStream" uid="uid://b58tbi8netxou" path="res://Audio/Sound Clip - game-start-6104.mp3" id="4_uh4nk"]
-[ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="5_2qcak"]
-[ext_resource type="Theme" uid="uid://cwptlbkrmqhn4" path="res://HUB_FontTheme.tres" id="6_o6ojd"]
-[ext_resource type="Texture2D" uid="uid://c27xhpkqpdbwg" path="res://Art_PNG/UI__Artwork/UI_Mission.png" id="7_23aue"]
-[ext_resource type="Texture2D" uid="uid://bbx0hqgr6340o" path="res://Art_PNG/UI__Artwork/UI_Stash_2x.png" id="8_h3kmt"]
-[ext_resource type="Texture2D" uid="uid://btcmsj22xtuqh" path="res://Art_UI/Shop_TextureButton, Normal, Small.png" id="8_nef1m"]
-[ext_resource type="Texture2D" uid="uid://2ldln76m8mqx" path="res://Art_PNG/UI__Artwork/UI_Shopkeeper_2x.png" id="9_3wuke"]
-[ext_resource type="Texture2D" uid="uid://5547r6r8hhhk" path="res://Art_UI/Shop_TextureButton, Pressed, Small.png" id="9_bcvpg"]
-[ext_resource type="Texture2D" uid="uid://bun2n52oivnew" path="res://Art_UI/Shop_TextureButton, Hover, Small.png" id="10_khq45"]
-[ext_resource type="Texture2D" uid="uid://bbpn8t3jaxtdg" path="res://Art_UI/Shop_TextureButton, Normal, Red.png" id="12_ymp6m"]
-[ext_resource type="Texture2D" uid="uid://dwhw6d1s7my32" path="res://Art_UI/Shop_TextureButton, Hover, Red.png" id="13_oe8j8"]
-[ext_resource type="Texture2D" uid="uid://csbyne15x6dyu" path="res://Art_UI/Shop_TextureButton, Normal, Green.png" id="14_e2ur0"]
-[ext_resource type="Texture2D" uid="uid://b85rvuyo3khmq" path="res://Art_UI/Shop_TextureButton, Hover, Green,png.png" id="15_vistt"]
-[ext_resource type="Texture2D" uid="uid://01g12v5bkbi7" path="res://Art_UI/Equipment_Header_Inventory.png" id="16_52o3i"]
-[ext_resource type="Script" path="res://GD Scripts/Stash.gd" id="16_vhla5"]
-[ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="17_yitpx"]
-[ext_resource type="Texture2D" uid="uid://csnkf40eamr8q" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell1.png" id="21_dqyos"]
-[ext_resource type="Texture2D" uid="uid://243g83cqtkxc" path="res://Art_PNG/Item_Currency_Aqua.png" id="21_yk6iy"]
-[ext_resource type="Texture2D" uid="uid://ctqo222sv0dn" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell2.png" id="22_7l100"]
-[ext_resource type="Texture2D" uid="uid://dbwalpk6sx547" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell11.png" id="23_8hpwy"]
-[ext_resource type="Texture2D" uid="uid://d3lx0podh5qeo" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell3.png" id="24_ghsml"]
-[ext_resource type="Texture2D" uid="uid://d4e3ii7iydm1m" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell4.png" id="25_pcs3g"]
-[ext_resource type="Texture2D" uid="uid://c8pu3j0jm7isu" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell5.png" id="26_cr1eq"]
-[ext_resource type="Texture2D" uid="uid://c7e0afjkb7w1y" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell6.png" id="27_0pykk"]
-[ext_resource type="Texture2D" uid="uid://8pco4p25s6q5" path="res://Art_UI/Equipment_Footer_Inventory.png" id="28_0aymo"]
-[ext_resource type="Texture2D" uid="uid://cvabxyes7d5lo" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell7.png" id="28_qgs4b"]
-[ext_resource type="PackedScene" uid="uid://4ohh3iq6c7uc" path="res://Scene/inventory/playerEquitment.tscn" id="29_54gah"]
-[ext_resource type="Texture2D" uid="uid://darsvxqfw1m06" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell8.png" id="29_ogfv4"]
-[ext_resource type="Texture2D" uid="uid://by1ghjgkxag1m" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell9.png" id="30_7bykd"]
-[ext_resource type="Texture2D" uid="uid://c01fpnkhhaubx" path="res://Art_UI/Equipment_Header_Information.png" id="30_n61il"]
-[ext_resource type="Texture2D" uid="uid://cskttdsovijkc" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell10.png" id="31_1tkjg"]
-[ext_resource type="Texture2D" uid="uid://cfcc8kd3my6n1" path="res://Art_UI/Equipment_InformationBackground.png" id="31_sekhr"]
-[ext_resource type="PackedScene" uid="uid://dxmu3oawxupu1" path="res://Scene/inventory/grid_inventoryPlayer.tscn" id="35_1tu8g"]
-[ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="36_dk6ra"]
-[ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="37_d8rn5"]
-[ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistolV1.tres" id="38_bpyo7"]
-[ext_resource type="Script" path="res://GD Scripts/shop.gd" id="38_fepcp"]
-[ext_resource type="Texture2D" uid="uid://bmuono7ikbk7o" path="res://Art_PNG/UI__Artwork/UI_Shopkeeper_Char_sprite.png" id="38_ldyp8"]
-[ext_resource type="Resource" uid="uid://0fxdylg7pp7g" path="res://Items/Guns/shotGunV1.tres" id="39_6b543"]
-[ext_resource type="Resource" uid="uid://sp77klvw5uhw" path="res://Items/Contents/BasicEqiupment.tres" id="40_0ttcj"]
-[ext_resource type="Resource" uid="uid://dpkpknqrbljcx" path="res://Items/Guns/SmgV1.tres" id="40_p3sc0"]
-[ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/SniperV1.tres" id="41_8t5hk"]
-[ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="42_k468t"]
-[ext_resource type="PackedScene" uid="uid://b54tbc2f6nid0" path="res://Scene/inventory/shopMain.tscn" id="43_eu1ge"]
-[ext_resource type="Resource" uid="uid://6r12xhs5o152" path="res://Items/Aqua.tres" id="43_h4fex"]
-[ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="44_fynms"]
-[ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="44_wwnai"]
-[ext_resource type="Resource" uid="uid://ncpu4qpolv3d" path="res://Items/Guns/ArV1.tres" id="44_y1kmj"]
-[ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="45_ictje"]
-[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="45_ycui3"]
-[ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="46_2u01f"]
-[ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_price.gd" id="48_26ioh"]
-[ext_resource type="Texture2D" uid="uid://b1nrvaa4kuhcg" path="res://Art_PNG/UI__Artwork/UI_Shopkeeper_sprite.png" id="50_4dv7l"]
-[ext_resource type="PackedScene" uid="uid://cag704jcu3o3i" path="res://Scene/inventory/stashgrid.tscn" id="52_1qi0f"]
-[ext_resource type="Resource" uid="uid://douiehmw6t3m6" path="res://Items/Contents/LootV1.tres" id="53_gmg0c"]
-[ext_resource type="PackedScene" uid="uid://drf6quwd64if4" path="res://Scene_Menu/first_time_menu.tscn" id="58_dyap8"]
-[ext_resource type="PackedScene" uid="uid://dkrp2wctpx7k8" path="res://Scene/Level1.tscn" id="62_d226n"]
-[ext_resource type="PackedScene" uid="uid://ofeodv7xg8ye" path="res://Scene/Level2.tscn" id="63_s8crf"]
-[ext_resource type="PackedScene" uid="uid://bckn1nhcr435j" path="res://Scene/level3.tscn" id="64_shgfk"]
+[ext_resource type="Script" path="res://Scene/hub.gd" id="1_82fe8"]
+[ext_resource type="AudioStream" uid="uid://c2q0hvwighqiw" path="res://Audio/Song - Kevin MacLeod - 8bit Dungeon Boss NO COPYRIGHT 8-bit Music.mp3" id="2_obu74"]
+[ext_resource type="AudioStream" uid="uid://njt5a3n8e6p4" path="res://Audio/Sound - one_beep-99630.mp3" id="3_vm8es"]
+[ext_resource type="AudioStream" uid="uid://b58tbi8netxou" path="res://Audio/Sound Clip - game-start-6104.mp3" id="4_1fegf"]
+[ext_resource type="Texture2D" uid="uid://bt0b4nk6uvm0a" path="res://Art_UI/Shop_TextureButton, Normal.png" id="5_o5c44"]
+[ext_resource type="Texture2D" uid="uid://brsqjv5ec7nl2" path="res://Art_UI/Shop_TextureButton, Pressed.png" id="6_xf5om"]
+[ext_resource type="Texture2D" uid="uid://bp10rbjsjlkm8" path="res://Art_UI/Shop_TextureButton, Hover.png" id="7_s51lu"]
+[ext_resource type="Theme" uid="uid://cwptlbkrmqhn4" path="res://HUB_FontTheme.tres" id="8_ib350"]
+[ext_resource type="Texture2D" uid="uid://c27xhpkqpdbwg" path="res://Art_PNG/UI__Artwork/UI_Mission.png" id="9_x8oom"]
+[ext_resource type="Texture2D" uid="uid://bbx0hqgr6340o" path="res://Art_PNG/UI__Artwork/UI_Stash_2x.png" id="10_bqrdw"]
+[ext_resource type="Texture2D" uid="uid://2ldln76m8mqx" path="res://Art_PNG/UI__Artwork/UI_Shopkeeper_2x.png" id="11_pcbhp"]
+[ext_resource type="Texture2D" uid="uid://bbpn8t3jaxtdg" path="res://Art_UI/Shop_TextureButton, Normal, Red.png" id="12_55o5u"]
+[ext_resource type="Texture2D" uid="uid://dwhw6d1s7my32" path="res://Art_UI/Shop_TextureButton, Hover, Red.png" id="13_l5bud"]
+[ext_resource type="Texture2D" uid="uid://csbyne15x6dyu" path="res://Art_UI/Shop_TextureButton, Normal, Green.png" id="14_h7o2v"]
+[ext_resource type="Texture2D" uid="uid://b85rvuyo3khmq" path="res://Art_UI/Shop_TextureButton, Hover, Green,png.png" id="15_uc3wo"]
+[ext_resource type="Script" path="res://GD Scripts/Stash.gd" id="16_ctyr8"]
+[ext_resource type="Texture2D" uid="uid://btcmsj22xtuqh" path="res://Art_UI/Shop_TextureButton, Normal, Small.png" id="17_wpkfp"]
+[ext_resource type="Texture2D" uid="uid://5547r6r8hhhk" path="res://Art_UI/Shop_TextureButton, Pressed, Small.png" id="18_sssws"]
+[ext_resource type="Texture2D" uid="uid://bun2n52oivnew" path="res://Art_UI/Shop_TextureButton, Hover, Small.png" id="19_02s6s"]
+[ext_resource type="PackedScene" uid="uid://cag704jcu3o3i" path="res://Scene/inventory/stashgrid.tscn" id="20_tsha0"]
+[ext_resource type="Script" path="res://addons/wyvernbox/inventories/grid_inventory.gd" id="21_6orep"]
+[ext_resource type="Texture2D" uid="uid://01g12v5bkbi7" path="res://Art_UI/Equipment_Header_Inventory.png" id="22_4rwcv"]
+[ext_resource type="PackedScene" uid="uid://dxmu3oawxupu1" path="res://Scene/inventory/grid_inventoryPlayer.tscn" id="23_ovxyj"]
+[ext_resource type="Resource" uid="uid://bibnyhpff7ser" path="res://Items/Bullet/9mm.tres" id="24_j57te"]
+[ext_resource type="Resource" uid="uid://cv2kpp132tjiw" path="res://Items/Bullet/Slugs.tres" id="25_bwq1v"]
+[ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistolV1.tres" id="26_i000a"]
+[ext_resource type="Resource" uid="uid://0fxdylg7pp7g" path="res://Items/Guns/shotGunV1.tres" id="27_qftul"]
+[ext_resource type="Resource" uid="uid://dpkpknqrbljcx" path="res://Items/Guns/SmgV1.tres" id="28_kbd5l"]
+[ext_resource type="Resource" uid="uid://dmswgxfj6pdi8" path="res://Items/Guns/SniperV1.tres" id="29_ye6jr"]
+[ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="30_5v3o6"]
+[ext_resource type="Resource" uid="uid://6r12xhs5o152" path="res://Items/Aqua.tres" id="31_715gh"]
+[ext_resource type="Resource" uid="uid://ncpu4qpolv3d" path="res://Items/Guns/ArV1.tres" id="32_q7jk5"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="33_xhytc"]
+[ext_resource type="Texture2D" uid="uid://8pco4p25s6q5" path="res://Art_UI/Equipment_Footer_Inventory.png" id="34_1d2hd"]
+[ext_resource type="PackedScene" uid="uid://4ohh3iq6c7uc" path="res://Scene/inventory/playerEquitment.tscn" id="35_11w65"]
+[ext_resource type="Texture2D" uid="uid://c01fpnkhhaubx" path="res://Art_UI/Equipment_Header_Information.png" id="36_n7sj1"]
+[ext_resource type="Texture2D" uid="uid://cfcc8kd3my6n1" path="res://Art_UI/Equipment_InformationBackground.png" id="37_2mklt"]
+[ext_resource type="Script" path="res://GD Scripts/shop.gd" id="38_3exmr"]
+[ext_resource type="Texture2D" uid="uid://bmuono7ikbk7o" path="res://Art_PNG/UI__Artwork/UI_Shopkeeper_Char_sprite.png" id="39_jv7cw"]
+[ext_resource type="Resource" uid="uid://sp77klvw5uhw" path="res://Items/Contents/BasicEqiupment.tres" id="40_u62t7"]
+[ext_resource type="Texture2D" uid="uid://csnkf40eamr8q" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell1.png" id="41_hwbkj"]
+[ext_resource type="Texture2D" uid="uid://ctqo222sv0dn" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell2.png" id="42_wir3w"]
+[ext_resource type="Texture2D" uid="uid://dbwalpk6sx547" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell11.png" id="43_lcws8"]
+[ext_resource type="Texture2D" uid="uid://d3lx0podh5qeo" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell3.png" id="44_d7oqr"]
+[ext_resource type="Texture2D" uid="uid://d4e3ii7iydm1m" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell4.png" id="45_f2cjv"]
+[ext_resource type="Texture2D" uid="uid://c8pu3j0jm7isu" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell5.png" id="46_5nnmk"]
+[ext_resource type="Texture2D" uid="uid://c7e0afjkb7w1y" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell6.png" id="47_o4xek"]
+[ext_resource type="Texture2D" uid="uid://cvabxyes7d5lo" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell7.png" id="48_pwq7i"]
+[ext_resource type="Texture2D" uid="uid://darsvxqfw1m06" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell8.png" id="49_68x5r"]
+[ext_resource type="Texture2D" uid="uid://by1ghjgkxag1m" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell9.png" id="50_uj3hv"]
+[ext_resource type="Texture2D" uid="uid://cskttdsovijkc" path="res://Art_PNG/UI_Shop_BuySellAnim/UI_Shopkeeper_Buy&Sell10.png" id="51_3sgcc"]
+[ext_resource type="Texture2D" uid="uid://b1nrvaa4kuhcg" path="res://Art_PNG/UI__Artwork/UI_Shopkeeper_sprite.png" id="52_7ik7u"]
+[ext_resource type="PackedScene" uid="uid://b54tbc2f6nid0" path="res://Scene/inventory/shopMain.tscn" id="53_go3py"]
+[ext_resource type="Resource" uid="uid://douiehmw6t3m6" path="res://Items/Contents/LootV1.tres" id="54_capca"]
+[ext_resource type="Texture2D" uid="uid://243g83cqtkxc" path="res://Art_PNG/Item_Currency_Aqua.png" id="55_rofxf"]
+[ext_resource type="PackedScene" uid="uid://drf6quwd64if4" path="res://Scene_Menu/first_time_menu.tscn" id="56_72yol"]
+[ext_resource type="PackedScene" uid="uid://cqa45c6lfsffv" path="res://addons/wyvernbox_prefabs/tooltip.tscn" id="57_cxma2"]
+[ext_resource type="Texture2D" uid="uid://bkq2w2liy8qcy" path="res://Art_UI/Inventory _Grid, Background_Fits 7x7 grids.png" id="58_hfagn"]
+[ext_resource type="Script" path="res://addons/wyvernbox/extension/tooltip_property_price.gd" id="59_ellhy"]
+[ext_resource type="PackedScene" uid="uid://boij7wcxmvnq7" path="res://addons/wyvernbox_prefabs/grabbed_item_stack_view.tscn" id="60_cigqi"]
+[ext_resource type="PackedScene" uid="uid://eonhf4dyqswi" path="res://Scene_Menu/Loading_Screen.tscn" id="61_r6ytc"]
+[ext_resource type="PackedScene" uid="uid://dkrp2wctpx7k8" path="res://Scene/Level1.tscn" id="62_gjqbk"]
+[ext_resource type="PackedScene" uid="uid://ofeodv7xg8ye" path="res://Scene/Level2.tscn" id="63_g3kc0"]
+[ext_resource type="PackedScene" uid="uid://bckn1nhcr435j" path="res://Scene/level3.tscn" id="64_v6sbv"]
 
 [sub_resource type="Theme" id="Theme_vs827"]
 
-[sub_resource type="Resource" id="Resource_2t352"]
+[sub_resource type="Resource" id="Resource_eld30"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
-script = ExtResource("44_fynms")
+script = ExtResource("21_6orep")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_hd242"]
+[sub_resource type="Resource" id="Resource_qg3n7"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
-script = ExtResource("44_fynms")
+script = ExtResource("21_6orep")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_pa4r1"]
+[sub_resource type="Resource" id="Resource_5t6se"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
-script = ExtResource("44_fynms")
+script = ExtResource("21_6orep")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_m6nx6"]
+[sub_resource type="Resource" id="Resource_jfi6n"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
-script = ExtResource("44_fynms")
+script = ExtResource("21_6orep")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_qn1gc"]
+[sub_resource type="Resource" id="Resource_udsce"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
-script = ExtResource("44_fynms")
+script = ExtResource("21_6orep")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_kcl37"]
+[sub_resource type="Resource" id="Resource_cltqp"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
-script = ExtResource("44_fynms")
+script = ExtResource("21_6orep")
 height = 12
 width = 12
 
-[sub_resource type="Resource" id="Resource_mv1sc"]
+[sub_resource type="Resource" id="Resource_e53a0"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
-script = ExtResource("44_fynms")
+script = ExtResource("21_6orep")
 height = 12
 width = 12
 
 [sub_resource type="Resource" id="Resource_odp2x"]
-script = ExtResource("45_ycui3")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("36_dk6ra"), ExtResource("37_d8rn5"), ExtResource("38_bpyo7"), ExtResource("39_6b543"), ExtResource("40_p3sc0"), ExtResource("41_8t5hk"), ExtResource("42_k468t"), ExtResource("43_h4fex"), ExtResource("44_y1kmj")])
+script = ExtResource("33_xhytc")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("24_j57te"), ExtResource("25_bwq1v"), ExtResource("26_i000a"), ExtResource("27_qftul"), ExtResource("28_kbd5l"), ExtResource("29_ye6jr"), ExtResource("30_5v3o6"), ExtResource("31_715gh"), ExtResource("32_q7jk5")])
 item_repeat_ranges = Array[Vector2]([Vector2(50, 50), Vector2(50, 50), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(50, 60), Vector2(50, 60), Vector2(1, 1)])
 item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0])
 repeat_post_chance = true
@@ -131,41 +131,41 @@ spread_angle_degrees = 0.0
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_n0flk"]
 frames = 11
 speed_scale = 8.0
-frame_0/texture = ExtResource("21_dqyos")
+frame_0/texture = ExtResource("41_hwbkj")
 frame_0/duration = 16.0
-frame_1/texture = ExtResource("22_7l100")
+frame_1/texture = ExtResource("42_wir3w")
 frame_1/duration = 1.0
-frame_2/texture = ExtResource("24_ghsml")
+frame_2/texture = ExtResource("44_d7oqr")
 frame_2/duration = 1.0
-frame_3/texture = ExtResource("25_pcs3g")
+frame_3/texture = ExtResource("45_f2cjv")
 frame_3/duration = 1.0
-frame_4/texture = ExtResource("26_cr1eq")
+frame_4/texture = ExtResource("46_5nnmk")
 frame_4/duration = 1.0
-frame_5/texture = ExtResource("27_0pykk")
+frame_5/texture = ExtResource("47_o4xek")
 frame_5/duration = 1.0
-frame_6/texture = ExtResource("28_qgs4b")
+frame_6/texture = ExtResource("48_pwq7i")
 frame_6/duration = 1.0
-frame_7/texture = ExtResource("29_ogfv4")
+frame_7/texture = ExtResource("49_68x5r")
 frame_7/duration = 1.0
-frame_8/texture = ExtResource("30_7bykd")
+frame_8/texture = ExtResource("50_uj3hv")
 frame_8/duration = 1.0
-frame_9/texture = ExtResource("31_1tkjg")
+frame_9/texture = ExtResource("51_3sgcc")
 frame_9/duration = 1.0
-frame_10/texture = ExtResource("23_8hpwy")
+frame_10/texture = ExtResource("43_lcws8")
 frame_10/duration = 1.0
 
 [sub_resource type="Resource" id="Resource_5hy3r"]
 resource_local_to_scene = true
 resource_name = "GridInventory"
-script = ExtResource("44_fynms")
+script = ExtResource("21_6orep")
 height = 9
 width = 9
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_26s31"]
-texture = ExtResource("45_ictje")
+texture = ExtResource("58_hfagn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ahhgq"]
-texture = ExtResource("3_v814g")
+texture = ExtResource("5_o5c44")
 
 [node name="Hub" type="Control"]
 layout_mode = 3
@@ -174,18 +174,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tbohb")
+script = ExtResource("1_82fe8")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_oxanp")
+stream = ExtResource("2_obu74")
 autoplay = true
 
 [node name="MenuSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_naga3")
+stream = ExtResource("3_vm8es")
 volume_db = 10.0
 
 [node name="Launch" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_uh4nk")
+stream = ExtResource("4_1fegf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -221,9 +221,9 @@ layout_mode = 2
 
 [node name="missions" type="TextureButton" parent="Margin/Vbox/Center/HubTubs"]
 layout_mode = 2
-texture_normal = ExtResource("3_v814g")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("5_2qcak")
+texture_normal = ExtResource("5_o5c44")
+texture_pressed = ExtResource("6_xf5om")
+texture_hover = ExtResource("7_s51lu")
 
 [node name="Text" type="RichTextLabel" parent="Margin/Vbox/Center/HubTubs/missions"]
 custom_minimum_size = Vector2(85, 22)
@@ -234,16 +234,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]missions"
 scroll_active = false
 
 [node name="stash" type="TextureButton" parent="Margin/Vbox/Center/HubTubs"]
 layout_mode = 2
-texture_normal = ExtResource("3_v814g")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("5_2qcak")
+texture_normal = ExtResource("5_o5c44")
+texture_pressed = ExtResource("6_xf5om")
+texture_hover = ExtResource("7_s51lu")
 
 [node name="Text" type="RichTextLabel" parent="Margin/Vbox/Center/HubTubs/stash"]
 layout_mode = 1
@@ -253,16 +253,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]stash"
 
 [node name="shop" type="TextureButton" parent="Margin/Vbox/Center/HubTubs"]
 layout_mode = 2
 theme = SubResource("Theme_vs827")
-texture_normal = ExtResource("3_v814g")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("5_2qcak")
+texture_normal = ExtResource("5_o5c44")
+texture_pressed = ExtResource("6_xf5om")
+texture_hover = ExtResource("7_s51lu")
 
 [node name="Text2" type="RichTextLabel" parent="Margin/Vbox/Center/HubTubs/shop"]
 layout_mode = 1
@@ -272,16 +272,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]shop"
 
 [node name="tutorial" type="TextureButton" parent="Margin/Vbox/Center/HubTubs"]
 layout_mode = 2
 theme = SubResource("Theme_vs827")
-texture_normal = ExtResource("3_v814g")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("5_2qcak")
+texture_normal = ExtResource("5_o5c44")
+texture_pressed = ExtResource("6_xf5om")
+texture_hover = ExtResource("7_s51lu")
 
 [node name="Text2" type="RichTextLabel" parent="Margin/Vbox/Center/HubTubs/tutorial"]
 layout_mode = 1
@@ -291,7 +291,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]tutorial"
 
@@ -303,15 +303,15 @@ alignment = 1
 
 [node name="Missions" type="TextureButton" parent="Margin/Vbox/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("7_23aue")
+texture_normal = ExtResource("9_x8oom")
 
 [node name="Stash" type="TextureButton" parent="Margin/Vbox/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("8_h3kmt")
+texture_normal = ExtResource("10_bqrdw")
 
 [node name="Shop" type="TextureButton" parent="Margin/Vbox/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("9_3wuke")
+texture_normal = ExtResource("11_pcbhp")
 
 [node name="ColorRect" type="ColorRect" parent="Margin/Vbox"]
 custom_minimum_size = Vector2(0, 80)
@@ -333,7 +333,7 @@ theme_override_constants/margin_bottom = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Margin/Vbox/ColorRect/MarginContainer"]
 layout_mode = 2
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]Welcome back, [wave]merc[/wave]. live to tella 'nother story, heh? well, about yer business."
 
@@ -388,9 +388,9 @@ layout_mode = 2
 
 [node name="DepartButton1" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/Vbox"]
 layout_mode = 2
-texture_normal = ExtResource("12_ymp6m")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("13_oe8j8")
+texture_normal = ExtResource("12_55o5u")
+texture_pressed = ExtResource("6_xf5om")
+texture_hover = ExtResource("13_l5bud")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/Vbox/DepartButton1"]
 layout_mode = 1
@@ -400,16 +400,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]Depart"
 
 [node name="CompleteButton1" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/Vbox"]
 visible = false
 layout_mode = 2
-texture_normal = ExtResource("14_e2ur0")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("15_vistt")
+texture_normal = ExtResource("14_h7o2v")
+texture_pressed = ExtResource("6_xf5om")
+texture_hover = ExtResource("15_uc3wo")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/Vbox/CompleteButton1"]
 layout_mode = 1
@@ -419,7 +419,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]Complete"
 
@@ -453,7 +453,7 @@ layout_mode = 2
 [node name="Mission1FlavorText" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission1/MarginContainer/ColorRect/InnerTextMargin/Vbox"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "wow, aren't you a load sack of aqua around here? go on, get out of camp and show us you can atleast get through a single extraction, bro."
 
@@ -466,7 +466,7 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "Rewards:"
 
@@ -474,7 +474,7 @@ text = "Rewards:"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "10 aqua
 2 medkits"
@@ -484,7 +484,7 @@ scroll_active = false
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "Map: "
 
@@ -492,7 +492,7 @@ text = "Map: "
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "Map: test_example_map"
 
@@ -505,9 +505,9 @@ layout_mode = 2
 
 [node name="DepartButton2" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/Vbox"]
 layout_mode = 2
-texture_normal = ExtResource("12_ymp6m")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("13_oe8j8")
+texture_normal = ExtResource("12_55o5u")
+texture_pressed = ExtResource("6_xf5om")
+texture_hover = ExtResource("13_l5bud")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/Vbox/DepartButton2"]
 layout_mode = 1
@@ -517,16 +517,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]Depart"
 
 [node name="CompleteButton2" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/Vbox"]
 visible = false
 layout_mode = 2
-texture_normal = ExtResource("14_e2ur0")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("15_vistt")
+texture_normal = ExtResource("14_h7o2v")
+texture_pressed = ExtResource("6_xf5om")
+texture_hover = ExtResource("15_uc3wo")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/Vbox/CompleteButton2"]
 layout_mode = 1
@@ -536,7 +536,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]Complete"
 
@@ -570,7 +570,7 @@ layout_mode = 2
 [node name="Mission2FlavorText" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission2/MarginContainer/ColorRect/InnerTextMargin/Vbox"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "aight, merc. you been here long enough. time to show us you got the cojones, pendejo. go into that forest over there, yea? bring me back the arm of the biggest one you can find."
 
@@ -583,7 +583,7 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "Rewards:"
 
@@ -591,7 +591,7 @@ text = "Rewards:"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "20 aqua
 shotgun [green]"
@@ -600,7 +600,7 @@ shotgun [green]"
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "Map: "
 
@@ -608,7 +608,7 @@ text = "Map: "
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "Map: test_example_map"
 
@@ -621,9 +621,9 @@ layout_mode = 2
 
 [node name="DepartButton3" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox"]
 layout_mode = 2
-texture_normal = ExtResource("12_ymp6m")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("13_oe8j8")
+texture_normal = ExtResource("12_55o5u")
+texture_pressed = ExtResource("6_xf5om")
+texture_hover = ExtResource("13_l5bud")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox/DepartButton3"]
 layout_mode = 1
@@ -633,16 +633,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]Depart"
 
 [node name="CompleteButton3" type="TextureButton" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox"]
 visible = false
 layout_mode = 2
-texture_normal = ExtResource("14_e2ur0")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("15_vistt")
+texture_normal = ExtResource("14_h7o2v")
+texture_pressed = ExtResource("6_xf5om")
+texture_hover = ExtResource("15_uc3wo")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/Vbox/CompleteButton3"]
 layout_mode = 1
@@ -652,7 +652,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]Complete"
 
@@ -686,7 +686,7 @@ layout_mode = 2
 [node name="Mission3FlavorText" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/Mission3/TextMargin/ColorRect/InnerTextMargin/Vbox"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "Gonna need you to go down to the aqua planet, it's the one over run with gross fish monsters. i really need my hard drive that has my \"favorites\" folder backed up on it."
 
@@ -699,7 +699,7 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "Rewards:"
 
@@ -707,7 +707,7 @@ text = "Rewards:"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "100 aqua
 smg [blue]"
@@ -716,7 +716,7 @@ smg [blue]"
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "Map: "
 
@@ -724,7 +724,7 @@ text = "Map: "
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "Map: test_example_map"
 
@@ -739,9 +739,9 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 mouse_filter = 1
-texture_normal = ExtResource("3_v814g")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("5_2qcak")
+texture_normal = ExtResource("5_o5c44")
+texture_pressed = ExtResource("6_xf5om")
+texture_hover = ExtResource("7_s51lu")
 
 [node name="Text" type="RichTextLabel" parent="Mission/Margin/ColorRect/Margin/MissionList/MarginContainer/back"]
 layout_mode = 1
@@ -751,7 +751,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]back"
 
@@ -763,7 +763,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("16_vhla5")
+script = ExtResource("16_ctyr8")
 
 [node name="Margin" type="MarginContainer" parent="Stash"]
 layout_mode = 1
@@ -808,9 +808,9 @@ alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs"]
 layout_mode = 2
-texture_normal = ExtResource("8_nef1m")
-texture_pressed = ExtResource("9_bcvpg")
-texture_hover = ExtResource("10_khq45")
+texture_normal = ExtResource("17_wpkfp")
+texture_pressed = ExtResource("18_sssws")
+texture_hover = ExtResource("19_02s6s")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton"]
 layout_mode = 1
@@ -820,16 +820,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]1"
 scroll_active = false
 
 [node name="TextureButton2" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs"]
 layout_mode = 2
-texture_normal = ExtResource("8_nef1m")
-texture_pressed = ExtResource("9_bcvpg")
-texture_hover = ExtResource("10_khq45")
+texture_normal = ExtResource("17_wpkfp")
+texture_pressed = ExtResource("18_sssws")
+texture_hover = ExtResource("19_02s6s")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton2"]
 layout_mode = 1
@@ -839,16 +839,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]2"
 scroll_active = false
 
 [node name="TextureButton3" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs"]
 layout_mode = 2
-texture_normal = ExtResource("8_nef1m")
-texture_pressed = ExtResource("9_bcvpg")
-texture_hover = ExtResource("10_khq45")
+texture_normal = ExtResource("17_wpkfp")
+texture_pressed = ExtResource("18_sssws")
+texture_hover = ExtResource("19_02s6s")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton3"]
 layout_mode = 1
@@ -858,16 +858,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]3"
 scroll_active = false
 
 [node name="TextureButton4" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs"]
 layout_mode = 2
-texture_normal = ExtResource("8_nef1m")
-texture_pressed = ExtResource("9_bcvpg")
-texture_hover = ExtResource("10_khq45")
+texture_normal = ExtResource("17_wpkfp")
+texture_pressed = ExtResource("18_sssws")
+texture_hover = ExtResource("19_02s6s")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton4"]
 layout_mode = 1
@@ -877,16 +877,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]4"
 scroll_active = false
 
 [node name="TextureButton5" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs"]
 layout_mode = 2
-texture_normal = ExtResource("8_nef1m")
-texture_pressed = ExtResource("9_bcvpg")
-texture_hover = ExtResource("10_khq45")
+texture_normal = ExtResource("17_wpkfp")
+texture_pressed = ExtResource("18_sssws")
+texture_hover = ExtResource("19_02s6s")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton5"]
 layout_mode = 1
@@ -896,16 +896,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]5"
 scroll_active = false
 
 [node name="TextureButton6" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs"]
 layout_mode = 2
-texture_normal = ExtResource("8_nef1m")
-texture_pressed = ExtResource("9_bcvpg")
-texture_hover = ExtResource("10_khq45")
+texture_normal = ExtResource("17_wpkfp")
+texture_pressed = ExtResource("18_sssws")
+texture_hover = ExtResource("19_02s6s")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton6"]
 layout_mode = 1
@@ -915,16 +915,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]6"
 scroll_active = false
 
 [node name="TextureButton7" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs"]
 layout_mode = 2
-texture_normal = ExtResource("8_nef1m")
-texture_pressed = ExtResource("9_bcvpg")
-texture_hover = ExtResource("10_khq45")
+texture_normal = ExtResource("17_wpkfp")
+texture_pressed = ExtResource("18_sssws")
+texture_hover = ExtResource("19_02s6s")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/StashTabs/TextureButton7"]
 layout_mode = 1
@@ -934,7 +934,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]7"
 scroll_active = false
@@ -945,18 +945,18 @@ size_flags_vertical = 3
 mouse_filter = 2
 color = Color(0.352941, 0.176471, 0.14902, 1)
 
-[node name="stash1" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
+[node name="stash1" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("20_tsha0")]
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 2
 offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_2t352")
+inventory = SubResource("Resource_eld30")
 autosave_file_path = "stash1"
 autosave_intensity = 3
 
-[node name="stash2" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
+[node name="stash2" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("20_tsha0")]
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
@@ -964,11 +964,11 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_hd242")
+inventory = SubResource("Resource_qg3n7")
 autosave_file_path = "stash2"
 autosave_intensity = 3
 
-[node name="stash3" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
+[node name="stash3" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("20_tsha0")]
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
@@ -976,11 +976,11 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_pa4r1")
+inventory = SubResource("Resource_5t6se")
 autosave_file_path = "stash3"
 autosave_intensity = 3
 
-[node name="stash4" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
+[node name="stash4" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("20_tsha0")]
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
@@ -988,11 +988,11 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_m6nx6")
+inventory = SubResource("Resource_jfi6n")
 autosave_file_path = "stash4"
 autosave_intensity = 3
 
-[node name="stash5" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
+[node name="stash5" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("20_tsha0")]
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
@@ -1000,11 +1000,11 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_qn1gc")
+inventory = SubResource("Resource_udsce")
 autosave_file_path = "stash5"
 autosave_intensity = 3
 
-[node name="stash6" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
+[node name="stash6" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("20_tsha0")]
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
@@ -1012,11 +1012,11 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_kcl37")
+inventory = SubResource("Resource_cltqp")
 autosave_file_path = "stash6"
 autosave_intensity = 3
 
-[node name="stash7" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("52_1qi0f")]
+[node name="stash7" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/ColorRect" groups=["stash"] instance=ExtResource("20_tsha0")]
 visible = false
 custom_minimum_size = Vector2(384, 384)
 layout_mode = 0
@@ -1024,16 +1024,16 @@ offset_left = 242.0
 offset_top = 5.0
 offset_right = 626.0
 offset_bottom = 389.0
-inventory = SubResource("Resource_mv1sc")
+inventory = SubResource("Resource_e53a0")
 autosave_file_path = "stash7"
 autosave_intensity = 3
 
 [node name="back" type="TextureButton" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
-texture_normal = ExtResource("3_v814g")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("5_2qcak")
+texture_normal = ExtResource("5_o5c44")
+texture_pressed = ExtResource("6_xf5om")
+texture_hover = ExtResource("7_s51lu")
 stretch_mode = 3
 
 [node name="Text2" type="RichTextLabel" parent="Stash/Margin/ColorRect/MarginContainer/HBoxContainer/VBoxContainer/back"]
@@ -1044,7 +1044,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]back"
 
@@ -1084,9 +1084,9 @@ theme_override_constants/separation = 0
 [node name="TextureRect" type="TextureRect" parent="Stash/Inventory/Margin/EquipmentAndInventory/InventoryVbox"]
 layout_mode = 2
 size_flags_vertical = 0
-texture = ExtResource("16_52o3i")
+texture = ExtResource("22_4rwcv")
 
-[node name="player" parent="Stash/Inventory/Margin/EquipmentAndInventory/InventoryVbox" instance=ExtResource("35_1tu8g")]
+[node name="player" parent="Stash/Inventory/Margin/EquipmentAndInventory/InventoryVbox" instance=ExtResource("23_ovxyj")]
 layout_mode = 2
 size_flags_vertical = 4
 contents = SubResource("Resource_odp2x")
@@ -1097,30 +1097,30 @@ autosave_intensity = 1
 [node name="TextureRect2" type="TextureRect" parent="Stash/Inventory/Margin/EquipmentAndInventory/InventoryVbox"]
 layout_mode = 2
 size_flags_vertical = 0
-texture = ExtResource("28_0aymo")
+texture = ExtResource("34_1d2hd")
 
 [node name="EquipmentVbox" type="VBoxContainer" parent="Stash/Inventory/Margin/EquipmentAndInventory"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Equip" parent="Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox" instance=ExtResource("29_54gah")]
+[node name="Equip" parent="Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox" instance=ExtResource("35_11w65")]
 layout_mode = 2
 init_contents = false
 
 [node name="InformationHeader" type="TextureRect" parent="Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox"]
 layout_mode = 2
-texture = ExtResource("30_n61il")
+texture = ExtResource("36_n7sj1")
 
 [node name="DescriptionbackGround" type="TextureRect" parent="Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox"]
 layout_mode = 2
-texture = ExtResource("31_sekhr")
+texture = ExtResource("37_2mklt")
 
 [node name="name" type="RichTextLabel" parent="Stash/Inventory/Margin/EquipmentAndInventory/EquipmentVbox/DescriptionbackGround"]
 layout_mode = 0
 offset_left = -1.0
 offset_right = 232.0
 offset_bottom = 33.0
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center]Name"
 
@@ -1129,7 +1129,7 @@ layout_mode = 0
 offset_top = 33.0
 offset_right = 233.0
 offset_bottom = 195.0
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[center] Description"
 
@@ -1141,7 +1141,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("38_fepcp")
+script = ExtResource("38_3exmr")
 ShopInven = NodePath("Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox2/shop/MarginContainer")
 shop_manager_2 = NodePath("Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox2/shop/ShopManager2")
 
@@ -1187,14 +1187,14 @@ layout_mode = 2
 [node name="PlayerSprite" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("38_ldyp8")
+texture = ExtResource("39_jv7cw")
 stretch_mode = 2
 
-[node name="player" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox" instance=ExtResource("35_1tu8g")]
+[node name="player" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox" instance=ExtResource("23_ovxyj")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-contents = ExtResource("40_0ttcj")
+contents = ExtResource("40_u62t7")
 autosave_file_path = ""
 
 [node name="BuySellAnim" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox"]
@@ -1225,10 +1225,10 @@ layout_mode = 2
 [node name="PlayerSprite" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox2"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("50_4dv7l")
+texture = ExtResource("52_7ik7u")
 stretch_mode = 2
 
-[node name="shop" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox2" instance=ExtResource("43_eu1ge")]
+[node name="shop" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox2" instance=ExtResource("53_go3py")]
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -1240,7 +1240,7 @@ autosave_intensity = 1
 
 [node name="ShopManager2" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/Hbox/Vbox2/shop" index="1"]
 sell_reward_into_inventory = NodePath("../../../Vbox/player")
-stock = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("53_gmg0c"), ExtResource("53_gmg0c"), ExtResource("53_gmg0c"), ExtResource("53_gmg0c"), ExtResource("53_gmg0c"), ExtResource("53_gmg0c"), ExtResource("53_gmg0c")])
+stock = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("54_capca"), ExtResource("54_capca"), ExtResource("54_capca"), ExtResource("54_capca"), ExtResource("54_capca"), ExtResource("54_capca"), ExtResource("54_capca")])
 stock_counts = Array[int]([1, 1, 1, 1, 1, 1, 1])
 stock_restocks = Array[int]([0, 0, 0, 0, 0, 0, 0])
 infinite_restocks = false
@@ -1252,10 +1252,10 @@ theme_override_constants/separation = 500
 
 [node name="back" type="TextureButton" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("6_o6ojd")
-texture_normal = ExtResource("3_v814g")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("5_2qcak")
+theme = ExtResource("8_ib350")
+texture_normal = ExtResource("5_o5c44")
+texture_pressed = ExtResource("6_xf5om")
+texture_hover = ExtResource("7_s51lu")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/back"]
 layout_mode = 1
@@ -1270,10 +1270,10 @@ text = "[center]back"
 
 [node name="refresh" type="TextureButton" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("6_o6ojd")
-texture_normal = ExtResource("3_v814g")
-texture_pressed = ExtResource("4_repa8")
-texture_hover = ExtResource("5_2qcak")
+theme = ExtResource("8_ib350")
+texture_normal = ExtResource("5_o5c44")
+texture_pressed = ExtResource("6_xf5om")
+texture_hover = ExtResource("7_s51lu")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/refresh"]
 layout_mode = 1
@@ -1293,13 +1293,13 @@ size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Money"]
 layout_mode = 2
-texture = ExtResource("21_yk6iy")
+texture = ExtResource("55_rofxf")
 stretch_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Money"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[right]currency:"
 scroll_active = false
@@ -1307,15 +1307,15 @@ scroll_active = false
 [node name="RichTextLabel2" type="RichTextLabel" parent="shop/Margin/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Money"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-theme = ExtResource("6_o6ojd")
+theme = ExtResource("8_ib350")
 bbcode_enabled = true
 text = "[left]1,000,000"
 scroll_active = false
 
-[node name="FirstTime_Menu" parent="." groups=["Ui"] instance=ExtResource("58_dyap8")]
+[node name="FirstTime_Menu" parent="." groups=["Ui"] instance=ExtResource("56_72yol")]
 visible = false
 
-[node name="Tooltip" parent="." instance=ExtResource("44_wwnai")]
+[node name="Tooltip" parent="." instance=ExtResource("57_cxma2")]
 visible = false
 layout_mode = 0
 offset_left = 3.0
@@ -1324,11 +1324,11 @@ offset_right = 225.0
 offset_bottom = 302.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_26s31")
 compare_to_inventory = NodePath("../Margin/EquipmentAndInventory/InventoryVbox/player")
-property_scripts = Array[Script]([ExtResource("48_26ioh")])
+property_scripts = Array[Script]([ExtResource("59_ellhy")])
 nameplate_panel = SubResource("StyleBoxTexture_ahhgq")
 back_panel = SubResource("StyleBoxTexture_26s31")
 
-[node name="Item" parent="." instance=ExtResource("46_2u01f")]
+[node name="Item" parent="." instance=ExtResource("60_cigqi")]
 offset_left = 68.0
 offset_top = 187.0
 offset_right = 180.0
@@ -1336,21 +1336,21 @@ offset_bottom = 299.0
 unit_size = Vector2(32, 32)
 hide_cursor = true
 
-[node name="Load_Screen1" parent="." instance=ExtResource("17_yitpx")]
+[node name="Load_Screen1" parent="." instance=ExtResource("61_r6ytc")]
 visible = false
-Scene = ExtResource("62_d226n")
+Scene = ExtResource("62_gjqbk")
 
-[node name="Load_Screen2" parent="." instance=ExtResource("17_yitpx")]
+[node name="Load_Screen2" parent="." instance=ExtResource("61_r6ytc")]
 visible = false
-Scene = ExtResource("63_s8crf")
+Scene = ExtResource("63_g3kc0")
 
-[node name="Load_Screen3" parent="." instance=ExtResource("17_yitpx")]
+[node name="Load_Screen3" parent="." instance=ExtResource("61_r6ytc")]
 visible = false
-Scene = ExtResource("64_shgfk")
+Scene = ExtResource("64_v6sbv")
 
-[node name="Load_Screen4" parent="." instance=ExtResource("17_yitpx")]
+[node name="Load_Screen4" parent="." instance=ExtResource("61_r6ytc")]
 visible = false
-Scene = ExtResource("58_dyap8")
+Scene = ExtResource("56_72yol")
 
 [connection signal="finished" from="Launch" to="." method="_on_launch_finished"]
 [connection signal="mouse_entered" from="Margin/Vbox/Center/HubTubs/missions" to="." method="_on_missions_mouse_entered"]

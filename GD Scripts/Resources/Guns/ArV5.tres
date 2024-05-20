@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Gun" load_steps=6 format=3 uid="uid://p1ltotsn40q2"]
+[gd_resource type="Resource" script_class="Gun" load_steps=7 format=3 uid="uid://p1ltotsn40q2"]
 
 [ext_resource type="PackedScene" uid="uid://br2il8di536b8" path="res://Scene_Sub/BulletPackScene/9mmBullet.tscn" id="1_xthlk"]
 [ext_resource type="Resource" uid="uid://dolh3xcwag5dg" path="res://Items/Bullet/5.7mm.tres" id="2_3wbn0"]
 [ext_resource type="Texture2D" uid="uid://bjpnb6venxv0n" path="res://Art_UI/Gun_Reticle, Assault Rifle.png" id="3_ehxvb"]
+[ext_resource type="AudioStream" uid="uid://1qvi0y2u65uf" path="res://Audio/shotgun-firing-4-6746.mp3" id="4_8nn52"]
 [ext_resource type="Texture2D" uid="uid://5mlquwt4ufnu" path="res://Art_PNG/Item_Gun/Item_Gun_AR_Blue, v1.png" id="4_nfo4t"]
 [ext_resource type="Script" path="res://GD Scripts/GunBase.gd" id="5_tvt48"]
 
@@ -13,12 +14,14 @@ Sprite = ExtResource("4_nfo4t")
 CrossHairSprite = ExtResource("3_ehxvb")
 BulletSpawnPoint = Vector2(20, -5.96046e-07)
 Description = ""
-ROF = 0.4
+ROF = 1.6
 BaseDamage = 7
 MagSize = 16
+ShotSound = ExtResource("4_8nn52")
 Arc = 360
 ButtetCount = 1
 BulletTypeItem = ExtResource("2_3wbn0")
 BulletScene = ExtResource("1_xthlk")
 ReloadTime = 7.0
 Accuracy = 75
+Type = "desert"

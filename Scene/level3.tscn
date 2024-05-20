@@ -1,7 +1,71 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd3hwjp6q5eg8"]
+[gd_scene load_steps=19 format=3 uid="uid://bckn1nhcr435j"]
 
 [ext_resource type="TileSet" uid="uid://cw8wysuqqyfiq" path="res://Resources/Earthlike_Tilemap.tres" id="1_56l28"]
 [ext_resource type="PackedScene" uid="uid://bpilr5la784ys" path="res://Scene_Sub/Player.tscn" id="2_j74us"]
+[ext_resource type="PackedScene" uid="uid://dev0qboo4pbph" path="res://Scene_Menu/LevelEndZone.tscn" id="3_igpt4"]
+[ext_resource type="PackedScene" uid="uid://1pya2v87pib1" path="res://Scene_Sub/fish_man.tscn" id="4_fo55h"]
+[ext_resource type="PackedScene" uid="uid://cus16s6b1oauo" path="res://Scene_Sub/LootBoxV5.tscn" id="5_w8ib2"]
+[ext_resource type="PackedScene" uid="uid://dqrnk6nnbvg5t" path="res://Scene_Sub/LootBoxV4.tscn" id="6_ex5bh"]
+[ext_resource type="PackedScene" uid="uid://1qnppnv1aduu" path="res://Scene_Sub/LootBoxV3.tscn" id="7_xbpn0"]
+[ext_resource type="PackedScene" uid="uid://bmp1u35uq0eio" path="res://Scene_Sub/LootBoxV2.tscn" id="8_xj7tr"]
+[ext_resource type="PackedScene" uid="uid://cqy4p7dbms0kf" path="res://Scene_Sub/LootBox.tscn" id="9_qyok2"]
+[ext_resource type="Resource" uid="uid://u6cm4c1s2oup" path="res://Items/Contents/Bullets.tres" id="10_i36ho"]
+[ext_resource type="Resource" uid="uid://douiehmw6t3m6" path="res://Items/Contents/LootV1.tres" id="11_hwhgg"]
+[ext_resource type="Resource" uid="uid://b0x03nmjjk3ur" path="res://Items/Contents/LootV2.tres" id="12_855mm"]
+[ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="13_2ekd0"]
+[ext_resource type="PackedScene" uid="uid://b8okuk7yhqy0l" path="res://Scene_Sub/Angeler.tscn" id="14_majss"]
+
+[sub_resource type="Resource" id="Resource_hcoxm"]
+resource_local_to_scene = true
+script = ExtResource("13_2ekd0")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("10_i36ho"), ExtResource("11_hwhgg"), ExtResource("11_hwhgg"), ExtResource("12_855mm")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[sub_resource type="Resource" id="Resource_hpyjh"]
+resource_local_to_scene = true
+script = ExtResource("13_2ekd0")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("10_i36ho"), ExtResource("11_hwhgg"), ExtResource("11_hwhgg"), ExtResource("12_855mm")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[sub_resource type="Resource" id="Resource_uhip7"]
+resource_local_to_scene = true
+script = ExtResource("13_2ekd0")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("10_i36ho"), ExtResource("11_hwhgg"), ExtResource("11_hwhgg"), ExtResource("12_855mm")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
+
+[sub_resource type="Resource" id="Resource_oosvx"]
+resource_local_to_scene = true
+script = ExtResource("13_2ekd0")
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("10_i36ho"), ExtResource("11_hwhgg"), ExtResource("11_hwhgg"), ExtResource("12_855mm")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0])
+repeat_post_chance = true
+randomize_locations = true
+delay_between_items = 0.0
+spread_distance = 32.0
+spread_cone_degrees = 360.0
+spread_angle_degrees = 0.0
 
 [node name="Level3" type="Node2D"]
 
@@ -31,10 +95,211 @@ y_sort_enabled = true
 
 [node name="Player" parent="World Contents" instance=ExtResource("2_j74us")]
 y_sort_enabled = true
-position = Vector2(-1973, 8166)
+position = Vector2(-119, 7578)
+scale = Vector2(1, 1)
+speed = 8000
 
 [node name="Loot" type="Node2D" parent="World Contents"]
 y_sort_enabled = true
 
 [node name="Props" type="Node2D" parent="World Contents"]
 y_sort_enabled = true
+
+[node name="EndZone" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_igpt4")]
+position = Vector2(-73, 7685)
+player = NodePath("../World Contents/Player")
+
+[node name="EndZone2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_igpt4")]
+position = Vector2(1838, 7954)
+player = NodePath("../World Contents/Player")
+
+[node name="EndZone3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_igpt4")]
+position = Vector2(804, -3261)
+player = NodePath("../World Contents/Player")
+
+[node name="EndZone4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_igpt4")]
+position = Vector2(3198, -729)
+player = NodePath("../World Contents/Player")
+
+[node name="EndZone5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_igpt4")]
+position = Vector2(-702, -2530)
+player = NodePath("../World Contents/Player")
+
+[node name="FishMan" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fo55h")]
+position = Vector2(-2001, 6852)
+player = NodePath("../World Contents/Player")
+
+[node name="FishMan2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fo55h")]
+position = Vector2(-1971, 5683)
+player = NodePath("../World Contents/Player")
+
+[node name="FishMan3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fo55h")]
+position = Vector2(-73, 5165)
+player = NodePath("../World Contents/Player")
+
+[node name="FishMan4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fo55h")]
+position = Vector2(826, 5154)
+player = NodePath("../World Contents/Player")
+
+[node name="FishMan5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fo55h")]
+position = Vector2(1829, 2637)
+player = NodePath("../World Contents/Player")
+
+[node name="FishMan6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fo55h")]
+position = Vector2(-1635, 3236)
+player = NodePath("../World Contents/Player")
+
+[node name="FishMan7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fo55h")]
+position = Vector2(-2114, -481)
+player = NodePath("../World Contents/Player")
+
+[node name="LootBoxs" parent="." instance=ExtResource("5_w8ib2")]
+position = Vector2(-1922, -527)
+
+[node name="LootBoxs2" parent="." instance=ExtResource("5_w8ib2")]
+position = Vector2(282, -1628)
+
+[node name="LootBoxs3" parent="." instance=ExtResource("5_w8ib2")]
+position = Vector2(61, -2435)
+
+[node name="LootBoxs4" parent="." instance=ExtResource("5_w8ib2")]
+position = Vector2(1369, -3154)
+
+[node name="LootBoxs5" parent="." instance=ExtResource("5_w8ib2")]
+position = Vector2(3145, -1030)
+
+[node name="LootBoxs6" parent="." instance=ExtResource("6_ex5bh")]
+position = Vector2(2607, -1288)
+
+[node name="LootBoxs7" parent="." instance=ExtResource("6_ex5bh")]
+position = Vector2(1952, -1183)
+
+[node name="LootBoxs8" parent="." instance=ExtResource("5_w8ib2")]
+position = Vector2(2861, -215)
+
+[node name="LootBoxs9" parent="." instance=ExtResource("6_ex5bh")]
+position = Vector2(2364, 1848)
+
+[node name="LootBoxs10" parent="." instance=ExtResource("5_w8ib2")]
+position = Vector2(1848, 3770)
+
+[node name="LootBoxs11" parent="." instance=ExtResource("5_w8ib2")]
+position = Vector2(-62, 4071)
+
+[node name="LootBoxs12" parent="." instance=ExtResource("7_xbpn0")]
+position = Vector2(85, 7522)
+
+[node name="LootBoxs13" parent="." instance=ExtResource("7_xbpn0")]
+position = Vector2(1976, 7791)
+
+[node name="LootBoxs14" parent="." instance=ExtResource("8_xj7tr")]
+position = Vector2(1976, 7727)
+
+[node name="LootBoxs15" parent="." instance=ExtResource("8_xj7tr")]
+position = Vector2(75, 7476)
+
+[node name="LootBoxs16" parent="." instance=ExtResource("8_xj7tr")]
+position = Vector2(69, 7431)
+
+[node name="LootBoxs17" parent="." instance=ExtResource("8_xj7tr")]
+position = Vector2(1980, 7674)
+
+[node name="LootBoxs18" parent="." instance=ExtResource("9_qyok2")]
+position = Vector2(-2124, 7976)
+InveentroyContent = SubResource("Resource_hcoxm")
+
+[node name="LootBoxs19" parent="." instance=ExtResource("9_qyok2")]
+position = Vector2(-2059, 7975)
+InveentroyContent = SubResource("Resource_hpyjh")
+
+[node name="LootBoxs20" parent="." instance=ExtResource("9_qyok2")]
+position = Vector2(-1925, 7975)
+InveentroyContent = SubResource("Resource_uhip7")
+
+[node name="LootBoxs21" parent="." instance=ExtResource("9_qyok2")]
+position = Vector2(-1861, 7982)
+InveentroyContent = SubResource("Resource_oosvx")
+
+[node name="LootBoxs22" parent="." instance=ExtResource("6_ex5bh")]
+position = Vector2(-34, -2187)
+
+[node name="FishMan8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fo55h")]
+position = Vector2(306, -2174)
+player = NodePath("../World Contents/Player")
+
+[node name="FishMan9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fo55h")]
+position = Vector2(681, -2154)
+player = NodePath("../World Contents/Player")
+
+[node name="FishMan10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fo55h")]
+position = Vector2(1054, -2149)
+player = NodePath("../World Contents/Player")
+
+[node name="FishMan11" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fo55h")]
+position = Vector2(733, -3010)
+player = NodePath("../World Contents/Player")
+
+[node name="angler" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_majss")]
+position = Vector2(1064, -2987)
+player = NodePath("../World Contents/Player")
+
+[node name="angler2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_majss")]
+position = Vector2(-461, -2377)
+player = NodePath("../World Contents/Player")
+
+[node name="angler3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_majss")]
+position = Vector2(380, -1687)
+player = NodePath("../World Contents/Player")
+
+[node name="angler4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_majss")]
+position = Vector2(-2120, 1143)
+player = NodePath("../World Contents/Player")
+
+[node name="angler5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_majss")]
+position = Vector2(314, 1832)
+player = NodePath("../World Contents/Player")
+
+[node name="angler6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_majss")]
+position = Vector2(261, -1762)
+player = NodePath("../World Contents/Player")
+
+[node name="angler7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_majss")]
+position = Vector2(532, -2141)
+player = NodePath("../World Contents/Player")
+
+[node name="angler8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_majss")]
+position = Vector2(-179, -2186)
+player = NodePath("../World Contents/Player")
+
+[node name="angler9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("14_majss")]
+position = Vector2(849, -2158)
+player = NodePath("../World Contents/Player")
+
+[node name="LootBoxs23" parent="." instance=ExtResource("5_w8ib2")]
+position = Vector2(1199, -2183)
+
+[node name="LootBoxs24" parent="." instance=ExtResource("8_xj7tr")]
+position = Vector2(711, 1832)
+
+[node name="LootBoxs25" parent="." instance=ExtResource("8_xj7tr")]
+position = Vector2(2495, -236)
+
+[node name="LootBoxs26" parent="." instance=ExtResource("7_xbpn0")]
+position = Vector2(-87, 5681)
+
+[node name="LootBoxs27" parent="." instance=ExtResource("7_xbpn0")]
+position = Vector2(713, -2768)
+
+[node name="LootBoxs28" parent="." instance=ExtResource("6_ex5bh")]
+position = Vector2(1255, -2790)
+
+[node name="LootBoxs29" parent="." instance=ExtResource("6_ex5bh")]
+position = Vector2(617, -2926)
+
+[node name="FishMan12" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fo55h")]
+position = Vector2(-103, 7414)
+player = NodePath("../World Contents/Player")
+
+[node name="FishMan13" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_fo55h")]
+position = Vector2(1861, 7679)
+player = NodePath("../World Contents/Player")

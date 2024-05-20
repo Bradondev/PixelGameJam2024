@@ -188,7 +188,7 @@ layout_mode = 2
 size_flags_vertical = 4
 contents = ExtResource("12_b6p14")
 init_contents = true
-interaction_mode = 13
+interaction_mode = 29
 autosave_file_path = ""
 autosave_intensity = 1
 
@@ -203,6 +203,7 @@ theme_override_constants/separation = 0
 
 [node name="Equip" parent="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox" instance=ExtResource("7_4fhhw")]
 layout_mode = 2
+contents = ExtResource("12_b6p14")
 
 [node name="InformationHeader" type="TextureRect" parent="UI/Inventory/Margin/EquipmentAndInventory/EquipmentVbox"]
 layout_mode = 2

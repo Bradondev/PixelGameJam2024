@@ -251,9 +251,9 @@ player = NodePath("../Player")
 
 [node name="Player" parent="WorldLoad" instance=ExtResource("2_8yw46")]
 y_sort_enabled = true
-position = Vector2(748, 2560)
+position = Vector2(418, 216)
 scale = Vector2(1, 1)
-speed = 4500
+speed = 7000
 
 [node name="angler" parent="WorldLoad" node_paths=PackedStringArray("player") instance=ExtResource("25_gncdl")]
 position = Vector2(4527, 138)

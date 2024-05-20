@@ -18,7 +18,9 @@ slot_flags = 524289
 custom_data = ExtResource("1_8mapj")
 default_properties_string = "{
 \"price\": {
-\"res://Items/Aqua.tres\": 225"
+\"res://Items/Aqua.tres\": 8
+}
+}"
 default_properties = {
 "price": {
 "res://Items/Aqua.tres": 8

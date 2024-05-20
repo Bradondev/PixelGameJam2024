@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemGenerator" load_steps=12 format=3 uid="uid://douiehmw6t3m6"]
+[gd_resource type="Resource" script_class="ItemGenerator" load_steps=13 format=3 uid="uid://douiehmw6t3m6"]
 
 [ext_resource type="Resource" uid="uid://b4t3uv3lch1n6" path="res://Items/Guns/pistolV1.tres" id="1_skli2"]
 [ext_resource type="Script" path="res://addons/wyvernbox/crafting/item_generator.gd" id="1_tti3r"]
@@ -11,10 +11,11 @@
 [ext_resource type="Resource" uid="uid://dolh3xcwag5dg" path="res://Items/Bullet/5.7mm.tres" id="8_p7q5y"]
 [ext_resource type="Resource" uid="uid://ncpu4qpolv3d" path="res://Items/Guns/ArV1.tres" id="9_508w3"]
 [ext_resource type="Resource" uid="uid://hvbxywxy0bfl" path="res://Items/Bullet/4.5mm.tres" id="10_x37s4"]
+[ext_resource type="Resource" uid="uid://dnbuhg1ymuiwe" path="res://Items/Contents/equipment.tres" id="11_ti62a"]
 
 [resource]
 script = ExtResource("1_tti3r")
 name = "LootV1"
-results = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_skli2"), ExtResource("2_p6brj"), ExtResource("3_ielcj"), ExtResource("4_t6h3a"), ExtResource("5_w48xh"), ExtResource("6_v06yw"), ExtResource("7_kpbnj"), ExtResource("8_p7q5y"), ExtResource("9_508w3"), ExtResource("10_x37s4")])
-weights = Array[float]([10.0, 30.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 30.0])
-count_ranges = Array[Vector2]([Vector2(0, 1), Vector2(8, 16), Vector2(0, 1), Vector2(0, 1), Vector2(0, 1), Vector2(6, 10), Vector2(6, 10), Vector2(0, 1), Vector2(0, 1), Vector2(12, 24)])
+results = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_skli2"), ExtResource("2_p6brj"), ExtResource("3_ielcj"), ExtResource("4_t6h3a"), ExtResource("5_w48xh"), ExtResource("6_v06yw"), ExtResource("7_kpbnj"), ExtResource("8_p7q5y"), ExtResource("9_508w3"), ExtResource("10_x37s4"), ExtResource("11_ti62a")])
+weights = Array[float]([10.0, 30.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 30.0, 10.0])
+count_ranges = Array[Vector2]([Vector2(0, 1), Vector2(8, 16), Vector2(0, 1), Vector2(0, 1), Vector2(0, 1), Vector2(6, 10), Vector2(6, 10), Vector2(0, 1), Vector2(0, 1), Vector2(12, 24), Vector2(1, 1)])

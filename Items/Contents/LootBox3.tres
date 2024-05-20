@@ -1,21 +1,16 @@
-[gd_resource type="Resource" script_class="ItemInstantiator" load_steps=5 format=3 uid="uid://cpa013vmp2atu"]
+[gd_resource type="Resource" script_class="ItemInstantiator" load_steps=6 format=3 uid="uid://cpa013vmp2atu"]
 
 [ext_resource type="Resource" uid="uid://u6cm4c1s2oup" path="res://Items/Contents/Bullets.tres" id="1_o5lld"]
 [ext_resource type="Script" path="res://addons/wyvernbox/item_instantiator.gd" id="2_qw5vt"]
-[ext_resource type="Script" path="res://addons/wyvernbox/crafting/item_generator.gd" id="2_wl4ds"]
-
-[sub_resource type="Resource" id="Resource_om0lg"]
-script = ExtResource("2_wl4ds")
-name = ""
-results = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([null])
-weights = Array[float]([1.0])
-count_ranges = Array[Vector2]([Vector2(1, 1)])
+[ext_resource type="Resource" uid="uid://cew8meuuxgme8" path="res://Items/Contents/LootV4.tres" id="2_vc00k"]
+[ext_resource type="Resource" uid="uid://b0x03nmjjk3ur" path="res://Items/Contents/LootV2.tres" id="3_ig0y6"]
+[ext_resource type="Resource" uid="uid://c0gklvo5tb8jn" path="res://Items/Contents/LootV3.tres" id="4_ou265"]
 
 [resource]
 script = ExtResource("2_qw5vt")
-items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_o5lld"), ExtResource("1_o5lld"), SubResource("Resource_om0lg")])
-item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
-item_chances = Array[float]([100.0, 100.0, 100.0])
+items_to_add = Array[Resource("res://addons/wyvernbox/crafting/item_like.gd")]([ExtResource("1_o5lld"), ExtResource("1_o5lld"), ExtResource("2_vc00k"), ExtResource("3_ig0y6"), ExtResource("4_ou265"), ExtResource("4_ou265"), ExtResource("1_o5lld"), ExtResource("1_o5lld"), ExtResource("1_o5lld"), ExtResource("1_o5lld")])
+item_repeat_ranges = Array[Vector2]([Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)])
+item_chances = Array[float]([100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0])
 repeat_post_chance = true
 randomize_locations = true
 delay_between_items = 0.0

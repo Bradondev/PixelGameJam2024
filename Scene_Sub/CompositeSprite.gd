@@ -12,7 +12,7 @@ Gun sprite = Gun, bullet, and gun fire effect // This texture can be swapped out
 
 var gun_color = {
 	"none" : null,
-	"desert" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Top_v2.png"),
+	"desert" : load("res://Art_PNG/obs/Player_CompositeSprite_SpriteSheet_Gun_Desert.png"),
 	"artic" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Gun_Artic.png"), 
 	"camo" : load("res://Art_PNG/CompositeSprites/Player_CompositeSprite_SpriteSheet_Gun_Camo.png"),
 }
@@ -66,3 +66,5 @@ func SwitchOutHelmet(type:String):
 	
 func SwitchOutPant(type:String):
 	pant.texture = pant_color[type]
+func SwitchOutGun(type:String):
+	gun.texture = gun_color[type]

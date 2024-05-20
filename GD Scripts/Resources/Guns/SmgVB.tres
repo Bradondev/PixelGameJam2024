@@ -24,3 +24,4 @@ BulletTypeItem = ExtResource("2_by1vq")
 BulletScene = ExtResource("1_ydw8m")
 ReloadTime = 1.0
 Accuracy = 75
+Type = "desert"
